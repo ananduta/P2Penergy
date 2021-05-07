@@ -1,7 +1,7 @@
 function s = projDSO(s,a_DSO,np,t)
 % Douglas-Rachford splitting to compute the projection onto the feasible
 % set of DSO
-% W. Ananduta
+% W. Ananduta & G. Belgioioso
 % 02/10/2020
 kmax =350;
 er_max =8e-2;
