@@ -1,7 +1,7 @@
 function [s,sl,np] = sd_alg_eP2P(np)
 %% Distributed algorithm
 % extended P2P market
-% W. Ananduta
+% W. Ananduta & G. Belgioioso
 % 12/11/2020
 
         %% INITIALIZATION
