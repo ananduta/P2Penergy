@@ -1,0 +1,337 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Response to reviewer Template
+% C. Ocampo-Martinez (2014)
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper,left=3.0cm,right=3.0cm,top=2.0cm,bottom=2.0cm]{geometry}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0ex}
+
+\usepackage[english]{babel}
+\usepackage{times, epsfig, subfigure, psfrag, amssymb, amsmath, amsbsy, amsfonts}
+\usepackage{graphics}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{url,soul,ulem}
+\usepackage{stfloats}
+\usepackage{array, color}
+\usepackage{bm}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{datetime,enumitem}
+\usepackage{algorithmic}
+\usepackage{cite}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{algorithm}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{empheq}
+\setlist[enumerate]{label=\alph*),topsep=0ex,parsep=0ex,partopsep=0ex}
+
+
+\newtheorem{definition}{Definition}%{\itshape}{\bfseries}
+\newtheorem{example}{Example}%{\it}{}
+\newtheorem{corollary}{Corollary}%{\it}{}
+\newtheorem{proposition}{Proposition}%{\it}{}
+\newtheorem{lemma}{Lemma}%{\it}{}
+\newtheorem{theorem}{Theorem}%{\it}{}
+\newtheorem{remark}{Remark}%{\it}{}
+\newtheorem{assumption}{Assumption}%{\it}{}
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+%\newcommand{\proof}{\vspace{1mm}\noindent{\it Proof.}\quad}
+%\def\qed{\quad{$\square$}} 
+
+%\textwidth=6.3in
+%\textheight 9in 
+%\setlength{\topmargin}{-0.5in}
+%\setlength{\oddsidemargin}{0.1in} 
+%\setlength{\evensidemargin}{0.1in}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\an#1{{{\bf \color{blue}#1}}}
+\def\o{{\bm{\omega}}}
+\def\vmean{v^{\rm mean}}
+\def\vmax{v^{\rm max}}	
+\def\e{\epsilon}
+\newcommand{\todo}[1]{\vspace{5 mm}\par \noindent \marginpar{\textsc{ToDo}}
+	\framebox{\begin{minipage}[c]{0.9 \textwidth} \tt #1
+	\end{minipage}}\vspace{5 mm}\par}
+
+% Boldsymbols, mathcal, mathbb
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\mc}{\mathcal}
+\newcommand{\bb}{\mathbb}
+\newcommand{\R}{\bb R}
+
+\DeclareMathAlphabet{\mathbbmsl}{U}{bbm}{m}{sl}
+\newcommand{\bbi}{\mathbbmsl}
+%norm
+\newcommand{\norm}[1]{\left\|#1\right\|}
+
+% Operators and notations
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\iP}{\mathcal{P}}
+\newcommand{\B}{\mathcal{C}}
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+\newcommand{\argmin}{\operatorname{argmin}}
+\newcommand{\mini}{\operatorname{minimize}}
+\newcommand{\Proj}{\mathrm{Proj}}
+\newcommand{\fix}{\mathrm{fix}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\prox}{\mathrm{prox}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\Res}{\operatorname{J}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\blkdiag}{\operatorname{blkdiag}}
+\newcommand{\col}{\operatorname{col}}
+\newcommand{\zer}{\operatorname{zer}}
+\newcommand{\nulls}{\operatorname{Null}}
+\newcommand{\range}{\operatorname{Range}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\nc}{\mathrm{N}}
+\newcommand{\0}{\mathbf{0}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\half}{^1\hspace*{-.1em}/_2}
+\newcommand{\gph}{\operatorname{gph}}
+%Roman numbers
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\newcommand{\eod}{\ensuremath{\hfill\Box}}
+\newcommand{\qedd}{\ensuremath{\hfill \blacksquare}}
+
+
+
+% Add time and date to pages
+% *****************************************
+%\cfoot[\thepage]{\thepage}
+%\chead[]{}\lhead[\currenttime]{\currenttime}\rhead[\today]{\today}
+%\pagestyle{fancy}
+% *****************************************
+\usepackage[nobottomtitles*]{titlesec}
+\titleformat{\section}%
+    {\bfseries\large}{}{0.0em}{}[]%
+\titlespacing*{\section}%
+    {-0.5cm}{2.5ex plus 0.2ex minus 0.2ex}{0.5ex plus 0.2ex minus 0.2ex}%
+
+\usepackage{ifthen}
+\newcommand{\query}[2][]{
+    \ifthenelse{\equal{#1}{}}{}{\textbf{#1:}~}\emph{#2}\\[0.1em]}
+\newcommand{\ans}[1]{\textbf{Answer:~}
+    \ifthenelse{\equal{#1}{}}{To be answered!}{#1}}
+
+
+% Use for adding comments according to the author (different color)
+% CUSTOMIZE
+%\newcommand{\XXX}[1]{\textcolor{red}{#1}}
+\newcommand{\com}[1]{\textcolor{blue}{#1}}
+\newcommand{\edit}[1]{\color{blue}{#1 }\color{black} }
+\newcommand{\comment}[1]{\textcolor{red}{[#1]}}
+%\newcommand{\XX}[1]{\textcolor[rgb]{0,0.5,0}{#1}}
+%\newcommand{\XXXX}[1]{\textcolor[rgb]{0.50,0.00,0.50}{#1}}
+
+
+\title{Authors' response}
+\date{}
+\begin{document}
+%\maketitle
+
+\begin{center}
+\textbf{\Large Authors' response}
+\end{center}
+\vspace{0.5cm}
+\noindent
+
+\textbf{Ms. Ref. No.: TSG-01404-2021}  \\
+\textbf{Title: Operationally-Safe Peer-to-Peer Energy Trading in Distribution Grids: A Game-Theoretic Market-Clearing Mechanism}   \\
+\textbf{Authors: G. Belgioioso, W. Ananduta, S. Grammatico, and C. Ocampo-Martinez}   \\
+\textbf{Journal: IEEE Transactions on Smart Grid}  
+
+%\vspace{1cm}
+
+\setcounter{page}{1}
+
+% ADD HERE PREAMBLE TEXT
+The authors would like to thank the Reviewers and the Associate Editor for their comments, which have helped us to improve the manuscript. We do hope that all the points raised have been addressed. {To help reviewing the revised manuscript,} the points have been divided up and marked AE, R1, R2, R3, and R4, for comments from Associate Editor, Reviewers 1, 2, 3, and 4, respectively. When appropriate, the corresponding marks can be found within the manuscript and the modifications according to the comments are highlighted in \textcolor{blue}{blue}. In addition, the cross references of equation labels, as mentioned by the reviewers and used in the answers, are adapted based on the revised manuscript. %We have also removed some intermediate steps in the derivation of some (in)-equalities and displayed some equations in different forms to meet the page limit. These parts are highlighted in \textcolor{magenta}{magenta}.%Additionally, in order to adjust the contents into a technical note, we have streamlined some parts of the paper, which are highlighted in \textcolor{magenta}{magenta}.
+
+
+\section*{Answers to Associate Editor}
+
+\query[AE-1]{This paper proposes a generalized Nash game model for P2P energy trading in a distribution network considering network constraints and DNO. A distributed algorithm is developed to seek the equilibrium of the game. The topic is relevant and timely. However, the reviewers raised some concerns. The authors should carefully consider all the comments and make a corresponding improvement. } 
+
+
+\ans{}
+
+
+\newpage
+\section*{Answers to Reviewer 1}
+
+
+\query[R1-1]{This paper proposed a peer-to-peer energy market for prosumers as a generalized aggregative game. The paper is well written, and the research may be of value. The reviewer mainly concerns about the proposed algorithm.}
+\ans{We thank the reviewer for the positive comment.}
+
+
+
+\textit{The comments are as follows:}
+
+\query[R1-2]{The feasibility of such scenarios still remains further discussions considering the capital costs of energy storage, interests conflicts of current electrical roles, and the engineering implementations involving such accurate models.}
+\ans{We agree with the Reviewer. This work shows how peer-to-peer market scenarios in theory can be beneficial.}
+
+\query[R1-3]{The charging and discharging efficiency are not considered in (5), which is sometimes acceptable, but requires explanations.  }
+\ans{In the first version of the manuscript, we did not consider the charging and discharging efficiency as we assume the simplest model of the storage since component model is not the main focus of this work. However, based on this reviewer comment, we now update the storage dynamics, which include the charging and discharging efficiencies. Therefore, for each storage unit, we consider two decision variables, i.e., the charging and discharging powers. The storage unit is now modeled as follows:}
+
+\textit{``\edit{The battery charging and discharging profiles, $p_{i}^{\mathrm{ch}} = \col((p_{i,h}^{\mathrm{ch}})_{h\in \mc H})$ and $p_{i}^{\mathrm{ds}} = \col((p_{i,h}^{\mathrm{ds}})_{h\in \mc H})$, respectively, are constrained by the battery dynamics}}
+%
+\begin{equation}
+%	\marginnote{\note{R1-3}\\ \note{R2-2}}
+	\begin{aligned}
+		\left.
+		\begin{array}{c}
+			\edit{	x_{i,h+1} =\eta_i^{\mathrm{st}} x_{i,h} +\frac{T_{\mathrm{s}}}{e^{\mathrm{cap}}_{i}}(\eta_i^{\mathrm{ch}} p_{i,h}^{\mathrm{ch}} -(\frac{1}{\eta_i^{\mathrm{ds}}})p_{i,h}^{\mathrm{ds}}),} \\[.2em]
+			\underline{x}_i \leq x_{i,h+1} \leq \overline{x}_i, \\[.2em]
+			\edit{	{p}_{i}^{\mathrm{ch}} \in [0,\overline{{p}}_{i}^{\mathrm{ch}}], \ \ {p}_{i}^{\mathrm{ds}} \in [0,\overline{{p}}_{i}^{\mathrm{ds}}],}
+		\end{array}
+		\hspace{-5pt} \right\} & \begin{matrix}
+			\forall i \in \mc N^{\mathrm{st}}, \\ \forall h \in \mc H,
+		\end{matrix} \\
+		\edit{p_{i}^{\mathrm{ch}}= 0, \ \ p_{i}^{\mathrm{ds}}= 0,}\qquad \qquad & \forall i \notin \mc N^{\mathrm{st}},
+	\end{aligned}
+	\label{eq:x}
+\end{equation}
+\textit{where $x_{i,h} $ denotes the state of charge (SoC) of the storage unit at time $h \in \mc H$%
+%\footnote{In \cite{atzeni2013}, the charging and discharging power are defined separately, which is actually a better representation. However, the optimal strategies that they produce satisfies the constraint that charging and discharging must be mutually exclusive (see footnote 1 in \cite{atzeni2013}). From other papers, they usually have boolean variables to ensure this constraint and we want to avoid that.}
+, \edit{$\eta_i^{\mathrm{st}}, \eta_i^{\mathrm{ch}}, \eta_i^{\mathrm{ds}} \in (0,1]$ denote  the leakage coefficient of the storage, charging, and discharging efficiencies, respectively, while }  %$b_i~=~-\frac{T_{\mathrm{s}}}{e^{\mathrm{cap}}_{i}}$, with 
+$T_{\mathrm{s}}$ and $e^{\mathrm{cap}}_{i}$ denote sampling time and maximum capacity of the storage, respectively. Moreover, $\underline{x}_i,\overline{x}_i  \in [0,1]$  denote the minimum and the maximum SoC of the storage unit of prosumer $i$, respectively, whereas $\edit{\overline p}^{\mathrm{ch}}_i \geq 0$ and $\edit{\overline p}^{\mathrm{ds}}_i \geq 0$ denote the maximum charging and discharging power of the storage unit. Finally, we denote by  $\mathcal{N}^{\mathrm{st}}\subseteq\mathcal{N}$ 	the set of prosumers that own a storage unit.''}
+
+We have also modified our game formulation and proposed algorithm in Section III to take into account this storage model update.
+
+\query[R1-4]{The energy loss of the distribution network is also not considered.}
+\ans{We do not include energy loss of the distribution network in the current setup and leave it for future work. In this manuscript, we focus on the game-theoretic formulation of the interaction among prosumers and the network operator.}
+
+\query[R1-5]{The individual variables, coupled relationships for these energy roles, and the corresponding dual variables should be explained specifically, along with the whole framework structure for equilibrium. The rationalities of the framework is not clear. At least, the current presentation is hard to follow.  }
+\ans{}
+
+\query[R1-6]{The P2P trading prices are given parameters, which are quite unreasonable. In fact, the P2P prices are the key variable in most literature.}
+\ans{\comment{Wicak}\comment{provide some references that consider this. Check dual variable as marginal price.}}
+
+ \query[R1-7]{The algorithm requires too many iterations, which leads to poor feasibility in real applications, especially in distributed environment. }
+ \ans{\comment{for day-ahead or intra-day markets (with sufficiently large sampling time), our numerical experience shows the algorithm is tractable.}}
+
+
+\newpage
+\section*{Answers to Reviewer 2}
+
+\query[R2-1]{This manuscript proposes a game model for P2P energy trading in a distribution network considering network constraints and the DNO agent. The game model is a generalized game in which agents have coupled objectives and constraints. A distributed algorithm is developed to seek the equilibrium of the game. The topic of this manuscript is interesting, and the presentation is clear in general. The reviewer has some comments on the model and algorithm. }
+\ans{We thank the Reviewer for the positive comment.}
+
+\query[R2-2]{In common energy storage models, efficiency is usually a coefficient of the charging/discharging power. The storage model in (5) is uncommon as the authors take the efficiency $a_i$ as a coefficient of energy state $x_{ih}$. In related works (such as (6) in https://ieeexplore.ieee.org/document/8919970), the coefficient of energy states is usually called a leakage coefficient, describing energy leakage over time. References may be needed for (5), and please explain in what sense this storage model (5) is practical.  }
+\ans{We thank the reviewer for raising this point and suggesting the reference. In the first version of the manuscript, we did not consider the charging and discharging efficiency as we assume the simplest model of the storage since component model is not the main focus of this work. However, based on this reviewer comment, we now update the storage dynamics, which include the charging and discharging efficiencies. Therefore, for each storage unit, we consider two decision variables, i.e., the charging and discharging powers. The storage unit is now modeled as follows:}
+
+\textit{``\edit{The battery charging and discharging profiles, $p_{i}^{\mathrm{ch}} = \col((p_{i,h}^{\mathrm{ch}})_{h\in \mc H})$ and $p_{i}^{\mathrm{ds}} = \col((p_{i,h}^{\mathrm{ds}})_{h\in \mc H})$, respectively, are constrained by the battery dynamics}}
+%
+\begin{equation}
+	%	\marginnote{\note{R1-3}\\ \note{R2-2}}
+	\begin{aligned}
+		\left.
+		\begin{array}{c}
+			\edit{	x_{i,h+1} =\eta_i^{\mathrm{st}} x_{i,h} +\frac{T_{\mathrm{s}}}{e^{\mathrm{cap}}_{i}}(\eta_i^{\mathrm{ch}} p_{i,h}^{\mathrm{ch}} -(\frac{1}{\eta_i^{\mathrm{ds}}})p_{i,h}^{\mathrm{ds}}),} \\[.2em]
+			\underline{x}_i \leq x_{i,h+1} \leq \overline{x}_i, \\[.2em]
+			\edit{	{p}_{i}^{\mathrm{ch}} \in [0,\overline{{p}}_{i}^{\mathrm{ch}}], \ \ {p}_{i}^{\mathrm{ds}} \in [0,\overline{{p}}_{i}^{\mathrm{ds}}],}
+		\end{array}
+		\hspace{-5pt} \right\} & \begin{matrix}
+			\forall i \in \mc N^{\mathrm{st}}, \\ \forall h \in \mc H,
+		\end{matrix} \\
+		\edit{p_{i}^{\mathrm{ch}}= 0, \ \ p_{i}^{\mathrm{ds}}= 0,}\qquad \qquad & \forall i \notin \mc N^{\mathrm{st}},
+	\end{aligned}
+	\label{eq:x}
+\end{equation}
+\textit{where $x_{i,h} $ denotes the state of charge (SoC) of the storage unit at time $h \in \mc H$%
+	%\footnote{In \cite{atzeni2013}, the charging and discharging power are defined separately, which is actually a better representation. However, the optimal strategies that they produce satisfies the constraint that charging and discharging must be mutually exclusive (see footnote 1 in \cite{atzeni2013}). From other papers, they usually have boolean variables to ensure this constraint and we want to avoid that.}
+	, \edit{$\eta_i^{\mathrm{st}}, \eta_i^{\mathrm{ch}}, \eta_i^{\mathrm{ds}} \in (0,1]$ denote  the leakage coefficient of the storage, charging, and discharging efficiencies, respectively, while }  %$b_i~=~-\frac{T_{\mathrm{s}}}{e^{\mathrm{cap}}_{i}}$, with 
+	$T_{\mathrm{s}}$ and $e^{\mathrm{cap}}_{i}$ denote sampling time and maximum capacity of the storage, respectively. Moreover, $\underline{x}_i,\overline{x}_i  \in [0,1]$  denote the minimum and the maximum SoC of the storage unit of prosumer $i$, respectively, whereas $\edit{\overline p}^{\mathrm{ch}}_i \geq 0$ and $\edit{\overline p}^{\mathrm{ds}}_i \geq 0$ denote the maximum charging and discharging power of the storage unit. Finally, we denote by  $\mathcal{N}^{\mathrm{st}}\subseteq\mathcal{N}$ 	the set of prosumers that own a storage unit.''}
+
+We have also modified our game formulation and proposed algorithm in Section III to take into account this storage model update.
+
+
+\query[R2-3]{In (9), the electricity price is defined to depend on the total consumption. This setting is often used in local energy systems (community or microgrid) but rarely used in wide-area energy networks (distribution networks). In real situations, the electricity prices in a power network are different at different buses and are determined by generation costs, power line congestion, power loss, etc. The reviewer understands that the authors deliberately use (9) to make the agents’ objectives coupled with each other. But the authors must explain why (9) is practical in the proposed model.  }
+\ans{\comment{Wicak} \comment{check price formulation in distribution networks}}
+
+\query[R2-4]{ In the proposed model, the DNO is considered a game player. This setting is also used in some other related works (such as https://ieeexplore.ieee.org/document/9223743). The authors may need a more comprehensive review on this aspect.  }
+\ans{\comment{improve literature survey}}
+
+\query[R2-5]{The property of the game equilibrium is not clear enough. It is unclear what is the difference between v-GNE and GNE. The authors may need to formally (mathematically) define the variational GNE that the proposed game will reach. }
+\ans{\comment{add explanation about v-GNE}}
+
+\query[R2-6]{Algorithm 1 looks unfriendly to readers. The explanation for the algorithm (section III-A) is also unclear. In this current version, readers may have no clue to follow the formulation/notations in the algorithm and Fig. 2. For example, what are the dual variables used for? What is the intuitive idea behind the algorithm? What are the step sizes used for? The authors are suggested to separate Algorithm 1 into several parts and explain each part. }
+\ans{\comment{Improve explanation of algorithm 1. Apply comments.}}
+
+\newpage
+\section*{Answers to Reviewer 3 }
+\textit{This paper presents an interesting work dealing with the clearing of P2P energy markets while also considering technical constraints of the distribution network. From my point of view, some issues need to be further clarified:}
+
+\query[R3-1]{Papers dealing with P2P markets are quite numerous recently. Literature review section is well structured and provides a fair number of works in this area, however the research gaps are not clearly stated. As a consequence, the contributions of the paper are quite generic. Please, consider to state, in a more specific way, the contributions of the paper. In particular, why the GNE approach is advantageous with respect to other decentralized frameworks proposed in the literature.  }
+\ans{\comment{rephrase research gaps}}
+
+\query[R3-2]{From the modeling point of view, a linear approximation of the power-flow is considered. It is known that this approximation is weak in distribution systems. I would suggest to include some references and analysis of convex approximations, if any, that might be compatible with the Assumption 1 of this paper. }
+\ans{\comment{Wicak} \comment{Other possible approximations: linear distflow model or SDP. Future work?}}
+
+\query[R3-3]{As well pointed by the authors, this is a semi-decentralized approach where a coordinator is needed. Please, provide some discussion on how this is different with community-based local markets.   }
+\ans{As discussed in \cite[Sect. 3.2]{sousa2019}, in community-based local markets, each prosumer  does not know with which other prosumers it trades energy. The power balance of the whole network (all prosumers) is considered. Our setup considers full P2P markets where each prosumer knows its trading partners and, thus, negotiates directly with them. The coordinator in our setup plays a role in handling the physical constraints of the network as well as the aggregated power bought from the main grid.}
+
+\query[R3-4]{ The proposed algorithm relies on several dual variables. Please, elaborate on the meaning of this dual variables and their interpretation as economic outputs of the clearing process. }
+\ans{\comment{apply comment}}
+
+\query[R3-5]{As to the results section, I miss some analysis of trading prices. Please consider to add some information about transactions prices among peers and compare them with grid prices. This analysis might be interesting in both storage and non-storage situations.}
+\ans{\comment{apply comment}}
+
+\query[R3-6]{ Please, check Figure 7. The authors claim that storage help in shaving the peak of total power imported from the main grid, but this looks the same in both figures.  }
+\ans{\comment{Wicak} \comment{explain. Redo with a more interesting setup?}}
+
+\query[R3-7]{ As a conclusion, the paper presents an interesting mathematical approach for clearing P2P markets. On the another hand, some relevant topics in this area remain uncovered and highlighted as future work. All in all, in my opinion, is a very good work, and should be considered for publication if the issues raised during revision are handled. }
+\ans{We thank the Reviewer for the positive comment and recommendation.}
+
+\newpage
+\section*{Answers to Reviewer 4}
+\textit{This paper presents a mathematical model for a P2P energy market formulated as a generalized game. They introduce in the game a new agent, a Distribution Network Operator (DNO), who is responsible of ensure the operational constraints of the market. Further, they propose a semi-decentralized algorithm to solve the problem, ensuring convergence to a Nash equilibrium. Finally, a numerical study is used to show the relevance of the market framework and the scalability of the algorithm.}
+
+
+\query[R4-1]{In my opinion, the paper is clearly written, with a detailed explanation of the mathematical aspects, and introduces some relevant results. However, some questions need to be addressed in order to improve the quality of the work.  }
+\ans{We thank the Reviewer for the positive comment.}
+
+\textit{Comments and suggestions: }
+
+\query[R4-2]{The authors state that due to the presence of coupling objective and constraints in the formulation, this implies the inapplicability of other decentralized algorithms employed in the literature (lines 54-57, page 2).  This is not strictly true, since it is straightforward to reformulate the problem to decompose the objective function, just by replicating the variables avoiding the decomposition, and introduce new complicating constraints to coordinate these variables. Reformulate this sentence. }
+\ans{\comment{rephrase sentence. Not as straightforward.}}
+
+\query[R4-3]{ In the introduction, the authors assert that they extend a preliminary work by including nonlinear operational constraints, which complicate the analysis. However, they consider a linear approximation of power-flow equations (equations (13)). In fact, it seems that the only nonlinear constraint in the model is (15a), although some quadratic terms appear in the objective function. Is there any justification for this? Probably, the statement must be relaxed.  }
+\ans{\comment{Wicak} \comment{apply comment}}
+
+\query[R4-4]{ Related to the previous comment, one of the nonlinearities appears in the objective function related to dispatchable units (equation (2)). However, in the numerical studies the parameter $Q_{i}^{di}$ is taken as zero, becoming a linear objective function, and simplifying the model. The same happens with the objective function associated to storage units (equation (4)). Have you tested the effect of these parameters in the model? Further, if these parameters take a positive value, some of the conclusions presented in the numerical study could change. I suggest the authors to analyze this issue.  }
+\ans{\comment{Wicak} \comment{nonlinear objective function is not an issue. Show simulation results here when we have strongly convex cost of storage and dispatchable units. We follow existing paper for the parameters of problem. }}
+
+\query[R4-5]{The objective function associated to the power traded with the main grid seems not so natural. If the electricity unit price, $c_{h}^{mg}$ in equation (9) is considered linear (instead of quadratic) with respect to the total consumption, this would simplify this term, further becoming (11) a decomposable function. Could the authors elaborate what is the advantage of using a quadratic term here? Is worth the improvement it could add with respect to the difficulty it brings to the model?}
+\ans{\comment{Wicak} \comment{correspond to linear inverse demand function}}
+
+\query[R4-6]{ Taking into account comment 1, suppose that we consider a reformulation of the problem to avoid coupling objective functions, and we employ the Alternating Direction Methods of Multipliers (ADMM) to solve the P2P market game in (1). Could the authors elaborate if this would be possible? Would the application of the ADDM also guarantees the convergence to a variational GNE of the P2P market game? What are the advantages of using Algorithm 1 proposed in the paper to solve the problem?  }
+\ans{}
+
+\query[R4-7]{ Regarding to the scalability of the algorithms, the author evaluates the convergence of the algorithm with respect to the number of agents and the connectivity, but they do not provide any information about the computational times. This is relevant to evaluate if it could be applied in a real large-scale system. }
+\ans{\comment{Wicak} \comment{show computational time}}
+
+ \query[R4-8]{ Given a prosumer $i$, when Algorithm 1 is applied, in order to update the dual variable related to reciprocity constraints, the value of the power traded with neighbors plays an important role. In detail, I mean $\{p^{tr}_{(j,i)}\}_{j\in \mc N_{i}}$, the forward trade estimate to prosumer $i$. It seems that, depending on the order the prosumers are considered, the coordination of these variables could change, so that the convergence of the algorithm. Hence, it could be interesting to analyze how this affect to the behavior of the algorithm. For example, could it benefit to consider first prosumers with less neighbors, since maybe they reach faster an equilibrium? }
+ 	\ans{\comment{prosumers update in parallel, not sequentially.}}
+ 	
+ 	\query[R4-9]{ The notation used to define the quadratic terms of the objective functions must be introduced previously as “Basic notation”.  }
+ 	\ans{We thank the reviewer for this suggestion and we have introduced the notation as follows:}
+ 	
+ 	\edit{\textit{``Given $x \in \bb R^n$, $\|x\|_A^2 = x^\top A x,$ with square matrix $A \succ 0$.''}}
+ 	
+ 	\query[R4-10]{ The references to the lines of Algorithm 1 (in page 7) appearing in the text must be revised. For example, in item (iv) of Remark 2 (page 6), it must appear “…..(lines: 28-31)”. In the box related to dual variable update of prosumer $i$, in Figure 2 (page 6), the line references must be: lines 19-24. }
+ 	\ans{We thank the reviewer for noticing this errors and we have updated the references to the lines of Algorithm 1 in Remark 2 and Figure 2.}
+
+\bibliographystyle{apalike}
+\bibliography{ref}
+\end{document}
