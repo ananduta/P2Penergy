@@ -209,7 +209,7 @@ $T_{\mathrm{s}}$ and $e^{\mathrm{cap}}_{i}$ denote sampling time and maximum cap
 We have also modified our game formulation and proposed algorithm in Section III to take into account this storage model update.
 
 \query[R1-4]{The energy loss of the distribution network is also not considered.}
-\ans{We do not include energy loss of the distribution network in the current setup and leave it for future work. In this manuscript, we focus on the game-theoretic formulation of the interaction among prosumers and the network operator.}
+\ans{We do not include energy loss of the distribution network in the current setup and leave it for future work. In this manuscript, we focus on the game-theoretic formulation of the interaction among prosumers and the network operator. Based on the formulation in our manuscript, the energy loss can be included as long as it is formulated as \comment{continue depending whether this appears in the cost function or constraints}}
 
 \query[R1-5]{The individual variables, coupled relationships for these energy roles, and the corresponding dual variables should be explained specifically, along with the whole framework structure for equilibrium. The rationalities of the framework is not clear. At least, the current presentation is hard to follow.  }
 \ans{}
@@ -276,7 +276,12 @@ We have also modified our game formulation and proposed algorithm in Section III
 \ans{\comment{rephrase research gaps}}
 
 \query[R3-2]{From the modeling point of view, a linear approximation of the power-flow is considered. It is known that this approximation is weak in distribution systems. I would suggest to include some references and analysis of convex approximations, if any, that might be compatible with the Assumption 1 of this paper. }
-\ans{\comment{Wicak} \comment{Other possible approximations: linear distflow model or SDP. Future work?}}
+\ans{We agree with the assessment of the Reviewer on the linear approximation of the power flow equations. Based on Assumption 1, nonlinear but convex approximation of the power flow equations such as a second order cone programming  or semi-definite programming relaxation as discussed in \cite[Sect. II-A]{molzahn2017} can be considered instead of a linear one. Furthermore, since the power flow constraints are handled fully by the distribution network operator, a reformulation of these constraints does not require any modification of Algorithm 1 but only on the local constraint set of the DNO, i.e., $\mc U_{N+1}$. In this regard, the ad-hoc algorithm that we proposed to perform the projection onto $\mc U_{N+1}$ must be adjusted accordingly. We leave out the task of improving the model as future work as this is not the focus and contribution of this work. Furthermore, as suggested by the reviewer, we have modified Remark 1 based on the preceding explanation:}
+
+
+\textit{``$\dots$ remain satisfied.} \edit{\textit{In addition, instead of considering linear power flow equations in \red{(14)}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.
+''}
+}
 
 \query[R3-3]{As well pointed by the authors, this is a semi-decentralized approach where a coordinator is needed. Please, provide some discussion on how this is different with community-based local markets.   }
 \ans{As discussed in \cite[Sect. 3.2]{sousa2019}, in community-based local markets, each prosumer  does not know with which other prosumers it trades energy. The power balance of the whole network (all prosumers) is considered. Our setup considers full P2P markets where each prosumer knows its trading partners and, thus, negotiates directly with them. The coordinator in our setup plays a role in handling the physical constraints of the network as well as the aggregated power bought from the main grid.}
@@ -323,7 +328,9 @@ We have also modified our game formulation and proposed algorithm in Section III
 
  \query[R4-8]{ Given a prosumer $i$, when Algorithm 1 is applied, in order to update the dual variable related to reciprocity constraints, the value of the power traded with neighbors plays an important role. In detail, I mean $\{p^{tr}_{(j,i)}\}_{j\in \mc N_{i}}$, the forward trade estimate to prosumer $i$. It seems that, depending on the order the prosumers are considered, the coordination of these variables could change, so that the convergence of the algorithm. Hence, it could be interesting to analyze how this affect to the behavior of the algorithm. For example, could it benefit to consider first prosumers with less neighbors, since maybe they reach faster an equilibrium? }
  	\ans{\comment{prosumers update in parallel, not sequentially.}}
- 	
+ 
+ \textit{Minor comments:}
+ 
  	\query[R4-9]{ The notation used to define the quadratic terms of the objective functions must be introduced previously as “Basic notation”.  }
  	\ans{We thank the reviewer for this suggestion and we have introduced the notation as follows:}
  	

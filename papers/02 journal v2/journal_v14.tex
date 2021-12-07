@@ -551,6 +551,7 @@ which indicates local power balance of bus $y$, similarly to \eqref{eq:l_pow_b} 
 &p_{(y,z)}^{\ell} = B_{(y,z)}\left({\theta_y - \theta_z} \right) - G_{(y,z)}\left(v_y - v_z \right), \, \, \forall z \in \mc B_y, \label{eq:pf_p}\\
 &q_{(y,z)}^{\ell} = G_{(y,z)}\left({\theta_y - \theta_z} \right) + B_{(y,z)}\left(v_y - v_z \right), \, \,  \forall z \in \mc B_y, \label{eq:pf_q}
 \end{align}
+\label{eq:pf_all}
 \end{subequations}
 which represent the power flow equations of line $(y,z)$ from the perspective of bus $y$, with $B_{(y,z)}$ and  $G_{(y,z)}$ denoting the susceptance and conductance, respectively, of line $(y,z)$. Note that by \eqref{eq:pf_p} and \eqref{eq:pf_q}, for each pair $(y,z) \in \mc L$, it holds that $p_{(y,z)}^{\ell} = {-p}_{(z,y)}^{\ell}$ and $q_{(y,z)}^{\ell} = {-q}_{(z,y)}^{\ell}$. 
 
@@ -613,7 +614,7 @@ u~|~ \text{\eqref{eq:rep_const}, \eqref{eq:p_mg_bound}, \eqref{eq:p_bal_p}, \eqr
 
 
 \begin{remark}
-Our definitions of $J_i$, $\mc U_i$ and $\mc C$ satisfy Assumption \ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied. \eod
+Our definitions of $J_i$, $\mc U_i$ and $\mc C$ satisfy Assumption \ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied.  \marginnote{\note{R3-2}} \edit{Additionally, instead of considering linear power flow equations in \eqref{eq:pf_all}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.}\eod
 \end{remark}
 
 \smallskip
@@ -721,7 +722,7 @@ We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operation
 %%%%%%%%%%
 
 \begin{algorithm*}[htbp]
-\caption{Distributed P2P Markets Clearing Mechanism \red{[include charging and discharging]}}
+\caption{Distributed P2P Markets Clearing Mechanism \red{[check modification because of extra variables of charging and discharging]}}
 \label{alg:alg1}
 \begin{algorithmic}[1]
 \small
@@ -729,7 +730,7 @@ We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operation
 \init{ }
 \State
 \textbf{Prosumers.} For all $i \in \mc N$: set $u_i(0) \in \mc U_i$, $\mu^{\text{tr}}_{(i,j)}(0) = \0$, $\forall j \in \mc N_i$; $\alpha_i \!<\! 
-3 +N \underset{h\in \mc H}{\max} d_h^{\text{mg}} $, $\beta^{\text{tr}}_{(i,j)}\! =\! \beta^{\text{tr}}_{ (j,i)} \!<\! \frac{1}{2}$, $\forall j \!\in\! \mc N_i$.
+\red{3} +N \underset{h\in \mc H}{\max} d_h^{\text{mg}} $, $\beta^{\text{tr}}_{(i,j)}\! =\! \beta^{\text{tr}}_{ (j,i)} \!<\! \frac{1}{2}$, $\forall j \!\in\! \mc N_i$.
 \State
 \textbf{DNO.} Set $u_{N+1}(0) \!\in\! \mc U_{N+1}$, $\lambda^{\text{mg}}\!=\!\0$, $\mu^{\text{tg}} \!=\! \0$, $\mu_y^{\text{pb}}(0)\! = \!\0$, $\forall y \!\in\! \mc B$; $\alpha_{N+1} \!<\!2$, $\gamma^{\text{mg}} \!<\! \frac{1}{N}$, $\beta^{\text{tg}}\! <\! \frac{1}{|\mc N| \!+\! |\mc B|}$, $\beta_y^{\text{pb}} \!<\! \frac{1}{1\!+\!2|\mc N_y^{\mathrm{b}}|\!+\!|\mc B_y|}$,  $\forall y\!\in\! \mc B $.%
 
@@ -746,7 +747,7 @@ We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operation
 \smallskip
 \State 
 $\psi_i(k) = 
-	\col \Big(-\mu_y^{\text{pb}}(k),-\mu_y^{\text{pb}}(k),
+	\col \Big(-\mu_y^{\text{pb}}(k),-\mu_y^{\text{pb}}(k), \edit{-\mu_y^{\text{pb}}(k),}
 	{
 	%\left(
 	\left[
@@ -779,7 +780,7 @@ $u_i(k+1)   =
 \EndPrimal
 
 \Comm{ (to DNO and trading partners)}
-\State $\eta_i(k+1)= p^{\text{d}}_i-p^{\text{di}}_i(k+1)- p^{\text{st}}_i(k+1)$
+\State $\eta_i(k+1)= p^{\text{d}}_i-p^{\text{di}}_i(k+1)\edit{- p^{\text{ds}}_i(k+1)+p^{\text{ch}}_i(k+1)}$
 \Comment{auxiliary vector: local load unbalance}
 \State
 $
