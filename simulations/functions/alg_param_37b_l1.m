@@ -5,6 +5,7 @@ function np = alg_param_37b_l1(np)
 
 np.A = cell(np.n,1);
 a_add = 1;
+dev = 0.9;
 % alphas
 for i=1:np.n
     Ni=sum(np.Adj(i,:));
@@ -12,13 +13,16 @@ for i=1:np.n
     % alphas
     
     
-    a_pi = 1 + a_add;
-    a_st = 1 + a_add;
-    a_mg = 3 + np.n*np.d_mg + a_add; 
+%     a_pi = 1 + a_add;
+%     a_ch = 1 + a_add;
+%     a_ds = 1 + a_add;
+%     a_mg = 4 + np.n*np.d_mg + a_add; 
+%     
+%     a_tr =2.01*ones(Ni,1); 
     
-    a_tr =2.01*ones(Ni,1); 
-    
-    a_all = [a_pi;a_st;a_mg;a_tr;zeros(Ni,1)];
+%     a_all = [a_pi;a_ch;a_ds;a_mg;a_tr;zeros(Ni,1)];
+    a_i = (4+np.n*np.d_mg)*dev;
+    a_all = [1/a_i*ones(4+Ni,1);zeros(Ni,1)];
     a_ik = diag(a_all);
     np.A{i}= sparse(kron(eye(np.h),a_ik));    % Structure/order different than what's written on the paper, due to dynamics of storage
 
@@ -34,22 +38,28 @@ np.beta_tr = b*ones(np.n);
 
 for y=1:np.b
     
-    a_the = a_add;
-    a_v = a_add;
-    a_tg = 2 + a_add;
-    a_p = (1 + a_add)*ones(length(np.B{y}),1);
-    a_q = (0 + a_add)*ones(length(np.B{y}),1);
+%     a_the = a_add;
+%     a_v = a_add;
+%     a_tg = 2 + a_add;
+%     a_p = (1 + a_add)*ones(length(np.B{y}),1);
+%     a_q = (0 + a_add)*ones(length(np.B{y}),1);
+    
+    a_the = 1/(2*dev);
+    a_v = 1/(2*dev);
+    a_tg = 1/(2*dev);
+    a_p = (1/(2*dev))*ones(length(np.B{y}),1);
+    a_q = (1/(2*dev))*ones(length(np.B{y}),1);
     
     a_all = [a_the; a_v; a_tg; a_p; a_q];
     np.A_DSO{y} = sparse(kron(diag(a_all),eye(np.h)));
     
-    np.beta_pb(y) = 0.5/(length(np.B{y})+2*length(np.N_b{y})+a_add);
+    np.beta_pb(y) = dev/(length(np.B{y})+2*length(np.N_b{y})+a_add);
     
 
 end
 
-np.beta_tg = 1/(np.n+np.b+a_add);
+np.beta_tg = dev/(np.n+np.b);
 
-np.gamma_mg = 1/(np.n+a_add);
+np.gamma_mg = dev/(np.n);
 
 end

@@ -1,0 +1,7 @@
+Code description
+
+sim_A : Physical constraints (line capacity)
+
+sim_B : Peak-shaving effect of storage units
+
+sim_B_cst_var : Varying cost coefficient of storage units + trading disallowed 

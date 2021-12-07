@@ -4,13 +4,14 @@ function np = build_mat_exP2P_tr1(np)
 % W. Ananduta
 % 24/09/2020
 
-[np.Sdi,np.Sst,np.Smg,np.Str] = gen_Smat_tr(np);
+np.no_localDecision = 4;
+[np.Sdi,np.Sch,np.Sds,np.Smg,np.Str] = gen_Smat_tr(np);
 
 for i=1:np.n
     Ni = sum(np.Adj(i,:));
 
     % Cost function
-   Q = diag([np.q_dg(i) np.q_st(i) 0 zeros(1,Ni) zeros(1,Ni)]);
+   Q = diag([np.q_dg(i) np.q_st(i) np.q_st(i) 0 zeros(1,Ni) zeros(1,Ni)]);
     
     
     %Q = diag([np.q_dg(i) np.q_st(i) 0 np.q_tr*ones(1,Ni)]);
@@ -22,18 +23,20 @@ for i=1:np.n
     %np.H_half_inv{i} = inv(np.H_half{i});
     
     cc = 1;
-    c = [np.c_dg(i) np.c_st(i) 0 zeros(1,Ni) np.q_tr*ones(1,Ni)]';
+    c = [np.c_dg(i) np.c_st(i) np.c_st(i) 0 zeros(1,Ni) np.q_tr*ones(1,Ni)]';
     for j=1:np.n 
         if np.Adj(i,j) == 1
-            c(3+cc,1) = np.c_tr(i,j);
+            c(np.no_localDecision+cc,1) = np.c_tr(i,j);
             cc = cc+1;
         end
     end
     np.ch{i} = kron(ones(np.h,1),c);
     
-    % constraints U_i
+    
+    %% constraints U_i
     % Load power balance (equality constraint) eq. (6)
-    E1 = [ones(1,3+Ni) zeros(1,Ni)];
+    E1 = [ones(1,np.no_localDecision+Ni) zeros(1,Ni)];
+    E1(1,2) = -1;
     np.Aeq{i} = sparse(kron(eye(np.h),E1));
     np.beq{i} = np.Pd(i,1:np.h)';
 
@@ -45,15 +48,23 @@ for i=1:np.n
     
 
     % Storage unit eq(5)
-    A2 = [ np.Sst{i};
-          -np.Sst{i}];
-    b2 = [np.p_dh(i)*ones(np.h,1);
-          np.p_ch(i)*ones(np.h,1)];
+    A2a = [ np.Sch{i};
+           -np.Sch{i}];
+    b2a = [np.p_ch(i)*ones(np.h,1);
+          0*ones(np.h,1)];
+      
+    A2b = [ np.Sds{i};
+          -np.Sds{i}];
+    b2b = [np.p_ds(i)*ones(np.h,1);
+           0*ones(np.h,1)];
+    
+    A2 = [A2a;A2b];
+    b2 = [b2a;b2b];
 
     if np.st_un(i) == 1
         % constructing the matrices for the dynamic equation (At and Bt)
         Am = np.a_st(i);
-        Bm = [0 -1 0 zeros(1,2*Ni)]; %be careful when sampling time is not 1 hour
+        Bm = [0 np.eta_ch(i) -1/np.eta_ds(i) 0 zeros(1,2*Ni)]; %be careful when sampling time is not 1 hour
 
         Btcol = zeros(np.h,size(Bm,2));
         Bt = zeros(np.h,np.h*size(Bm,2));
@@ -75,12 +86,12 @@ for i=1:np.n
     end
     
     % Import from main grid 
-    A5 = [-np.Smg{i}];
+    A5 = -np.Smg{i};
     %b5 = [-np.pmg_min_a*ones(np.h,1)];
-    b5 = [-zeros(np.h,1)];
+    b5 = -zeros(np.h,1);
     
     % Power traded eq. (8)
-    A4 = [zeros(Ni,3) eye(Ni) zeros(Ni)];
+    A4 = [zeros(Ni,np.no_localDecision) eye(Ni) zeros(Ni)];
     A4 = kron(eye(np.h),A4);
     
     cc=1;
@@ -97,8 +108,8 @@ for i=1:np.n
     b4 = [b4; b4];
     
     % Auxiliary variable p_tr (l1-penalty term)
-    A6 = [zeros(Ni,3) eye(Ni) -eye(Ni);
-          zeros(Ni,3) -eye(Ni) -eye(Ni)];
+    A6 = [zeros(Ni,np.no_localDecision) eye(Ni) -eye(Ni);
+          zeros(Ni,np.no_localDecision) -eye(Ni) -eye(Ni)];
     A6 = kron(eye(np.h),A6);
     
     b6 = zeros(np.h*Ni*2,1);

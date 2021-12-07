@@ -17,7 +17,7 @@ np.q_dg = zeros(1,np.n);
 np.c_dg = zeros(1,np.n);
 
 % per-unit cost of using storage
-np.q_st = 0*ones(1,np.n);
+np.q_st = 0.1*ones(1,np.n);
 np.c_st = 0*ones(1,np.n);
 
 % per-unit cost of transferring power

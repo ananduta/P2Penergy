@@ -19,7 +19,7 @@ end
 % local constraints
 np.pdg_min = zeros(1,np.n);
 np.pdg_max = 20*ones(1,np.n);
-np.p_dh = 5*ones(1,np.n);
+np.p_ds = 5*ones(1,np.n);
 np.p_ch = 5*ones(1,np.n);
 np.x_min = 20*ones(1,np.n);
 np.x_max = 100*ones(1,np.n);
@@ -30,6 +30,9 @@ J2Wh = 1/3600;
 np.a_st = ones(1,np.n);
 np.b_st = T*J2Wh*ones(1,np.n);
 np.x0 = np.x_min+30;
+
+np.eta_ch = 0.95*ones(1,np.n);
+np.eta_ds = 0.94*ones(1,np.n);
 
 % power transfer constraints
 np.pt_max = 30*np.Adj;

@@ -1,10 +1,10 @@
 function s = projDSO(s,a_DSO,np,t)
 % Douglas-Rachford splitting to compute the projection onto the feasible
 % set of DSO
-% W. Ananduta & G. Belgioioso
+% W. Ananduta
 % 02/10/2020
-kmax =350;
-er_max =8e-2;
+kmax =500;
+er_max =1e-3;
 for y = 1:np.b
     if t==0
         x{y}(:,1) = np.init*ones(np.h*(3+2*length(np.B{y})),1);
@@ -70,11 +70,11 @@ for k=1:kmax
     end
     
     %stopping criteria
-    er(1,k) = norm(xi_all(:,k+1)-xi_all(:,k),2);
-    er(3,k) = norm(xi_proj - z_all(:,k),2);
+    er(1,k) = norm(xi_all(:,k+1)-xi_all(:,k),inf);
+    er(3,k) = norm(xi_proj - z_all(:,k),inf);
     %er(3,k)
     if k>1
-        er(2,k) = norm(z_all(:,k)-z_all(:,k-1),2);
+        er(2,k) = norm(z_all(:,k)-z_all(:,k-1),inf);
         
     end
 %    if k>1 && er(2,k) < er_max && er(1,k) < er_max

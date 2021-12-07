@@ -9,12 +9,12 @@ function s = loc_opt_qprog_l1(np,s,sl,t,i)
     
     % linear term associated with primal cost function
     %cc = 1;
-    c = [np.c_dg(i); np.c_st(i); 0; zeros(sum(np.Adj(i,:)),1); np.q_tr*ones(sum(np.Adj(i,:)),1)];
+    c = [np.c_dg(i); np.c_st(i); np.c_st(i); 0; zeros(sum(np.Adj(i,:)),1); np.q_tr*ones(sum(np.Adj(i,:)),1)];
     
     %mu_tr=[];
     for jj = 1:length(np.N{i})
         j = np.N{i}(jj);
-        c(3+jj,1) = np.c_tr(i,j);
+        c(np.no_localDecision+jj,1) = np.c_tr(i,j);
         
      %   mu_tr = [mu_tr;sl.mu_tr{i,j}(:,t)];
         
@@ -26,24 +26,27 @@ function s = loc_opt_qprog_l1(np,s,sl,t,i)
     pmg_i_t = np.Smg{i}*s.u{i}(:,t);
     for h = 1:np.h
         %c_1 = c + [0; 0; np.q_mg*(s.ph_mg(h,t)+pmg_i_t(h)); zeros(sum(np.Adj(i,:)),1)]; 
-        c_1 = c + [0; 0; np.d_mg*(s.sigma_mg(h,t)); zeros(2*sum(np.Adj(i,:)),1)]; 
+        c_1 = c + [0; 0; 0; np.d_mg*(s.sigma_mg(h,t)); zeros(2*sum(np.Adj(i,:)),1)]; 
         c1 = [c1;c_1];
     end
     
     % linear term associated with p_di
     c2 = np.Sdi{i}'*-sl.mu_pb{np.B_n(i)}(:,t);
     
-    % linear term associated with p_st
-    c3 = np.Sst{i}'*-sl.mu_pb{np.B_n(i)}(:,t);
+    % linear term associated with p_ch
+    c3a = np.Sch{i}'*sl.mu_pb{np.B_n(i)}(:,t);
     
+    % linear term associated with p_ds
+    c3b = np.Sds{i}'*-sl.mu_pb{np.B_n(i)}(:,t);
     
+    c3 = c3a+c3b;
     
     % linear term associated with grid constraints
     c4 = s.lambda_mg(:,t)'*[np.Smg{i};-np.Smg{i}]+sl.mu_tg(:,t)'*np.Smg{i};
     c4 = c4';
     
     % linear term associated with reciprocity constraints
-    c5 = zeros(np.h*(3+2*sum(np.Adj(i,:))),1);
+    c5 = zeros(np.h*(np.no_localDecision+2*sum(np.Adj(i,:))),1);
     for j=1:np.n
         if np.Adj(i,j) == 1
             c5 = c5 + np.Str{i,j}'*s.mu_tr{i,j}(:,t);
@@ -94,9 +97,9 @@ b = [b;beq;-beq];
 prob = osqp;
 
 settings = prob.default_settings();
-%settings.eps_abs= 1e-6;
-%settings.eps_rel= 1e-6;
-%settings.max_iter = 1e4;
+settings.eps_abs= 1e-7;
+settings.eps_rel= 1e-7;
+settings.max_iter = 1e4;
 settings.verbose = 0;
 % Setup workspace and change alpha parameter
 prob.setup(H, f, A, [], b, settings);
@@ -120,7 +123,8 @@ else
      %   u_i = u_all(dim_prev_ag+1:dim_prev_ag+dim_i);
         s.u{i}(:,t+1) = u_i;
         s.p_di{i}(:,t+1) = np.Sdi{i}*u_i;
-        s.p_st{i}(:,t+1) = np.Sst{i}*u_i;
+        s.p_ch{i}(:,t+1) = np.Sch{i}*u_i;
+        s.p_ds{i}(:,t+1) = np.Sds{i}*u_i;
         s.p_mg{i}(:,t+1) = np.Smg{i}*u_i;
         for jj = 1:length(np.N{i})
             j = np.N{i}(jj);

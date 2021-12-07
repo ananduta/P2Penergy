@@ -10,7 +10,7 @@ close all
 clc
 
 % Add path of folder 'functions'
-addpath([pwd,'\functions'])
+addpath([pwd,'/functions'])
 
 
 ty = [0]; %type of case study: (0)heterogenous  or (1)uniform  agents

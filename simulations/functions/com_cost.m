@@ -17,7 +17,8 @@ function [s,o] = com_cost(s,np)
         o.J_mg(i,1) = f_mg;
         
         o.p_di{i}(:,1) = s.p_di{i}(:,end) ;
-        o.p_st{i}(:,1) = s.p_st{i}(:,end) ;
+        o.p_ch{i}(:,1) = s.p_ch{i}(:,end) ;
+        o.p_ds{i}(:,1) = s.p_ds{i}(:,end) ;
         o.p_mg{i}(:,1) = s.p_mg{i}(:,end) ;
         for jj = 1:length(np.N{i})
             j = np.N{i}(jj);

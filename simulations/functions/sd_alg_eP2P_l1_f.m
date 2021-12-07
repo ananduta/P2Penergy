@@ -7,8 +7,9 @@ function [s,sl,np] = sd_alg_eP2P_l1_f(np)
         %% INITIALIZATION
         % Assigning parameters of the algorithm
         %np = alg_param(np);
-        np = alg_param_37b_l1(np);
-        np.t_max = 1000;
+%        np = alg_param_37b_l1(np); 
+        np = alg_param_37b_l2(np);
+        np.t_max = 1e4;
         np.er_max = 1e-1; 
 
         % % Generate matrices S_i^mg and S_ij^tr
@@ -29,13 +30,14 @@ function [s,sl,np] = sd_alg_eP2P_l1_f(np)
             %s = initialize_u_quadp(np,s,i);
             s.u{i}(:,1) = np.init*ones(size(np.A_ineq{i},2),1);
             s.p_di{i}(:,1) = np.Sdi{i}*s.u{i}(:,1);
-            s.p_st{i}(:,1) = np.Sst{i}*s.u{i}(:,1);
+            s.p_ch{i}(:,1) = np.Sch{i}*s.u{i}(:,1);
+            s.p_ds{i}(:,1) = np.Sds{i}*s.u{i}(:,1);
             s.p_mg{i}(:,1) = np.Smg{i}*s.u{i}(:,1);
             for jj = 1:length(np.N{i})
                 j = np.N{i}(jj);
                 s.p_tr{i,j} = np.Str{i,j}*s.u{i}(:,1);
             end
-            sl.b{i}(:,1) = np.Pd(i,1:np.h)' - s.p_di{i}(:,1) - s.p_st{i}(:,1);
+            sl.b{i}(:,1) = np.Pd(i,1:np.h)' - s.p_di{i}(:,1) - s.p_ds{i}(:,1)+ s.p_ch{i}(:,1);
 
             s.sigma_mg(:,1) = s.sigma_mg(:,1) + s.p_mg{i}(:,1);
         end
@@ -55,9 +57,13 @@ function [s,sl,np] = sd_alg_eP2P_l1_f(np)
         
         %s.sum_p_pd = zeros(np.h,1);
         for y = 1:np.b
-
-
-            sl.c_pb{y}(:,1) = np.Pd(np.n+y,1:np.h)' - s.p_tg{y}(:,1);
+            
+            sl.c_pb{y}(:,1) =  - s.p_tg{y}(:,1);
+            for ii = 1:length(np.Pasag_b{y})
+                    i = np.Pasag_b{y}(ii);
+                    sl.c_pb{y}(:,1) = sl.c_pb{y}(:,1) + np.Pd(i+np.n,:)';
+            end
+            
             for ii = 1:length(np.N_b{y})
                 i = np.N_b{y}(ii);
                 sl.c_pb{y}(:,1) = sl.c_pb{y}(:,1) + sl.b{i}(:,1);
@@ -85,8 +91,9 @@ function [s,sl,np] = sd_alg_eP2P_l1_f(np)
 
 
         %% Iteration
-        while 1
-            tic
+        tic
+        for t = 1:np.t_max
+            %tic
             t
             % 1) Strategy update
             %s = loc_opt_c_qprog(np,s,t);
@@ -101,7 +108,7 @@ function [s,sl,np] = sd_alg_eP2P_l1_f(np)
                 s = loc_opt_qprog_l1(np,s,sl,t,i);
                 
                 % local load imbalance of prosumer i
-                sl.b{i}(:,t+1) = np.Pd(i,1:np.h)' - s.p_di{i}(:,t+1) - s.p_st{i}(:,t+1);
+                sl.b{i}(:,t+1) = np.Pd(i,1:np.h)' - s.p_di{i}(:,t+1) - s.p_ds{i}(:,t+1) + s.p_ch{i}(:,t+1);
 
                 % forward p_mg to DSO
                 s.sigma_mg(:,t+1) = s.sigma_mg(:,t+1) + s.p_mg{i}(:,t+1);
@@ -173,7 +180,7 @@ function [s,sl,np] = sd_alg_eP2P_l1_f(np)
                 sl.mu_pb{y}(:,t+1) = sl.mu_pb{y}(:,t) + np.beta_pb(y)*(2*sl.c_pb{y}(:,t+1) - sl.c_pb{y}(:,t)) ;
                 
                 % error
-                res_dso2(t) = res_dso2(t) + sl.c_pb{y}(:,t+1)'*sl.c_pb{y}(:,t+1);
+                res_dso2(t) = norm([res_dso2(t);sl.c_pb{y}(:,t+1)],inf);
                 dres_dso2(t) = dres_dso2(t) + (sl.mu_pb{y}(:,t+1)-sl.mu_pb{y}(:,t))'*(sl.mu_pb{y}(:,t+1)-sl.mu_pb{y}(:,t));
                 
                 res1(np.n+y,t+1)= norm(s.u_DSO{y}(:,t+1)-s.u_DSO{y}(:,t),inf);
@@ -199,16 +206,22 @@ function [s,sl,np] = sd_alg_eP2P_l1_f(np)
 %             s.dres_dso(t) = sqrt(dres_dso2(t));
             
             s.res1(t) = norm(res1(:,t+1),inf);
-            [s.res(t);s.dres(t);s.res1(t)]
             
+            [s.res(t);res_dso2(t);s.dres(t);s.res1(t)]
+            error_v(:,t) = [s.res(t);res_dso2(t);s.dres(t);s.res1(t)];
+            error(t) = norm(error_v(t),inf);
+            temp.error_v = error_v;
+            temp.error = error;
             %if s.res(t) < np.er_max && s.dres(t) < np.er_max && s.res_dso(t) < np.er_max && s.dres_dso(t) < np.er_max && s.res1(t)<np.er_max %&& all(s.ph_mg(:,t) >= np.pmg_min) && all(s.ph_mg(:,t) <= np.pmg_max*ones(np.h,1)) 
             %if  s.res(t) < np.er_max && s.dres(t) < np.er_max
-            if s.res1(t) < np.er_max && s.res(t) < np.er_max
+            if error < np.er_max
                 break
             end
             
 
             t= t+1;
-            toc
+            save(['p2p_temp',date],'temp')
+            %toc
         end
+        s.comp_time = toc;
 end
