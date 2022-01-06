@@ -1,0 +1,1 @@
+- Don't we have to impose some complementarity rules for the battery charging and discharging?
