@@ -99,6 +99,44 @@ and for all $y \in \mc B$, $z \in \mc B_z$, and  $h \in \mc H$
 Whereas, since $\mc S_2$ is an affine set, a closed-form expression for $\proj_{\mc S_2}$ is given in \cite[Example 29.17(ii)]{bauschke2011convex}.
 %The projection onto $C_2$ can be computed by solving a quadratic programming (e.g. via lsqlin, quadprog, osqp, etc...) with appropriate matrices.
 
+%%%%%%%%
+\algblockdefx[init]{init}{Endinit}
+[1][<default value>]{\textbf{Initialization}}
+[2][<default value>]{\textbf{end initialization}}
+
+\algblockdefx[DNO]{DNO}{EndDNO}
+[1][<default value>]{\textbf{DNO routine}}
+[2][<default value>]{\textbf{end DNO routine}}
+
+\algblockdefx[PRO]{PRO}{EndPRO}
+[1][<default value>]{\textbf{Prosumer $i$ routine}}
+[2][<default value>]{\textbf{end prosumer $i$ routine}}
+
+\algblockdefx[Primal]{Primal}{EndPrimal}
+[1][<default value>]{\textbf{primal update}}
+[2][<default value>]{\textbf{end}}
+
+\algblockdefx[Dual]{Dual}{EndDual}
+[1][<default value>]{\textbf{dual update}}
+[2][<default value>]{\textbf{end}}
+
+\algblockdefx[Aux]{Aux}{EndAux}
+[1][<default value>]{\textbf{auxiliary update}}
+[2][<default value>]{\textbf{end}}
+
+\algblockdefx[Comm]{Comm}{EndComm}
+[1][<default value>]{\textbf{communication}}
+[2][<default value>]{\textbf{end communication}}
+
+\algblockdefx[Agg]{Agg}{EndAgg}
+[1][<default value>]{\textbf{aggregation update}}
+[2][<default value>]{\textbf{end}}
+
+\algblockdefx[IUC]{IUC}{EndIUC}
+[1][<default value>]{\textbf{While convergence is not achieved do:}}
+[2][<default value>]{\textbf{end while}}
+%%%%%%%%%%
+
 \begin{algorithm}[]
 	\caption{DRS for computing $\proj_{\mc U_{N+1}}(u_{N+1})$}
 	\label{alg:alg2}
@@ -121,3 +159,199 @@ Whereas, since $\mc S_2$ is an affine set, a closed-form expression for $\proj_{
 		
 	\end{algorithmic}
 \end{algorithm}
+
+\smallskip	
+
+\begin{algorithm*}[htbp]
+\caption{Semi-decentralized P2P Markets Clearing Mechanism}
+\label{alg:alg1}
+\begin{algorithmic}[1]
+\small
+
+\init{ }
+\State
+\textbf{Prosumers.} For all $i \in \mc N$: set $u_i(0) \in \mc U_i$, $\mu^{\text{tr}}_{(i,j)}(0) = \0$, $\forall j \in \mc N_i$; $\alpha_i \!<\! 
+(\red{3} +N \underset{h\in \mc H}{\max}\, d_h^{\text{mg}})^{-1}$, $\beta^{\text{tr}}_{(i,j)}\! =\! \beta^{\text{tr}}_{ (j,i)} \!<\! \frac{1}{2}$, $\forall j \!\in\! \mc N_i$.
+\State
+\textbf{DNO.} Set $u_{N+1}(0) \!\in\! \mc U_{N+1}$, $\lambda^{\text{mg}}\!=\!\0$, $\mu^{\text{tg}} \!=\! \0$, $\mu_y^{\text{pb}}(0)\! = \!\0$, $\forall y \!\in\! \mc B$; $\alpha_{N+1} \!<\!2$, $\gamma^{\text{mg}} \!<\! \frac{1}{N}$, $\beta^{\text{tg}}\! <\! \frac{1}{|\mc N| \!+\! |\mc B|}$, $\beta_y^{\text{pb}} \!<\! \frac{1}{1\!+\!2|\mc N_y^{\mathrm{b}}|\!+\!|\mc B_y|}$,  $\forall y\!\in\! \mc B $.%
+
+\Endinit
+
+\smallskip
+\IUC{ }
+\smallskip
+\ForAll{$ i \in \mc N$}
+\PRO{ }
+\Primal{ }
+\Comment{$u_i = \{$generation, storage, main grid, trades$\}$}
+
+\smallskip
+\State 
+$\psi_i(k) = 
+	\col \Big(-\mu_y^{\text{pb}}(k),\edit{\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),}
+	{
+	%\left(
+	\left[
+	\begin{smallmatrix}
+	I_H\\
+	- I_H 
+	\end{smallmatrix}
+	\right] 
+	%\otimes I_H
+%\right)	
+	}^\top \lambda^{\text{mg}}(k) + \mu^{\text{tg}}(k),
+	%
+	\left\{ {\mu^{\text{tr}}_{(i,j)}(k)}\right\}_{j \in \mc N_i}   \Big)$
+\Comment{auxiliary vector}
+
+\State
+$u_i(k+1)   =
+\left\{
+\begin{array}{r l}
+	\underset{\xi \in \R^{n_i}}{\argmin} & 
+	\tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big) 
+	+ {\psi_i(k)}^\top \xi + \frac{1}{2 \alpha_i}
+	\left\| \xi - u_i(k) 
+	\textstyle
+	  \right\|^2 \\
+	\text{s.t. } & \xi \in \mc U_i
+\end{array} 
+	\right.	$
+\Comment{quadratic programming}	
+\EndPrimal
+
+\Comm{ (to DNO and trading partners)}
+\State $\eta_i(k+1)= p^{\text{d}}_i-p^{\text{di}}_i(k+1)\edit{+p^{\text{ch}}_i(k+1)- p^{\text{ds}}_i(k+1)}$
+\Comment{auxiliary vector: local load unbalance}
+\State
+$
+p^{\textrm{mg}}_{i}(k+1), \eta_i(k+1)  \longrightarrow  \text{DNO,}
+$
+\Comment{forward to DNO}
+     \ForAll{prosumer $ j \in \mc N_i$}
+     
+\State
+ $p^{\text{tr}}_{(i,j)}(k+1)
+	\longrightarrow \text{prosumer }j$
+	\Comment{forward trade estimate to prosumer $j$}
+	\EndFor
+\EndComm
+
+
+\Dual{ }
+\Comment{reciprocity constraints}
+\ForAll{$ j \in \mc N_i$}
+\State
+$\zeta^{\text{tr}}_{(i,j)}(k+1)  =  p^{\textrm{tr}}_{(i,j)} (k+1) + p^{\textrm{tr}}_{(j,i)} (k+1)$
+\Comment{auxiliary vector}
+\State
+$\mu^{\text{tr}}_{(i,j)}(k+1) = \mu^{\text{tr}}_{(i,j)}(k) + \beta_{(i,j)}^{\text{tr}} \left( 
+	2  \zeta^{\text{tr}}_{(i,j)}(k+1) - \zeta^{\text{tr}}_{(i,j)}(k)
+	\right)$
+	\Comment{reflected dual ascent}
+\EndFor
+
+\EndDual
+
+\EndPRO
+
+\EndFor
+
+%%%%%%%%%%%%%%%%%%%%%%
+\smallskip
+%\Statex
+\DNO{ }
+%\State
+%Iterate
+
+\Primal{}
+\Comment{angles, voltages, power on grid and buses}
+\State
+$\psi_{N+1}(k) = \col \left( 
+	\left\{
+	\0,\0,-\mu^{\text{tg}}(k) - \mu_y^{\text{pb}}(k), 
+	\{ -\mu_y^{\text{pb}}(k), \0 \}_{z \in \mc B_y}
+	\right\}_{y \in \mc B}
+	\right)$
+\Comment{auxiliary vector}
+
+\State 	$u_{N+1}(k+1) = \proj_{\mc U_{N+1}}  \left( u_{N+1}(k) - (\alpha_{N+1})^{-1} \psi_{N+1}(k) \right)$
+%\Comment{ solved via Algorithm 2 (see Appendix)}
+\EndPrimal
+
+%---------------------------Aggregation
+\Agg{}
+\State
+$ \sigma^{\text{mg}}(k+1) = \sum_{i \in \mc N} p_i^{\text{mg}}(k+1) $
+\Comment{aggregate active load, eqn. (10)}
+\State
+$\sigma^{\text{tg}}(k+1) = \sum_{y \in \mc B} p_y^{\text{tg}}(k+1)$
+\Comment{aggregate grid-to-buses power }
+\EndAgg
+
+%---------------------------Dual Update
+\Dual{}
+\State
+$\eta_{N+1}(k+1	) = 
+	\left[
+	\begin{smallmatrix}
+	1\\
+	- 1 
+	\end{smallmatrix}
+	\right] \otimes (2 \sigma^{\text{mg}}(k+1)- \sigma^{\text{mg}}(k)) 
+	-
+	\left[
+	\begin{smallmatrix}
+	\overline{p}^{\mathrm{mg}}\1_{H}-b \\
+	-     \underline{p}^{\mathrm{mg}} \1_{H}+b
+	\end{smallmatrix} 
+	\right]  $
+	\Comment{auxiliary vector}
+	\State
+$\lambda^{\text{mg}}(k+1) = \textstyle
+	\proj_{\R^{2 H}_{\geq 0}}\left( 
+	\lambda^{\text{mg}}(k) + \gamma^{\text{mg}} \eta_{N+1}(k+1)
+	 \right)$
+		\Comment{grid constraints}
+
+\ForAll{buses $ y \in \mc B$}
+
+\State
+$\zeta^{\text{pb}}_y(k+1)   = \sum_{i \in \mc P_y^{\mathrm{b}}} p_i^{\mathrm{d}} + \sum_{i \in \mc N_y^{\mathrm{b}}} \eta_i(k+1)- p^{\text{tg}}_y(k+1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k+1)$
+\Comment{auxiliary vector}
+
+\State
+$\mu_y^{\text{pb}}(k+1) = \mu_y^{\text{pb}}(k) + \beta^{\text{pb}}_y (2 \zeta^{\text{pb}}_y(k+1)- \zeta^{\text{pb}}_y(k))$
+\Comment{local power balance of bus $y$}
+\EndFor
+
+\State
+$\zeta^{\text{tg}}(k+1) = \sigma^{\text{mg}}
+	(k+1)+b- \sigma^{\text{tg}}(k+1)$
+\Comment{auxiliary vector}
+
+\State
+$\mu^{\text{tg}}(k+1) = \mu^{\text{tg}}(k) + \beta^{\text{tg}} (2\zeta^{\text{tg}}(k+1)-\zeta^{\text{tg}}(k))$
+\Comment{grid-to-buses constraints}
+\EndDual	
+
+\Comm{ (broadcast to all prosumers)}
+\State
+$ \{ \sigma^{\mathrm{mg}}(k+1)+b, \, \lambda^{\text{mg}}(k+1), \mu^{\text{tg}}(k+1) \} 
+	\longrightarrow  \mc N$
+\ForAll{buses $ y \in \mc B$}
+\State
+$\mu^{\text{pb}}_y(k+1)\longrightarrow \mc N_y^{\mathrm{b}}$
+\Comment{only to prosumers on bus $y$}
+\EndFor
+
+\EndComm
+
+\EndDNO	
+
+\EndIUC	
+
+\end{algorithmic}
+\end{algorithm*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

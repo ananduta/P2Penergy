@@ -541,9 +541,14 @@ Secondly, we define decision variables, for each bus $y \in \mc B$, which are us
 \smallskip
 We consider a linear approximation of power-flow equations, which is standard in the literature of P2P markets, e.g., \cite{yang2019,moret2020}. Specifically, for each bus $y \in \mc B$, it must hold that
 \begin{equation}
-\sum_{i \in \mc P_y^\mathrm{b}}p_i^{\mathrm{d}}+ \sum_{i\in \mc N_y^{\mathrm b}} \left(p_i^{\mathrm d}-p_{i}^{\mathrm{di}}-\edit{p_{i}^{\mathrm{ds}}+p_{i}^{\mathrm{ch}}}\right)-p_{y}^{\mathrm{tg}}=\sum_{z\in \mc B_y}p_{(y,z)}^{\ell}, \label{eq:p_bal_p}
+\sum_{i \in \mc P_y^\mathrm{b}}p_i^{\mathrm{d}}+ \sum_{i\in \mc N_y^{\mathrm b}} \eta_i - p_{y}^{\mathrm{tg}}=\sum_{z\in \mc B_y}p_{(y,z)}^{\ell}, \label{eq:p_bal_p}
 \end{equation}
-which indicates local power balance of bus $y$, similarly to \eqref{eq:l_pow_b} although now it relates power generation, consumption and line powers. Moreover, it must hold that
+where $\eta_i$ is the local power unbalance of prosumer $i$, i.e.,
+\begin{equation}
+\label{eq:etai}
+\eta_i := p_i^{\mathrm d}-p_{i}^{\mathrm{di}}-\edit{p_{i}^{\mathrm{ds}}+p_{i}^{\mathrm{ch}}}.
+\end{equation}
+Equation \eqref{eq:p_bal_p} represents the local power balance of bus $y$, similarly to \eqref{eq:l_pow_b} although now it relates power generation, consumption and line powers. Moreover, it must hold that
 \begin{subequations}
 \small
 \label{eq:pf_pq}
@@ -583,8 +588,8 @@ where \eqref{eq:grid_ex} is imposed by definition that the busses that are not d
 \section{A Distributed Market-clearing Mechanism}
 \label{sub:alg}
 	By letting the decision variables related to the physical constraints handled by a DNO (agent $N+1$ in the game), the P2P market model can be compactly written as the problem of finding $u_i^*$ in \eqref{eq:locOpt}, for all $i \in \mc N^+$, where the decision variable $u_i$ is defined as
-$$u_i \hspace{-2pt} = \hspace{-2pt}\begin{cases} \col\hspace{-2pt}\left(p_{i}^{\mathrm{di}},\edit{p_{i}^{\mathrm{ch}},p_{i}^{\mathrm{ds}}, } p_{i}^{\mathrm{mg}},\{p_{(i,j)}^{\mathrm {tr}}\}_{j\in \mc N_i}\right)\hspace{-2pt}, \ \qquad \qquad \; \; \forall  i \in \mc N,\\
-	\col\hspace{-2pt}\left(\{\theta_y, v_y, p_y^{\mathrm{tg}},\{p_{(y,z)}^{\ell},q_{(y,z)}^{\ell}\}_{z \in \mc B_y} \}_{y\in\mc B} \right)\hspace{-2pt},   i\!=\! N\!+\!1;
+$$u_i \hspace{-2pt} = \hspace{-2pt}\begin{cases} \col\hspace{-2pt}\left(p_{i}^{\mathrm{di}},\edit{p_{i}^{\mathrm{ch}},p_{i}^{\mathrm{ds}}, } p_{i}^{\mathrm{mg}},\{p_{(i,j)}^{\mathrm {tr}}\}_{j\in \mc N_i}\right)\hspace{-2pt}, \ \qquad \qquad \;  \forall  i \in \mc N,\\
+	\col\hspace{-2pt}\left(\{\theta_y, v_y, p_y^{\mathrm{tg}},\{p_{(y,z)}^{\ell},q_{(y,z)}^{\ell}\}_{z \in \mc B_y} \}_{y\in\mc B} \right)\hspace{-2pt},  \; \quad i\!=\! N\!+\!1;
 	\end{cases}$$ 
 the cost function is defined as
 	\begin{multline}
@@ -654,7 +659,7 @@ The proposed market-clearing algorithm is summarized in Algorithm~1 and its info
 %\end{enumerate}
 %\end{assumption}
 %\smallskip
-The next proposition shows its global convergence of Algorithm~1 to a variational\footnote{Variational GNEs (v-GNEs) are  a special subclass of GNEs that enjoys the property of ``economic fairness”, namely, the marginal loss due to the presence of the coupling constraints is the same for each
+The next proposition shows its global convergence to a variational\footnote{Variational GNEs (v-GNEs) are  a special subclass of GNEs that enjoys the property of ``economic fairness”, namely, the marginal loss due to the presence of the coupling constraints is the same for each
 agent, and coincides with the solutions to a specific variational inequality \cite{kulkarni2012variational}.} GNE of the P2P market game. %The algorithm derivation and its convergence analysis are discussed in Appendix \ref{app:CA}.
 
 \smallskip
@@ -674,244 +679,251 @@ Algorithm~1 is an instance of the \textit{customized preconditioned proximal-poi
 We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operationally} for a complete derivation and convergence analysis of Algorithm~1.
 \end{proof}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=.5\textwidth]{figures/algorithm1_GB_v4}
-\caption{Information flow of Algorithm~1 for each prosumer $i \in \mc N$ (top boxes) and the DNO (bottom box).}
-\label{fig:IFC}
+%\begin{figure}[t]
+%\centering
+%\includegraphics[width=.5\textwidth]{figures/algorithm1_GB_v4}
+%\caption{Information flow of Algorithm~1 for each prosumer $i \in \mc N$ (top boxes) and the DNO (bottom box).}
+%\label{fig:IFC}
+%\end{figure}
+
+
+\begin{figure}
+\medskip \noindent
+\begin{minipage}{\columnwidth}
+\hrule
+\smallskip
+\textsc{Algorithm 1}. Semi-decentralized P2P market clearing
+\smallskip
+\hrule 
+\smallskip
+\text{Initialization}: For all prosumers $i \in \mc N$: set $\mu^{\text{tr}}_{(i,j)}(-1) = 0$, $\forall j \in \mc N_i$. DNO: set $\lambda^{\text{mg}}(0)\!=\!0$, $\mu^{\text{tg}}(0) \!=\! 0$, $\mu_y^{\text{pb}}(0)\! = \!0$, $\forall y \!\in\! \mc B$.
+
+\medskip
+ \text{Iterate until convergence $(k = 0,1,\ldots)$}
+\begin{align*}
+& \text{For all prosumers $i \in \mc I$ (in parallel):}\\
+\quad &\left|
+\begin{array}{l}
+\text{Local update via \textsc{Algorithm 2}:}\\
+\left|
+\begin{array}{l}
+\text{Set $\{\mu_{(i,j)}(k)\}_{j \in \mc N_i}$ as in \textsc{Alg. 2} (i)}\\
+\text{Set $u_i(k\!+\!1)$ as in \textsc{Alg. 2} (ii)}
+\end{array}
+\right.\\[1em]
+ \text{Communication}\\
+ \left|
+\begin{array}{l}
+\eta_i(k\!+\!1), \; p_i^{\text{mg}}(k\!+\!1) \rightarrow \text{ DNO}\\[.5em]
+\text{For all trading partners } j \in \mc N_i \text{ (in parallel):}\\
+ \left|
+\begin{array}{l}
+p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
+\end{array}
+\right.
+\end{array}
+\right.
+\end{array}
+\right.\\[.5em]
+%%%
+% DNO
+%%%
+& \text{DNO}\\
+\quad &\left|
+\begin{array}{l}
+\text{Central update via \textsc{Algorithm 3}:}\\
+\left|
+\begin{array}{l}
+\text{Set $u_{N+1}(k\!+\!1)$ as in \textsc{Alg. 3} (i)}\\
+\text{Set $\lambda^{\text{mg}}$, $\mu^{\text{tg}}$, $\{ \mu_y^{\text{pb}}(k\!+\!1)\}_{y \in\mc B}$ as in \textsc{Alg. 3} (ii)}
+\end{array}
+\right.\\[1em]
+\text{Communication (Gather \& Broadcast)}\\
+ \left|
+\begin{array}{l}
+\sigma^{\mathrm{mg}},\, \lambda^{\text{mg}}, \mu^{\text{tg}}(k\!+\!1) \rightarrow \text{ all prosumers } i \in \mc N\\[.5em]
+\text{For all busses } y \in \mc B \text{ (in parallel):}\\
+ \left|
+\begin{array}{l}
+\mu_y^{\text{pb}}(k+1) \rightarrow \text{ all prosumers } i \in \mc N_y^{\text{b}}%
+\end{array}%
+\right.%
+\end{array}%
+\right.\\[1em]
+\end{array}%
+\right.%
+\end{align*}
+\smallskip
+\hrule
+\end{minipage}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\smallskip	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\medskip \noindent
+\begin{minipage}{\columnwidth}
+\hrule
+\smallskip
+\textsc{Algorithm 2}. Prosumer $i$ local update
+\smallskip
+\hrule 
+\smallskip
 
-%%%%%%%%
-\algblockdefx[init]{init}{Endinit}
-[1][<default value>]{\textbf{Initialization}}
-[2][<default value>]{\textbf{end initialization}}
-
-\algblockdefx[DNO]{DNO}{EndDNO}
-[1][<default value>]{\textbf{DNO routine}}
-[2][<default value>]{\textbf{end DNO routine}}
-
-\algblockdefx[PRO]{PRO}{EndPRO}
-[1][<default value>]{\textbf{Prosumer $i$ routine}}
-[2][<default value>]{\textbf{end prosumer $i$ routine}}
-
-\algblockdefx[Primal]{Primal}{EndPrimal}
-[1][<default value>]{\textbf{primal update}}
-[2][<default value>]{\textbf{end}}
-
-\algblockdefx[Dual]{Dual}{EndDual}
-[1][<default value>]{\textbf{dual update}}
-[2][<default value>]{\textbf{end}}
-
-\algblockdefx[Aux]{Aux}{EndAux}
-[1][<default value>]{\textbf{auxiliary update}}
-[2][<default value>]{\textbf{end}}
-
-\algblockdefx[Comm]{Comm}{EndComm}
-[1][<default value>]{\textbf{communication}}
-[2][<default value>]{\textbf{end communication}}
-
-\algblockdefx[Agg]{Agg}{EndAgg}
-[1][<default value>]{\textbf{aggregation update}}
-[2][<default value>]{\textbf{end}}
-
-\algblockdefx[IUC]{IUC}{EndIUC}
-[1][<default value>]{\textbf{While convergence is not achieved do:}}
-[2][<default value>]{\textbf{end while}}
-%%%%%%%%%%
-
-\begin{algorithm*}[htbp]
-\caption{Distributed P2P Markets Clearing Mechanism \red{[check modification because of extra variables of charging and discharging]}}
-\label{alg:alg1}
-\begin{algorithmic}[1]
-\small
-
-\init{ }
-\State
-\textbf{Prosumers.} For all $i \in \mc N$: set $u_i(0) \in \mc U_i$, $\mu^{\text{tr}}_{(i,j)}(0) = \0$, $\forall j \in \mc N_i$; $\alpha_i \!<\! 
-\red{3} +N \underset{h\in \mc H}{\max} d_h^{\text{mg}} $, $\beta^{\text{tr}}_{(i,j)}\! =\! \beta^{\text{tr}}_{ (j,i)} \!<\! \frac{1}{2}$, $\forall j \!\in\! \mc N_i$.
-\State
-\textbf{DNO.} Set $u_{N+1}(0) \!\in\! \mc U_{N+1}$, $\lambda^{\text{mg}}\!=\!\0$, $\mu^{\text{tg}} \!=\! \0$, $\mu_y^{\text{pb}}(0)\! = \!\0$, $\forall y \!\in\! \mc B$; $\alpha_{N+1} \!<\!2$, $\gamma^{\text{mg}} \!<\! \frac{1}{N}$, $\beta^{\text{tg}}\! <\! \frac{1}{|\mc N| \!+\! |\mc B|}$, $\beta_y^{\text{pb}} \!<\! \frac{1}{1\!+\!2|\mc N_y^{\mathrm{b}}|\!+\!|\mc B_y|}$,  $\forall y\!\in\! \mc B $.%
-
-\Endinit
+\text{Step sizes}: set $
+ \alpha_i \!<\! 
+({3} +N \max_{h}\, d_h^{\text{mg}})^{-1}$, $\beta^{\text{tr}}_{(i,j)}\! =\! \beta^{\text{tr}}_{ (j,i)} \!<\! \frac{1}{2}$.
 
 \smallskip
-\IUC{ }
-\smallskip
-\ForAll{$ i \in \mc N$}
-\PRO{ }
-\Primal{ }
-\Comment{$u_i = \{$generation, storage, main grid, trades$\}$}
+\noindent 
+(i) \text{Dual update:}\\[.2em]
+\hspace*{.15em}
+$
+\left| 
+\begin{array}{l}
+\text{For all } j \in \mc N_i \text{ (in parallel):}\\
+\left|
+\begin{array}{l}
+%\text{Receive } p^{\textrm{tr}}_{(j,i)} (k) \text{ from prosumer } j\\
+\zeta^{\text{tr}}_{(i,j)}(k)  =  p^{\textrm{tr}}_{(i,j)} (k) + p^{\textrm{tr}}_{(j,i)} (k)\\
+\mu^{\text{tr}}_{(i,j)}(k) = \mu^{\text{tr}}_{(i,j)}(k) + \beta_{(i,j)}^{\text{tr}} \left( 
+	2  \zeta^{\text{tr}}_{(i,j)}(k) - \zeta^{\text{tr}}_{(i,j)}(k\!-\!1)
+	\right)
+\end{array}
+\right.
+\end{array}
+\right.
+$
 
-\smallskip
-\State 
-$\psi_i(k) = 
-	\col \Big(-\mu_y^{\text{pb}}(k),\edit{\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),}
+\medskip
+\noindent
+(ii) \text{Primal update:}\\[.2em]
+\hspace*{.15em}
+$
+\left| 
+\begin{array}{l}
+%\text{Receive } \sigma^{\mathrm{mg}}(k),\, \lambda^{\text{mg}}(k), \mu^{\text{tg}}(k), \mu_y^{\text{pb}}(k) \text{ from the DNO}\\
+\psi_i(k) = 
+	\alpha_i \col \Big(-\mu_y^{\text{pb}}(k),\edit{\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),}\\
+	\hspace*{4em}
 	{
-	%\left(
 	\left[
 	\begin{smallmatrix}
 	I_H\\
 	- I_H 
 	\end{smallmatrix}
-	\right] 
-	%\otimes I_H
-%\right)	
+	\right] 	
 	}^\top \lambda^{\text{mg}}(k) + \mu^{\text{tg}}(k),
 	%
-	\left\{ {\mu^{\text{tr}}_{(i,j)}(k)}\right\}_{j \in \mc N_i}   \Big)$
-\Comment{auxiliary vector}
-
-\State
-$u_i(k+1)   =
+	\left\{ {\mu^{\text{tr}}_{(i,j)}(k)}\right\}_{j \in \mc N_i}   \Big)\\[1em]
+%
+\text{Set } u_i(k\!+\!1) \text{ as the unique solution to}\\[.3em]
 \left\{
 \begin{array}{r l}
 	\underset{\xi \in \R^{n_i}}{\argmin} & 
 	\tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big) 
-	+ {\psi_i(k)}^\top \xi + \frac{1}{2 \alpha_i}
-	\left\| \xi - u_i(k) 
+	+ \frac{1}{2 \alpha_i}
+	\left\| \xi - u_i(k) +  \psi_i(k) 
 	\textstyle
 	  \right\|^2 \\
 	\text{s.t. } & \xi \in \mc U_i
 \end{array} 
-	\right.	$
-\Comment{quadratic programming}	
-\EndPrimal
-
-\Comm{ (to DNO and trading partners)}
-\State $\eta_i(k+1)= p^{\text{d}}_i-p^{\text{di}}_i(k+1)\edit{+p^{\text{ch}}_i(k+1)- p^{\text{ds}}_i(k+1)}$
-\Comment{auxiliary vector: local load unbalance}
-\State
+\right.
+\end{array}
+\right.
 $
-p^{\textrm{mg}}_{i}(k+1), \eta_i(k+1)  \longrightarrow  \text{DNO,}
-$
-\Comment{forward to DNO}
-     \ForAll{prosumer $ j \in \mc N_i$}
-     
-\State
- $p^{\text{tr}}_{(i,j)}(k+1)
-	\longrightarrow \text{prosumer }j$
-	\Comment{forward trade estimate to prosumer $j$}
-	\EndFor
-\EndComm
 
 
-\Dual{ }
-\Comment{reciprocity constraints}
-\ForAll{$ j \in \mc N_i$}
-\State
-$\zeta^{\text{tr}}_{(i,j)}(k+1)  =  p^{\textrm{tr}}_{(i,j)} (k+1) + p^{\textrm{tr}}_{(j,i)} (k+1)$
-\Comment{auxiliary vector}
-\State
-$\mu^{\text{tr}}_{(i,j)}(k+1) = \mu^{\text{tr}}_{(i,j)}(k) + \beta_{(i,j)}^{\text{tr}} \left( 
-	2  \zeta^{\text{tr}}_{(i,j)}(k+1) - \zeta^{\text{tr}}_{(i,j)}(k)
-	\right)$
-	\Comment{reflected dual ascent}
-\EndFor
-
-\EndDual
-
-\EndPRO
-
-\EndFor
-
-%%%%%%%%%%%%%%%%%%%%%%
 \smallskip
-%\Statex
-\DNO{ }
-%\State
-%Iterate
+\hrule
+\end{minipage}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\Primal{}
-\Comment{angles, voltages, power on grid and buses}
-\State
-$\psi_{N+1}(k) = \col \left( 
+\begin{figure}
+\medskip \noindent
+\begin{minipage}{\columnwidth}
+\hrule
+\smallskip
+\textsc{Algorithm 3}. DNO central update
+\smallskip
+\hrule 
+\smallskip
+
+\text{Step sizes}: set $\alpha_{N+1} <2$, $\gamma^{\text{mg}} < 1/N$, $\beta^{\text{tg}} < (|\mc N| \!+\! |\mc B|)^{-1}$, and $\beta_y^{\text{pb}} < (1\!+\!2|\mc N_y^{\mathrm{b}}|\!+\!|\mc B_y|)^{-1}$,  for all busses $y\!\in\! \mc B $.
+
+\smallskip
+\noindent 
+(i) \text{Primal update:}\\[.2em]
+\hspace*{.15em}
+$
+\left| 
+\begin{array}{l}
+%\text{Receive } \\
+\psi(k) \!=\!\col \Big( 
 	\left\{
-	\0,\0,-\mu^{\text{tg}}(k) - \mu_y^{\text{pb}}(k), 
-	\{ -\mu_y^{\text{pb}}(k), \0 \}_{z \in \mc B_y}
-	\right\}_{y \in \mc B}
-	\right)$
-\Comment{auxiliary vector}
+	\0,\mu^{\text{tg}}(k) + \mu_y^{\text{pb}}(k), 
+	\{ \mu_y^{\text{pb}}(k), \0 \}_{z \in \mc B_y}
+	\right\}_{y \in \mc B} \Big)\\[.7em]
+%
+u_{N+1}(k+1) = \proj_{\mc U_{N+1}}  \left( u_{N+1}(k) + (\alpha_{N+1})^{-1} \psi(k) \right)
+\end{array}
+\right.
+$
 
-\State 	$u_{N+1}(k+1) = \proj_{\mc U_{N+1}}  \left( u_{N+1}(k) - (\alpha_{N+1})^{-1} \psi_{N+1}(k) \right)$
-%\Comment{ solved via Algorithm 2 (see Appendix)}
-\EndPrimal
-
-%---------------------------Aggregation
-\Agg{}
-\State
-$ \sigma^{\text{mg}}(k+1) = \sum_{i \in \mc N} p_i^{\text{mg}}(k+1) $
-\Comment{aggregate active load, eqn. (10)}
-\State
-$\sigma^{\text{tg}}(k+1) = \sum_{y \in \mc B} p_y^{\text{tg}}(k+1)$
-\Comment{aggregate grid-to-buses power }
-\EndAgg
-
-%---------------------------Dual Update
-\Dual{}
-\State
-$\eta_{N+1}(k+1	) = 
+\medskip
+\noindent
+\noindent 
+(ii) \text{Dual update:}\\[.2em]
+\hspace*{.15em}
+$
+\left| 
+\begin{array}{l}
+%
+\eta(k\!+\!1) = 
 	\left[
 	\begin{smallmatrix}
 	1\\
 	- 1 
 	\end{smallmatrix}
-	\right] \otimes (2 \sigma^{\text{mg}}(k+1)- \sigma^{\text{mg}}(k)) 
+	\right] \otimes (2 \sigma^{\text{mg}}(k\!+\!1)- \sigma^{\text{mg}}(k)) 
 	-
 	\left[
 	\begin{smallmatrix}
 	\overline{p}^{\mathrm{mg}}\1_{H}-b \\
 	-     \underline{p}^{\mathrm{mg}} \1_{H}+b
 	\end{smallmatrix} 
-	\right]  $
-	\Comment{auxiliary vector}
-	\State
-$\lambda^{\text{mg}}(k+1) = \textstyle
+	\right]\\
+	% lambda update
+	\lambda^{\text{mg}}(k+1) = \textstyle
 	\proj_{\R^{2 H}_{\geq 0}}\left( 
-	\lambda^{\text{mg}}(k) + \gamma^{\text{mg}} \eta_{N+1}(k+1)
-	 \right)$
-		\Comment{grid constraints}
+	\lambda^{\text{mg}}(k) + \gamma^{\text{mg}} \eta(k\!+\!1)
+	 \right)\\
+%
+\zeta^{\text{tg}}(k+1) = \sigma^{\text{mg}}
+	(k\!+\!1)+b- \sigma^{\text{tg}}(k\!+\!1)\\
+	%
+	\mu^{\text{tg}}(k+1) = \mu^{\text{tg}}(k) + \beta^{\text{tg}} (2\zeta^{\text{tg}}(k+1)-\zeta^{\text{tg}}(k))\\[.5em]
+	%
+\text{For all busses } y \in \mc B \text{ (in parallel):}\\
+\left|
+\begin{array}{l}
+%\text{Receive } p^{\textrm{tr}}_{(j,i)} (k) \text{ from prosumer } j\\
+\zeta^{\text{pb}}_y(k+1)   = \sum_{i \in \mc P_y^{\mathrm{b}}} p_i^{\mathrm{d}} + \sum_{i \in \mc N_y^{\mathrm{b}}} \eta_i(k\!+\!1)\\
+\hspace*{8em} - p^{\text{tg}}_y(k\!+\!1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k\!+\!1)\\
+%
+\mu_y^{\text{pb}}(k+1) = \mu_y^{\text{pb}}(k) + \beta^{\text{pb}}_y (2 \zeta^{\text{pb}}_y(k\!+\!1)- \zeta^{\text{pb}}_y(k))
+\end{array}
+\right.
+\end{array}
+\right.
+$
 
-\ForAll{buses $ y \in \mc B$}
-
-\State
-$\zeta^{\text{pb}}_y(k+1)   = \sum_{i \in \mc P_y^{\mathrm{b}}} p_i^{\mathrm{d}} + \sum_{i \in \mc N_y^{\mathrm{b}}} \eta_i(k+1)- p^{\text{tg}}_y(k+1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k+1)$
-\Comment{auxiliary vector}
-
-\State
-$\mu_y^{\text{pb}}(k+1) = \mu_y^{\text{pb}}(k) + \beta^{\text{pb}}_y (2 \zeta^{\text{pb}}_y(k+1)- \zeta^{\text{pb}}_y(k))$
-\Comment{local power balance of bus $y$}
-\EndFor
-
-\State
-$\zeta^{\text{tg}}(k+1) = \sigma^{\text{mg}}
-	(k+1)+b- \sigma^{\text{tg}}(k+1)$
-\Comment{auxiliary vector}
-
-\State
-$\mu^{\text{tg}}(k+1) = \mu^{\text{tg}}(k) + \beta^{\text{tg}} (2\zeta^{\text{tg}}(k+1)-\zeta^{\text{tg}}(k))$
-\Comment{grid-to-buses constraints}
-\EndDual	
-
-\Comm{ (broadcast to all prosumers)}
-\State
-$ \{ \sigma^{\mathrm{mg}}(k+1)+b, \, \lambda^{\text{mg}}(k+1), \mu^{\text{tg}}(k+1) \} 
-	\longrightarrow  \mc N$
-\ForAll{buses $ y \in \mc B$}
-\State
-$\mu^{\text{pb}}_y(k+1)\longrightarrow \mc N_y^{\mathrm{b}}$
-\Comment{only to prosumers on bus $y$}
-\EndFor
-
-\EndComm
-
-\EndDNO	
-
-\EndIUC	
-
-\end{algorithmic}
-\end{algorithm*}
+\smallskip
+\hrule
+\end{minipage}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{remark} The main properties of the proposed market-clearing mechanism (Algorithm 1) are listed below:
@@ -1062,7 +1074,7 @@ Future research directions include: efficiently incorporating non-linear convex 
 \bibliographystyle{ieeetran}
 \bibliography{ref}
 
-%\input{appendix}
+\include{appendix}
 
 
 \end{document}
