@@ -4,6 +4,8 @@ The top-level auxiliary file: journal_v14.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: ieeetran.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
+Reallocating 'name_of_file' (item size: 1) to 13 items.
+A level-1 auxiliary file: appendix.aux
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
@@ -15,44 +17,44 @@ Database file #1: ref.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 35 entries,
+You've used 37 entries,
             4087 wiz_defined-function locations,
-            1008 strings with 13681 characters,
-and the built_in function-call counts, 29408 in all, are:
-= -- 2438
-> -- 758
-< -- 279
-+ -- 428
-- -- 136
-* -- 1451
-:= -- 4349
-add.period$ -- 71
-call.type$ -- 35
-change.case$ -- 37
-chr.to.int$ -- 612
-cite$ -- 35
-duplicate$ -- 2073
-empty$ -- 2137
-format.name$ -- 163
-if$ -- 6862
+            1020 strings with 14013 characters,
+and the built_in function-call counts, 31054 in all, are:
+= -- 2584
+> -- 788
+< -- 291
++ -- 444
+- -- 141
+* -- 1522
+:= -- 4584
+add.period$ -- 76
+call.type$ -- 37
+change.case$ -- 39
+chr.to.int$ -- 636
+cite$ -- 37
+duplicate$ -- 2201
+empty$ -- 2271
+format.name$ -- 170
+if$ -- 7261
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 355
-newline$ -- 130
-num.names$ -- 34
-pop$ -- 755
+int.to.str$ -- 37
+missing$ -- 374
+newline$ -- 136
+num.names$ -- 36
+pop$ -- 799
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2274
+skip$ -- 2413
 stack$ -- 0
-substring$ -- 1495
-swap$ -- 1805
-text.length$ -- 75
+substring$ -- 1571
+swap$ -- 1909
+text.length$ -- 79
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 35
+type$ -- 37
 warning$ -- 0
-while$ -- 126
-width$ -- 37
-write$ -- 380
+while$ -- 134
+width$ -- 39
+write$ -- 400

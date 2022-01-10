@@ -77,6 +77,7 @@
 \newcommand{\B}{\mathcal{C}}
 \newcommand{\red}{\textcolor{red}}
 \newcommand{\blue}{\textcolor{blue}}
+\newcommand{\green}{\textcolor{green}}
 \newcommand{\argmin}{\operatorname{argmin}}
 \newcommand{\mini}{\operatorname{minimize}}
 \newcommand{\Proj}{\mathrm{Proj}}
@@ -212,13 +213,19 @@ We have also modified our game formulation and proposed algorithm in Section III
 \ans{We do not include energy loss of the distribution network in the current setup and leave it for future work. In this manuscript, we focus on the game-theoretic formulation of the interaction among prosumers and the network operator and show that the problem can be solved efficiently. Based on the formulation in our manuscript, the energy loss can be included as long as it is formulated as \comment{continue depending whether this appears in the cost function or constraints}}
 
 \query[R1-5]{The individual variables, coupled relationships for these energy roles, and the corresponding dual variables should be explained specifically, along with the whole framework structure for equilibrium. The rationalities of the framework is not clear. At least, the current presentation is hard to follow.  }
-\ans{}
+\ans{
+\green{
+In the revised paper, (i) we provided a detailed description of each individual variable along with an explanation of its function in the algorithm; (ii) we expanded the description of the algorithm; and (iii) we included a paragraph to present the framework structure for equilibrium considered. Please, refer to the margin notes (R1-5) in Section III for the relative changes and additions.
+}
+}
 
 \query[R1-6]{The P2P trading prices are given parameters, which are quite unreasonable. In fact, the P2P prices are the key variable in most literature.}
 \ans{In this manuscript, we want to consider the most general problem formulation available in the literature. Following \cite{sorin2019,lecadre2020,sousa2019}, a linear trading cost function is introduced in the problem formulation to describe \comment{continue}. Furthermore, \cite{bibid} also adds a trading tariff encoded as a 1-norm cost function. Furthermore, we may set $c_{\{i,j\}}^{\mathrm{tr}}=0$, and thus only consider the dual variable associated with the reciprocity constraints (Eq. \red{(xx)} in the revised manuscript) as the shadow price of trading. Indeed the proposed algorithm can handle any case where $c_{\{i,j\}}^{\mathrm{tr}} \geq 0$, for all $\{i,j\} \in \mc E$.}
 
  \query[R1-7]{The algorithm requires too many iterations, which leads to poor feasibility in real applications, especially in distributed environment. }
- \ans{\comment{for day-ahead or intra-day markets (with sufficiently large sampling time), our numerical experience shows the algorithm is tractable.}}
+ \ans{\comment{for day-ahead or intra-day markets (with sufficiently large sampling time), our numerical experience shows the algorithm is tractable.}
+\green{I have to answer}. 
+ }
 
 
 \newpage
@@ -263,10 +270,19 @@ We have also modified our game formulation and proposed algorithm in Section III
 \ans{\comment{improve literature survey}}
 
 \query[R2-5]{The property of the game equilibrium is not clear enough. It is unclear what is the difference between v-GNE and GNE. The authors may need to formally (mathematically) define the variational GNE that the proposed game will reach. }
-\ans{\comment{add explanation about v-GNE}}
+\ans{\green{We included a more detailed explanation of the targeted class of variational generalized Nash equilibria, including a formal mathematical definition, in Section III A.}}
 
 \query[R2-6]{Algorithm 1 looks unfriendly to readers. The explanation for the algorithm (section III-A) is also unclear. In this current version, readers may have no clue to follow the formulation/notations in the algorithm and Fig. 2. For example, what are the dual variables used for? What is the intuitive idea behind the algorithm? What are the step sizes used for? The authors are suggested to separate Algorithm 1 into several parts and explain each part. }
-\ans{\comment{Improve explanation of algorithm 1. Apply comments.}}
+\ans{ \green{
+We agree with the Reviewer. Thus, following his suggestion, we have split the main algorithm in 3 parts: (1) (the new) Algorithm 1, i.e., the main semi-decentralized loop, in which we summarize the information flow between prosumers and DNO, including the precise order of their updates; (2) Algorithm 2, i.e., the local primal-dual updates of the prosumers; (3) Algorithm 3, i.e., the central primal-dual update of the DNO.
+%
+Moreover, we have included a paragraph in Section III B in which we list all primal, dual, and auxiliary variables in (the new) Algorithm 1, along with an explanation of their scopes within the algorithm and their economical and system-theoretic interpretations.
+%
+Finally, we have re-designed the flow-chart illustration of Algorithm 1 (Fig. X) which we also found unfriendly to readers.
+%
+Due to space limitations, we omitted a more detailed discussion to the algorithm design and derivation. We refer the interested reader to [16] for a complete discussion on these matters, including step-sizes bound analysis.
+}
+}
 
 \newpage
 \section*{Answers to Reviewer 3 }
@@ -287,7 +303,9 @@ We have also modified our game formulation and proposed algorithm in Section III
 \ans{As discussed in \cite[Sect. 3.2]{sousa2019}, in community-based local markets, each prosumer  does not know with which other prosumers it trades energy. The power balance of the whole network (all prosumers) is considered. Our setup considers full P2P markets where each prosumer knows its trading partners and, thus, negotiates directly with them. The coordinator in our setup plays a role in handling the physical constraints of the network as well as the aggregated power bought from the main grid.}
 
 \query[R3-4]{ The proposed algorithm relies on several dual variables. Please, elaborate on the meaning of this dual variables and their interpretation as economic outputs of the clearing process. }
-\ans{\comment{apply comment}}
+\ans{\green{
+We have included a paragraph in Section III B in which we list all primal, dual, and auxiliary variables in the main algorithm, along with an explanation of their scopes and their economical and system-theoretic interpretations.
+}}
 
 \query[R3-5]{As to the results section, I miss some analysis of trading prices. Please consider to add some information about transactions prices among peers and compare them with grid prices. This analysis might be interesting in both storage and non-storage situations.}
 \ans{\comment{apply comment}}
@@ -309,7 +327,10 @@ We have also modified our game formulation and proposed algorithm in Section III
 \textit{Comments and suggestions: }
 
 \query[R4-2]{The authors state that due to the presence of coupling objective and constraints in the formulation, this implies the inapplicability of other decentralized algorithms employed in the literature (lines 54-57, page 2).  This is not strictly true, since it is straightforward to reformulate the problem to decompose the objective function, just by replicating the variables avoiding the decomposition, and introduce new complicating constraints to coordinate these variables. Reformulate this sentence. }
-\ans{\comment{rephrase sentence. Not as straightforward.}}
+\ans{\green{We respectfully disagree.\\
+(i) First of all, we point out that the class variational GNEs and social minimizers, namely, the 
+(i) difference between v-GNE and social welfare. (ii) For games, it is not straightfoward to get rid of the coupling in the cost functions. (iii) One possible way does not lead to scalable algorithm. 
+}}
 
 \query[R4-3]{ In the introduction, the authors assert that they extend a preliminary work by including nonlinear operational constraints, which complicate the analysis. However, they consider a linear approximation of power-flow equations (equations (13)). In fact, it seems that the only nonlinear constraint in the model is (15a), although some quadratic terms appear in the objective function. Is there any justification for this? Probably, the statement must be relaxed.  }
 \ans{\comment{Wicak} \comment{apply comment}}

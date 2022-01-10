@@ -87,13 +87,13 @@ Z.~{Wang}, F.~{Liu}, Z.~{Ma}, Y.~{Chen}, M.~{Jia}, W.~{Wei}, and Q.~{Wu},
 
 \bibitem{paccagnan2019}
 D.~{Paccagnan}, B.~{Gentile}, F.~{Parise}, M.~{Kamgarpour}, and J.~{Lygeros},
-  ``Nash and {Wardrop} equilibria in aggregative games with coupling
+  ``{N}ash and {Wardrop} equilibria in aggregative games with coupling
   constraints,'' \emph{IEEE Transactions on Automatic Control}, vol.~64, no.~4,
   pp. 1373--1388, 2019.
 
 \bibitem{belgioioso2020b}
 G.~{Belgioioso}, A.~{Nedich}, and S.~{Grammatico}, ``Distributed generalized
-  nash equilibrium seeking in aggregative games on time-varying networks,''
+  {N}ash equilibrium seeking in aggregative games on time-varying networks,''
   \emph{IEEE Transactions on Automatic Control}, vol.~66, no.~5, pp. 2061 --
   2075, 2021.
 
@@ -104,14 +104,14 @@ D.~Gadjov and L.~Pavel, ``Single-timescale distributed {GNE} seeking for
   https://doi.org/10.1109/TAC.2020.3015354.
 
 \bibitem{belgioioso2020semi}
-G.~Belgioioso and S.~Grammatico, ``Semi-decentralized generalized nash
-  equilibrium seeking in monotone aggregative games,'' \emph{arXiv preprint
-  arXiv:2003.04031}, 2020.
+G.~Belgioioso and S.~Grammatico, ``Semi-decentralized generalized {N}ash
+  equilibrium seeking in monotone aggregative games,'' \emph{IEEE Transactions
+  on Automatic Control}, 2021.
 
 \bibitem{bianchi2020fast}
-M.~Bianchi, G.~Belgioioso, and S.~Grammatico, ``Fast generalized {Nash}
-  equilibrium seeking under partial-decision information,'' \emph{arXiv
-  preprint arXiv:2003.09335}, 2020.
+M.~Bianchi, G.~Belgioioso, and S.~Grammatico, ``Fast generalized {N}ash
+  equilibrium seeking under partial-decision information,'' \emph{Automatica},
+  vol. 136, p. 110080, 2022.
 
 \bibitem{qin2018}
 J.~{Qin}, R.~{Rajagopal}, and P.~{Varaiya}, ``Flexible market for smart grid:
@@ -168,23 +168,29 @@ Z.~{Yang}, K.~{Xie}, J.~{Yu}, H.~{Zhong}, N.~{Zhang}, and Q.~{Xia}, ``A general
   \emph{IEEE Transactions on Power Systems}, vol.~34, no.~2, pp. 1315--1324,
   2019.
 
-\bibitem{facchinei2010generalized}
-F.~Facchinei and C.~Kanzow, ``Generalized nash equilibrium problems,''
-  \emph{Annals of Operations Research}, vol. 175, no.~1, pp. 177--211, 2010.
+\bibitem{facchinei201012}
+F.~Facchinei and J.-S. Pang, ``12. {N}ash equilibria: the variational
+  approach,'' \emph{Convex optimization in signal processing and
+  communications}, p. 443, 2010.
+
+\bibitem{kulkarni2012variational}
+A.~A. Kulkarni and U.~V. Shanbhag, ``On the variational equilibrium as a
+  refinement of the generalized {N}ash equilibrium,'' \emph{Automatica},
+  vol.~48, no.~1, pp. 45--55, 2012.
 
 \bibitem{jensen2010aggregative}
 M.~K. Jensen, ``Aggregative games and best-reply potentials,'' \emph{Economic
   theory}, vol.~43, no.~1, pp. 45--66, 2010.
 
-\bibitem{belgioioso2017convexity}
-G.~Belgioioso and S.~Grammatico, ``On convexity and monotonicity in generalized
-  aggregative games,'' \emph{IFAC-PapersOnLine}, vol.~50, no.~1, pp.
-  14\,338--14\,343, 2017.
+\bibitem{koutsoupias1999worst}
+E.~Koutsoupias and C.~Papadimitriou, ``Worst-case equilibria,'' in \emph{Annual
+  Symposium on Theoretical Aspects of Computer Science}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer, 1999, pp. 404--413.
 
-\bibitem{kulkarni2012variational}
-A.~A. Kulkarni and U.~V. Shanbhag, ``On the variational equilibrium as a
-  refinement of the generalized nash equilibrium,'' \emph{Automatica}, vol.~48,
-  no.~1, pp. 45--55, 2012.
+\bibitem{paccagnan2018efficiency}
+D.~Paccagnan, F.~Parise, and J.~Lygeros, ``On the efficiency of {N}ash
+  equilibria in aggregative charging games,'' \emph{IEEE control systems
+  letters}, vol.~2, no.~4, pp. 629--634, 2018.
 
 \bibitem{belgioioso2021operationally}
 G.~Belgioioso, W.~Ananduta, S.~Grammatico, and C.~Ocampo-Martinez,
@@ -207,5 +213,10 @@ H.~H. Bauschke and V.~R. Koch, ``Projection methods: Swiss army knives for
 ``{JASM} data platform,'' {Accessed: 25-11-2020}. [Online]. Available:
   \url{https://data.sccer-jasm.ch}
 \BIBentrySTDinterwordspacing
+
+\bibitem{belgioioso2017convexity}
+G.~Belgioioso and S.~Grammatico, ``On convexity and monotonicity in generalized
+  aggregative games,'' \emph{IFAC-PapersOnLine}, vol.~50, no.~1, pp.
+  14\,338--14\,343, 2017.
 
 \end{thebibliography}

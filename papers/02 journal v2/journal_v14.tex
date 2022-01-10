@@ -87,6 +87,7 @@
 \newcommand{\B}{\mathcal{C}}
 \newcommand{\red}{\textcolor{red}}
 \newcommand{\blue}{\textcolor{blue}}
+\newcommand{\green}{\textcolor{green}}
 \newcommand{\argmin}{\operatorname{argmin}}
 \newcommand{\mini}{\operatorname{minimize}}
 \newcommand{\Proj}{\mathrm{Proj}}
@@ -105,7 +106,6 @@
 \newcommand{\nc}{\mathrm{N}}
 \newcommand{\0}{\mathbf{0}}
 \newcommand{\1}{\mathbf{1}}
-\newcommand{\half}{^1\hspace*{-.1em}/_2}
 
 %\newcommand{\comment}[1]{\textcolor{red}{[#1]}}
 \newcommand{\edit}[1]{\color{blue}{#1}\color{black}}
@@ -331,13 +331,13 @@ Let us model such a P2P market as a generalized game. Specifically, we assume th
 In this regard, let $u_i \in \bb R^{n_i}$ denote the decision of agent $i$, for all $i\in \mc N^+ :=\{1,\dots,N+1\}$,  for the whole time. 
 Furthermore, we denote by $u$ the decision profile, namely, the stacked vectors of the decisions of all agents, i.e., $u:=\col(\{u_j\}_{j\in \mc N^+ })$, and by $u_{-i}$ the decision of all agents except agent $i$, i.e., $u_{-i} = \col(\{u_j\}_{j\in \mc N^+ \backslash \{i\}})$.
 
-Each agent $i$ wants to selfishly compute an optimal decision, $u_i^*$, of its local optimization problem, as follows:%
+Each agent $i$ is self-interested and wants to compute an optimal decision, $u_i^*$, that solves its local optimization problem%
 \begin{subequations}
 	\label{eq:locOpt}
 	\begin{empheq}[left=u_i^*\in \empheqlbrace]{align}
 	\label{eq:cost_gen}	
 	& 
-	\arg\min_{{u}_i}  \;  J_{i}\left(
+	\arg\min_{{u}_i }  \;   J_{i}\left(
 	u_{i} , u_{-i} 	
 	\right) \\[.2em]
 	\label{eq:const_gen}
@@ -534,7 +534,7 @@ where $\overline{p}^{\mathrm{mg}}>\underline{p}^{\mathrm{mg}} \geq 0$ denote the
 To ensure that the solutions to our decentralized market design are not only economically-efficient but also operationally-safe and reliable for the entire system, we impose the physical constraints of the electrical network, namely, power-flow-related constraints.
 
 Firstly, recall that $\mc G^{\mathrm p}=(\mc B, \mc L)$ is a graph representation of the physical electrical network that connects the prosumers. We  denote by $\mc B_y =\{z~|~(y,z) \in \mc L\}$ the set of neighbouring busses of bus $y \in \mc B$, whereas we denote by $\mc N_y^{\mathrm b} \subseteq \mc N$ and $\mc P_y^\mathrm{b} \subseteq \mc P$ the set of prosumers and passive consumers that are connected to bus $y \in \mc B$, respectively. 
-Additionally, we denote the set of busses that is connected to the main grid by $\mc B^{\mathrm{mg}} \subseteq \mc B$.
+Additionally, we denote the set of busses connected to the main grid by $\mc B^{\mathrm{mg}} \subseteq \mc B$.
 
 Secondly, we define decision variables, for each bus $y \in \mc B$, which are used to define the physical constraints. Denote by $v_y \in \bb R^H$ and $\theta_y \in \bb R^H$ the voltage magnitude and angle over $\mc H$.  Moreover, $p^{\mathrm{tg}}_y \in \mathbb{R}^H$ denotes the real power exchanged between bus $y \in \mc B$ and the main grid, whereas $p_{(y,z)}^{\ell}$ and $q_{(y,z)}^{\ell} \in \bb R^H$, for each $m \in \mc B_y$, denote the real and reactive powers of line $(y,z) \in \mc L$ over $\mc H$, respectively. 
 
@@ -561,7 +561,7 @@ Equation \eqref{eq:p_bal_p} represents the local power balance of bus $y$, simil
 which represent the power flow equations of line $(y,z)$ from the perspective of bus $y$, with $B_{(y,z)}$ and  $G_{(y,z)}$ denoting the susceptance and conductance, respectively, of line $(y,z)$. Note that by \eqref{eq:pf_p} and \eqref{eq:pf_q}, for each pair $(y,z) \in \mc L$, it holds that $p_{(y,z)}^{\ell} = {-p}_{(z,y)}^{\ell}$ and $q_{(y,z)}^{\ell} = {-q}_{(z,y)}^{\ell}$. 
 
 \smallskip
-Furthermore, we also impose reliability constraints for each bus $y \in \mc B$, i.e.,
+We also impose reliability constraints for each bus $y \in \mc B$, 
 \begin{subequations}
 \label{eq:line}
 \begin{align}
@@ -573,7 +573,7 @@ Furthermore, we also impose reliability constraints for each bus $y \in \mc B$, 
 where \eqref{eq:line_cap} represents the line capacity constraint at each line, with maximum capacity of line $(y,z) \in \mc L$ denoted by $\overline{s}_{(y,z)}$, and \eqref{eq:theta_b}-\eqref{eq:v_b} represent the bounds of the voltage phase angles and magnitudes, respectively, with $\underline{\theta}_y \leq \overline{\theta}_y$ denoting the minimum and maximum phase angles and $\underline{v}_y\leq \overline v_y$ denoting the minimum and maximum voltage magnitude. Note that, when linearizing the power flow equations, we take one of the busses as reference bus. Without loss of generality, we suppose the reference is bus $1$ and assume $\underline{\theta}_1 = \overline{\theta}_1=0$.  \color{black}
 
 %\paragraph*{constraint related to trading with main grid}
-Finally, related with the power exchanged with the main grid, we impose the following constraints:
+Finally, the power exchanged with the main grid must satisfy the following constraints:
 \begin{subequations}
 \begin{align}
 	p^{\mathrm{tg}}_{y} &= 0, \quad \forall y \notin \mc B^{\mathrm{mg}}, \label{eq:grid_ex}\\
@@ -587,7 +587,8 @@ where \eqref{eq:grid_ex} is imposed by definition that the busses that are not d
 %\label{def:p2p_ext}
 \section{A Distributed Market-clearing Mechanism}
 \label{sub:alg}
-	By letting the decision variables related to the physical constraints handled by a DNO (agent $N+1$ in the game), the P2P market model can be compactly written as the problem of finding $u_i^*$ in \eqref{eq:locOpt}, for all $i \in \mc N^+$, where the decision variable $u_i$ is defined as
+\subsection{Market-Clearing Game and Variational Equilibria}
+By letting the physical variables of the distribution network be handled by a DNO (i.e., agent $N\!+\!1$), the P2P market clearing problem can be compactly written as the problem of finding the optimal strategy profiles $u_i^*$'s in \eqref{eq:locOpt}, for all $i \in \mc N^+$, where the decision variable $u_i$ is defined as
 $$u_i \hspace{-2pt} = \hspace{-2pt}\begin{cases} \col\hspace{-2pt}\left(p_{i}^{\mathrm{di}},\edit{p_{i}^{\mathrm{ch}},p_{i}^{\mathrm{ds}}, } p_{i}^{\mathrm{mg}},\{p_{(i,j)}^{\mathrm {tr}}\}_{j\in \mc N_i}\right)\hspace{-2pt}, \ \qquad \qquad \;  \forall  i \in \mc N,\\
 	\col\hspace{-2pt}\left(\{\theta_y, v_y, p_y^{\mathrm{tg}},\{p_{(y,z)}^{\ell},q_{(y,z)}^{\ell}\}_{z \in \mc B_y} \}_{y\in\mc B} \right)\hspace{-2pt},  \; \quad i\!=\! N\!+\!1;
 	\end{cases}$$ 
@@ -619,80 +620,75 @@ u~|~ \text{\eqref{eq:rep_const}, \eqref{eq:p_mg_bound}, \eqref{eq:p_bal_p}, \eqr
 
 
 \begin{remark}
-Our definitions of $J_i$, $\mc U_i$ and $\mc C$ satisfy Assumption \ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied.  \marginnote{\note{R3-2}} \edit{Additionally, instead of considering linear power flow equations in \eqref{eq:pf_all}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.}\eod
+Our definitions of $J_i$, $\mc U_i$, $\mc C$ satisfy Assumption~\ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied.  \marginnote{\note{R3-2}} \edit{Additionally, instead of considering linear power flow equations in \eqref{eq:pf_all}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.}\eod
 \end{remark}
 
 \smallskip
-From a game-theoretic perspective, the inter-dependent optimization problems in \eqref{eq:locOpt} constitute a \textit{generalized game} \cite{facchinei2010generalized} and a set of decisions $\{u_1^*,\ldots,u_{N+1}^*\}$ that simultaneously satisfy \eqref{eq:locOpt}, for all $i \in \mc N^+$, corresponds to a GNE \cite[\S~1]{facchinei2010generalized}.
+From a game-theoretic perspective, the collection of inter-dependent optimization problems in \eqref{eq:locOpt} constitute a \textit{generalized game}, and a set of decisions $\{u_1^*,\ldots,u_{N+1}^*\}$ that simultaneously satisfy \eqref{eq:locOpt}, for all $i \in \mc N^+$, corresponds to a GNE \cite[\S~2]{facchinei201012}.
 %
-In other words, a set of strategies $\{u_1^*,\ldots,u_{N+1}^*\}$ is a GNE if no agent $i \in \mc N^+$ (prosumers and DNO)  can reduce its cost  function $J_{i}(
-     u_{i}^*, u_{-i}^*)$ by unilaterally changing its strategy	 $u_i^*$ to another feasible one, i.e., $u_i \in \mc U_i $ s.t. $(u_i,u_{-i}^*) \in \mc C$.
-%\smallskip
-%Since the cost functions \eqref{eq:cost_def} are continuous and the constraints $\mc U_i$'s are convex and compact, the existence of a GNE follows by Brouwer's fixed-point theorem \cite[Prop.~12.7]{palomar2010convex}, while uniqueness does not hold in general.
+In other words, a set of strategies $\{u_1^*,\ldots,u_{N+1}^*\}$ is a GNE if no agent $i \in \mc N^+$ (prosumers and DNO)  can reduce its cost  function $J_{i}(u_{i}^*, u_{-i}^*)$ by unilaterally changing its strategy $u_i^*$ to another feasible one.
+%
+\marginnote{\note{R1-5}\\ \note{R2-5}}
+%
+\edit{Among all GNEs, we target the special subclass of \textit{variational} GNEs (v-GNEs) that coincides with the solutions to a specific variational inequality GVI$(\mc K, P)$ \cite[Prop.~12.4]{facchinei201012},  i.e., the problem of finding a pair of vectors $(u^*,z^*)$, such that $u^* \in \mc K$, $z^* \in P(u^*)$, and
+\begin{align*}
+{(u - u^*)}^\top z^* \geq 0, \quad \forall u  \in  {\mc K}, 
+\end{align*}
+where the mapping $P(u^*): = \prod_{i \in \mc N^+} \frac{\partial}{\partial u_i} J_i(u_i^*,u_{-i}^*)$ is the so-called \textit{pseudo-subdifferential}, and $\mc K:= \mc C \cap (\prod_{i \in \mc N^+} \mc U_i)$ is the global feasible set.
+%
+v-GNEs enjoy the property of ``economic fairness”, namely, the marginal loss due to the presence of the coupling constraints is the same for each agent, see e.g. \cite{kulkarni2012variational}. For these reasons, v-GNEs have been used to model desirable (i.e., locally efficient, fair, and safe) configurations in several distributed engineering systems, including P2P energy market models, see e.g. \cite{lecadre2020}. In this paper, we focus on computational aspects, namely, the design and analysis of a fast and scalable decentralized v-GNE seeking algorithm for the P2P market game \eqref{eq:locOpt}, while we study the properties of its v-GNEs numerically rather than analytically.} 
 
-Note that, the cost functions in \eqref{eq:cost_def} are not influenced by some specific prosumers, but only by the local decisions and by the aggregative quantity $\sigma^{\textrm{mg}}$ in  \eqref{eq:Aggr}, namely, the active load on the main grid. Therefore, for each agent $i \in \mc I$, we can define a function $\tilde J_i$ such that
+
+Note that the cost functions in \eqref{eq:cost_def} are coupled only via the aggregative quantity $\sigma^{\textrm{mg}} = \sum_{i\in\mathcal{N}} p_{i}^{\mathrm{mg}}$ in  \eqref{eq:Aggr}, namely, the active load (i.e., the congestion) on the main grid. Therefore, for each agent $i \in \mc I$, we can define a function $\tilde J_i$ such that
 \begin{equation}
 \tilde J_i(u_i, \sigma^{\textrm{mg}}) =:J_i(u_i,  u_{-i}).
 \end{equation}
-Games with such special structure are known as \textit{aggregative games} \cite{jensen2010aggregative,belgioioso2017convexity}, and have received intense research interest, within the operations research and the automatic control communities \cite{paccagnan2019,belgioioso2020semi,belgioioso2020b,
-	gadjov2020single,bianchi2020fast}. 
+Games with such special structure are known as \textit{aggregative games} \cite{jensen2010aggregative}, and have received intense research interest, within the operations research and the automatic control communities \cite{paccagnan2019,belgioioso2020semi,belgioioso2020b,
+gadjov2020single,bianchi2020fast}. 
+\marginnote{\note{R1-5}}
+\edit{
+When the agents' cost functions depend linearly on the congestion (as for our P2P market model), v-GNEs are efficient. Specifically, the so-called \textit{price of anarchy}\cite{koutsoupias1999worst}, which quantifies how much selfish behaviour degrades the performance of a given system, tends to one (i.e., no performance degradation) as the agents population size grows \cite{paccagnan2018efficiency}.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Nash Equilibrium Seeking in Aggregative Games}
-Several semi-decentralized and distributed algorithms are available in the literature to find a solution of the generalized aggregative game in \eqref{eq:locOpt}, e.g. \cite{paccagnan2019,belgioioso2020semi,belgioioso2020b,
-gadjov2020single,bianchi2020fast}. Among these methods, semi-decentralized ones \cite{belgioioso2020semi} have been shown to be particularly efficient in terms of convergence speed. % and general in terms of convergence guarantees.
-
-Here, we tailor Algorithm~6 in \cite{belgioioso2020semi} for our P2P market game in \eqref{eq:locOpt}. Before presenting the algorithm, let us introduce, for each prosumer $i\in\mc N$, the dual variable $\mu^{\text{tr}}_{(i,j)} \in \bb R^{H}$, for all $j\in\mc N_i$, which are associated with the trading reciprocity \eqref{eq:rep_const}. For the DNO, we introduce $\lambda^{\text{mg}}\in \bb R^{2H}$, $\mu^{\text{tg}}$, which are dual variables associated with the grid constraints \eqref{eq:p_mg_bound} and \eqref{eq:grid_const2}, respectively; moreover, for all $y \in \mc B$, let us introduce $\mu_{y}^{\text{pb}}$, namely, the dual variable associated with the power balance constraint on bus $y$ \eqref{eq:p_bal_p}.
-
-\smallskip 
-The proposed market-clearing algorithm is summarized in Algorithm~1 and its information flow is illustrated in Fig.~\ref{fig:IFC}. 
-%, while the step-size choices therein are formalized next.
-%\smallskip
-%\begin{assumption}\label{ass:SSS}
-%The step sizes in Alg.~1 are set as follows:
-%\begin{enumerate}[(i)]
-%\item $\forall i \!\in \!\mc N$: $\alpha_i \!<\! 
-%3 +N \underset{h\in \mc H}{\max} d_h^{\text{mg}} $, $\beta^{\text{tr}}_{(i,j)}\! =\! \beta^{\text{tr}}_{ (j,i)} \!<\! \frac{1}{2}$, $\forall j \!\in\! \mc N_i$. 
+\subsection{Semi-decentralized Coordinated Market Clearing}
+Several semi-decentralized and distributed algorithms have been recently proposed to find a solution of the generalized aggregative game in \eqref{eq:locOpt}, e.g. \cite{paccagnan2019,belgioioso2020semi,belgioioso2020b,
+gadjov2020single,bianchi2020fast}. 
 %
-%\item $\alpha_{N+1} <2$, $\gamma^{\text{mg}} < \frac{1}{N}$, $\beta^{\text{tg}} < (|\mc N| + |\mc B|)^{-1}$ and $\beta_y^{\text{pb}} < (1+2|\mc N_y^{\mathrm{b}}|+|\mc B_y|)^{-1}$, for all $y \in \mc B$.
-%{\hfill $\square$}
-%\end{enumerate}
-%\end{assumption}
-%\smallskip
-The next proposition shows its global convergence to a variational\footnote{Variational GNEs (v-GNEs) are  a special subclass of GNEs that enjoys the property of ``economic fairness”, namely, the marginal loss due to the presence of the coupling constraints is the same for each
-agent, and coincides with the solutions to a specific variational inequality \cite{kulkarni2012variational}.} GNE of the P2P market game. %The algorithm derivation and its convergence analysis are discussed in Appendix \ref{app:CA}.
+\marginnote{\note{R1-5}\\ \note{R2-6}\\ \note{R3-4}}
+\edit{%
+Among these methods, we focus on semi-decentralized ones \cite{belgioioso2020semi}, in which the agents (i.e., prosumers) rely on a reliable central coordinator (i.e., the DNO) that gathers local variables in aggregative form and then broadcasts (incentive) signals for coordination purposes. % and general in terms of convergence guarantees.
 
-\smallskip
-\begin{proposition}
-	\label{prp:conv}
-The following statements hold:
-\begin{enumerate}[(i)]
-\item There exists a variational GNE of the game \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def}-\eqref{eq:Cconstr_def}.
-\item The sequence $\left(u_1(k),\ldots,u_{N+1}(k)\right)_{k \in \bb N}$ generated by Algorithm 1 converges to a variational GNE of \eqref{eq:locOpt}.
-{\hfill $\square$ }
-\end{enumerate}
-\end{proposition}
-\begin{proof} (Sketch)
-Algorithm~1 is an instance of the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. To prove convergence, it is sufficient to show that the proposed market-clearing game in \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def} and \eqref{eq:Cconstr_def}, respectively, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which is the existence of a variational GNE (i.e., item (i) of Proposition \ref{prp:conv}). Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove convergence of Algorithm \ref{alg:alg1} (i.e., item (ii) of Proposition \ref{prp:conv}).
-%For a complete convergence analysis of the cPPP algorithm for aggregative games we refer to \cite[Appendix~C]{belgioioso2020semi}.
-%Due to space limitations, we provide next only a sketch of its derivation and convergence analysis.
-We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operationally} for a complete derivation and convergence analysis of Algorithm~1.
-\end{proof}
+%
+In this paper, we exploit the special linear coupling structure in the cost functions \eqref{eq:cost_def} and coupling constraints \eqref{eq:Cconstr_def} to tailor Algorithm~6 in \cite{belgioioso2020semi} for our P2P market game.
+%
+Unlike most of the available semi-decentralized pseudo-gradient-based methods, \cite[Algorithm~6]{belgioioso2020semi} relies on proximal updates that are computationally more expensive but greatly mitigate the overall communication burden between agents and coordinator.
 
-%\begin{figure}[t]
-%\centering
-%\includegraphics[width=.5\textwidth]{figures/algorithm1_GB_v4}
-%\caption{Information flow of Algorithm~1 for each prosumer $i \in \mc N$ (top boxes) and the DNO (bottom box).}
-%\label{fig:IFC}
-%\end{figure}
+%
+The resulting market-clearing mechanism, summarized in Algorithms~1, requires the prosumers and the DNO to store, update, and communicate some additional (dual and auxiliary) variables, whose primary function is to coordinate the system towards operational feasibility and trading reciprocity. In particular, each prosumer $i\in\mc N$ stores in its local memory
+\begin{itemize}
+\item the local strategy $u_i$ that collects the power generation, storage (charging/discharging), load, and trading profiles.
 
+\item the local power unbalance $\eta_i$, defined as in \eqref{eq:etai} and privately communicated only to the DNO.
+
+\item a (dual) variable $\mu^{\text{tr}}_{(i,j)}$ for each trading partner $j \in \mc N_i$, whose function is to drive prosumer $i$'s and $j$'s power trade to agreement, i.e., the reciprocity constraints \eqref{eq:rep_const};
+
+\end{itemize}
+In addition to the physical variables of the distribution network, i.e., $u_{N\!+\!1}$, the DNO stores in its local memory
+\begin{itemize}
+\item the (dual) variables $\lambda^{\text{mg}}$ and $\mu^{\text{tg}} $, that are associated with the main grid constraints \eqref{eq:p_mg_bound} and \eqref{eq:grid_const2}, respectively;
+
+\item a (dual) variable $\mu_{y}^{\text{pb}}$ for each bus $y \in \mc B$, associated with the power balance constraint on bus $y$ \eqref{eq:p_bal_p}.
+\end{itemize}
+From an economic perspective, these variables can be interpreted as extra marginal losses imposed to the prosumers for the grid usage. From a control-theoretic perspective, they can be interpreted as states of discrete-time integrators driven by the violation of the network operational constraints \eqref{eq:Cconstr_def}.
+}
 
 \begin{figure}
-\medskip \noindent
+\marginnote{\note{R1-6}}
+\edit{
 \begin{minipage}{\columnwidth}
 \hrule
 \smallskip
-\textsc{Algorithm 1}. Semi-decentralized P2P market clearing
+\textsc{Algorithm 1}. Coordinated P2P Market Clearing
 \smallskip
 \hrule 
 \smallskip
@@ -745,7 +741,7 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \text{For all busses } y \in \mc B \text{ (in parallel):}\\
  \left|
 \begin{array}{l}
-\mu_y^{\text{pb}}(k+1) \rightarrow \text{ all prosumers } i \in \mc N_y^{\text{b}}%
+\mu_y^{\text{pb}}(k+1) \rightarrow \text{ all prosumers } i \in \mc N_y^{\text{b}} \text{ on bus } y%
 \end{array}%
 \right.%
 \end{array}%
@@ -756,16 +752,48 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \smallskip
 \hrule
 \end{minipage}
+}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The semi-decentralized information flow of Algorithm~1 is illustrated in Fig.~\ref{fig:IFC}, \edit{while its locals and central updates are summarized  in Algorithm 2 and Algorithm 3, respectively. In there, we use some auxiliary variables (e.g., $\zeta^{\text{tr}}_{(i,j)}$, $\psi_i$ in Alg.~2) to keep the presentation compact. }  
+%
+The next proposition shows the global convergence of Algorithm 1 to a variational GNE of the P2P market game. 
+
+\smallskip
+\begin{proposition}[Convergence of Algorithm 1]\hspace*{3em}
+	\label{prp:conv}
+\begin{enumerate}[(i)]
+\item There exists a v-GNE of the P2P market game \eqref{eq:locOpt}.
+%, with cost functions and constraints sets defined in \eqref{eq:cost_def}-\eqref{eq:Cconstr_def}.
+\item The sequence $\left(u_1(k),\ldots,u_{N+1}(k)\right)_{k \in \bb N}$ generated by Algorithm~1 converges to a v-GNE of \eqref{eq:locOpt}.
+\end{enumerate}
+\end{proposition}
+\begin{proof} (Sketch)
+Algorithm~1 is an instance of the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. To prove convergence, it is sufficient to show that the proposed market-clearing game in \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def} and \eqref{eq:Cconstr_def}, respectively, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which is the existence of a variational GNE (i.e., item (i) of Proposition \ref{prp:conv}). Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove convergence of Algorithm \ref{alg:alg1} (i.e., item (ii) of Proposition \ref{prp:conv}).
+%For a complete convergence analysis of the cPPP algorithm for aggregative games we refer to \cite[Appendix~C]{belgioioso2020semi}.
+%Due to space limitations, we provide next only a sketch of its derivation and convergence analysis.
+We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operationally} for a detailed derivation and convergence analysis of Algorithm~1.
+\end{proof}
+
+%\begin{figure}[t]
+%\centering
+%\includegraphics[width=.5\textwidth]{figures/algorithm1_GB_v4}
+%\caption{Information flow of Algorithm~1 for each prosumer $i \in \mc N$ (top boxes) and the DNO (bottom box).}
+%\label{fig:IFC}
+%\end{figure}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
+\marginnote{\note{R1-6}}
+\edit{
 \medskip \noindent
 \begin{minipage}{\columnwidth}
 \hrule
 \smallskip
-\textsc{Algorithm 2}. Prosumer $i$ local update
+\textsc{Algorithm 2}. Prosumer $i$'s local update
 \smallskip
 \hrule 
 \smallskip
@@ -774,9 +802,9 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
  \alpha_i \!<\! 
 ({3} +N \max_{h}\, d_h^{\text{mg}})^{-1}$, $\beta^{\text{tr}}_{(i,j)}\! =\! \beta^{\text{tr}}_{ (j,i)} \!<\! \frac{1}{2}$.
 
-\smallskip
+\medskip
 \noindent 
-(i) \text{Dual update:}\\[.2em]
+(i) \text{Dual update (trading reciprocity):}\\[.2em]
 \hspace*{.15em}
 $
 \left| 
@@ -797,15 +825,15 @@ $
 
 \medskip
 \noindent
-(ii) \text{Primal update:}\\[.2em]
+(ii) \text{Primal update (generation, storage, load, and trading):}\\[.2em]
 \hspace*{.15em}
 $
 \left| 
 \begin{array}{l}
 %\text{Receive } \sigma^{\mathrm{mg}}(k),\, \lambda^{\text{mg}}(k), \mu^{\text{tg}}(k), \mu_y^{\text{pb}}(k) \text{ from the DNO}\\
-\psi_i(k) = 
-	\alpha_i \col \Big(-\mu_y^{\text{pb}}(k),\edit{\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),}\\
-	\hspace*{4em}
+\psi_i(k) = u_i(k)-
+	\alpha_i \cdot \col \Big(-\mu_y^{\text{pb}}(k),\edit{\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),}\\
+	\hspace*{5em}
 	{
 	\left[
 	\begin{smallmatrix}
@@ -821,27 +849,28 @@ $
 \left\{
 \begin{array}{r l}
 	\underset{\xi \in \R^{n_i}}{\argmin} & 
-	\tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big) 
+	\tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \!-\! p_i^{\text{mg}}(k) \!+\! \xi \big) 
 	+ \frac{1}{2 \alpha_i}
-	\left\| \xi - u_i(k) +  \psi_i(k) 
+	\left\| \xi -  \psi_i(k) 
 	\textstyle
 	  \right\|^2 \\
-	\text{s.t. } & \xi \in \mc U_i
+	\text{s.t.} & \xi \in \mc U_i
 \end{array} 
 \right.
 \end{array}
 \right.
 $
 
-
-\smallskip
+\medskip
 \hrule
 \end{minipage}
+}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}
-\medskip \noindent
+\marginnote{\note{R1-6}}
+\edit{
 \begin{minipage}{\columnwidth}
 \hrule
 \smallskip
@@ -852,9 +881,9 @@ $
 
 \text{Step sizes}: set $\alpha_{N+1} <2$, $\gamma^{\text{mg}} < 1/N$, $\beta^{\text{tg}} < (|\mc N| \!+\! |\mc B|)^{-1}$, and $\beta_y^{\text{pb}} < (1\!+\!2|\mc N_y^{\mathrm{b}}|\!+\!|\mc B_y|)^{-1}$,  for all busses $y\!\in\! \mc B $.
 
-\smallskip
+\medskip
 \noindent 
-(i) \text{Primal update:}\\[.2em]
+(i) \text{Primal update (network physical variables):}\\[.2em]
 \hspace*{.15em}
 $
 \left| 
@@ -874,7 +903,7 @@ $
 \medskip
 \noindent
 \noindent 
-(ii) \text{Dual update:}\\[.2em]
+(ii) \text{Dual update (operational feasibility):}\\[.2em]
 \hspace*{.15em}
 $
 \left| 
@@ -910,7 +939,7 @@ $
 \begin{array}{l}
 %\text{Receive } p^{\textrm{tr}}_{(j,i)} (k) \text{ from prosumer } j\\
 \zeta^{\text{pb}}_y(k+1)   = \sum_{i \in \mc P_y^{\mathrm{b}}} p_i^{\mathrm{d}} + \sum_{i \in \mc N_y^{\mathrm{b}}} \eta_i(k\!+\!1)\\
-\hspace*{8em} - p^{\text{tg}}_y(k\!+\!1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k\!+\!1)\\
+\hspace*{9em} - p^{\text{tg}}_y(k\!+\!1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k\!+\!1)\\[.5em]
 %
 \mu_y^{\text{pb}}(k+1) = \mu_y^{\text{pb}}(k) + \beta^{\text{pb}}_y (2 \zeta^{\text{pb}}_y(k\!+\!1)- \zeta^{\text{pb}}_y(k))
 \end{array}
@@ -919,24 +948,22 @@ $
 \right.
 $
 
-\smallskip
+\medskip
 \hrule
 \end{minipage}
+}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{remark} The main properties of the proposed market-clearing mechanism (Algorithm 1) are listed below:
+\begin{remark} The main properties of the proposed market-clearing mechanism (algorithms 1-3) are listed below:
 \begin{enumerate}[(i)]
 
-\item The step sizes are fully-uncoordinated, i.e., they can differ across the prosumers and can chosen based on local information only (see lines 2--3);
+\item The step sizes in the local and central updates (i.e., algorithms 2 and 3) are fully-uncoordinated, i.e., they can differ across prosumers and DNO, and can be chosen independently based on local information only;
 
-\item Algorithm 1 is semi-decentralized, i.e., the prosumers rely on a reliable central coordinator (i.e., the DNO) that gathers local variables in aggregative form and then broadcasts signals, such as the dual variable $\lambda^{\text{mg}}$, to all prosumers, see Figure~\ref{fig:IFC}.
-%Such communication architecture is particularly efficient to design fast and scalable equilibrium seeking algorithms in games \cite{belgioioso2020semi};
+\item The primal update of each prosumer (Algorithm~2~(ii)) involves the solution of a quadratic program\footnote{Up to a fairly-standard reformulation of the absolute value term in \eqref{eq:f_t}.}, for which very efficient solvers are available, e.g. \cite{osqp}. \edit{In there, if $ \tilde  J_{i} \big( \xi, \sigma^{\text{mg}}(k) \!-\! p_i^{\text{mg}}(k) \!+\! \xi \big)$ is replaced by its approximate version $ \tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big)$, obtained by neglecting prosumer $i$'s contribution $p_i^{\text{tr}}$ to the aggregative active load $\sigma^{\text{mg}}$, Algorithm 1 will converge to a variational Wardrop equilibrium \cite[\S~II.B]{belgioioso2020semi}, which is a good approximation of v-GNEs for networks with a large number of prosumers.}
 
-\item The primal update of each prosumer (lines: 8--11) involves the solution of a quadratic program\footnote{Up to a fairly-standard reformulation of the absolute value term in \eqref{eq:f_t}.}, for which very efficient solvers are available, e.g. \cite{osqp};
-
-\item \marginnote{\note{R4-10}} The primal update of the DNO (lines: \edit{28--31}) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation can be computationally expensive if naively solved. However, more efficient algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~4.3]{bauschke2015projection}, see e.g. \cite[Appendix~2]{belgioioso2021operationally}.
+\item \marginnote{\note{R4-10}} The primal update of the DNO (Algorithm~3~(i)) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation can be computationally expensive if naively solved. However, more efficient algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~4.3]{bauschke2015projection}, see e.g. \cite[Appendix~2]{belgioioso2021operationally}.
 
 \end{enumerate}
 \end{remark}

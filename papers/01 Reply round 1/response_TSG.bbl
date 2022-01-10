@@ -1,3 +1,35 @@
 \begin{thebibliography}{}
 
+\bibitem[{Atzeni} et~al., 2013]{atzeni2013}
+{Atzeni}, I., {Ord\'{o}\~{n}ez}, L.~G., {Scutari}, G., {Palomar}, D.~P., and
+  {Fonollosa}, J.~R. (2013).
+\newblock Demand-side management via distributed energy generation and storage
+  optimization.
+\newblock {\em IEEE Transactions on Smart Grid}, 4(2):866--876.
+
+\bibitem[Cadre et~al., 2020]{lecadre2020}
+Cadre, H.~L., Jacquot, P., Wan, C., and Alasseur, C. (2020).
+\newblock Peer-to-peer electricity market analysis: From variational to
+  generalized {Nash} equilibrium.
+\newblock {\em European Journal of Operational Research}, 282(2):753--771.
+
+\bibitem[{Molzahn} et~al., 2017]{molzahn2017}
+{Molzahn}, D.~K., {D\"{o}rfler}, F., {Sandberg}, H., {Low}, S.~H.,
+  {Chakrabarti}, S., {Baldick}, R., and {Lavaei}, J. (2017).
+\newblock A survey of distributed optimization and control algorithms for
+  electric power systems.
+\newblock {\em IEEE Transactions on Smart Grid}, 8(6):2941--2962.
+
+\bibitem[{Sorin} et~al., 2019]{sorin2019}
+{Sorin}, E., {Bobo}, L., and {Pinson}, P. (2019).
+\newblock Consensus-based approach to peer-to-peer electricity markets with
+  product differentiation.
+\newblock {\em IEEE Transactions on Power Systems}, 34(2):994--1004.
+
+\bibitem[Sousa et~al., 2019]{sousa2019}
+Sousa, T., Soares, T., Pinson, P., Moret, F., Baroche, T., and Sorin, E.
+  (2019).
+\newblock Peer-to-peer and community-based markets: A comprehensive review.
+\newblock {\em Renewable and Sustainable Energy Reviews}, 104:367--378.
+
 \end{thebibliography}

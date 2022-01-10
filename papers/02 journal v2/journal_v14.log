@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  7 JAN 2022 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  10 JAN 2022 17:32
 entering extended mode
 **./journal_v14.tex
 (journal_v14.tex
@@ -702,50 +702,127 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 442--442
 
 Package marginnote Info: xpos seems to be 89.67595pt on input line 442.
 [4]
-Overfull \hbox (15.93622pt too wide) detected at line 593
+Overfull \hbox (15.93622pt too wide) detected at line 594
 \OML/cmm/m/it/10 u[]  \OT1/cmr/m/n/10 =  []
  []
 
 Package marginnote Info: Margin note 5.1 is on absolute page 5 on input line 62
-2.
-Package marginnote Info: right page because not two side mode on input line 622
+3.
+Package marginnote Info: right page because not two side mode on input line 623
 .
-Package marginnote Info: xpos seems to be 388.84087pt on input line 622.
+Package marginnote Info: xpos seems to be 388.84087pt on input line 623.
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10> not available
-(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 622.
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 623.
 
-Overfull \hbox (4.0pt too wide) in paragraph at lines 622--622
+Overfull \hbox (4.0pt too wide) in paragraph at lines 623--623
 []\OT1/pcr/m/sl/10 R3-2[]  
  []
 
-[5]
-
-LaTeX Warning: Reference `fig:IFC' on page 6 undefined on input line 648.
-
-
-Overfull \hbox (9.13528pt too wide) in paragraph at lines 778--797
-|  $[]$ 
- []
-
-
-Overfull \hbox (8.28464pt too wide) in paragraph at lines 875--921
-|  $[]$ 
- []
-
-
-LaTeX Warning: Reference `fig:IFC' on page 6 undefined on input line 934.
-
-Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 93
-9.
-Package marginnote Info: right page because not two side mode on input line 939
+Package marginnote Info: Margin note 5.2 is on absolute page 5 on input line 63
+3.
+Package marginnote Info: right page because not two side mode on input line 633
 .
-Package marginnote Info: xpos seems to be 334.80713pt on input line 939.
+Package marginnote Info: xpos seems to be 475.655pt on input line 633.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 939--939
-[]\OT1/pcr/m/sl/10 R4-10[]  
+Overfull \hbox (4.0pt too wide) in paragraph at lines 633--633
+[]\OT1/pcr/m/n/10 R1-5[]  
+ []
+
+
+Overfull \hbox (4.0pt too wide) in paragraph at lines 633--633
+[][]\OT1/pcr/m/n/10 R2-5[]  
+ []
+
+[5]
+Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 64
+9.
+Package marginnote Info: right page because not two side mode on input line 649
+.
+
+Overfull \hbox (4.0pt too wide) in paragraph at lines 649--649
+ []\OT1/pcr/m/n/10 R1-5[]
+ []
+
+Package marginnote Info: xpos seems to be 94.14758pt on input line 649.
+Package marginnote Info: Margin note 6.2 is on absolute page 6 on input line 65
+8.
+Package marginnote Info: right page because not two side mode on input line 658
+.
+
+Overfull \hbox (4.0pt too wide) in paragraph at lines 658--658
+ []\OT1/pcr/m/n/10 R1-5[]
+ []
+
+
+Overfull \hbox (4.0pt too wide) in paragraph at lines 658--658
+ [][]\OT1/pcr/m/n/10 R2-6[]
+ []
+
+
+Overfull \hbox (4.0pt too wide) in paragraph at lines 658--658
+ [][]\OT1/pcr/m/n/10 R3-4[]
+ []
+
+Package marginnote Info: xpos seems to be 209.15791pt on input line 658.
+Package marginnote Info: Margin note 6.3 is on absolute page 6 on input line 68
+7.
+Package marginnote Info: right page because not two side mode on input line 687
+.
+Package marginnote Info: xpos seems to be 313.14749pt on input line 687.
+
+Overfull \hbox (4.0pt too wide) in paragraph at lines 687--687
+[]\OT1/pcr/m/n/10 R1-6[]  
+ []
+
+
+LaTeX Warning: Reference `fig:IFC' on page 6 undefined on input line 759.
+
+Package marginnote Info: Margin note 6.4 is on absolute page 7 on input line 79
+1.
+Package marginnote Info: right page because not two side mode on input line 791
+.
+
+Overfull \hbox (4.0pt too wide) in paragraph at lines 791--791
+ []\OT1/pcr/m/n/10 R1-6[]
+ []
+
+Package marginnote Info: xpos seems to be 49.14749pt on input line 791.
+
+Overfull \hbox (9.13528pt too wide) in paragraph at lines 867--867
+|  $[]$ 
+ []
+
+
+Overfull \hbox (16.02577pt too wide) in paragraph at lines 867--867
+|  $[]$ 
+ []
+
+Package marginnote Info: Margin note 6.5 is on absolute page 7 on input line 87
+3.
+Package marginnote Info: right page because not two side mode on input line 873
+.
+
+Overfull \hbox (4.0pt too wide) in paragraph at lines 873--873
+ []\OT1/pcr/m/n/10 R1-6[]
+ []
+
+Package marginnote Info: xpos seems to be 49.14749pt on input line 873.
+
+Overfull \hbox (10.61455pt too wide) in paragraph at lines 954--954
+|  $[]$ 
  []
 
 [6]
+Package marginnote Info: Margin note 7.1 is on absolute page 7 on input line 96
+6.
+Package marginnote Info: right page because not two side mode on input line 966
+.
+Package marginnote Info: xpos seems to be 334.80713pt on input line 966.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 966--966
+[]\OT1/pcr/m/sl/10 R4-10[]  
+ []
+
 Package epstopdf Info: Source file: <figures/simD_safe1.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 32588 bytes
@@ -754,7 +831,7 @@ Package epstopdf Info: Source file: <figures/simD_safe1.eps>
 (epstopdf)                    size: 5458 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simD_safe1-eps-conv
 erted-to.pdf figures/simD_safe1.eps>
-(epstopdf)             \includegraphics on input line 965.
+(epstopdf)             \includegraphics on input line 992.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -764,7 +841,7 @@ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/simD_safe1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simD_safe1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simD_safe1-eps-converted-to.pdf  used on input
- line 965.
+ line 992.
 (pdftex.def)             Requested size: 115.63092pt x 149.05548pt.
 Package epstopdf Info: Source file: <figures/simD_fail1.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
@@ -774,7 +851,7 @@ Package epstopdf Info: Source file: <figures/simD_fail1.eps>
 (epstopdf)                    size: 31985 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simD_fail1-eps-conv
 erted-to.pdf figures/simD_fail1.eps>
-(epstopdf)             \includegraphics on input line 971.
+(epstopdf)             \includegraphics on input line 998.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -784,13 +861,14 @@ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/simD_fail1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simD_fail1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simD_fail1-eps-converted-to.pdf  used on input
- line 971.
+ line 998.
 (pdftex.def)             Requested size: 114.72755pt x 148.15211pt.
 
-Overfull \hbox (10.59991pt too wide) in paragraph at lines 963--974
+Overfull \hbox (10.59991pt too wide) in paragraph at lines 990--1001
  [][]  [] 
  []
 
+[7]
 Package epstopdf Info: Source file: <figures/b0.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 45076 bytes
@@ -799,17 +877,17 @@ Package epstopdf Info: Source file: <figures/b0.eps>
 (epstopdf)                    size: 15534 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b0-eps-converted-to
 .pdf figures/b0.eps>
-(epstopdf)             \includegraphics on input line 986.
+(epstopdf)             \includegraphics on input line 1013.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/b0-eps-converted-to.pdf): PDF inclusio
 n: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/b0-eps-converted-to.pdf, id=61, 548.0475pt x 286.06876pt>
+<figures/b0-eps-converted-to.pdf, id=67, 548.0475pt x 286.06876pt>
 File: figures/b0-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/b0-eps-converted-to.pdf>
-Package pdftex.def Info: figures/b0-eps-converted-to.pdf  used on input line 98
-6.
+Package pdftex.def Info: figures/b0-eps-converted-to.pdf  used on input line 10
+13.
 (pdftex.def)             Requested size: 231.83954pt x 121.0167pt.
 Package epstopdf Info: Source file: <figures/b1a.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
@@ -819,17 +897,17 @@ Package epstopdf Info: Source file: <figures/b1a.eps>
 (epstopdf)                    size: 28328 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b1a-eps-converted-t
 o.pdf figures/b1a.eps>
-(epstopdf)             \includegraphics on input line 994.
+(epstopdf)             \includegraphics on input line 1021.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/b1a-eps-converted-to.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/b1a-eps-converted-to.pdf, id=62, 488.82625pt x 256.96pt>
+<figures/b1a-eps-converted-to.pdf, id=68, 488.82625pt x 256.96pt>
 File: figures/b1a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/b1a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/b1a-eps-converted-to.pdf  used on input line 9
-94.
+Package pdftex.def Info: figures/b1a-eps-converted-to.pdf  used on input line 1
+021.
 (pdftex.def)             Requested size: 231.83954pt x 121.87297pt.
 Package epstopdf Info: Source file: <figures/b2a.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
@@ -839,20 +917,18 @@ Package epstopdf Info: Source file: <figures/b2a.eps>
 (epstopdf)                    size: 26264 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b2a-eps-converted-t
 o.pdf figures/b2a.eps>
-(epstopdf)             \includegraphics on input line 1002.
+(epstopdf)             \includegraphics on input line 1029.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/b2a-eps-converted-to.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/b2a-eps-converted-to.pdf, id=63, 487.8225pt x 255.95625pt>
+<figures/b2a-eps-converted-to.pdf, id=69, 487.8225pt x 255.95625pt>
 File: figures/b2a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/b2a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/b2a-eps-converted-to.pdf  used on input line 1
-002.
+029.
 (pdftex.def)             Requested size: 231.83954pt x 121.64296pt.
-[7 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail1-eps-conver
-ted-to.pdf> <./figures/b0-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/simB_0402_pt1_v2.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 184738 bytes
@@ -862,18 +938,18 @@ pdf>
 (epstopdf)                    size: 71261 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt1_v2-ep
 s-converted-to.pdf figures/simB_0402_pt1_v2.eps>
-(epstopdf)             \includegraphics on input line 1026.
+(epstopdf)             \includegraphics on input line 1053.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/simB_0402_pt1_v2-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simB_0402_pt1_v2-eps-converted-to.pdf, id=98, 421.575pt x 382.42876pt>
+<figures/simB_0402_pt1_v2-eps-converted-to.pdf, id=70, 421.575pt x 382.42876pt>
 
 File: figures/simB_0402_pt1_v2-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simB_0402_pt1_v2-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simB_0402_pt1_v2-eps-converted-to.pdf  used on
- input line 1026.
+ input line 1053.
 (pdftex.def)             Requested size: 252.0pt x 228.60121pt.
 Package epstopdf Info: Source file: <figures/c2a.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
@@ -883,21 +959,21 @@ Package epstopdf Info: Source file: <figures/c2a.eps>
 (epstopdf)                    size: 37616 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/c2a-eps-converted-t
 o.pdf figures/c2a.eps>
-(epstopdf)             \includegraphics on input line 1033.
+(epstopdf)             \includegraphics on input line 1060.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/c2a-eps-converted-to.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/c2a-eps-converted-to.pdf, id=99, 562.1pt x 421.575pt>
+<figures/c2a-eps-converted-to.pdf, id=71, 562.1pt x 421.575pt>
 File: figures/c2a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/c2a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/c2a-eps-converted-to.pdf  used on input line 1
-033.
+060.
 (pdftex.def)             Requested size: 252.0pt x 188.99939pt.
-[8 <./figures/b1a-eps-converted-to.pdf> <./figures/b2a-eps-converted-to.pdf> <.
-/figures/simB_0402_pt1_v2-eps-converted-to.pdf> <./figures/c2a-eps-converted-to
-.pdf>]
+[8 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail1-eps-conver
+ted-to.pdf> <./figures/b0-eps-converted-to.pdf> <./figures/b1a-eps-converted-to
+.pdf> <./figures/b2a-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/simEF1.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 59742 bytes
@@ -906,19 +982,25 @@ Package epstopdf Info: Source file: <figures/simEF1.eps>
 (epstopdf)                    size: 57984 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simEF1-eps-converte
 d-to.pdf figures/simEF1.eps>
-(epstopdf)             \includegraphics on input line 1058.
+(epstopdf)             \includegraphics on input line 1085.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/simEF1-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simEF1-eps-converted-to.pdf, id=123, 421.575pt x 316.18124pt>
+<figures/simEF1-eps-converted-to.pdf, id=113, 421.575pt x 316.18124pt>
 File: figures/simEF1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simEF1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simEF1-eps-converted-to.pdf  used on input lin
-e 1058.
+e 1085.
 (pdftex.def)             Requested size: 252.0pt x 189.00099pt.
 (journal_v14.bbl
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
+[9 <./figures/simB_0402_pt1_v2-eps-converted-to.pdf> <./figures/c2a-eps-convert
+ed-to.pdf> <./figures/simEF1-eps-converted-to.pdf>]
 Underfull \hbox (badness 4353) in paragraph at lines 137--141
 []\OT1/ptm/m/n/8 F. Moret, A. Tosatto, T. Baroche, and P. Pin-son, ``Loss al-
  []
@@ -930,10 +1012,7 @@ eer mar-
  []
 
 
-Overfull \vbox (2.518pt too high) has occurred while \output is active []
-
- [9 <./figures/simEF1-eps-converted-to.pdf>]
-Underfull \hbox (badness 2426) in paragraph at lines 190--194
+Underfull \hbox (badness 2426) in paragraph at lines 196--200
 []\OT1/ptm/m/n/8 G. Bel-gioioso, W. Anan-duta, S. Gram-matico, and C. Ocampo-
  []
 
@@ -953,10 +1032,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 7953 strings out of 479334
- 130177 string characters out of 2855431
- 480710 words of memory out of 3000000
- 25191 multiletter control sequences out of 15000+200000
+ 7962 strings out of 479334
+ 130292 string characters out of 2855431
+ 479457 words of memory out of 3000000
+ 25200 multiletter control sequences out of 15000+200000
  457377 words of font info for 147 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,33n,77p,960b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1001,7 +1080,7 @@ a/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/giuse
 pData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/giuse/AppD
 ata/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/giuse/AppData
 /Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on journal_v14.pdf (12 pages, 709921 bytes).
+Output written on journal_v14.pdf (12 pages, 714521 bytes).
 PDF statistics:
  254 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
