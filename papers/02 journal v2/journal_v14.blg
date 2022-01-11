@@ -4,8 +4,6 @@ The top-level auxiliary file: journal_v14.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: ieeetran.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
-Reallocating 'name_of_file' (item size: 1) to 13 items.
-A level-1 auxiliary file: appendix.aux
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
@@ -19,7 +17,7 @@ Database file #1: ref.bib
 Done.
 You've used 37 entries,
             4087 wiz_defined-function locations,
-            1020 strings with 14013 characters,
+            1019 strings with 14003 characters,
 and the built_in function-call counts, 31054 in all, are:
 = -- 2584
 > -- 788

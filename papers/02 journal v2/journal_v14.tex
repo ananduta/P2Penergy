@@ -257,23 +257,23 @@ In recent years, there has been a fast growing penetration of distributed and re
 
 %\paragraph*{literature survey: what are currently studied}
 Focusing on spot markets, i.e., day-ahead and intra-day markets, each prosumer has to decide its energy production and consumption over a certain time horizon, with the objective of minimizing its own economic cost while satisfying its physical and operational constraints. 
-Most of existing works formulate such peer-to-peer (P2P) markets via game-theoretic or multi-agent optimization frameworks \cite{tushar2018,tushar2020,lecadre2020,cui2020,zhang2020,baroche2019,sorin2019}. For instance, the authors of \cite{tushar2018} provide a literature survey of early works on game-theoretic P2P market models. {More recently, \cite{tushar2020} considers a coalition game approach for peer-to-peer trading of prosumers with storage units.}  Furthermore, \cite{lecadre2020,cui2020,zhang2020,baroche2019,sorin2019} propose economic dispatch formulations where energy trading is incorporated as coupling (reciprocity) constraints and each prosumer has an objective that depends on local decision variables only. 
+Most of existing works formulate such peer-to-peer (P2P) markets via game-theoretic or multi-agent optimization frameworks \cite{tushar2018,tushar2020,lecadre2020,cui2020,zhang2020,baroche2019,sorin2019}. For instance, the authors of \cite{tushar2018} provide a literature survey of early works on game-theoretic P2P market models. {More recently, \cite{tushar2020} considers a coalition game approach for peer-to-peer trading of prosumers with storage units.}  Furthermore, \cite{lecadre2020,cui2020,zhang2020,baroche2019,sorin2019} propose economic dispatch formulations where energy trading is incorporated as coupling (reciprocity) constraints and each prosumer has local decoupled objectives. 
 
 Generalizing the previous papers, our preliminary work in  \cite{belgioioso2020energy} does not only consider multi-bilateral trading  but also trading with the main grid, which extends the coupling to both constraints and objective functions. 
 %
 Mathematically, clearing the resulting P2P market corresponds to finding a generalized Nash equilibrium (GNE), namely, a configuration in which no prosumer has an incentive to unilaterally deviate. 
 %
-Similarly, \cite{wang2021} formulates a generalized Nash game of energy sharing or a multilateral (instead of bilateral) trading among prosumers, and moreover, a distributed GNE seeking algorithm is designed to find a solution of the market equilibrium problem. 
+Similarly, \cite{wang2021} formulates a generalized Nash game of energy sharing or a multilateral (instead of bilateral) trading among prosumers, and proposes a distributed algorithm to find a solution of the market equilibrium problem. 
 %
-In parallel, we note that operator-theoretic approaches have been effectively exploited to design distributed methods that solve GNE problems under the least restrictive assumptions \cite{paccagnan2019,belgioioso2020b,gadjov2020single,belgioioso2020semi,
+In parallel, we note that operator-theoretic approaches have been effectively exploited to design distributed methods that efficiently solve GNE problems under the least restrictive assumptions \cite{paccagnan2019,belgioioso2020b,gadjov2020single,belgioioso2020semi,
 	bianchi2020fast}.
 
 %\paragraph*{highlight on considering physical constraints}
-In practice, however, direct trading among prosumers might jeopardize system reliability, for which network operators are responsible. Therefore, when designing energy management mechanism for a distribution grid, one must also consider the role of network operators and the reliability of the system itself.
+In practice, however, direct trading among prosumers might jeopardize system reliability, for which network operators are responsible. Therefore, when designing energy management mechanisms for a distribution grid, one must also consider the role of network operators and the reliability of the system itself.
 %
 For example, \cite{qin2018,morstyn2019} treat decentralized markets and operational reliability separately, and propose market-clearing mechanisms where decentralized market solutions must be approved by a network operator based on the system operational constraints. 
 %
-An alternative is based on incorporating network charges, which may reflect utilization fees and network congestion, into the market formulation, as discussed in \cite{baroche2019b,paudel2020}. Differently, \cite{moret2020,zhang2020} include network operators as players in the market and impose operational requirements of the network as constraints in the market problem, which is formulated as a multi-agent optimization. Nevertheless, none of these works simultaneously consider coupled objectives and constraints, implying the inapplicability of their decentralized mechanisms to our market formulation.
+An alternative is based on incorporating network charges, which may reflect utilization fees and network congestion, into the market formulation, as discussed in \cite{baroche2019b,paudel2020}. Differently, \cite{moret2020,zhang2020} include network operators as players in the market and impose network operational requirements as constraints in the market problem, which is formulated as a multi-agent optimization. Nevertheless, none of these works considers both coupled objectives and constraints.
 
 
 %\paragraph*{In this paper:} 
@@ -319,11 +319,21 @@ Moreover, we also consider the electrical distribution network, to which the pro
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=1.4]{figures/37bus_ex}
-	\caption{A modified IEEE 37-bus network with 12 prosumers (boxes) and 15 passive loads (black triangles). Busses are represented by black circles, physical lines in $\mc L$ by solid lines, whereas trading relations ($\mc E$) by dash-dotted blue lines.
+	%\includegraphics[scale=1.4]{figures/37bus_ex}
+	\includegraphics[width=\columnwidth]{figures/NF/37bus_sysIPE1}
+	\caption{Left plot: A modified IEEE 37-bus network with 12 prosumers (boxes) and 15 passive loads (black triangles); busses are represented by black circles, physical lines in $\mc L$ by solid lines. Right plot: P2P trading network, whereas trading relations ($\mc E$) are represented by blue double-arrow lines.
 	}
 	\label{fig:GGp}
 \end{figure} 
+
+%\begin{figure}
+%	\centering
+%	\includegraphics[scale=1.4]{figures/37bus_ex}
+%	\caption{A modified IEEE 37-bus network with 12 prosumers (boxes) and 15 passive loads (black triangles). Busses are represented by black circles, physical lines in $\mc L$ by solid lines, whereas trading relations ($\mc E$) by dash-dotted blue lines.
+%	}
+%	\label{fig:GGp}
+%\end{figure} 
+
 %\subsubsection*{Types of market considered}
 We focus on P2P spot markets, i.e., day-ahead and intra-day markets, similarly to \cite{sousa2019,lecadre2020,moret2020}. Thus, we denote the time horizon for which the decisions are computed by $\mc H = \{1,2,\dots,H \}$. For instance, in a day-ahead market, typically, the sampling period is one hour and the time horizon is $H=24$ hours. Moreover, as in \cite{moret2020}, we also include the physical constraints of the distribution network to ensure that a solution is not only economically optimal but also meets the standards of the DNO.
 
@@ -543,7 +553,7 @@ We consider a linear approximation of power-flow equations, which is standard in
 \begin{equation}
 \sum_{i \in \mc P_y^\mathrm{b}}p_i^{\mathrm{d}}+ \sum_{i\in \mc N_y^{\mathrm b}} \eta_i-p_{y}^{\mathrm{tg}}=\sum_{z\in \mc B_y}p_{(y,z)}^{\ell}, \label{eq:p_bal_p}
 \end{equation}
-where $\eta_i$ is the real power injection of prosumer $i$, i.e.,
+where $\eta_i$ is the active power injection of prosumer $i$, i.e.,
 \begin{equation}\label{eq:etai}
 \eta_i:= p_i^{\mathrm d}-p_{i}^{\mathrm{di}}-\edit{p_{i}^{\mathrm{ds}}+p_{i}^{\mathrm{ch}}}
 \end{equation}
@@ -1098,6 +1108,7 @@ Future research directions include: efficiently incorporating non-linear convex 
 \bibliographystyle{ieeetran}
 \bibliography{ref}
 
+\newpage
 \input{appendix}
 
 

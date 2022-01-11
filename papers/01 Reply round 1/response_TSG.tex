@@ -222,7 +222,7 @@ In the revised paper, (i) we provided a detailed description of each individual 
 	Furthermore, we may set $c_{\{i,j\}}^{\mathrm{tr}}=0$, and thus only consider the dual variable associated with the reciprocity constraints (Eq. \red{(8b)} in the revised manuscript) as the shadow price of bilateral trading \cite[Section 2.4]{lecadre2020}. Indeed the proposed algorithm can handle any case where $c_{\{i,j\}}^{\mathrm{tr}} \geq 0$, for all $\{i,j\} \in \mc E$.}
 
  \query[R1-7]{The algorithm requires too many iterations, which leads to poor feasibility in real applications, especially in distributed environment. }
- \ans{\comment{for day-ahead or intra-day markets (with sufficiently large sampling time), our numerical experience shows the algorithm is tractable.}
+ \ans{\comment{For day-ahead or intra-day markets, our numerical experience shows the algorithm is tractable.}
 \green{I have to answer}. 
  }
 
@@ -302,13 +302,13 @@ Due to space limitations, we omitted a more detailed discussion to the algorithm
 \ans{As discussed in \cite[Sect. 3.2]{sousa2019}, in community-based local markets, each prosumer  does not know with which other prosumers it trades energy. The power balance of the whole network (all prosumers) is considered. Our setup considers full P2P markets where each prosumer knows its trading partners and, thus, negotiates directly with them. The coordinator in our setup plays a role in handling the physical constraints of the network as well as the aggregated power bought from the main grid.}
 
 \query[R3-4]{ The proposed algorithm relies on several dual variables. Please, elaborate on the meaning of this dual variables and their interpretation as economic outputs of the clearing process. }
-<<<<<<< HEAD
+%<<<<<<< HEAD
 \ans{\green{
-We have included a paragraph in Section III B in which we list all primal, dual, and auxiliary variables in the main algorithm, along with an explanation of their scopes and their economical and system-theoretic interpretations.
+We have included a paragraph in Section III B in which we list all primal, dual, and auxiliary variables of the main algorithm, along with an explanation of their scope, and economical and system-theoretic interpretations.
 }}
-=======
-\ans{We introduce dual variables for the purpose of problem decomposition. Particularly, these dual variables are associated with the coupling constraints that define $\mc C$ in \red{(9)}. Some of these dual variables, i.e., particularly those that are associated with bus power balance constraints \red{(13)} and reciprocity constraints \red{(8b)}, can be intrepreted as  nodal prices and bilateral trading prices, respectively, as discussed in \cite[Section 2.4]{lecadre2020}. }
->>>>>>> fa2f889457721f5328b34fcf1ccafeda7a6ee6a0
+%=======
+%\ans{We introduce dual variables for the purpose of problem decomposition. Particularly, these dual variables are associated with the coupling constraints that define $\mc C$ in \red{(9)}. Some of these dual variables, i.e., particularly those that are associated with bus power balance constraints \red{(13)} and reciprocity constraints \red{(8b)}, can be intrepreted as  nodal prices and bilateral trading prices, respectively, as discussed in \cite[Section 2.4]{lecadre2020}. }
+%>>>>>>> fa2f889457721f5328b34fcf1ccafeda7a6ee6a0
 
 \query[R3-5]{As to the results section, I miss some analysis of trading prices. Please consider to add some information about transactions prices among peers and compare them with grid prices. This analysis might be interesting in both storage and non-storage situations.}
 \ans{For the simulations in Section IV-C, we consider a uniform per-unit trading price $c_{(i,j)}^{\mathrm{tr}}=0.08$, for all trading links $(i,j) \in \mc E$. The comparison of this trading price with the grid prices, in both scenarios (without and with storages) is provided in the bottom plot of Figure \red{8}, which is also shown below. As expected, the plot of the grid prices in the scenario with storages is flatter than that in the scenario without storages. In comparison to the trading price, the grid prices in both scenarios are higher, which also explain a relatively high trading among prosumers.}
@@ -342,11 +342,102 @@ We have included a paragraph in Section III B in which we list all primal, dual,
 
 \textit{Comments and suggestions: }
 
-\query[R4-2]{The authors state that due to the presence of coupling objective and constraints in the formulation, this implies the inapplicability of other decentralized algorithms employed in the literature (lines 54-57, page 2).  This is not strictly true, since it is straightforward to reformulate the problem to decompose the objective function, just by replicating the variables avoiding the decomposition, and introduce new complicating constraints to coordinate these variables. Reformulate this sentence. }
-\ans{\green{We respectfully disagree.\\
-(i) First of all, we point out that the class variational GNEs and social minimizers, namely, the 
-(i) difference between v-GNE and social welfare. (ii) For games, it is not straightfoward to get rid of the coupling in the cost functions. (iii) One possible way does not lead to scalable algorithm. 
+\query[R4-2]{The authors state that due to the presence of coupling objective and constraints in the formulation, this implies the inapplicability of other decentralized algorithms employed in the literature (lines 54-57, page 2). This is not strictly true, since it is straightforward to reformulate the problem to decompose the objective function, just by replicating the variables avoiding the decomposition, and introduce new complicating constraints to coordinate these variables. Reformulate this sentence. }
+\ans{\green{
+We respectfully point out that the original game and the ``decomposed" one, obtained by including local slack variables and coupling constraints to coordinate these variables have, in general, different equilibria, see the example at the end of the answer. Therefore, social-welfare optimization methods (e.g., ADMM) cannot be straightforwardly used to solve our game-theoretic problem (which is a variational inequality). This is not surprising since v-GNEs and social optima, i.e., the minimizers of the social welfare, are essentially different configurations and coincide only in special cases. \\
+In the revised paper, we rephrased the sentence avoiding strong claims of inapplicability, as follows:
 }}
+
+\textit{ \edit{``Nevertheless, none of these works considers both coupled objectives and constraints.''}}
+
+\green{
+\textit{Example.} Consider the 2-player aggregative game:
+\begin{align*} 
+\text{player }1: \quad \min_{u_1 \in \mathbb R}J_1(u_1,u_2) = (u_1+u_2 + 1)^\top u_1,\\
+\text{player }2: \quad \min_{u_2 \in \mathbb R} J_2(u_2,u_1) = (u_1+u_2 + 1)^\top u_2.
+\end{align*}
+Its Nash equilibria can be found in closed form by solving the system of equations obtained by imposing the pseudo-gradient mapping of the game to zero, i.e.,
+\begin{equation*}
+\left[
+\begin{array}{l}
+\nabla_{u_1} J_1(u_1,u_2)\\
+\nabla_{u_2} J_2(u_1,u_2)
+\end{array}
+\right]
+=
+\left[
+\begin{array}{l}
+2u_1+u_2+1\\
+u_1+2u_2+1
+\end{array}
+\right]
+\overset{!}{=}
+\left[
+\begin{array}{l}
+0\\
+0
+\end{array}
+\right],
+\end{equation*} 
+which yields a unique NE solution: $(u_1^*,u_2^*) = (-1/3,-1/3) $.\\
+Now, consider the generalized game
+\begin{align*} \
+\text{player }1: \quad 
+\left\{
+\begin{array}{r l}
+\displaystyle
+\min_{u_1,\sigma_1 \in \mathbb R}& J_1(u_1,\sigma_1) = (u_1+\sigma_1 + 1)^\top u_1,\\
+\text{s.t. } & \sigma_1 - u_2 = 0\\
+            &  \sigma_2 - u_1 = 0
+\end{array}
+\right.
+\\
+\text{player }2: \quad 
+\left\{
+\begin{array}{r l}
+\displaystyle
+\min_{u_2,\sigma_2 \in \mathbb R}& J_2(u_2,\sigma_2) = (\sigma_2+u_2 + 1)^\top u_2,\\
+\text{s.t. } & \sigma_1 - u_2 = 0\\
+            &  \sigma_2 - u_1 = 0
+\end{array}
+\right.
+\end{align*} 
+obtained by decomposing the objective functions using the local slack variables $\sigma_1,\sigma_2$ and the extra coupling constraints $\sigma_1 - u_2 = 0, \, \sigma_2 - u_1$. Let us define the Lagrangian functions
+\begin{align*}
+\text{player }1: \quad \mc L_1(u_1,u_2,\sigma_1,\sigma_2,\lambda_{1,1},\lambda_{1,2}) &= (u_1+\sigma_1 + 1)^\top u_1 + \lambda_{1,1}^\top(\sigma_1 - u_2) + \lambda_{1,2}^\top(\sigma_2 - u_1),\\
+\text{player }2: \quad \mc L_2(u_2,u_1,\sigma_2,\sigma_1,\lambda_{2,1},\lambda_{2,2}) &= (u_2+\sigma_2 + 1)^\top u_2 + \lambda_{2,1}^\top(\sigma_1 - u_2) + \lambda_{2,2}^\top(\sigma_2 - u_1),
+\end{align*}
+The variational GNEs of this modified game can be obtained in closed form by solving the system of equations obtained by stacking the coupled KKT systems of player 1 and 2, with equal dual variables ($\lambda_{1,1}=\lambda_{2,1} := \lambda_1$ and $\lambda_{2,1}=\lambda_{2,2} :=\lambda_2$) \cite{auslender2000lagrangian}, i.e.,
+\begin{align*}
+\left[
+\begin{array}{c}
+\nabla_{u_1} \mc L_1(u_1,u_2,\sigma_1,\sigma_2,\lambda_1,\lambda_2)\\
+\nabla_{\sigma_1} \mc L_1(u_1,u_2,\sigma_1,\sigma_2,\lambda_1,\lambda_2)\\
+\nabla_{u_2} \mc \mc L_2(u_1,u_2,\sigma_1,\sigma_2,\lambda_1,\lambda_2)\\
+\nabla_{\sigma_2} \mc \mc L_2(u_1,u_2,\sigma_1,\sigma_2,\lambda_1,\lambda_2)\\
+\sigma_1 - u_2\\
+\sigma_2 - u_1
+\end{array}
+\right] =
+%
+\left[
+\begin{array}{c}
+2u_1 + \sigma_1 +1 - \lambda_2\\
+u_1 +\lambda_1\\
+2u_2 + \sigma_2 +1 - \lambda_1\\
+u_2 +\lambda_2\\
+\sigma_1 - u_2\\
+\sigma_2 - u_1
+\end{array}
+\right] 
+\overset{!}{
+=}
+%
+ \mathbf{0},
+\end{align*}
+which yields v-GNEs of the form $(u_1^*, u_2^*) = (x,-1/2-x)$, with $x \in \mathbb R$.
+{\hfill $\square$}
+} 
 
 \query[R4-3]{ In the introduction, the authors assert that they extend a preliminary work by including nonlinear operational constraints, which complicate the analysis. However, they consider a linear approximation of power-flow equations (equations (13)). In fact, it seems that the only nonlinear constraint in the model is (15a), although some quadratic terms appear in the objective function. Is there any justification for this? Probably, the statement must be relaxed.  }
 \ans{We agree with the Reviewer that the statement can be made clearer. That statement concerns the analysis for algorithm development as we now have a larger set of coupling constraints than that in \cite{belgioioso2020energy}. In order to have an efficient algorithm, we exploit the structure of these constraints in decomposing the problem, thus resulting in Algorithm 1 in the revised manuscript, which is more complicated than \cite[Algorithm 1]{belgioioso2020energy}. Therefore, in the revised manuscript, we have modified the statement as follows:}
@@ -360,7 +451,9 @@ We have included a paragraph in Section III B in which we list all primal, dual,
 \ans{By the formulation in \red{(9)--(11)}, which is based on \cite{atzeni2013}, the electricity price from the main grid follows a linear inverse demand function where it increases linearly as the total consumption increases. On the other hand, if  $c^{\mathrm{mg}}$ in (9) is a linear function, the electricity unit price is assumed to be constant, which is not the case in the practice. In our view, the former represent better the electricity unit price than the latter, as supported by \cite{atzeni2013noncooperative} and some references therein. In addition, as discussed in \cite[Section II-D]{atzeni2013noncooperative}, the cost function in \red{(11)} can represent either the actual energy cost (as a result of energy generation and transmission costs by the main grid) or simply a pricing function designed to incentivize load-shifting by the end users.}
 
 \query[R4-6]{ Taking into account comment 1, suppose that we consider a reformulation of the problem to avoid coupling objective functions, and we employ the Alternating Direction Methods of Multipliers (ADMM) to solve the P2P market game in (1). Could the authors elaborate if this would be possible? Would the application of the ADDM also guarantees the convergence to a variational GNE of the P2P market game? What are the advantages of using Algorithm 1 proposed in the paper to solve the problem?  }
-\ans{}
+\ans{\green{Indeed, the only trivial case in which v-GNEs and social optima, i.e., the minimizers of the social welfare, coincide is for games with decoupled objective functions. This fact can be shown, for example, by a direct comparison of their KKT systems. In this special case, the original v-GNE seeking problem and the social welfare minimization problem are equivalent. Hence, the latter can be tackled via existing distributed optimization algorithms, e.g. ADMM. Unfortunately, in general, it is not possible to trivially reformulate games with coupled objectives as optimization problems -- see R4-3 for a simple counter-example in which a straightforward decoupling of the local objective functions fails to preserve the original equilibria. This simple fact motivated many authors in different research communities to design ad-hoc algorithms for games and generalized games with coupled cost functions, see e.g.  \cite{yi2019,paccagnan2019,liang2017distributed, koshal2016distributed,gadjov2020single,belgioioso2020b}.
+}
+}
 
 \query[R4-7]{ Regarding to the scalability of the algorithms, the author evaluates the convergence of the algorithm with respect to the number of agents and the connectivity, but they do not provide any information about the computational times. This is relevant to evaluate if it could be applied in a real large-scale system. }
 \ans{We thank the Reviewer for raising this point. We agree that the computational time is relevant in practice and thus we have added the plots of the total computational time/agent in the scalability test section, %\red{particularly for the simulations with different numbers of agents} 
@@ -368,7 +461,9 @@ We have included a paragraph in Section III B in which we list all primal, dual,
 }
 
  \query[R4-8]{ Given a prosumer $i$, when Algorithm 1 is applied, in order to update the dual variable related to reciprocity constraints, the value of the power traded with neighbors plays an important role. In detail, I mean $\{p^{tr}_{(j,i)}\}_{j\in \mc N_{i}}$, the forward trade estimate to prosumer $i$. It seems that, depending on the order the prosumers are considered, the coordination of these variables could change, so that the convergence of the algorithm. Hence, it could be interesting to analyze how this affect to the behavior of the algorithm. For example, could it benefit to consider first prosumers with less neighbors, since maybe they reach faster an equilibrium? }
- 	\ans{\comment{prosumers update in parallel, not sequentially.}}
+ 	\ans{\green{
+In the proposed market-clearing mechanism, all the local (primal and dual) updates of the prosumers are performed in parallel. We explicitly clarified this point in the new algorithm layout (see the new Algorithm 1).
+ 	}}
  
  \textit{Minor comments:}
  

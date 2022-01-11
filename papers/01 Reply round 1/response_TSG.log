@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  10 JAN 2022 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  11 JAN 2022 22:10
 entering extended mode
 **./response_TSG.tex
 (response_TSG.tex
@@ -640,33 +640,76 @@ Overfull \hbox (1.74104pt too wide) in paragraph at lines 149--153
 s-tri-bu-tion Grids: A Game-Theoretic
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
-
- []
-
 [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
 {C:/Users/giuse/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 187
+LaTeX Font Info:    Trying to load font information for U+msa on input line 185
 .
 
 (C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 187
+LaTeX Font Info:    Trying to load font information for U+msb on input line 185
 .
 
 (C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-[2]
+[2] [3] [4] [5] [6]
+Package epstopdf Info: Source file: <figures/eprice.eps>
+(epstopdf)                    date: 2022-01-10 17:41:52
+(epstopdf)                    size: 117632 bytes
+(epstopdf)             Output file: <figures/eprice-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-01-10 17:41:52
+(epstopdf)                    size: 53028 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/eprice-eps-converte
+d-to.pdf figures/eprice.eps>
+(epstopdf)             \includegraphics on input line 318.
+Package epstopdf Info: Output file is already uptodate.
 
-LaTeX Warning: Citation `bibid' on page 3 undefined on input line 223.
 
-[3] [4] [5] [6] [7] [8] (response_TSG.bbl [9]) [10] (response_TSG.aux)
+pdfTeX warning: pdflatex (file ./figures/eprice-eps-converted-to.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/eprice-eps-converted-to.pdf, id=32, 562.1pt x 237.88875pt>
+File: figures/eprice-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/eprice-eps-converted-to.pdf>
+Package pdftex.def Info: figures/eprice-eps-converted-to.pdf  used on input lin
+e 318.
+(pdftex.def)             Requested size: 310.50357pt x 131.40909pt.
+Package epstopdf Info: Source file: <figures/simB_0402_pt1_v3.eps>
+(epstopdf)                    date: 2022-01-10 17:41:52
+(epstopdf)                    size: 170672 bytes
+(epstopdf)             Output file: <figures/simB_0402_pt1_v3-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2022-01-10 17:41:52
+(epstopdf)                    size: 75383 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt1_v3-ep
+s-converted-to.pdf figures/simB_0402_pt1_v3.eps>
+(epstopdf)             \includegraphics on input line 329.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./figures/simB_0402_pt1_v3-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/simB_0402_pt1_v3-eps-converted-to.pdf, id=33, 562.1pt x 421.575pt>
+File: figures/simB_0402_pt1_v3-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/simB_0402_pt1_v3-eps-converted-to.pdf>
+Package pdftex.def Info: figures/simB_0402_pt1_v3-eps-converted-to.pdf  used on
+ input line 329.
+(pdftex.def)             Requested size: 266.14978pt x 199.61336pt.
+[7 <./figures/eprice-eps-converted-to.pdf> <./figures/simB_0402_pt1_v3-eps-conv
+erted-to.pdf>] [8] [9]
+
+LaTeX Warning: Citation `atzeni2013noncooperative' on page 10 undefined on inpu
+t line 451.
+
+
+LaTeX Warning: Citation `atzeni2013noncooperative' on page 10 undefined on inpu
+t line 451.
+
+[10] [11] (response_TSG.bbl [12]) [13] (response_TSG.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -675,32 +718,34 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8621 strings out of 479334
- 125288 string characters out of 2855431
- 485952 words of memory out of 3000000
- 25868 multiletter control sequences out of 15000+200000
- 424933 words of font info for 65 fonts, out of 3000000 for 9000
+ 8675 strings out of 479334
+ 126477 string characters out of 2855431
+ 488199 words of memory out of 3000000
+ 25906 multiletter control sequences out of 15000+200000
+ 428221 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,16n,88p,1129b,227s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 83i,16n,88p,1129b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmex10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuse/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuse/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuse/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
-sers/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-8.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/giuse/AppData/Roamin
-g/MiKTeX/2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/giuse/AppData/Roaming/M
-iKTeX/2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/giuse/AppData/Roaming/MiKT
-eX/2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on response_TSG.pdf (10 pages, 173293 bytes).
+cm/cmbx10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmex10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuse/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuse/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuse
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr6.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr8.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuse/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/giuse/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+><C:/Users/giuse/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmb8a.pfb><C
+:/Users/giuse/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmr8a.pfb><C:/U
+sers/giuse/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on response_TSG.pdf (13 pages, 332405 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
+ 118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

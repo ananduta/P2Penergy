@@ -5,46 +5,50 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: ref.bib
-Warning--I didn't find a database entry for "bibid"
-You've used 5 entries,
+Repeated entry---line 458 of file ref.bib
+ : @article{gadjov2020single
+ :                          ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "atzeni2013noncooperative"
+You've used 15 entries,
             1935 wiz_defined-function locations,
-            505 strings with 4796 characters,
-and the built_in function-call counts, 2488 in all, are:
-= -- 235
-> -- 140
-< -- 0
-+ -- 52
-- -- 50
-* -- 244
-:= -- 439
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 50
-chr.to.int$ -- 5
-cite$ -- 5
-duplicate$ -- 70
-empty$ -- 153
-format.name$ -- 55
-if$ -- 466
+            563 strings with 6714 characters,
+and the built_in function-call counts, 6900 in all, are:
+= -- 672
+> -- 330
+< -- 4
++ -- 118
+- -- 114
+* -- 635
+:= -- 1193
+add.period$ -- 48
+call.type$ -- 15
+change.case$ -- 132
+chr.to.int$ -- 15
+cite$ -- 15
+duplicate$ -- 223
+empty$ -- 456
+format.name$ -- 135
+if$ -- 1335
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 5
-newline$ -- 28
-num.names$ -- 15
-pop$ -- 40
+missing$ -- 15
+newline$ -- 80
+num.names$ -- 45
+pop$ -- 106
 preamble$ -- 1
-purify$ -- 50
+purify$ -- 132
 quote$ -- 0
-skip$ -- 51
+skip$ -- 168
 stack$ -- 0
-substring$ -- 192
-swap$ -- 5
-text.length$ -- 0
+substring$ -- 543
+swap$ -- 26
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 30
+type$ -- 90
 warning$ -- 0
-while$ -- 19
+while$ -- 52
 width$ -- 0
-write$ -- 67
-(There was 1 warning)
+write$ -- 200
+(There was 1 error message)
