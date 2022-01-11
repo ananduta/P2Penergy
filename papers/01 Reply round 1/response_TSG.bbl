@@ -7,6 +7,18 @@
   optimization.
 \newblock {\em IEEE Transactions on Smart Grid}, 4(2):866--876.
 
+\bibitem[{Baroche} et~al., 2019]{baroche2019b}
+{Baroche}, T., {Pinson}, P., {Latimier}, R. L.~G., and {Ahmed}, H.~B. (2019).
+\newblock Exogenous cost allocation in peer-to-peer electricity markets.
+\newblock {\em IEEE Transactions on Power Systems}, 34(4):2553--2564.
+
+\bibitem[Belgioioso et~al., 2020]{belgioioso2020energy}
+Belgioioso, G., Ananduta, W., Grammatico, S., and Ocampo-Martinez, C. (2020).
+\newblock Energy management and peer-to-peer trading in future smart grids: A
+  distributed game-theoretic approach.
+\newblock In {\em 2020 European Control Conference (ECC)}, pages 1324--1329.
+  IEEE.
+
 \bibitem[Cadre et~al., 2020]{lecadre2020}
 Cadre, H.~L., Jacquot, P., Wan, C., and Alasseur, C. (2020).
 \newblock Peer-to-peer electricity market analysis: From variational to
@@ -19,6 +31,13 @@ Cadre, H.~L., Jacquot, P., Wan, C., and Alasseur, C. (2020).
 \newblock A survey of distributed optimization and control algorithms for
   electric power systems.
 \newblock {\em IEEE Transactions on Smart Grid}, 8(6):2941--2962.
+
+\bibitem[{Moret} et~al., 2020]{moret2020}
+{Moret}, F., {Tosatto}, A., {Baroche}, T., and {Pinson}, P. (2020).
+\newblock Loss allocation in joint transmission and distribution peer-to-peer
+  markets.
+\newblock {\em IEEE Transactions on Power Systems}.
+\newblock early access at https://doi.org/10.1109/TPWRS.2020.3025391.
 
 \bibitem[{Sorin} et~al., 2019]{sorin2019}
 {Sorin}, E., {Bobo}, L., and {Pinson}, P. (2019).
