@@ -5,23 +5,19 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: ref.bib
-Repeated entry---line 458 of file ref.bib
- : @article{gadjov2020single
- :                          ,
-I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "atzeni2013noncooperative"
 You've used 15 entries,
             1935 wiz_defined-function locations,
-            563 strings with 6714 characters,
-and the built_in function-call counts, 6900 in all, are:
-= -- 672
+            562 strings with 6656 characters,
+and the built_in function-call counts, 6891 in all, are:
+= -- 670
 > -- 330
 < -- 4
 + -- 118
 - -- 114
 * -- 635
-:= -- 1193
-add.period$ -- 48
+:= -- 1191
+add.period$ -- 47
 call.type$ -- 15
 change.case$ -- 132
 chr.to.int$ -- 15
@@ -29,13 +25,13 @@ cite$ -- 15
 duplicate$ -- 223
 empty$ -- 456
 format.name$ -- 135
-if$ -- 1335
+if$ -- 1333
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 15
-newline$ -- 80
+newline$ -- 79
 num.names$ -- 45
-pop$ -- 106
+pop$ -- 107
 preamble$ -- 1
 purify$ -- 132
 quote$ -- 0
@@ -50,5 +46,5 @@ type$ -- 90
 warning$ -- 0
 while$ -- 52
 width$ -- 0
-write$ -- 200
-(There was 1 error message)
+write$ -- 198
+(There was 1 warning)

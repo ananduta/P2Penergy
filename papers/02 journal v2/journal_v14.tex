@@ -997,7 +997,7 @@ Some equilibrium solutions of the P2P market cause overcapacity in some lines wh
 	~ 
 	\begin{subfigure}[t]{0.27\textwidth}
 		\centering
-		\includegraphics[scale=0.9]{figures/simD_fail1}
+		\includegraphics[scale=0.9]{figures/simD_fail2}
 		\caption{Without physical constraints}
 	\end{subfigure}
 	\caption{Power line capacities of the physical network. The solutions of the P2P market might cause overcapacity in some lines of the physical network when capacity constraints \eqref{eq:line_cap} are not taken into account.}
@@ -1078,9 +1078,19 @@ Note that the prosumers charge their storage units during the first off-peak hou
 \subsection{Scalability of the algorithm}
 Finally, we perform a scalability test for the proposed algorithm. Specifically, we evaluate the convergence speed, in terms of the total number of iterations required to meet a predetermined stopping criterion, when the size of the population of prosumers $N$ and the connectivity of the trading network (the number of trading links) grow. We carry out two sets of simulations.
 %
-For the former, we consider five different values of $N$ and a fixed connectivity level of $0.6$ and we run ten Monte Carlo simulations for each $N$, whereas in the latter, the connectivity of the trading network of $50$ prosumers varies in the range $[0.1,1]$, where connectivity $1$ means that the trading network is a complete graph. Similarly, we also run ten Monte Carlo simulations for each connectivity value, see
-\edit{Figures~\ref{fig:simE1}--\ref{fig:simE2}.} We can see that Algorithm~\ref{alg:alg1} suitably scales with respect to both the number of prosumers and the connectivity level of the trading network. These results highlight that our algorithm is suitable to be applied to  large-scale systems. 
+For the former, we consider five different values of $N$ and a fixed connectivity level of $0.6$ and we run ten Monte Carlo simulations for each $N$, whereas in the latter, the connectivity of the trading network of $50$ prosumers varies in the range $[0.1,1]$, where connectivity $1$ means that the trading network is a complete graph. Similarly, we also run ten Monte Carlo simulations for each connectivity value. We can see from Figure \ref{fig:simE} that Algorithm~\ref{alg:alg1} suitably scales with respect to both the number of prosumers and the connectivity level of the trading network. \marginnote{\note{R4-7}} {\edit{The average computational time performed by each agent is 0.33 seconds per iteration on a computer with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory. 
+}} These results highlight that our algorithm is suitable to be applied to  large-scale systems. 
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=1\linewidth]{figures/simEF1.eps}
+	\caption{Total number of iterations for convergence of Alg. 1 vs number of prosumers (top) and the connectivity level (the number of trading links) (bottom).  
+	}
+
+	\label{fig:simE}
+\end{figure}
+
+\iffalse
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=1\linewidth]{figures/simAg_810.eps}
@@ -1095,7 +1105,7 @@ For the former, we consider five different values of $N$ and a fixed connectivit
 	}
 	\label{fig:simE2}
 \end{figure}
-
+\fi 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusion
 \section{Conclusion}
 Energy management and P2P trading in future energy markets of prosumers can be formulated as a generalized game, where the network operator is an extra player in charge of handling the network operational constraints. A provably-convergent operationally-safe market-clearing mechanism is obtained by solving the game with a semi-decentralized Nash equilibrium seeking algorithm based on the proximal-point method.    

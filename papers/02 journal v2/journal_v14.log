@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  11 JAN 2022 20:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  11 JAN 2022 22:18
 entering extended mode
 **./journal_v14.tex
 (journal_v14.tex
@@ -809,24 +809,24 @@ File: figures/simD_safe1-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/simD_safe1-eps-converted-to.pdf  used on input
  line 994.
 (pdftex.def)             Requested size: 115.63092pt x 149.05548pt.
-Package epstopdf Info: Source file: <figures/simD_fail1.eps>
-(epstopdf)                    date: 2021-12-20 12:35:38
-(epstopdf)                    size: 2891259 bytes
-(epstopdf)             Output file: <figures/simD_fail1-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-12-20 12:35:38
-(epstopdf)                    size: 31985 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/simD_fail1-eps-conv
-erted-to.pdf figures/simD_fail1.eps>
+Package epstopdf Info: Source file: <figures/simD_fail2.eps>
+(epstopdf)                    date: 2022-01-11 22:11:19
+(epstopdf)                    size: 3355539 bytes
+(epstopdf)             Output file: <figures/simD_fail2-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-01-11 22:11:19
+(epstopdf)                    size: 32749 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/simD_fail2-eps-conv
+erted-to.pdf figures/simD_fail2.eps>
 (epstopdf)             \includegraphics on input line 1000.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./figures/simD_fail1-eps-converted-to.pdf): PDF 
+pdfTeX warning: pdflatex (file ./figures/simD_fail2-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simD_fail1-eps-converted-to.pdf, id=76, 127.47626pt x 164.615pt>
-File: figures/simD_fail1-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/simD_fail1-eps-converted-to.pdf>
-Package pdftex.def Info: figures/simD_fail1-eps-converted-to.pdf  used on input
+<figures/simD_fail2-eps-converted-to.pdf, id=76, 127.47626pt x 164.615pt>
+File: figures/simD_fail2-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/simD_fail2-eps-converted-to.pdf>
+Package pdftex.def Info: figures/simD_fail2-eps-converted-to.pdf  used on input
  line 1000.
 (pdftex.def)             Requested size: 114.72755pt x 148.15211pt.
 
@@ -947,57 +947,50 @@ File: figures/simB_0402_pt2_v5-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/simB_0402_pt2_v5-eps-converted-to.pdf  used on
  input line 1060.
 (pdftex.def)             Requested size: 252.0pt x 188.99939pt.
-[8 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail1-eps-conver
+Package marginnote Info: Margin note 8.2 is on absolute page 9 on input line 10
+81.
+Package marginnote Info: right page because not two side mode on input line 108
+1.
+
+Overfull \hbox (4.0pt too wide) in paragraph at lines 1081--1081
+ []\OT1/pcr/m/n/10 R4-7[]
+ []
+
+Package marginnote Info: xpos seems to be 169.50043pt on input line 1081.
+[8 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail2-eps-conver
 ted-to.pdf> <./figures/b0-eps-converted-to.pdf> <./figures/b1a-eps-converted-to
 .pdf> <./figures/b2a-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/simAg_810.eps>
-(epstopdf)                    date: 2022-01-10 17:41:52
-(epstopdf)                    size: 74358 bytes
-(epstopdf)             Output file: <figures/simAg_810-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-01-10 17:41:52
-(epstopdf)                    size: 138491 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/simAg_810-eps-conve
-rted-to.pdf figures/simAg_810.eps>
+Package epstopdf Info: Source file: <figures/simEF1.eps>
+(epstopdf)                    date: 2021-12-20 12:35:38
+(epstopdf)                    size: 59742 bytes
+(epstopdf)             Output file: <figures/simEF1-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-12-20 12:35:38
+(epstopdf)                    size: 57984 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/simEF1-eps-converte
+d-to.pdf figures/simEF1.eps>
 (epstopdf)             \includegraphics on input line 1086.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./figures/simAg_810-eps-converted-to.pdf): PDF i
-nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simAg_810-eps-converted-to.pdf, id=129, 562.1pt x 421.575pt>
-File: figures/simAg_810-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/simAg_810-eps-converted-to.pdf>
-Package pdftex.def Info: figures/simAg_810-eps-converted-to.pdf  used on input 
-line 1086.
-(pdftex.def)             Requested size: 252.0pt x 188.99939pt.
-Package epstopdf Info: Source file: <figures/simCon.eps>
-(epstopdf)                    date: 2022-01-10 17:41:52
-(epstopdf)                    size: 48260 bytes
-(epstopdf)             Output file: <figures/simCon-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-01-10 17:41:52
-(epstopdf)                    size: 78561 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/simCon-eps-converte
-d-to.pdf figures/simCon.eps>
-(epstopdf)             \includegraphics on input line 1093.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./figures/simCon-eps-converted-to.pdf): PDF incl
+pdfTeX warning: pdflatex (file ./figures/simEF1-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simCon-eps-converted-to.pdf, id=130, 562.1pt x 194.7275pt>
-File: figures/simCon-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/simCon-eps-converted-to.pdf>
-Package pdftex.def Info: figures/simCon-eps-converted-to.pdf  used on input lin
-e 1093.
-(pdftex.def)             Requested size: 252.0pt x 87.29971pt.
+<figures/simEF1-eps-converted-to.pdf, id=129, 421.575pt x 316.18124pt>
+File: figures/simEF1-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/simEF1-eps-converted-to.pdf>
+Package pdftex.def Info: figures/simEF1-eps-converted-to.pdf  used on input lin
+e 1086.
+(pdftex.def)             Requested size: 252.0pt x 189.00099pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 (journal_v14.bbl
 
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
 [9 <./figures/simB_0402_pt1_v3-eps-converted-to.pdf> <./figures/simB_0402_pt2_v
-5-eps-converted-to.pdf> <./figures/simAg_810-eps-converted-to.pdf> <./figures/s
-imCon-eps-converted-to.pdf>]
+5-eps-converted-to.pdf> <./figures/simEF1-eps-converted-to.pdf>]
 Underfull \hbox (badness 4353) in paragraph at lines 137--141
 []\OT1/ptm/m/n/8 F. Moret, A. Tosatto, T. Baroche, and P. Pin-son, ``Loss al-
  []
@@ -1024,10 +1017,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 7951 strings out of 479334
- 130274 string characters out of 2855431
- 478852 words of memory out of 3000000
- 25191 multiletter control sequences out of 15000+200000
+ 7945 strings out of 479334
+ 130044 string characters out of 2855431
+ 478776 words of memory out of 3000000
+ 25186 multiletter control sequences out of 15000+200000
  457377 words of font info for 147 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,33n,77p,958b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1072,9 +1065,9 @@ a/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/giuse
 pData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/giuse/AppD
 ata/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/giuse/AppData
 /Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on journal_v14.pdf (12 pages, 944795 bytes).
+Output written on journal_v14.pdf (12 pages, 788682 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
+ 270 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
