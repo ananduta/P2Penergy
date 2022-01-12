@@ -213,7 +213,7 @@ We have also modified our game formulation and proposed algorithm in Section III
 \query[R1-5]{The individual variables, coupled relationships for these energy roles, and the corresponding dual variables should be explained specifically, along with the whole framework structure for equilibrium. The rationalities of the framework is not clear. At least, the current presentation is hard to follow.  }
 \ans{
 \green{
-In the revised paper, (i) we provided a detailed description of each individual variable along with an explanation of its function in the algorithm; (ii) we expanded the description of the algorithm; and (iii) we included a paragraph to present the framework structure for equilibrium considered. Please, refer to the margin notes (R1-5) in Section III for the relative changes and additions.
+In the revised paper, (i) we provided a detailed description of each individual variable along with an explanation of its function in the algorithm; (ii) we re-designed the main algorithm layout; and (iii) we included a paragraph to present the targeted class of equilibria considered. Please, refer to the margin notes (R1-5) in Section III for the relative changes and additions.
 }
 }
 
@@ -222,9 +222,14 @@ In the revised paper, (i) we provided a detailed description of each individual 
 	Furthermore, we may set $c_{\{i,j\}}^{\mathrm{tr}}=0$, and thus only consider the dual variable associated with the reciprocity constraints (Eq. \red{(8b)} in the revised manuscript) as the shadow price of bilateral trading \cite[Section 2.4]{lecadre2020}. Indeed the proposed algorithm can handle any case where $c_{\{i,j\}}^{\mathrm{tr}} \geq 0$, for all $\{i,j\} \in \mc E$.}
 
  \query[R1-7]{The algorithm requires too many iterations, which leads to poor feasibility in real applications, especially in distributed environment. }
- \ans{\comment{For day-ahead or intra-day markets, our numerical experience shows the algorithm is tractable.}
-\green{I have to answer}. 
- }
+ \ans{
+\green{The average computational time for the parallel updates of each prosumer (i.e., Algorithm 2) is $t_{\text{avg}}^{\text{pro}} = \red{X}$; while for the DNO update (i.e., Algorithm 3), the average computational time is $t_{\text{avg}}^{\text{DNO}} = \red{X}$. Hence the total running time of the proposed market-clearing algorithm (Algorithm 1) to converge to a v-GNE configuration (i.e., reach a precision of \red{X}), when implemented on a real distributed system can be approximatively calculated as
+\begin{align*}
+\text{total running time} = \text{\# iter for convergence } \times (t_{\text{avg}}^{\text{pro}} + 	t_{\text{avg}}^{\text{DNO}}).
+\end{align*}
+This approximation disregards the (gather and broadcast-type) communication time which is implementation dependent.
+Note that the algorithm is scalable with respect to the prosumer population size, namely, the number of iterations for convergence is not affected by the total number of prosumers in the network (see Figure 8). Moreover, the computation time of the local updates is virtually also independent from the prosumer population size, for constant connectivity levels of the trading network. Therefore, the previous approximation yields running times of about \red{X} for our market-clearing algorithm, independently from the market size. We consider this computational-time requirement feasible for day-head or also intra-day scheduling purposes. Finally, we note that provably-convergent accelerated (inertial or over-relaxed) versions of our market-clearing mechanism can be easily devised by exploiting the algorithmic framework in based on \cite[\S~IV-B]{belgioioso2020semi} to reduce (potentially halve) the total number of iterations for convergence.
+} }
 
 
 \newpage

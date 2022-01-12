@@ -6,45 +6,45 @@ The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: ref.bib
 Warning--I didn't find a database entry for "atzeni2013noncooperative"
-You've used 15 entries,
+You've used 16 entries,
             1935 wiz_defined-function locations,
-            562 strings with 6656 characters,
-and the built_in function-call counts, 6891 in all, are:
-= -- 670
-> -- 330
-< -- 4
-+ -- 118
-- -- 114
-* -- 635
-:= -- 1191
-add.period$ -- 47
-call.type$ -- 15
-change.case$ -- 132
-chr.to.int$ -- 15
-cite$ -- 15
-duplicate$ -- 223
-empty$ -- 456
-format.name$ -- 135
-if$ -- 1333
+            566 strings with 6833 characters,
+and the built_in function-call counts, 7202 in all, are:
+= -- 700
+> -- 343
+< -- 5
++ -- 122
+- -- 118
+* -- 658
+:= -- 1249
+add.period$ -- 50
+call.type$ -- 16
+change.case$ -- 139
+chr.to.int$ -- 16
+cite$ -- 16
+duplicate$ -- 236
+empty$ -- 476
+format.name$ -- 142
+if$ -- 1392
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 15
-newline$ -- 79
-num.names$ -- 45
-pop$ -- 107
+missing$ -- 16
+newline$ -- 84
+num.names$ -- 48
+pop$ -- 113
 preamble$ -- 1
-purify$ -- 132
+purify$ -- 139
 quote$ -- 0
-skip$ -- 168
+skip$ -- 179
 stack$ -- 0
-substring$ -- 543
-swap$ -- 26
+substring$ -- 555
+swap$ -- 27
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 90
+type$ -- 96
 warning$ -- 0
-while$ -- 52
+while$ -- 54
 width$ -- 0
-write$ -- 198
+write$ -- 210
 (There was 1 warning)
