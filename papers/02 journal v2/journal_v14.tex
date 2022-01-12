@@ -689,8 +689,15 @@ In addition to the physical variables of the distribution network, i.e., $u_{N\!
 \end{itemize}
 From an economic perspective, these variables can be interpreted as extra marginal losses imposed to the prosumers for the grid usage. From a control-theoretic perspective, they can be interpreted as states of discrete-time integrators driven by the violation of the network operational constraints \eqref{eq:Cconstr_def}.
 }
-
-\begin{figure}
+%
+\begin{figure}[t]
+\centering
+\includegraphics[width=.4\textwidth]{figures/flowChart_v1}
+\caption{Flow chart of Algorithm 1.}
+\label{fig:IFC}
+\end{figure}
+%
+\begin{figure}[t]
 \marginnote{\note{R1-6}}
 \edit{
 \begin{minipage}{\columnwidth}
@@ -762,6 +769,7 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \end{minipage}
 }
 \end{figure}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The semi-decentralized information flow of Algorithm~1 is illustrated in Fig.~\ref{fig:IFC}, \edit{while its locals and central updates are summarized  in Algorithm 2 and Algorithm 3, respectively. In there, we use some auxiliary variables (e.g., $\zeta^{\text{tr}}_{(i,j)}$, $\psi_i$ in Alg.~2) to keep the presentation compact. }  
@@ -783,13 +791,6 @@ Algorithm~1 is an instance of the \textit{customized preconditioned proximal-poi
 %Due to space limitations, we provide next only a sketch of its derivation and convergence analysis.
 We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operationally} for a detailed derivation and convergence analysis of Algorithm~1.
 \end{proof}
-
-%\begin{figure}[t]
-%\centering
-%\includegraphics[width=.5\textwidth]{figures/algorithm1_GB_v4}
-%\caption{Information flow of Algorithm~1 for each prosumer $i \in \mc N$ (top boxes) and the DNO (bottom box).}
-%\label{fig:IFC}
-%\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
