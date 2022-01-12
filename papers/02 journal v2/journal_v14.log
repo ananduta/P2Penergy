@@ -1,33 +1,31 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.20)  12 JAN 2022 10:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  12 JAN 2022 10:01
 entering extended mode
 **./journal_v14.tex
 (journal_v14.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-07-17> (IEEEtran.cls
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> xparse <2020-03-03> (IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
-\@IEEEtrantmpdimenA=\dimen134
-\@IEEEtrantmpdimenB=\dimen135
-\@IEEEtrantmpdimenC=\dimen136
-\@IEEEtrantmpcountA=\count168
-\@IEEEtrantmpcountB=\count169
-\@IEEEtrantmpcountC=\count170
+\@IEEEtrantmpdimenA=\dimen138
+\@IEEEtrantmpdimenB=\dimen139
+\@IEEEtrantmpdimenC=\dimen140
+\@IEEEtrantmpcountA=\count179
+\@IEEEtrantmpcountB=\count180
+\@IEEEtrantmpcountC=\count181
 \@IEEEtrantmptoksA=\toks15
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
 03.
-
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/psnfss/ot1ptm.fd"
+(C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
 -- Using PDF output.
-\@IEEEnormalsizeunitybaselineskip=\dimen137
+\@IEEEnormalsizeunitybaselineskip=\dimen141
 -- This is a 10 point document.
-\CLASSINFOnormalsizebaselineskip=\dimen138
-\CLASSINFOnormalsizeunitybaselineskip=\dimen139
-\IEEEnormaljot=\dimen140
+\CLASSINFOnormalsizebaselineskip=\dimen142
+\CLASSINFOnormalsizeunitybaselineskip=\dimen143
+\IEEEnormaljot=\dimen144
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
@@ -78,47 +76,47 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
-\IEEEquantizedlength=\dimen141
-\IEEEquantizedlengthdiff=\dimen142
-\IEEEquantizedtextheightdiff=\dimen143
-\IEEEilabelindentA=\dimen144
-\IEEEilabelindentB=\dimen145
-\IEEEilabelindent=\dimen146
-\IEEEelabelindent=\dimen147
-\IEEEdlabelindent=\dimen148
-\IEEElabelindent=\dimen149
-\IEEEiednormlabelsep=\dimen150
-\IEEEiedmathlabelsep=\dimen151
+\IEEEquantizedlength=\dimen145
+\IEEEquantizedlengthdiff=\dimen146
+\IEEEquantizedtextheightdiff=\dimen147
+\IEEEilabelindentA=\dimen148
+\IEEEilabelindentB=\dimen149
+\IEEEilabelindent=\dimen150
+\IEEEelabelindent=\dimen151
+\IEEEdlabelindent=\dimen152
+\IEEElabelindent=\dimen153
+\IEEEiednormlabelsep=\dimen154
+\IEEEiedmathlabelsep=\dimen155
 \IEEEiedtopsep=\skip47
-\c@section=\count171
-\c@subsection=\count172
-\c@subsubsection=\count173
-\c@paragraph=\count174
-\c@IEEEsubequation=\count175
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@IEEEsubequation=\count186
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
-\c@figure=\count176
-\c@table=\count177
-\@IEEEeqnnumcols=\count178
-\@IEEEeqncolcnt=\count179
-\@IEEEsubeqnnumrollback=\count180
-\@IEEEquantizeheightA=\dimen152
-\@IEEEquantizeheightB=\dimen153
-\@IEEEquantizeheightC=\dimen154
-\@IEEEquantizeprevdepth=\dimen155
-\@IEEEquantizemultiple=\count181
-\@IEEEquantizeboxA=\box45
-\@IEEEtmpitemindent=\dimen156
-\IEEEPARstartletwidth=\dimen157
-\c@IEEEbiography=\count182
-\@IEEEtranrubishbin=\box46
+\c@figure=\count187
+\c@table=\count188
+\@IEEEeqnnumcols=\count189
+\@IEEEeqncolcnt=\count190
+\@IEEEsubeqnnumrollback=\count191
+\@IEEEquantizeheightA=\dimen156
+\@IEEEquantizeheightB=\dimen157
+\@IEEEquantizeheightC=\dimen158
+\@IEEEquantizeprevdepth=\dimen159
+\@IEEEquantizemultiple=\count192
+\@IEEEquantizeboxA=\box47
+\@IEEEtmpitemindent=\dimen160
+\IEEEPARstartletwidth=\dimen161
+\c@IEEEbiography=\count193
+\@IEEEtranrubishbin=\box48
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb
-.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.st
+y
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfont
-s.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.s
+ty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -127,72 +125,64 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.
-sty"
-Package: amsmath 2020/01/20 v2.17e AMS math features
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip50
-
 For additional information on amsmath, use the `?' option.
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amstext.
-sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
-
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsgen.s
-ty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
-\ex@=\dimen158
+\ex@=\dimen162
 ))
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsbsy.s
-ty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen159
-)
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsopn.s
-ty"
+\pmbraise@=\dimen163
+) (C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
+y
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count183
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count184
-\leftroot@=\count185
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count186
-\DOTSCASE@=\count187
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box47
-\strutbox@=\box48
-\big@size=\dimen160
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count188
-\c@MaxMatrixCols=\count189
+\inf@bad=\count194
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count195
+\leftroot@=\count196
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count197
+\DOTSCASE@=\count198
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box49
+\strutbox@=\box50
+\big@size=\dimen164
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count199
+\c@MaxMatrixCols=\count266
 \dotsspace@=\muskip16
-\c@parentequation=\count190
-\dspbrk@lvl=\count191
+\c@parentequation=\count267
+\dspbrk@lvl=\count268
 \tag@help=\toks18
-\row@=\count192
-\column@=\count193
-\maxfields@=\count194
+\row@=\count269
+\column@=\count270
+\maxfields@=\count271
 \andhelp@=\toks19
-\eqnshift@=\dimen161
-\alignsep@=\dimen162
-\tagshift@=\dimen163
-\tagwidth@=\dimen164
-\totwidth@=\dimen165
-\lineht@=\dimen166
+\eqnshift@=\dimen165
+\alignsep@=\dimen166
+\tagshift@=\dimen167
+\tagwidth@=\dimen168
+\totwidth@=\dimen169
+\lineht@=\dimen170
 \@envbody=\toks20
 \multlinegap=\skip51
 \multlinetaggap=\skip52
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/amscls/amsthm.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks22
 \thm@bodyfont=\toks23
@@ -204,67 +194,64 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip55
 \dth@everypar=\toks27
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphic
-x.sty"
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.s
+ty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.
-sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks28
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphic
-s.sty"
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.s
+ty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.st
-y"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/gra
-phics.cfg"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graphi
+cs.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdf
-tex.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex
+.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen167
-\Gin@req@width=\dimen168
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/comment/comment.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/comment\comment.sty
 \CommentStream=\write3
- Excluding comment 'comment')
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/booktabs/booktabs.sty"
+Excluding comment 'comment')
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\booktabs.s
+ty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen169
-\lightrulewidth=\dimen170
-\cmidrulewidth=\dimen171
-\belowrulesep=\dimen172
-\belowbottomsep=\dimen173
-\aboverulesep=\dimen174
-\abovetopsep=\dimen175
-\cmidrulesep=\dimen176
-\cmidrulekern=\dimen177
-\defaultaddspace=\dimen178
-\@cmidla=\count195
-\@cmidlb=\count196
-\@aboverulesep=\dimen179
-\@belowrulesep=\dimen180
-\@thisruleclass=\count197
-\@lastruleclass=\count198
-\@thisrulewidth=\dimen181
+\heavyrulewidth=\dimen173
+\lightrulewidth=\dimen174
+\cmidrulewidth=\dimen175
+\belowrulesep=\dimen176
+\belowbottomsep=\dimen177
+\aboverulesep=\dimen178
+\abovetopsep=\dimen179
+\cmidrulesep=\dimen180
+\cmidrulekern=\dimen181
+\defaultaddspace=\dimen182
+\@cmidla=\count272
+\@cmidlb=\count273
+\@aboverulesep=\dimen183
+\@belowrulesep=\dimen184
+\@thisruleclass=\count274
+\@lastruleclass=\count275
+\@thisrulewidth=\dimen185
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/preprint/balance.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/preprint\balance.st
+y
 Package: balance 1999/02/23 4.3 (PWD)
-\oldvsize=\dimen182
+\oldvsize=\dimen186
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/bm.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/latex-tools\bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
 \symboldletters=\mathgroup7
@@ -272,111 +259,101 @@ Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 209.
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/wasysym/wasysym.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\wasysym.sty
 Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
 \symwasy=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
-)
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/float/float.sty"
+) (C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count199
+\c@float@type=\count276
 \float@exts=\toks29
-\float@box=\box49
+\float@box=\box51
 \@float@everytoks=\toks30
-\@floatcapt=\box50
+\@floatcapt=\box52
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/color.s
-ty"
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/col
-or.cfg"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color.
+cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/doublestroke/dsfont.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/doublestroke\dsfont
+.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/algorithms/algor
-ithm.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithms\algorith
+m.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks31
-\c@algorithm=\count266
+\c@algorithm=\count277
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/algorithmicx/algorithmicx.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithmicx\algori
+thmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count267
-\c@ALG@rem=\count268
-\c@ALG@nested=\count269
+\c@ALG@line=\count278
+\c@ALG@rem=\count279
+\c@ALG@nested=\count280
 \ALG@tlm=\skip56
 \ALG@thistlm=\skip57
-\c@ALG@Lnr=\count270
-\c@ALG@blocknr=\count271
-\c@ALG@storecount=\count272
-\c@ALG@tmpcounter=\count273
+\c@ALG@Lnr=\count281
+\c@ALG@blocknr=\count282
+\c@ALG@storecount=\count283
+\c@ALG@tmpcounter=\count284
 \ALG@tmplength=\skip58
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/algorithmicx/algpseudocode.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithmicx\algpse
+udocode.sty
 Package: algpseudocode 
 
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/eps
-topdf.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstop
+df.sty
 Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
 
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/ge
-neric/infwarerr/infwarerr.sty"
+(C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/grfext/grfext.sty"
+) (C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/latex/grfext\grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/ge
-neric/kvdefinekeys/kvdefinekeys.sty"
+(C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/generic/kvdefinekeys\kvdefinekey
+s.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 ))
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/kvoptions/kvoptions.sty"
+(C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/ge
-neric/ltxcmds/ltxcmds.sty"
+(C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/ge
-neric/kvsetkeys/kvsetkeys.sty"
+(C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 ))
-("/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdftexcmds/pdf
-texcmds.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdftexcmds\pdftex
+cmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/iftex.st
-y"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/eps
-topdf-base.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstop
+df-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
@@ -385,116 +362,114 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
 ))
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/tabularx.s
-ty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/latex-tools\tabular
+x.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/array.sty"
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen183
-\ar@mcellbox=\box51
-\extrarowheight=\dimen184
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/latex-tools\array.s
+ty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen187
+\ar@mcellbox=\box53
+\extrarowheight=\dimen188
 \NC@list=\toks32
 \extratabsurround=\skip59
 \backup@length=\skip60
-\ar@cellbox=\box52
+\ar@cellbox=\box54
 )
-\TX@col@width=\dimen185
-\TX@old@table=\dimen186
-\TX@old@col=\dimen187
-\TX@target=\dimen188
-\TX@delta=\dimen189
-\TX@cols=\count274
+\TX@col@width=\dimen189
+\TX@old@table=\dimen190
+\TX@old@col=\dimen191
+\TX@target=\dimen192
+\TX@delta=\dimen193
+\TX@cols=\count285
 \TX@ftn=\toks33
-)
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/cite/cite.sty"
+) (C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/enumerate.
-sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/latex-tools\enumera
+te.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks34
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mathtools/empheq
-.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\empheq.st
+y
 Package: empheq 2017/03/31 v2.15 Emphasizing equations
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mathtools/mhsetu
-p.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\mhsetup.s
+ty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/mathtools/mathto
-ols.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\mathtools
+.sty
 Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/calc.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/latex-tools\calc.st
+y
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count275
-\calc@Bcount=\count276
-\calc@Adimen=\dimen190
-\calc@Bdimen=\dimen191
+\calc@Acount=\count286
+\calc@Bcount=\count287
+\calc@Adimen=\dimen194
+\calc@Bdimen=\dimen195
 \calc@Askip=\skip61
 \calc@Bskip=\skip62
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count277
+\calc@Ccount=\count288
 \calc@Cskip=\skip63
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count278
-\l_MT_multwidth_dim=\dimen192
+\g_MT_multlinerow_int=\count289
+\l_MT_multwidth_dim=\dimen196
 \origjot=\skip64
-\l_MT_shortvdotswithinadjustabove_dim=\dimen193
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen194
-\l_MT_above_intertext_sep=\dimen195
-\l_MT_below_intertext_sep=\dimen196
-\l_MT_above_shortintertext_sep=\dimen197
-\l_MT_below_shortintertext_sep=\dimen198
-\xmathstrut@box=\box53
-\xmathstrut@dim=\dimen199
+\l_MT_shortvdotswithinadjustabove_dim=\dimen197
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen198
+\l_MT_above_intertext_sep=\dimen199
+\l_MT_below_intertext_sep=\dimen256
+\l_MT_above_shortintertext_sep=\dimen257
+\l_MT_below_shortintertext_sep=\dimen258
+\xmathstrut@box=\box55
+\xmathstrut@dim=\dimen259
 )
-\l_EQ_equationtype_int=\count279
-\l_EQ_alignmentmode_int=\count280
-\l_EQ_totalwidth_dim=\dimen256
-\l_EQ_displaywidth_dim=\dimen257
-\l_EQ_temp_linewidth_dim=\dimen258
-\l_EQ_linewidth_dim=\dimen259
-\EmphEqdelimitershortfall=\dimen260
-\EmphEqdelimiterfactor=\count281
-\g_EQ_toptag_height_dim=\dimen261
-\g_EQ_bottomtag_depth_dim=\dimen262
-\g_EQ_toprow_height_dim=\dimen263
-\g_EQ_bottomrow_depth_dim=\dimen264
-\g_EQ_widesttag_dim=\dimen265
-\EQ_mathdisplay_box=\box54
-\EQ_tag_box=\box55
-\g_EQ_temprow_int=\count282
+\l_EQ_equationtype_int=\count290
+\l_EQ_alignmentmode_int=\count291
+\l_EQ_totalwidth_dim=\dimen260
+\l_EQ_displaywidth_dim=\dimen261
+\l_EQ_temp_linewidth_dim=\dimen262
+\l_EQ_linewidth_dim=\dimen263
+\EmphEqdelimitershortfall=\dimen264
+\EmphEqdelimiterfactor=\count292
+\g_EQ_toptag_height_dim=\dimen265
+\g_EQ_bottomtag_depth_dim=\dimen266
+\g_EQ_toprow_height_dim=\dimen267
+\g_EQ_bottomrow_depth_dim=\dimen268
+\g_EQ_widesttag_dim=\dimen269
+\EQ_mathdisplay_box=\box56
+\EQ_tag_box=\box57
+\g_EQ_temprow_int=\count293
 )
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/subcapti
-on.sty"
-Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\subcaption.
+sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption.
-sty"
-Package: caption 2020/05/30 v3.4k Customizing captions (AR)
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption3
-.sty"
-Package: caption3 2020/05/30 v1.12 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen266
-\captionmargin@=\dimen267
-\captionwidth=\dimen268
-\caption@tempdima=\dimen269
-\caption@indent=\dimen270
-\caption@parindent=\dimen271
-\caption@hangindent=\dimen272
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.st
+y
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen270
+\captionmargin@=\dimen271
+\captionwidth=\dimen272
+\caption@tempdima=\dimen273
+\caption@indent=\dimen274
+\caption@parindent=\dimen275
+\caption@hangindent=\dimen276
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
@@ -507,44 +482,43 @@ malfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\n
 ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
 ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
 \else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
-\fi  on input line 1054.
+\fi  on input line 1139.
 )
 
 Package caption Warning: Unknown document class (or package),
 (caption)                standard defaults will be used.
 See the caption package documentation for explanation.
 
-\c@caption@flags=\count283
-\c@continuedfloat=\count284
+\c@caption@flags=\count294
+\c@continuedfloat=\count295
 Package caption Info: float package is loaded.
 )
-\c@subfigure=\count285
-\c@subtable=\count286
+\c@subfigure=\count296
+\c@subtable=\count297
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/eurosym/eurosym.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/eurosym\eurosym.sty
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box56
+\@eurobox=\box58
 )
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/marginnote/marginnote.sty"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/marginnote\marginno
+te.sty
 Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
-\c@mn@abspage=\count287
+\c@mn@abspage=\count298
 )
-\c@theorem=\count288
-\c@proposition=\count289
-\c@property=\count290
-\c@definition=\count291
-\c@corollary=\count292
-\c@remark=\count293
-\c@assumption=\count294
-\c@lemma=\count295
+\c@theorem=\count299
+\c@proposition=\count300
+\c@property=\count301
+\c@definition=\count302
+\c@corollary=\count303
+\c@remark=\count304
+\c@assumption=\count305
+\c@lemma=\count306
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3back
-end-pdfmode.def"
-File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count296
-\l__pdf_internal_box=\box57
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backend
+-pdftex.def
+File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count307
+\l__pdf_internal_box=\box59
 ) (journal_v14.aux)
 \openout1 = `journal_v14.aux'.
 
@@ -565,36 +539,33 @@ LaTeX Font Info:    ... okay on input line 136.
 
 -- Lines per column: 58 (exact).
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp
--pdf.mkii"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
+f.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
-\scratchdimen=\dimen273
-\scratchbox=\box58
-\nofMPsegments=\count298
-\nofMParguments=\count299
+\scratchcounter=\count308
+\scratchdimen=\dimen277
+\scratchbox=\box60
+\nofMPsegments=\count309
+\nofMParguments=\count310
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count300
-\MPscratchDim=\dimen274
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
+\MPscratchCnt=\count311
+\MPscratchDim=\dimen278
+\MPnumerator=\count312
+\makeMPintoPDFobject=\count313
 \everyMPtoPDFconversion=\toks36
 )
-\Hy@linkcounter=\count303
+\Hy@linkcounter=\count314
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
 38.
-
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/psnfss/ot1pcr.fd"
+ (C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 1
 38.
 
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/psnfss/omspcr.fd"
+(C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/latex/psnfss\omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
@@ -602,149 +573,32 @@ LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
 LaTeX Font Info:    Trying to load font information for U+msa on input line 159
 .
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
-"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 159
 .
 
-("/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
-"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 15
 9.
 
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/wasysym/uwasy.fd"
+(C:\Users\giuse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation `parag2016' on page 1 undefined on input line 256.
-
-
-LaTeX Warning: Citation `parag2016' on page 1 undefined on input line 256.
-
-
-LaTeX Warning: Citation `tushar2018' on page 1 undefined on input line 256.
-
-
-LaTeX Warning: Citation `liu2019' on page 1 undefined on input line 256.
-
-
-LaTeX Warning: Citation `sousa2019' on page 1 undefined on input line 256.
-
-[1{/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/data/pdftex/c
-onfig/pdftex.map}
+[1{C:/Users/giuse/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-
-LaTeX Warning: Citation `tushar2018' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `tushar2020' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `lecadre2020' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `cui2020' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `zhang2020' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `baroche2019' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `sorin2019' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `tushar2018' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `tushar2020' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `lecadre2020' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `cui2020' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `zhang2020' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `baroche2019' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `sorin2019' on page 2 undefined on input line 260.
-
-
-LaTeX Warning: Citation `belgioioso2020energy' on page 2 undefined on input lin
-e 262.
-
-
-LaTeX Warning: Citation `wang2021' on page 2 undefined on input line 266.
-
-
-LaTeX Warning: Citation `paccagnan2019' on page 2 undefined on input line 269.
-
-
-LaTeX Warning: Citation `belgioioso2020b' on page 2 undefined on input line 269
-.
-
-
-LaTeX Warning: Citation `gadjov2020single' on page 2 undefined on input line 26
-9.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 2 undefined on input line 
-269.
-
-
-LaTeX Warning: Citation `bianchi2020fast' on page 2 undefined on input line 269
-.
-
-
-LaTeX Warning: Citation `qin2018' on page 2 undefined on input line 274.
-
-
-LaTeX Warning: Citation `morstyn2019' on page 2 undefined on input line 274.
-
-
-LaTeX Warning: Citation `baroche2019b' on page 2 undefined on input line 276.
-
-
-LaTeX Warning: Citation `paudel2020' on page 2 undefined on input line 276.
-
-
-LaTeX Warning: Citation `moret2020' on page 2 undefined on input line 276.
-
-
-LaTeX Warning: Citation `zhang2020' on page 2 undefined on input line 276.
-
-
-LaTeX Warning: Citation `moret2020' on page 2 undefined on input line 280.
-
-
-LaTeX Warning: Citation `belgioioso2020energy' on page 2 undefined on input lin
-e 282.
-
-
-LaTeX Warning: Citation `bauschke2011convex' on page 2 undefined on input line 
-287.
-
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
 87.
 
-("/Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/tex/la
-tex/psnfss/ts1ptm.fd"
+(C:\Users\giuse\AppData\Roaming\MiKTeX\2.9\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 Package marginnote Info: Margin note 2.1 is on absolute page 2 on input line 29
@@ -757,18 +611,6 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 293--293
 []\OT1/pcr/m/n/10 R4-9[]  
  []
 
-
-LaTeX Warning: Citation `sousa2019' on page 2 undefined on input line 312.
-
-
-LaTeX Warning: Citation `qin2018' on page 2 undefined on input line 317.
-
-
-LaTeX Warning: Citation `morstyn2019' on page 2 undefined on input line 317.
-
-
-LaTeX Warning: Citation `moret2020' on page 2 undefined on input line 317.
-
 [2]
 <figures/NF/37bus_sysIPE1.pdf, id=32, 272.84233pt x 169.89272pt>
 File: figures/NF/37bus_sysIPE1.pdf Graphic file (type pdf)
@@ -777,37 +619,12 @@ Package pdftex.def Info: figures/NF/37bus_sysIPE1.pdf  used on input line 323.
 (pdftex.def)             Requested size: 252.0pt x 156.92015pt.
 
 
-LaTeX Warning: Citation `sousa2019' on page 3 undefined on input line 338.
-
-
-LaTeX Warning: Citation `lecadre2020' on page 3 undefined on input line 338.
-
-
-LaTeX Warning: Citation `moret2020' on page 3 undefined on input line 338.
-
-
-LaTeX Warning: Citation `moret2020' on page 3 undefined on input line 338.
-
-
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 370.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 370.
-
-
-LaTeX Warning: Citation `bauschke2011convex' on page 3 undefined on input line 
-370.
-
-
-LaTeX Warning: Citation `moret2020' on page 3 undefined on input line 391.
-
-
-LaTeX Warning: Citation `atzeni2013' on page 3 undefined on input line 391.
-
-
-LaTeX Warning: Citation `molzahn2017' on page 3 undefined on input line 391.
 
 Package marginnote Info: Margin note 3.1 is on absolute page 3 on input line 39
 4.
@@ -823,18 +640,6 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 394--394
 Overfull \hbox (4.0pt too wide) in paragraph at lines 394--394
 [][]\OT1/pcr/m/n/10 R2-2[]  
  []
-
-
-LaTeX Warning: Citation `atzeni2013' on page 3 undefined on input line 401.
-
-
-LaTeX Warning: Citation `hans2018' on page 3 undefined on input line 401.
-
-
-LaTeX Warning: Citation `sorin2019' on page 3 undefined on input line 401.
-
-
-LaTeX Warning: Citation `hans2018' on page 3 undefined on input line 418.
 
 Package marginnote Info: Margin note 3.2 is on absolute page 4 on input line 42
 7.
@@ -852,30 +657,6 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 427--427
 
 Package marginnote Info: xpos seems to be 54.54774pt on input line 427.
 [3 <./figures/NF/37bus_sysIPE1.pdf>]
-
-LaTeX Warning: Citation `lecadre2020' on page 4 undefined on input line 478.
-
-
-LaTeX Warning: Citation `baroche2019' on page 4 undefined on input line 478.
-
-
-LaTeX Warning: Citation `sousa2019' on page 4 undefined on input line 478.
-
-
-LaTeX Warning: Citation `sorin2019' on page 4 undefined on input line 478.
-
-
-LaTeX Warning: Citation `baroche2019' on page 4 undefined on input line 478.
-
-
-LaTeX Warning: Citation `lecadre2020' on page 4 undefined on input line 478.
-
-
-LaTeX Warning: Citation `sousa2019' on page 4 undefined on input line 486.
-
-
-LaTeX Warning: Citation `atzeni2013' on page 4 undefined on input line 491.
-
 Package marginnote Info: Margin note 4.1 is on absolute page 4 on input line 51
 3.
 Package marginnote Info: right page because not two side mode on input line 513
@@ -887,13 +668,6 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 513--513
  []
 
 [4]
-
-LaTeX Warning: Citation `yang2019' on page 5 undefined on input line 552.
-
-
-LaTeX Warning: Citation `moret2020' on page 5 undefined on input line 552.
-
-
 Overfull \hbox (15.93622pt too wide) detected at line 603
 \OML/cmm/m/it/10 u[]  \OT1/cmr/m/n/10 =  []
  []
@@ -910,13 +684,6 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 632--632
 []\OT1/pcr/m/sl/10 R3-2[]  
  []
 
-
-LaTeX Warning: Citation `molzahn2017' on page 5 undefined on input line 632.
-
-
-LaTeX Warning: Citation `facchinei201012' on page 5 undefined on input line 636
-.
-
 Package marginnote Info: Margin note 5.2 is on absolute page 5 on input line 64
 2.
 Package marginnote Info: right page because not two side mode on input line 642
@@ -932,41 +699,7 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 642--642
 [][]\OT1/pcr/m/n/10 R2-5[]  
  []
 
-
-LaTeX Warning: Citation `facchinei201012' on page 5 undefined on input line 648
-.
-
-
-LaTeX Warning: Citation `kulkarni2012variational' on page 5 undefined on input 
-line 648.
-
-
-LaTeX Warning: Citation `lecadre2020' on page 5 undefined on input line 648.
-
 [5]
-
-LaTeX Warning: Citation `jensen2010aggregative' on page 6 undefined on input li
-ne 655.
-
-
-LaTeX Warning: Citation `paccagnan2019' on page 6 undefined on input line 656.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 6 undefined on input line 
-656.
-
-
-LaTeX Warning: Citation `belgioioso2020b' on page 6 undefined on input line 656
-.
-
-
-LaTeX Warning: Citation `gadjov2020single' on page 6 undefined on input line 65
-6.
-
-
-LaTeX Warning: Citation `bianchi2020fast' on page 6 undefined on input line 656
-.
-
 Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 65
 8.
 Package marginnote Info: right page because not two side mode on input line 658
@@ -977,33 +710,6 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 658--658
  []
 
 Package marginnote Info: xpos seems to be 135.40701pt on input line 658.
-
-LaTeX Warning: Citation `koutsoupias1999worst' on page 6 undefined on input lin
-e 659.
-
-
-LaTeX Warning: Citation `paccagnan2018efficiency' on page 6 undefined on input 
-line 659.
-
-
-LaTeX Warning: Citation `paccagnan2019' on page 6 undefined on input line 664.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 6 undefined on input line 
-664.
-
-
-LaTeX Warning: Citation `belgioioso2020b' on page 6 undefined on input line 664
-.
-
-
-LaTeX Warning: Citation `gadjov2020single' on page 6 undefined on input line 66
-4.
-
-
-LaTeX Warning: Citation `bianchi2020fast' on page 6 undefined on input line 664
-.
-
 Package marginnote Info: Margin note 6.2 is on absolute page 6 on input line 66
 7.
 Package marginnote Info: right page because not two side mode on input line 667
@@ -1024,18 +730,6 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 667--667
 [][]\OT1/pcr/m/n/10 R3-4[]  
  []
 
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 6 undefined on input line 
-691.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 6 undefined on input line 
-691.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 6 undefined on input line 
-691.
-
 Package marginnote Info: Margin note 6.3 is on absolute page 6 on input line 69
 5.
 Package marginnote Info: right page because not two side mode on input line 695
@@ -1049,48 +743,27 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 695--695
 
 LaTeX Warning: Reference `fig:IFC' on page 6 undefined on input line 767.
 
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 6 undefined on input line 
-781.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 6 undefined on input line 
-781.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 6 undefined on input line 
-781.
-
-
-LaTeX Warning: Citation `belgioioso2021operationally' on page 6 undefined on in
-put line 784.
-
-[6]
-Package marginnote Info: Margin note 7.1 is on absolute page 7 on input line 79
-7.
 Package marginnote Info: right page because not two side mode on input line 797
 .
+Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 797.
 
 Overfull \hbox (4.0pt too wide) in paragraph at lines 797--797
- []\OT1/pcr/m/n/10 R1-6[]
+[]\OT1/pcr/m/n/10 R1-6[]  
  []
 
-Package marginnote Info: xpos seems to be 49.14749pt on input line 797.
 
 Overfull \hbox (9.13528pt too wide) in paragraph at lines 871--871
 |  $[]$ 
  []
 
-Package marginnote Info: Margin note 7.2 is on absolute page 7 on input line 87
-7.
 Package marginnote Info: right page because not two side mode on input line 877
 .
+Package marginnote Info: xpos seems to be \@mn@currxpos  on input line 877.
 
 Overfull \hbox (4.0pt too wide) in paragraph at lines 877--877
- []\OT1/pcr/m/n/10 R1-6[]
+[]\OT1/pcr/m/n/10 R1-6[]  
  []
 
-Package marginnote Info: xpos seems to be 49.14749pt on input line 877.
 
 Overfull \hbox (3.00018pt too wide) in paragraph at lines 956--956
 |  $[]$ 
@@ -1101,45 +774,22 @@ Overfull \hbox (11.61789pt too wide) in paragraph at lines 956--956
 |  $[]$ 
  []
 
-
-LaTeX Warning: Citation `osqp' on page 7 undefined on input line 966.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 7 undefined on input line 
-966.
-
-Package marginnote Info: Margin note 7.3 is on absolute page 7 on input line 96
+[6]
+Package marginnote Info: Margin note 7.1 is on absolute page 7 on input line 96
 8.
 Package marginnote Info: right page because not two side mode on input line 968
 .
-Package marginnote Info: xpos seems to be 334.80713pt on input line 968.
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 968--968
-[]\OT1/pcr/m/sl/10 R4-10[]  
+ []\OT1/pcr/m/sl/10 R4-10[]
  []
 
-
-LaTeX Warning: Citation `bauschke2015projection' on page 7 undefined on input l
-ine 968.
-
-
-LaTeX Warning: Citation `belgioioso2021operationally' on page 7 undefined on in
-put line 968.
-
-
-LaTeX Warning: Citation `osqp' on page 7 undefined on input line 976.
-
-
-LaTeX Warning: Citation `jasm' on page 7 undefined on input line 978.
-
-
-LaTeX Warning: Citation `atzeni2013' on page 7 undefined on input line 982.
-
+Package marginnote Info: xpos seems to be 49.14749pt on input line 968.
 Package epstopdf Info: Source file: <figures/simD_safe1.eps>
-(epstopdf)                    date: 2021-03-19 22:28:24
-(epstopdf)                    size: 31896 bytes
+(epstopdf)                    date: 2021-12-20 12:35:38
+(epstopdf)                    size: 32588 bytes
 (epstopdf)             Output file: <figures/simD_safe1-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-22 21:10:44
+(epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 5458 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simD_safe1-eps-conv
 erted-to.pdf figures/simD_safe1.eps>
@@ -1156,10 +806,10 @@ Package pdftex.def Info: figures/simD_safe1-eps-converted-to.pdf  used on input
  line 994.
 (pdftex.def)             Requested size: 115.63092pt x 149.05548pt.
 Package epstopdf Info: Source file: <figures/simD_fail2.eps>
-(epstopdf)                    date: 2022-01-12 00:07:12
-(epstopdf)                    size: 3278208 bytes
+(epstopdf)                    date: 2022-01-11 22:11:19
+(epstopdf)                    size: 3355539 bytes
 (epstopdf)             Output file: <figures/simD_fail2-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-01-12 00:13:50
+(epstopdf)                    date: 2022-01-11 22:11:19
 (epstopdf)                    size: 32749 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simD_fail2-eps-conv
 erted-to.pdf figures/simD_fail2.eps>
@@ -1182,10 +832,10 @@ Overfull \hbox (10.59991pt too wide) in paragraph at lines 992--1003
 
 [7]
 Package epstopdf Info: Source file: <figures/b0.eps>
-(epstopdf)                    date: 2021-07-10 11:49:45
-(epstopdf)                    size: 42336 bytes
+(epstopdf)                    date: 2021-12-20 12:35:38
+(epstopdf)                    size: 45076 bytes
 (epstopdf)             Output file: <figures/b0-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-07-12 02:33:41
+(epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 15534 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b0-eps-converted-to
 .pdf figures/b0.eps>
@@ -1202,10 +852,10 @@ Package pdftex.def Info: figures/b0-eps-converted-to.pdf  used on input line 10
 15.
 (pdftex.def)             Requested size: 231.83954pt x 121.0167pt.
 Package epstopdf Info: Source file: <figures/b1a.eps>
-(epstopdf)                    date: 2021-07-22 23:53:54
-(epstopdf)                    size: 59768 bytes
+(epstopdf)                    date: 2021-12-20 12:35:38
+(epstopdf)                    size: 63235 bytes
 (epstopdf)             Output file: <figures/b1a-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-09-01 15:31:04
+(epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 28328 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b1a-eps-converted-t
 o.pdf figures/b1a.eps>
@@ -1222,10 +872,10 @@ Package pdftex.def Info: figures/b1a-eps-converted-to.pdf  used on input line 1
 023.
 (pdftex.def)             Requested size: 231.83954pt x 121.87297pt.
 Package epstopdf Info: Source file: <figures/b2a.eps>
-(epstopdf)                    date: 2021-07-22 23:54:51
-(epstopdf)                    size: 54254 bytes
+(epstopdf)                    date: 2021-12-20 12:35:38
+(epstopdf)                    size: 57518 bytes
 (epstopdf)             Output file: <figures/b2a-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-09-01 15:31:05
+(epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 26264 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b2a-eps-converted-t
 o.pdf figures/b2a.eps>
@@ -1272,11 +922,11 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 1053--1053
 
 Package marginnote Info: xpos seems to be 49.14749pt on input line 1053.
 Package epstopdf Info: Source file: <figures/simB_0402_pt1_v3.eps>
-(epstopdf)                    date: 2022-01-04 06:31:38
-(epstopdf)                    size: 161728 bytes
+(epstopdf)                    date: 2022-01-10 17:41:52
+(epstopdf)                    size: 170672 bytes
 (epstopdf)             Output file: <figures/simB_0402_pt1_v3-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2022-01-04 06:31:41
+(epstopdf)                    date: 2022-01-10 17:41:52
 (epstopdf)                    size: 75385 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt1_v3-ep
 s-converted-to.pdf figures/simB_0402_pt1_v3.eps>
@@ -1293,11 +943,11 @@ Package pdftex.def Info: figures/simB_0402_pt1_v3-eps-converted-to.pdf  used on
  input line 1053.
 (pdftex.def)             Requested size: 252.0pt x 188.99939pt.
 Package epstopdf Info: Source file: <figures/simB_0402_pt2_v4.eps>
-(epstopdf)                    date: 2022-01-04 06:24:56
-(epstopdf)                    size: 76574 bytes
+(epstopdf)                    date: 2022-01-10 17:41:52
+(epstopdf)                    size: 80594 bytes
 (epstopdf)             Output file: <figures/simB_0402_pt2_v4-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2022-01-04 06:25:23
+(epstopdf)                    date: 2022-01-10 17:41:52
 (epstopdf)                    size: 35553 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt2_v4-ep
 s-converted-to.pdf figures/simB_0402_pt2_v4.eps>
@@ -1324,11 +974,11 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 1069--1069
  []
 
 Package epstopdf Info: Source file: <figures/simB_0402_pt3_v1.eps>
-(epstopdf)                    date: 2022-01-12 10:24:53
-(epstopdf)                    size: 103343 bytes
+(epstopdf)                    date: 2022-01-12 09:57:19
+(epstopdf)                    size: 109178 bytes
 (epstopdf)             Output file: <figures/simB_0402_pt3_v1-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2022-01-12 10:24:57
+(epstopdf)                    date: 2022-01-12 09:57:19
 (epstopdf)                    size: 48372 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt3_v1-ep
 s-converted-to.pdf figures/simB_0402_pt3_v1.eps>
@@ -1354,17 +1004,14 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 1088--1088
  []
 
 Package marginnote Info: xpos seems to be 169.50043pt on input line 1088.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail2-eps-conve
-rted-to.pdf> <./figures/b0-eps-converted-to.pdf> <./figures/b1a-eps-converted-t
-o.pdf> <./figures/b2a-eps-converted-to.pdf>]
+[8 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail2-eps-conver
+ted-to.pdf> <./figures/b0-eps-converted-to.pdf> <./figures/b1a-eps-converted-to
+.pdf> <./figures/b2a-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/simEF1.eps>
-(epstopdf)                    date: 2021-03-19 20:57:11
+(epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 59742 bytes
 (epstopdf)             Output file: <figures/simEF1-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-28 04:16:23
+(epstopdf)                    date: 2021-12-20 12:35:38
 (epstopdf)                    size: 57984 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simEF1-eps-converte
 d-to.pdf figures/simEF1.eps>
@@ -1380,7 +1027,7 @@ File: figures/simEF1-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/simEF1-eps-converted-to.pdf  used on input lin
 e 1093.
 (pdftex.def)             Requested size: 252.0pt x 189.00099pt.
-(journal_v14.bbl)
+(journal_v14.bbl
 
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
@@ -1388,81 +1035,26 @@ Package balance Warning: You have called \balance in second column
 [9 <./figures/simB_0402_pt1_v3-eps-converted-to.pdf> <./figures/simB_0402_pt2_v
 4-eps-converted-to.pdf> <./figures/simB_0402_pt3_v1-eps-converted-to.pdf> <./fi
 gures/simEF1-eps-converted-to.pdf>]
-Overfull \vbox (6.0pt too high) has occurred while \output is active []
+Underfull \hbox (badness 4353) in paragraph at lines 137--141
+[]\OT1/ptm/m/n/8 F. Moret, A. Tosatto, T. Baroche, and P. Pin-son, ``Loss al-
+ []
 
 
-Overfull \vbox (8.16492pt too high) has occurred while \output is active []
+Underfull \hbox (badness 2564) in paragraph at lines 137--141
+\OT1/ptm/m/n/8 lo-ca-tion in joint trans-mis-sion and dis-tri-bu-tion peer-to-p
+eer mar-
+ []
+
+
+Underfull \hbox (badness 2426) in paragraph at lines 196--200
+[]\OT1/ptm/m/n/8 G. Bel-gioioso, W. Anan-duta, S. Gram-matico, and C. Ocampo-
+ []
+
+)
+Overfull \vbox (1.0979pt too high) has occurred while \output is active []
 
 
 [10] (appendix.tex
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 4.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 4.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 4.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 4.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 7.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 13.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 30.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 32.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 34.
-
-
-LaTeX Warning: Citation `belgioioso2017convexity' on page 11 undefined on input
- line 36.
-
-
-LaTeX Warning: Citation `bauschke2011convex' on page 11 undefined on input line
- 36.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 36.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 38.
-
-
-LaTeX Warning: Citation `belgioioso2020semi' on page 11 undefined on input line
- 38.
-
-
-LaTeX Warning: Citation `bauschke2011convex' on page 11 undefined on input line
- 56.
-
-
-LaTeX Warning: Citation `bauschke2015projection' on page 11 undefined on input 
-line 56.
-
-
-LaTeX Warning: Citation `bauschke2011convex' on page 11 undefined on input line
- 99.
-
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 140.
@@ -1471,61 +1063,62 @@ LaTeX Warning: No positions in optional float specifier.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 7739 strings out of 481226
- 126281 string characters out of 2903320
- 421240 words of memory out of 3000000
- 23102 multiletter control sequences out of 15000+200000
- 588995 words of font info for 149 fonts, out of 3000000 for 9000
+ 7971 strings out of 479334
+ 130776 string characters out of 2855431
+ 480056 words of memory out of 3000000
+ 25211 multiletter control sequences out of 15000+200000
+ 457377 words of font info for 147 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,33n,47p,1093b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.e
-nc}</Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfo
-nts/cm/cmbsy10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/ty
-pe1/public/amsfonts/cm/cmbx10.pfb></Library/Application Support/MiKTeX/texmfs/i
-nstall/fonts/type1/public/amsfonts/cm/cmbx6.pfb></Library/Application Support/M
-iKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx7.pfb></Library/Applica
-tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx9.pfb></L
-ibrary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm
-/cmex10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/pub
-lic/amsfonts/cmextra/cmex9.pfb></Library/Application Support/MiKTeX/texmfs/inst
-all/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Library/Application Support/MiK
-TeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb></Library/Applicati
-on Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Lib
-rary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/c
-mmi7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></Library/Application Support/MiKTeX/texmfs/install/font
-s/type1/public/amsfonts/cm/cmmi9.pfb></Library/Application Support/MiKTeX/texmf
-s/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Library/Application Suppor
-t/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></Library/Appli
-cation Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></
-Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/c
-m/cmr7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/publ
-ic/amsfonts/cm/cmr9.pfb></Library/Application Support/MiKTeX/texmfs/install/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></Library/Application Support/MiKTeX/tex
-mfs/install/fonts/type1/public/amsfonts/cm/cmsy5.pfb></Library/Application Supp
-ort/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Library/Ap
-plication Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1
-/public/amsfonts/cm/cmsy9.pfb></Users/wicakananduta/Library/Application Support
-/MiKTeX/texmfs/install/fonts/type1/public/eurosym/feymr10.pfb></Library/Applica
-tion Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/symbols/msam10.p
-fb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb></Library/Application Support/MiKTeX/texmfs/install/font
-s/type1/public/amsfonts/symbols/msbm7.pfb></Library/Application Support/MiKTeX/
-texmfs/install/fonts/type1/urw/courier/ucrr8a.pfb></Library/Application Support
-/MiKTeX/texmfs/install/fonts/type1/urw/courier/ucrro8a.pfb></Library/Applicatio
-n Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmb8a.pfb></Library/Appl
-ication Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmbi8a.pfb></Libra
-ry/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmr8a.pfb><
-/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmri8
-a.pfb></Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/f
-onts/type1/public/wasy-type1/wasy10.pfb>
-Output written on journal_v14.pdf (12 pages, 794683 bytes).
+ 69i,33n,77p,1106b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+} <C:\Users\giuse\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/wasy/dpi600\w
+asy10.pk><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmbsy10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/giuse/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/giuse/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Use
+rs/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cmextra/cmex9.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/giuse/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuse/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Use
+rs/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi9.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/giuse/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/giuse/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/giuse/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Us
+ers/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy5.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/giuse/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuse/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/gi
+use/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb><C
+:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/giuse/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/giuse/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/giuse
+/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/giuse/Ap
+pData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/giuse/AppD
+ata/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/giuse/AppData
+/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on journal_v14.pdf (12 pages, 799266 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
+ 276 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
