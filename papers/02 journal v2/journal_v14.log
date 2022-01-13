@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  12 JAN 2022 19:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  12 JAN 2022 19:32
 entering extended mode
 **./journal_v14.tex
 (journal_v14.tex
@@ -757,37 +757,37 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 798--798
 
 Package marginnote Info: xpos seems to be 49.14749pt on input line 798.
 
-Overfull \hbox (9.13528pt too wide) in paragraph at lines 872--872
+Overfull \hbox (9.13528pt too wide) in paragraph at lines 871--871
 |  $[]$ 
  []
 
 Package marginnote Info: Margin note 7.2 is on absolute page 7 on input line 87
-8.
-Package marginnote Info: right page because not two side mode on input line 878
+6.
+Package marginnote Info: right page because not two side mode on input line 876
 .
-Package marginnote Info: xpos seems to be 313.14749pt on input line 878.
+Package marginnote Info: xpos seems to be 313.14749pt on input line 876.
 
-Overfull \hbox (4.0pt too wide) in paragraph at lines 878--878
+Overfull \hbox (4.0pt too wide) in paragraph at lines 876--876
 []\OT1/pcr/m/n/10 R1-6[]  
  []
 
 
-Overfull \hbox (3.00018pt too wide) in paragraph at lines 957--957
+Overfull \hbox (3.00018pt too wide) in paragraph at lines 955--955
 |  $[]$ 
  []
 
 
-Overfull \hbox (11.61789pt too wide) in paragraph at lines 957--957
+Overfull \hbox (11.61789pt too wide) in paragraph at lines 955--955
 |  $[]$ 
  []
 
 Package marginnote Info: Margin note 7.3 is on absolute page 7 on input line 96
-9.
-Package marginnote Info: right page because not two side mode on input line 969
+7.
+Package marginnote Info: right page because not two side mode on input line 967
 .
-Package marginnote Info: xpos seems to be 334.80713pt on input line 969.
+Package marginnote Info: xpos seems to be 334.80713pt on input line 967.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 969--969
+Overfull \hbox (10.0pt too wide) in paragraph at lines 967--967
 []\OT1/pcr/m/sl/10 R4-10[]  
  []
 
@@ -800,7 +800,7 @@ Package epstopdf Info: Source file: <figures/simD_safe1.eps>
 (epstopdf)                    size: 5458 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simD_safe1-eps-conv
 erted-to.pdf figures/simD_safe1.eps>
-(epstopdf)             \includegraphics on input line 995.
+(epstopdf)             \includegraphics on input line 993.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -810,7 +810,7 @@ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/simD_safe1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simD_safe1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simD_safe1-eps-converted-to.pdf  used on input
- line 995.
+ line 993.
 (pdftex.def)             Requested size: 115.63092pt x 149.05548pt.
 Package epstopdf Info: Source file: <figures/simD_fail2.eps>
 (epstopdf)                    date: 2022-01-11 22:11:19
@@ -820,7 +820,7 @@ Package epstopdf Info: Source file: <figures/simD_fail2.eps>
 (epstopdf)                    size: 32749 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simD_fail2-eps-conv
 erted-to.pdf figures/simD_fail2.eps>
-(epstopdf)             \includegraphics on input line 1001.
+(epstopdf)             \includegraphics on input line 999.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -830,10 +830,10 @@ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/simD_fail2-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simD_fail2-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simD_fail2-eps-converted-to.pdf  used on input
- line 1001.
+ line 999.
 (pdftex.def)             Requested size: 114.72755pt x 148.15211pt.
 
-Overfull \hbox (10.59991pt too wide) in paragraph at lines 993--1004
+Overfull \hbox (10.59991pt too wide) in paragraph at lines 991--1002
  [][]  [] 
  []
 
@@ -845,7 +845,7 @@ Package epstopdf Info: Source file: <figures/b0.eps>
 (epstopdf)                    size: 15534 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b0-eps-converted-to
 .pdf figures/b0.eps>
-(epstopdf)             \includegraphics on input line 1016.
+(epstopdf)             \includegraphics on input line 1014.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -855,7 +855,7 @@ n: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/b0-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/b0-eps-converted-to.pdf>
 Package pdftex.def Info: figures/b0-eps-converted-to.pdf  used on input line 10
-16.
+14.
 (pdftex.def)             Requested size: 231.83954pt x 121.0167pt.
 Package epstopdf Info: Source file: <figures/b1a.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
@@ -865,7 +865,7 @@ Package epstopdf Info: Source file: <figures/b1a.eps>
 (epstopdf)                    size: 28328 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b1a-eps-converted-t
 o.pdf figures/b1a.eps>
-(epstopdf)             \includegraphics on input line 1024.
+(epstopdf)             \includegraphics on input line 1022.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -875,7 +875,7 @@ on: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/b1a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/b1a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/b1a-eps-converted-to.pdf  used on input line 1
-024.
+022.
 (pdftex.def)             Requested size: 231.83954pt x 121.87297pt.
 Package epstopdf Info: Source file: <figures/b2a.eps>
 (epstopdf)                    date: 2021-12-20 12:35:38
@@ -885,7 +885,7 @@ Package epstopdf Info: Source file: <figures/b2a.eps>
 (epstopdf)                    size: 26264 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b2a-eps-converted-t
 o.pdf figures/b2a.eps>
-(epstopdf)             \includegraphics on input line 1032.
+(epstopdf)             \includegraphics on input line 1030.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -895,41 +895,41 @@ on: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/b2a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/b2a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/b2a-eps-converted-to.pdf  used on input line 1
-032.
+030.
 (pdftex.def)             Requested size: 231.83954pt x 121.64296pt.
 Package marginnote Info: Margin note 8.1 is on absolute page 8 on input line 10
-44.
+42.
 Package marginnote Info: right page because not two side mode on input line 104
-4.
-Package marginnote Info: xpos seems to be 518.17476pt on input line 1044.
+2.
+Package marginnote Info: xpos seems to be 518.17476pt on input line 1042.
 
-Overfull \hbox (4.0pt too wide) in paragraph at lines 1044--1044
+Overfull \hbox (4.0pt too wide) in paragraph at lines 1042--1042
 []\OT1/pcr/m/n/10 R4-4[]  
  []
 
 Package marginnote Info: Margin note 8.2 is on absolute page 9 on input line 10
-46.
+44.
 Package marginnote Info: right page because not two side mode on input line 104
-6.
+4.
 
-Overfull \hbox (4.0pt too wide) in paragraph at lines 1046--1046
+Overfull \hbox (4.0pt too wide) in paragraph at lines 1044--1044
  []\OT1/pcr/m/n/10 R3-5[]
  []
 
-Package marginnote Info: xpos seems to be 93.84555pt on input line 1046.
+Package marginnote Info: xpos seems to be 93.84555pt on input line 1044.
 [8 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail2-eps-conver
 ted-to.pdf> <./figures/b0-eps-converted-to.pdf> <./figures/b1a-eps-converted-to
 .pdf> <./figures/b2a-eps-converted-to.pdf>]
 Package marginnote Info: Margin note 9.1 is on absolute page 9 on input line 10
-54.
+52.
 Package marginnote Info: right page because not two side mode on input line 105
-4.
+2.
 
-Overfull \hbox (4.0pt too wide) in paragraph at lines 1054--1054
+Overfull \hbox (4.0pt too wide) in paragraph at lines 1052--1052
  []\OT1/pcr/m/n/10 R3-6[]
  []
 
-Package marginnote Info: xpos seems to be 49.14749pt on input line 1054.
+Package marginnote Info: xpos seems to be 49.14749pt on input line 1052.
 Package epstopdf Info: Source file: <figures/simB_0402_pt1_v3.eps>
 (epstopdf)                    date: 2022-01-10 17:41:52
 (epstopdf)                    size: 170672 bytes
@@ -939,7 +939,7 @@ pdf>
 (epstopdf)                    size: 75385 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt1_v3-ep
 s-converted-to.pdf figures/simB_0402_pt1_v3.eps>
-(epstopdf)             \includegraphics on input line 1054.
+(epstopdf)             \includegraphics on input line 1052.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -949,7 +949,7 @@ pdfTeX warning: pdflatex (file ./figures/simB_0402_pt1_v3-eps-converted-to.pdf)
 File: figures/simB_0402_pt1_v3-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simB_0402_pt1_v3-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simB_0402_pt1_v3-eps-converted-to.pdf  used on
- input line 1054.
+ input line 1052.
 (pdftex.def)             Requested size: 252.0pt x 188.99939pt.
 Package epstopdf Info: Source file: <figures/simB_0402_pt2_v4.eps>
 (epstopdf)                    date: 2022-01-10 17:41:52
@@ -960,7 +960,7 @@ pdf>
 (epstopdf)                    size: 35553 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt2_v4-ep
 s-converted-to.pdf figures/simB_0402_pt2_v4.eps>
-(epstopdf)             \includegraphics on input line 1061.
+(epstopdf)             \includegraphics on input line 1059.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -970,15 +970,15 @@ pdfTeX warning: pdflatex (file ./figures/simB_0402_pt2_v4-eps-converted-to.pdf)
 File: figures/simB_0402_pt2_v4-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simB_0402_pt2_v4-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simB_0402_pt2_v4-eps-converted-to.pdf  used on
- input line 1061.
+ input line 1059.
 (pdftex.def)             Requested size: 252.0pt x 94.04968pt.
 Package marginnote Info: Margin note 9.2 is on absolute page 9 on input line 10
-70.
-Package marginnote Info: right page because not two side mode on input line 107
-0.
-Package marginnote Info: xpos seems to be 313.14749pt on input line 1070.
+68.
+Package marginnote Info: right page because not two side mode on input line 106
+8.
+Package marginnote Info: xpos seems to be 313.14749pt on input line 1068.
 
-Overfull \hbox (4.0pt too wide) in paragraph at lines 1070--1070
+Overfull \hbox (4.0pt too wide) in paragraph at lines 1068--1068
 []\OT1/pcr/m/n/10 R3-5[]  
  []
 
@@ -991,7 +991,7 @@ pdf>
 (epstopdf)                    size: 48372 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt3_v1-ep
 s-converted-to.pdf figures/simB_0402_pt3_v1.eps>
-(epstopdf)             \includegraphics on input line 1070.
+(epstopdf)             \includegraphics on input line 1068.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1001,15 +1001,15 @@ pdfTeX warning: pdflatex (file ./figures/simB_0402_pt3_v1-eps-converted-to.pdf)
 File: figures/simB_0402_pt3_v1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simB_0402_pt3_v1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simB_0402_pt3_v1-eps-converted-to.pdf  used on
- input line 1070.
+ input line 1068.
 (pdftex.def)             Requested size: 252.0pt x 188.99939pt.
 Package marginnote Info: Margin note 9.3 is on absolute page 9 on input line 10
-89.
+87.
 Package marginnote Info: right page because not two side mode on input line 108
-9.
-Package marginnote Info: xpos seems to be 433.50043pt on input line 1089.
+7.
+Package marginnote Info: xpos seems to be 433.50043pt on input line 1087.
 
-Overfull \hbox (4.0pt too wide) in paragraph at lines 1089--1089
+Overfull \hbox (4.0pt too wide) in paragraph at lines 1087--1087
 []\OT1/pcr/m/n/10 R4-7[]  
  []
 
@@ -1021,7 +1021,7 @@ Package epstopdf Info: Source file: <figures/simEF1.eps>
 (epstopdf)                    size: 57984 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simEF1-eps-converte
 d-to.pdf figures/simEF1.eps>
-(epstopdf)             \includegraphics on input line 1094.
+(epstopdf)             \includegraphics on input line 1092.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1031,14 +1031,11 @@ usion: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/simEF1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simEF1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simEF1-eps-converted-to.pdf  used on input lin
-e 1094.
+e 1092.
 (pdftex.def)             Requested size: 252.0pt x 189.00099pt.
-
-Underfull \vbox (badness 7451) has occurred while \output is active []
-
- [9 <./figures/simB_0402_pt1_v3-eps-converted-to.pdf> <./figures/simB_0402_pt2_
-v4-eps-converted-to.pdf> <./figures/simB_0402_pt3_v1-eps-converted-to.pdf> <./f
-igures/simEF1-eps-converted-to.pdf>] (journal_v14.bbl
+[9 <./figures/simB_0402_pt1_v3-eps-converted-to.pdf> <./figures/simB_0402_pt2_v
+4-eps-converted-to.pdf> <./figures/simB_0402_pt3_v1-eps-converted-to.pdf> <./fi
+gures/simEF1-eps-converted-to.pdf>] (journal_v14.bbl
 Underfull \hbox (badness 4353) in paragraph at lines 137--141
 []\OT1/ptm/m/n/8 F. Moret, A. Tosatto, T. Baroche, and P. Pin-son, ``Loss al-
  []
@@ -1054,67 +1051,66 @@ Underfull \hbox (badness 2426) in paragraph at lines 196--200
 []\OT1/ptm/m/n/8 G. Bel-gioioso, W. Anan-duta, S. Gram-matico, and C. Ocampo-
  []
 
-)
-Overfull \vbox (2.38399pt too high) has occurred while \output is active []
-
-
-[10] (appendix.tex
+) [10] (appendix.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `htbp') on input line 140.
 
-) [11] [12] (journal_v14.aux) ) 
+) [11] [12] (journal_v14.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  7976 strings out of 479334
  130953 string characters out of 2855431
- 483802 words of memory out of 3000000
+ 483223 words of memory out of 3000000
  25215 multiletter control sequences out of 15000+200000
  457377 words of font info for 147 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,34n,77p,1106b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.
-9/fonts/enc/dvips/base/8r.enc} <C:\Users\giuse\AppData\Local\MiKTeX\2.9\fonts/p
-k/ljfour/public/wasy/dpi600\wasy10.pk><C:/Users/giuse/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/giuse/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/gius
-e/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C
-:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmbx7.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx9.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><C:/Users/giuse/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/gius
-e/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C
-:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi6.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmmi7.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/giuse/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuse/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/
-giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb
-><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr7.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr9.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/giuse/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/giuse/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Use
-rs/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
+{C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+} <C:\Users\giuse\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/wasy/dpi600\w
+asy10.pk><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmbsy10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/giuse/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/giuse/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Use
+rs/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cmextra/cmex9.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/giuse/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuse/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Use
+rs/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8
 .pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy9.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/eurosym/feymr10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/giuse/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/giuse/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb
-><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr
-8a.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courie
-r/ucrro8a.pfb><C:/Users/giuse/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/
-utmb8a.pfb><C:/Users/giuse/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utm
-bi8a.pfb><C:/Users/giuse/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmr8
-a.pfb><C:/Users/giuse/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on journal_v14.pdf (12 pages, 860900 bytes).
+nts/cm/cmmi9.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/giuse/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/giuse/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/giuse/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Us
+ers/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy5.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/giuse/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuse/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/gi
+use/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb><C
+:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/giuse/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/giuse/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/giuse
+/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/giuse/Ap
+pData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/giuse/AppD
+ata/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/giuse/AppData
+/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on journal_v14.pdf (12 pages, 860921 bytes).
 PDF statistics:
  312 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
