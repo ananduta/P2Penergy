@@ -316,12 +316,12 @@ We have included a paragraph in Section III B in which we list all primal, dual,
 
 
 \query[R3-5]{As to the results section, I miss some analysis of trading prices. Please consider to add some information about transactions prices among peers and compare them with grid prices. This analysis might be interesting in both storage and non-storage situations.}
-\ans{For the simulations in Section IV-C, we consider a uniform per-unit trading price $c_{(i,j)}^{\mathrm{tr}}=0.08$, for all trading links $(i,j) \in \mc E$. Figure 8 in the revised manuscript show how the average trading prices $c^{\mathrm{tr}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$ compares with the electricity price from the main grid ($c^{\mathrm{mg}}$). The relatively low trading prices explain high power traded among the prosumers. We can also observe from the top plot that during the first six hours, these prices are almost equal, thus the amount of power traded is relatively low (see Figure 7 in the revised manuscript) . }
+\ans{For the simulations in Section IV-C, we consider a uniform per-unit trading price $c_{(i,j)}^{\mathrm{tr}}=0.08$ and trading tariff $c^{\mathrm{ta}}=0.01$, for all trading links $(i,j) \in \mc E$. Figure 8 in the revised manuscript show how the average trading prices $c^{\mathrm{tr}} + c^{\mathrm{ta}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$ compares with the electricity price from the main grid ($c^{\mathrm{mg}}$). The relatively low trading prices explain high power traded among the prosumers. We can also observe from the top plot that during the first six hours, these prices are almost equal, thus the amount of power traded is relatively low (see Figure 7 in the revised manuscript) . }
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\linewidth]{figures/simB_0402_pt3_v1.eps}
-	\caption{Comparison of the average electricity trading price ($c^{\mathrm{tr}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$) with the electricity grid prices ($c^{\mathrm{mg}}$) in scenarios a (top) and b (bottom).
+	\includegraphics[width=0.7\linewidth]{figures/simB_0402_pt3_v2.eps}
+	\caption{Comparison of the average electricity trading price ($c^{\mathrm{tr}} + c^{\mathrm{ta}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$) with the electricity grid prices ($c^{\mathrm{mg}}$) in scenarios a (top) and b (bottom).
 	}
 	\label{fig:simC_pen}
 \end{figure}
