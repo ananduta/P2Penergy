@@ -1,4 +1,4 @@
-\appendix[Supplementary Material ]
+\appendix%[Supplementary Material ]
 \subsection{Algorithm 1: Derivation and Convergence Analysis}
 \label{app:CA}
 The derivation and convergence analysis of Algorithm 1 relies (for the most part) on the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. The objective of this appendix is to show that the proposed market-clearing game \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def}-\eqref{eq:Cconstr_def}, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which is the existence of a variational GNE, i.e., item (i) of Proposition \ref{prp:conv}. Therefore, we invoke \cite[Theorem~2]{belgioioso2020semi} to prove convergence of Algorithm \ref{alg:alg1}, i.e., item (ii) of Proposition \ref{prp:conv}. For a complete convergence analysis of the cPPP algorithm for aggregative games we refer to \cite[Appendix~C]{belgioioso2020semi}.
@@ -98,6 +98,7 @@ and for all $y \in \mc B$, $z \in \mc B_z$, and  $h \in \mc H$
 \end{align*}
 Whereas, since $\mc S_2$ is an affine set, a closed-form expression for $\proj_{\mc S_2}$ is given in \cite[Example 29.17(ii)]{bauschke2011convex}.
 %The projection onto $C_2$ can be computed by solving a quadratic programming (e.g. via lsqlin, quadprog, osqp, etc...) with appropriate matrices.
+
 
 %%%%%%%%
 \algblockdefx[init]{init}{Endinit}
@@ -355,3 +356,4 @@ $\mu^{\text{pb}}_y(k+1)\longrightarrow \mc N_y^{\mathrm{b}}$
 \end{algorithm*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  12 JAN 2022 19:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  13 JAN 2022 11:26
 entering extended mode
 **./journal_v14.tex
 (journal_v14.tex
@@ -709,27 +709,27 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 658--658
  []\OT1/pcr/m/n/10 R1-5[]
  []
 
-Package marginnote Info: xpos seems to be 94.14758pt on input line 658.
+Package marginnote Info: xpos seems to be 135.40701pt on input line 658.
 Package marginnote Info: Margin note 6.2 is on absolute page 6 on input line 66
 7.
 Package marginnote Info: right page because not two side mode on input line 667
 .
+Package marginnote Info: xpos seems to be 271.14763pt on input line 667.
 
 Overfull \hbox (4.0pt too wide) in paragraph at lines 667--667
- []\OT1/pcr/m/n/10 R1-5[]
+[]\OT1/pcr/m/n/10 R1-5[]  
  []
 
 
 Overfull \hbox (4.0pt too wide) in paragraph at lines 667--667
- [][]\OT1/pcr/m/n/10 R2-6[]
+[][]\OT1/pcr/m/n/10 R2-6[]  
  []
 
 
 Overfull \hbox (4.0pt too wide) in paragraph at lines 667--667
- [][]\OT1/pcr/m/n/10 R3-4[]
+[][]\OT1/pcr/m/n/10 R3-4[]  
  []
 
-Package marginnote Info: xpos seems to be 209.15791pt on input line 667.
 <figures/flowChart_v1.pdf, id=71, 259.85782pt x 285.51367pt>
 File: figures/flowChart_v1.pdf Graphic file (type pdf)
 <use figures/flowChart_v1.pdf>
@@ -982,25 +982,25 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 1068--1068
 []\OT1/pcr/m/n/10 R3-5[]  
  []
 
-Package epstopdf Info: Source file: <figures/simB_0402_pt3_v1.eps>
-(epstopdf)                    date: 2022-01-12 09:57:19
-(epstopdf)                    size: 109178 bytes
-(epstopdf)             Output file: <figures/simB_0402_pt3_v1-eps-converted-to.
+Package epstopdf Info: Source file: <figures/simB_0402_pt3_v2.eps>
+(epstopdf)                    date: 2022-01-13 11:23:25
+(epstopdf)                    size: 108874 bytes
+(epstopdf)             Output file: <figures/simB_0402_pt3_v2-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2022-01-12 09:57:19
-(epstopdf)                    size: 48372 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt3_v1-ep
-s-converted-to.pdf figures/simB_0402_pt3_v1.eps>
+(epstopdf)                    date: 2022-01-13 11:23:25
+(epstopdf)                    size: 48349 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt3_v2-ep
+s-converted-to.pdf figures/simB_0402_pt3_v2.eps>
 (epstopdf)             \includegraphics on input line 1068.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./figures/simB_0402_pt3_v1-eps-converted-to.pdf)
+pdfTeX warning: pdflatex (file ./figures/simB_0402_pt3_v2-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simB_0402_pt3_v1-eps-converted-to.pdf, id=165, 562.1pt x 421.575pt>
-File: figures/simB_0402_pt3_v1-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/simB_0402_pt3_v1-eps-converted-to.pdf>
-Package pdftex.def Info: figures/simB_0402_pt3_v1-eps-converted-to.pdf  used on
+<figures/simB_0402_pt3_v2-eps-converted-to.pdf, id=165, 562.1pt x 421.575pt>
+File: figures/simB_0402_pt3_v2-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/simB_0402_pt3_v2-eps-converted-to.pdf>
+Package pdftex.def Info: figures/simB_0402_pt3_v2-eps-converted-to.pdf  used on
  input line 1068.
 (pdftex.def)             Requested size: 252.0pt x 188.99939pt.
 Package marginnote Info: Margin note 9.3 is on absolute page 9 on input line 10
@@ -1034,7 +1034,7 @@ Package pdftex.def Info: figures/simEF1-eps-converted-to.pdf  used on input lin
 e 1092.
 (pdftex.def)             Requested size: 252.0pt x 189.00099pt.
 [9 <./figures/simB_0402_pt1_v3-eps-converted-to.pdf> <./figures/simB_0402_pt2_v
-4-eps-converted-to.pdf> <./figures/simB_0402_pt3_v1-eps-converted-to.pdf> <./fi
+4-eps-converted-to.pdf> <./figures/simB_0402_pt3_v2-eps-converted-to.pdf> <./fi
 gures/simEF1-eps-converted-to.pdf>] (journal_v14.bbl
 Underfull \hbox (badness 4353) in paragraph at lines 137--141
 []\OT1/ptm/m/n/8 F. Moret, A. Tosatto, T. Baroche, and P. Pin-son, ``Loss al-
@@ -1054,7 +1054,7 @@ Underfull \hbox (badness 2426) in paragraph at lines 196--200
 ) [10] (appendix.tex
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 140.
+               Default added (so using `htbp') on input line 141.
 
 ) [11] [12] (journal_v14.aux)
 
@@ -1064,7 +1064,7 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Here is how much of TeX's memory you used:
  7976 strings out of 479334
  130953 string characters out of 2855431
- 483223 words of memory out of 3000000
+ 483392 words of memory out of 3000000
  25215 multiletter control sequences out of 15000+200000
  457377 words of font info for 147 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1110,7 +1110,7 @@ a/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/giuse
 pData/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/giuse/AppD
 ata/Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/giuse/AppData
 /Roaming/MiKTeX/2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on journal_v14.pdf (12 pages, 860921 bytes).
+Output written on journal_v14.pdf (12 pages, 860795 bytes).
 PDF statistics:
  312 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

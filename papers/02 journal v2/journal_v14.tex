@@ -1065,8 +1065,8 @@ Note that the prosumers charge their storage units during the first off-peak hou
 	\centering 
 	%\hspace{-17pt}
 	\marginnote{\note{R3-5}}
-	\includegraphics[width=1\linewidth]{figures/simB_0402_pt3_v1}
-	\caption{Comparison of the average electricity trading price ($c^{\mathrm{tr}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$) with the electricity grid prices ($c^{\mathrm{mg}}$) in scenarios a (top) and b (bottom).
+	\includegraphics[width=1\linewidth]{figures/simB_0402_pt3_v2}
+	\caption{Comparison of the average electricity trading price ($c^{\mathrm{tr}} + c^{\mathrm{ta}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$) with the electricity grid prices ($c^{\mathrm{mg}}$) in scenarios a (top) and b (bottom).
 	}
 	\label{fig:sim_B3}
 \end{figure}  
@@ -1084,8 +1084,8 @@ Note that the prosumers charge their storage units during the first off-peak hou
 \subsection{Scalability of the algorithm}
 Finally, we perform a scalability test for the proposed algorithm. Specifically, we evaluate the convergence speed, in terms of the total number of iterations required to meet a predetermined stopping criterion, when the size of the population of prosumers $N$ and the connectivity of the trading network (the number of trading links) grow. We carry out two sets of simulations.
 %
-For the former, we consider five different values of $N$ and a fixed connectivity level of $0.6$ and we run ten Monte Carlo simulations for each $N$, whereas in the latter, the connectivity of the trading network of $50$ prosumers varies in the range $[0.1,1]$, where connectivity $1$ means that the trading network is a complete graph. Similarly, we also run ten Monte Carlo simulations for each connectivity value. We can see from Figure \ref{fig:simE} that Algorithm~\ref{alg:alg1} suitably scales with respect to both the number of prosumers and the connectivity level of the trading network. \marginnote{\note{R4-7}} {\edit{The average computational time performed by each agent is 0.33 seconds per iteration.\footnote{The simulations are performed on a computer with Intel Xeon E5-2637 3.5 GHz processor and 128 GB of memory.} 
-}} These results highlight that our algorithm is suitable to be applied to  large-scale systems. 
+For the former, we consider five different values of $N$ and a fixed connectivity level of $0.6$ and we run ten Monte Carlo simulations for each $N$, whereas in the latter, the connectivity of the trading network of $50$ prosumers varies in the range $[0.1,1]$, where connectivity $1$ means that the trading network is a complete graph. Similarly, we also run ten Monte Carlo simulations for each connectivity value. We can see from Figure \ref{fig:simE} that Algorithm~\ref{alg:alg1} suitably scales with respect to both the number of prosumers and the connectivity level of the trading network. \marginnote{\note{R4-7}} {\edit{The average computational time performed by each prosumer is 74.5 milliseconds per iteration whereas the average computational time/iteration of the DNO is 1.13 seconds on a computer with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory.} 
+} These results highlight that our algorithm is suitable to be applied to  large-scale systems. 
 
 \begin{figure}[t]
 	\centering
