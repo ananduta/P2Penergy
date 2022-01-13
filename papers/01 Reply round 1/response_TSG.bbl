@@ -50,6 +50,12 @@ Cadre, H.~L., Jacquot, P., Wan, C., and Alasseur, C. (2020).
   generalized {Nash} equilibrium.
 \newblock {\em European Journal of Operational Research}, 282(2):753--771.
 
+\bibitem[Facchinei and Pang, 2010]{facchinei201012}
+Facchinei, F. and Pang, J.-S. (2010).
+\newblock 12. {N}ash equilibria: the variational approach.
+\newblock {\em Convex optimization in signal processing and communications},
+  page 443.
+
 \bibitem[Gadjov and Pavel, 2020]{gadjov2020single}
 Gadjov, D. and Pavel, L. (2020).
 \newblock Single-timescale distributed gne seeking for aggregative games over
@@ -60,6 +66,12 @@ Gadjov, D. and Pavel, L. (2020).
 Koshal, J., Nedi{\'c}, A., and Shanbhag, U.~V. (2016).
 \newblock Distributed algorithms for aggregative games on graphs.
 \newblock {\em Operations Research}, 64(3):680--704.
+
+\bibitem[Kulkarni and Shanbhag, 2012]{kulkarni2012variational}
+Kulkarni, A.~A. and Shanbhag, U.~V. (2012).
+\newblock On the variational equilibrium as a refinement of the generalized
+  nash equilibrium.
+\newblock {\em Automatica}, 48(1):45--55.
 
 \bibitem[Liang et~al., 2017]{liang2017distributed}
 Liang, S., Yi, P., and Hong, Y. (2017).
@@ -105,5 +117,11 @@ Yi, P. and Pavel, L. (2019).
 \newblock An operator splitting approach for distributed generalized nash
   equilibria computation.
 \newblock {\em Automatica}, 102:111--121.
+
+\bibitem[Zhong et~al., 2019]{zhong2019online}
+Zhong, W., Xie, K., Liu, Y., Yang, C., Xie, S., and Zhang, Y. (2019).
+\newblock Online control and near-optimal algorithm for distributed energy
+  storage sharing in smart grid.
+\newblock {\em IEEE Transactions on Smart Grid}, 11(3):2552--2562.
 
 \end{thebibliography}

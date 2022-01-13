@@ -139,6 +139,12 @@ F.~{Moret}, A.~{Tosatto}, T.~{Baroche}, and P.~{Pinson}, ``Loss allocation in
   Transactions on Power Systems}, 2020, early access at
   https://doi.org/10.1109/TPWRS.2020.3025391.
 
+\bibitem{zhong2019online}
+W.~Zhong, K.~Xie, Y.~Liu, C.~Yang, S.~Xie, and Y.~Zhang, ``Online control and
+  near-optimal algorithm for distributed energy storage sharing in smart
+  grid,'' \emph{IEEE Transactions on Smart Grid}, vol.~11, no.~3, pp.
+  2552--2562, 2019.
+
 \bibitem{bauschke2011convex}
 H.~H. Bauschke and P.~L. Combettes, \emph{Convex analysis and monotone operator
   theory in Hilbert spaces}.\hskip 1em plus 0.5em minus 0.4em\relax Springer,

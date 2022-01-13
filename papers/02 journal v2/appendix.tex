@@ -33,7 +33,7 @@ Let $\mc N_i = \mc N$, for all $i \in \mc N$, without loss of generality\footnot
 	%
 	\item For all $i \in \mc N^+$, the local set $\mc U_i$ in \eqref{eq:constr_def} is nonempty, closed and convex. Moreover, Slater's constraint qualification on the global feasible set $\left( \prod_{i \in \mc N^+} \mc U_i \right) \cap \mc C$ holds under an appropriate choice of the parameters. Therefore, \cite[Assumption~2]{belgioioso2020semi} is satisfied.
 	%
-	\item The \textit{pseudo-subdifferential} mapping of the game \eqref{eq:locOpt} reads as $F: u \mapsto \prod_{i \in \mc N}\left(\partial_{u_i} J_i(u_i, u_{-i})\right)\times \0$, since $J_{N+1}=0$. It follows by \cite[Corollary~1]{belgioioso2017convexity}, that the first term of $F$, i.e., $u \mapsto \prod_{i \in \mc N}\partial_{u_i} J_i(u_i, u_{-i})$, is maximally monotone, since  $C$ in \eqref{eq:C_cPPP} is positive semidefinite, i.e., $C=(\Xi^{\text{mg}})^\top D \, \Xi^{\text{mg}} \succeq 0$. Moreover, also the second term of $F$, i.e., the zero mapping $\0$, is maximally monotone. Therefore, it follows by \cite[Proposition~20.23]{bauschke2011convex} that their cartesian product $\prod_{i \in \mc N}\left(\partial_{u_i} J_i(u_i, u_{-i})\right)\times \0 = F$ is maximally monotone. Hence, \cite[Assumption~6]{belgioioso2020semi} holds.
+	\item The \textit{pseudo-subdifferential} mapping of the game \eqref{eq:locOpt} reads as $F: u \mapsto \prod_{i \in \mc N}\left(\partial_{u_i} J_i(u_i, u_{-i})\right)\times \0$, since $J_{N+1}=0$. It follows by \cite[Corollary~1]{belgioioso2017convexity}, that the first term of $F$, i.e., $u \mapsto \prod_{i \in \mc N}\partial_{u_i} J_i(u_i, u_{-i})$, is maximally monotone \cite[Definition~20.20]{bauschke2011convex}, since  $C$ in \eqref{eq:C_cPPP} is positive semidefinite, i.e., $C=(\Xi^{\text{mg}})^\top D \, \Xi^{\text{mg}} \succeq 0$. Moreover, also the second term of $F$, i.e., the zero mapping $\0$, is maximally monotone. Therefore, it follows by \cite[Proposition~20.23]{bauschke2011convex} that their cartesian product $\prod_{i \in \mc N}\left(\partial_{u_i} J_i(u_i, u_{-i})\right)\times \0 = F$ is maximally monotone. Hence, \cite[Assumption~6]{belgioioso2020semi} holds.
 	%
 	\item By \cite[Lemma~1~(i)]{belgioioso2020semi}, there exists a variational GNE of the game in \eqref{eq:locOpt}, since the constraint sets $\mc U_i$ in \eqref{eq:constr_def} are bounded, and the pseudo-subdifferential mapping $F$ is monotone. Hence, \cite[Assumption~4]{belgioioso2020semi} is satisfied.
 \end{enumerate} 
@@ -163,197 +163,197 @@ Whereas, since $\mc S_2$ is an affine set, a closed-form expression for $\proj_{
 
 \smallskip	
 
-\begin{algorithm*}[htbp]
-\caption{Semi-decentralized P2P Markets Clearing Mechanism}
-\label{alg:alg1}
-\begin{algorithmic}[1]
-\small
-
-\init{ }
-\State
-\textbf{Prosumers.} For all $i \in \mc N$: set $u_i(0) \in \mc U_i$, $\mu^{\text{tr}}_{(i,j)}(0) = \0$, $\forall j \in \mc N_i$; $\alpha_i \!<\! 
-(\red{3} +N \underset{h\in \mc H}{\max}\, d_h^{\text{mg}})^{-1}$, $\beta^{\text{tr}}_{(i,j)}\! =\! \beta^{\text{tr}}_{ (j,i)} \!<\! \frac{1}{2}$, $\forall j \!\in\! \mc N_i$.
-\State
-\textbf{DNO.} Set $u_{N+1}(0) \!\in\! \mc U_{N+1}$, $\lambda^{\text{mg}}\!=\!\0$, $\mu^{\text{tg}} \!=\! \0$, $\mu_y^{\text{pb}}(0)\! = \!\0$, $\forall y \!\in\! \mc B$; $\alpha_{N+1} \!<\!2$, $\gamma^{\text{mg}} \!<\! \frac{1}{N}$, $\beta^{\text{tg}}\! <\! \frac{1}{|\mc N| \!+\! |\mc B|}$, $\beta_y^{\text{pb}} \!<\! \frac{1}{1\!+\!2|\mc N_y^{\mathrm{b}}|\!+\!|\mc B_y|}$,  $\forall y\!\in\! \mc B $.%
-
-\Endinit
-
-\smallskip
-\IUC{ }
-\smallskip
-\ForAll{$ i \in \mc N$}
-\PRO{ }
-\Primal{ }
-\Comment{$u_i = \{$generation, storage, main grid, trades$\}$}
-
-\smallskip
-\State 
-$\psi_i(k) = 
-	\col \Big(-\mu_y^{\text{pb}}(k),\edit{\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),}
-	{
-	%\left(
-	\left[
-	\begin{smallmatrix}
-	I_H\\
-	- I_H 
-	\end{smallmatrix}
-	\right] 
-	%\otimes I_H
-%\right)	
-	}^\top \lambda^{\text{mg}}(k) + \mu^{\text{tg}}(k),
-	%
-	\left\{ {\mu^{\text{tr}}_{(i,j)}(k)}\right\}_{j \in \mc N_i}   \Big)$
-\Comment{auxiliary vector}
-
-\State
-$u_i(k+1)   =
-\left\{
-\begin{array}{r l}
-	\underset{\xi \in \R^{n_i}}{\argmin} & 
-	\tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big) 
-	+ {\psi_i(k)}^\top \xi + \frac{1}{2 \alpha_i}
-	\left\| \xi - u_i(k) 
-	\textstyle
-	  \right\|^2 \\
-	\text{s.t. } & \xi \in \mc U_i
-\end{array} 
-	\right.	$
-\Comment{quadratic programming}	
-\EndPrimal
-
-\Comm{ (to DNO and trading partners)}
-\State $\eta_i(k+1)= p^{\text{d}}_i-p^{\text{di}}_i(k+1)\edit{+p^{\text{ch}}_i(k+1)- p^{\text{ds}}_i(k+1)}$
-\Comment{auxiliary vector: local load unbalance}
-\State
-$
-p^{\textrm{mg}}_{i}(k+1), \eta_i(k+1)  \longrightarrow  \text{DNO,}
-$
-\Comment{forward to DNO}
-     \ForAll{prosumer $ j \in \mc N_i$}
-     
-\State
- $p^{\text{tr}}_{(i,j)}(k+1)
-	\longrightarrow \text{prosumer }j$
-	\Comment{forward trade estimate to prosumer $j$}
-	\EndFor
-\EndComm
-
-
-\Dual{ }
-\Comment{reciprocity constraints}
-\ForAll{$ j \in \mc N_i$}
-\State
-$\zeta^{\text{tr}}_{(i,j)}(k+1)  =  p^{\textrm{tr}}_{(i,j)} (k+1) + p^{\textrm{tr}}_{(j,i)} (k+1)$
-\Comment{auxiliary vector}
-\State
-$\mu^{\text{tr}}_{(i,j)}(k+1) = \mu^{\text{tr}}_{(i,j)}(k) + \beta_{(i,j)}^{\text{tr}} \left( 
-	2  \zeta^{\text{tr}}_{(i,j)}(k+1) - \zeta^{\text{tr}}_{(i,j)}(k)
-	\right)$
-	\Comment{reflected dual ascent}
-\EndFor
-
-\EndDual
-
-\EndPRO
-
-\EndFor
-
-%%%%%%%%%%%%%%%%%%%%%%
-\smallskip
-%\Statex
-\DNO{ }
+%\begin{algorithm*}[htbp]
+%\caption{Semi-decentralized P2P Markets Clearing Mechanism}
+%\label{alg:alg1}
+%\begin{algorithmic}[1]
+%\small
+%
+%\init{ }
 %\State
-%Iterate
-
-\Primal{}
-\Comment{angles, voltages, power on grid and buses}
-\State
-$\psi_{N+1}(k) = \col \left( 
-	\left\{
-	\0,\0,-\mu^{\text{tg}}(k) - \mu_y^{\text{pb}}(k), 
-	\{ -\mu_y^{\text{pb}}(k), \0 \}_{z \in \mc B_y}
-	\right\}_{y \in \mc B}
-	\right)$
-\Comment{auxiliary vector}
-
-\State 	$u_{N+1}(k+1) = \proj_{\mc U_{N+1}}  \left( u_{N+1}(k) - (\alpha_{N+1})^{-1} \psi_{N+1}(k) \right)$
-%\Comment{ solved via Algorithm 2 (see Appendix)}
-\EndPrimal
-
-%---------------------------Aggregation
-\Agg{}
-\State
-$ \sigma^{\text{mg}}(k+1) = \sum_{i \in \mc N} p_i^{\text{mg}}(k+1) $
-\Comment{aggregate active load, eqn. (10)}
-\State
-$\sigma^{\text{tg}}(k+1) = \sum_{y \in \mc B} p_y^{\text{tg}}(k+1)$
-\Comment{aggregate grid-to-buses power }
-\EndAgg
-
-%---------------------------Dual Update
-\Dual{}
-\State
-$\eta_{N+1}(k+1	) = 
-	\left[
-	\begin{smallmatrix}
-	1\\
-	- 1 
-	\end{smallmatrix}
-	\right] \otimes (2 \sigma^{\text{mg}}(k+1)- \sigma^{\text{mg}}(k)) 
-	-
-	\left[
-	\begin{smallmatrix}
-	\overline{p}^{\mathrm{mg}}\1_{H}-b \\
-	-     \underline{p}^{\mathrm{mg}} \1_{H}+b
-	\end{smallmatrix} 
-	\right]  $
-	\Comment{auxiliary vector}
-	\State
-$\lambda^{\text{mg}}(k+1) = \textstyle
-	\proj_{\R^{2 H}_{\geq 0}}\left( 
-	\lambda^{\text{mg}}(k) + \gamma^{\text{mg}} \eta_{N+1}(k+1)
-	 \right)$
-		\Comment{grid constraints}
-
-\ForAll{buses $ y \in \mc B$}
-
-\State
-$\zeta^{\text{pb}}_y(k+1)   = \sum_{i \in \mc P_y^{\mathrm{b}}} p_i^{\mathrm{d}} + \sum_{i \in \mc N_y^{\mathrm{b}}} \eta_i(k+1)- p^{\text{tg}}_y(k+1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k+1)$
-\Comment{auxiliary vector}
-
-\State
-$\mu_y^{\text{pb}}(k+1) = \mu_y^{\text{pb}}(k) + \beta^{\text{pb}}_y (2 \zeta^{\text{pb}}_y(k+1)- \zeta^{\text{pb}}_y(k))$
-\Comment{local power balance of bus $y$}
-\EndFor
-
-\State
-$\zeta^{\text{tg}}(k+1) = \sigma^{\text{mg}}
-	(k+1)+b- \sigma^{\text{tg}}(k+1)$
-\Comment{auxiliary vector}
-
-\State
-$\mu^{\text{tg}}(k+1) = \mu^{\text{tg}}(k) + \beta^{\text{tg}} (2\zeta^{\text{tg}}(k+1)-\zeta^{\text{tg}}(k))$
-\Comment{grid-to-buses constraints}
-\EndDual	
-
-\Comm{ (broadcast to all prosumers)}
-\State
-$ \{ \sigma^{\mathrm{mg}}(k+1)+b, \, \lambda^{\text{mg}}(k+1), \mu^{\text{tg}}(k+1) \} 
-	\longrightarrow  \mc N$
-\ForAll{buses $ y \in \mc B$}
-\State
-$\mu^{\text{pb}}_y(k+1)\longrightarrow \mc N_y^{\mathrm{b}}$
-\Comment{only to prosumers on bus $y$}
-\EndFor
-
-\EndComm
-
-\EndDNO	
-
-\EndIUC	
-
-\end{algorithmic}
-\end{algorithm*}
+%\textbf{Prosumers.} For all $i \in \mc N$: set $u_i(0) \in \mc U_i$, $\mu^{\text{tr}}_{(i,j)}(0) = \0$, $\forall j \in \mc N_i$; $\alpha_i \!<\! 
+%(\red{3} +N \underset{h\in \mc H}{\max}\, d_h^{\text{mg}})^{-1}$, $\beta^{\text{tr}}_{(i,j)}\! =\! \beta^{\text{tr}}_{ (j,i)} \!<\! \frac{1}{2}$, $\forall j \!\in\! \mc N_i$.
+%\State
+%\textbf{DNO.} Set $u_{N+1}(0) \!\in\! \mc U_{N+1}$, $\lambda^{\text{mg}}\!=\!\0$, $\mu^{\text{tg}} \!=\! \0$, $\mu_y^{\text{pb}}(0)\! = \!\0$, $\forall y \!\in\! \mc B$; $\alpha_{N+1} \!<\!2$, $\gamma^{\text{mg}} \!<\! \frac{1}{N}$, $\beta^{\text{tg}}\! <\! \frac{1}{|\mc N| \!+\! |\mc B|}$, $\beta_y^{\text{pb}} \!<\! \frac{1}{1\!+\!2|\mc N_y^{\mathrm{b}}|\!+\!|\mc B_y|}$,  $\forall y\!\in\! \mc B $.%
+%
+%\Endinit
+%
+%\smallskip
+%\IUC{ }
+%\smallskip
+%\ForAll{$ i \in \mc N$}
+%\PRO{ }
+%\Primal{ }
+%\Comment{$u_i = \{$generation, storage, main grid, trades$\}$}
+%
+%\smallskip
+%\State 
+%$\psi_i(k) = 
+%	\col \Big(-\mu_y^{\text{pb}}(k),\edit{\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),}
+%	{
+%	%\left(
+%	\left[
+%	\begin{smallmatrix}
+%	I_H\\
+%	- I_H 
+%	\end{smallmatrix}
+%	\right] 
+%	%\otimes I_H
+%%\right)	
+%	}^\top \lambda^{\text{mg}}(k) + \mu^{\text{tg}}(k),
+%	%
+%	\left\{ {\mu^{\text{tr}}_{(i,j)}(k)}\right\}_{j \in \mc N_i}   \Big)$
+%\Comment{auxiliary vector}
+%
+%\State
+%$u_i(k+1)   =
+%\left\{
+%\begin{array}{r l}
+%	\underset{\xi \in \R^{n_i}}{\argmin} & 
+%	\tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big) 
+%	+ {\psi_i(k)}^\top \xi + \frac{1}{2 \alpha_i}
+%	\left\| \xi - u_i(k) 
+%	\textstyle
+%	  \right\|^2 \\
+%	\text{s.t. } & \xi \in \mc U_i
+%\end{array} 
+%	\right.	$
+%\Comment{quadratic programming}	
+%\EndPrimal
+%
+%\Comm{ (to DNO and trading partners)}
+%\State $\eta_i(k+1)= p^{\text{d}}_i-p^{\text{di}}_i(k+1)\edit{+p^{\text{ch}}_i(k+1)- p^{\text{ds}}_i(k+1)}$
+%\Comment{auxiliary vector: local load unbalance}
+%\State
+%$
+%p^{\textrm{mg}}_{i}(k+1), \eta_i(k+1)  \longrightarrow  \text{DNO,}
+%$
+%\Comment{forward to DNO}
+%     \ForAll{prosumer $ j \in \mc N_i$}
+%     
+%\State
+% $p^{\text{tr}}_{(i,j)}(k+1)
+%	\longrightarrow \text{prosumer }j$
+%	\Comment{forward trade estimate to prosumer $j$}
+%	\EndFor
+%\EndComm
+%
+%
+%\Dual{ }
+%\Comment{reciprocity constraints}
+%\ForAll{$ j \in \mc N_i$}
+%\State
+%$\zeta^{\text{tr}}_{(i,j)}(k+1)  =  p^{\textrm{tr}}_{(i,j)} (k+1) + p^{\textrm{tr}}_{(j,i)} (k+1)$
+%\Comment{auxiliary vector}
+%\State
+%$\mu^{\text{tr}}_{(i,j)}(k+1) = \mu^{\text{tr}}_{(i,j)}(k) + \beta_{(i,j)}^{\text{tr}} \left( 
+%	2  \zeta^{\text{tr}}_{(i,j)}(k+1) - \zeta^{\text{tr}}_{(i,j)}(k)
+%	\right)$
+%	\Comment{reflected dual ascent}
+%\EndFor
+%
+%\EndDual
+%
+%\EndPRO
+%
+%\EndFor
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+%\smallskip
+%%\Statex
+%\DNO{ }
+%%\State
+%%Iterate
+%
+%\Primal{}
+%\Comment{angles, voltages, power on grid and buses}
+%\State
+%$\psi_{N+1}(k) = \col \left( 
+%	\left\{
+%	\0,\0,-\mu^{\text{tg}}(k) - \mu_y^{\text{pb}}(k), 
+%	\{ -\mu_y^{\text{pb}}(k), \0 \}_{z \in \mc B_y}
+%	\right\}_{y \in \mc B}
+%	\right)$
+%\Comment{auxiliary vector}
+%
+%\State 	$u_{N+1}(k+1) = \proj_{\mc U_{N+1}}  \left( u_{N+1}(k) - (\alpha_{N+1})^{-1} \psi_{N+1}(k) \right)$
+%%\Comment{ solved via Algorithm 2 (see Appendix)}
+%\EndPrimal
+%
+%%---------------------------Aggregation
+%\Agg{}
+%\State
+%$ \sigma^{\text{mg}}(k+1) = \sum_{i \in \mc N} p_i^{\text{mg}}(k+1) $
+%\Comment{aggregate active load, eqn. (10)}
+%\State
+%$\sigma^{\text{tg}}(k+1) = \sum_{y \in \mc B} p_y^{\text{tg}}(k+1)$
+%\Comment{aggregate grid-to-buses power }
+%\EndAgg
+%
+%%---------------------------Dual Update
+%\Dual{}
+%\State
+%$\eta_{N+1}(k+1	) = 
+%	\left[
+%	\begin{smallmatrix}
+%	1\\
+%	- 1 
+%	\end{smallmatrix}
+%	\right] \otimes (2 \sigma^{\text{mg}}(k+1)- \sigma^{\text{mg}}(k)) 
+%	-
+%	\left[
+%	\begin{smallmatrix}
+%	\overline{p}^{\mathrm{mg}}\1_{H}-b \\
+%	-     \underline{p}^{\mathrm{mg}} \1_{H}+b
+%	\end{smallmatrix} 
+%	\right]  $
+%	\Comment{auxiliary vector}
+%	\State
+%$\lambda^{\text{mg}}(k+1) = \textstyle
+%	\proj_{\R^{2 H}_{\geq 0}}\left( 
+%	\lambda^{\text{mg}}(k) + \gamma^{\text{mg}} \eta_{N+1}(k+1)
+%	 \right)$
+%		\Comment{grid constraints}
+%
+%\ForAll{buses $ y \in \mc B$}
+%
+%\State
+%$\zeta^{\text{pb}}_y(k+1)   = \sum_{i \in \mc P_y^{\mathrm{b}}} p_i^{\mathrm{d}} + \sum_{i \in \mc N_y^{\mathrm{b}}} \eta_i(k+1)- p^{\text{tg}}_y(k+1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k+1)$
+%\Comment{auxiliary vector}
+%
+%\State
+%$\mu_y^{\text{pb}}(k+1) = \mu_y^{\text{pb}}(k) + \beta^{\text{pb}}_y (2 \zeta^{\text{pb}}_y(k+1)- \zeta^{\text{pb}}_y(k))$
+%\Comment{local power balance of bus $y$}
+%\EndFor
+%
+%\State
+%$\zeta^{\text{tg}}(k+1) = \sigma^{\text{mg}}
+%	(k+1)+b- \sigma^{\text{tg}}(k+1)$
+%\Comment{auxiliary vector}
+%
+%\State
+%$\mu^{\text{tg}}(k+1) = \mu^{\text{tg}}(k) + \beta^{\text{tg}} (2\zeta^{\text{tg}}(k+1)-\zeta^{\text{tg}}(k))$
+%\Comment{grid-to-buses constraints}
+%\EndDual	
+%
+%\Comm{ (broadcast to all prosumers)}
+%\State
+%$ \{ \sigma^{\mathrm{mg}}(k+1)+b, \, \lambda^{\text{mg}}(k+1), \mu^{\text{tg}}(k+1) \} 
+%	\longrightarrow  \mc N$
+%\ForAll{buses $ y \in \mc B$}
+%\State
+%$\mu^{\text{pb}}_y(k+1)\longrightarrow \mc N_y^{\mathrm{b}}$
+%\Comment{only to prosumers on bus $y$}
+%\EndFor
+%
+%\EndComm
+%
+%\EndDNO	
+%
+%\EndIUC	
+%
+%\end{algorithmic}
+%\end{algorithm*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

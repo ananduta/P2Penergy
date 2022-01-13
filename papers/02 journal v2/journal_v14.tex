@@ -273,10 +273,10 @@ In practice, however, direct trading among prosumers might jeopardize system rel
 %
 For example, \cite{qin2018,morstyn2019} treat decentralized markets and operational reliability separately, and propose market-clearing mechanisms where decentralized market solutions must be approved by a network operator based on the system operational constraints. 
 %
-An alternative is based on incorporating network charges, which may reflect utilization fees and network congestion, into the market formulation, as discussed in \cite{baroche2019b,paudel2020}. Differently, \cite{moret2020,zhang2020} include network operators as players in the market and impose network operational requirements as constraints in the market problem, which is formulated as a multi-agent optimization. Nevertheless, none of these works considers both coupled objectives and constraints.
+An alternative is based on incorporating network charges, which may reflect utilization fees and network congestion, into the market formulation, as discussed in \cite{baroche2019b,paudel2020}. Differently, \cite{moret2020,zhang2020} include network operators as players in the market and impose network operational requirements as constraints in the market problem, which is formulated as a multi-agent optimization. \marginnote{\note{R2-4}}\edit{A similar approach is considered in \cite{zhong2019online}, where an online decentralized control algorithm for distributed energy storage systems is developed. } 
 
 
-%\paragraph*{In this paper:} 
+\paragraph*{Contribution} 
 In this paper, we consider a P2P energy market in which each prosumer is capable of not only generating and storing energy but also directly trading with other prosumers as well as with the main grid. Similarly to \cite{moret2020}, we include a network operator, whose objective is to ensure safe and reliable operation  of the system. 
 %
 However, we formulate the market clearing as a GNE problem, in which the players (i.e., prosumers and network operators) have coupling objective functions and constraints (Section \ref{sub:setup}). \edit{Our market formulation extends our preliminary work \cite{belgioioso2020energy} by including network operational constraints and system operators in the model, which complicate the analysis as we need to exploit the problem structure to derive an efficient algorithm.}
@@ -289,15 +289,14 @@ Furthermore, we propose a provably-convergent, scalable and distributed market-c
 Finally, we investigate via extensive numerical studies: (i)  the effectiveness of the proposed market framework; (ii) the impact of distributed generation, storage and P2P tradings in distribution grids; and (iii) the scalability of the proposed market-clearing mechanism with respect to both the number of prosumers and the number of P2P tradings in the distribution network (Section \ref{sub:case_std}).
 
 \smallskip
-\subsubsection*{Basic notation}
+\subsubsection*{Notation}
 $\R$ denotes the set of real numbers, $\bb N$ denotes the set of natural numbers, and  $\bs{0}$ ($\bs{1}$) denotes a matrix/vector with all elements equal to $0$ ($1$); to improve clarity, we may add the dimension of these matrices/vectors as subscript. $A \otimes B$ denotes the Kronecker product between the matrices $A$ and $B$. For a square matrix $A \in \R^{n \times n}$, its transpose is $A^\top$, $[A]_{i,j}$ represents the element on the row $i$ and column $j$. $A \succ 0$ ($\succcurlyeq 0$) stands for positive definite (semidefinite) matrix. Given $N$ vectors $x_1 \in \bb R^{n_1}, x_2 \in \bb R^{n_2},\ldots, x_N \in \R^{n_N}$, $x := \col\left(x_1,\ldots,x_N\right) = [ x_1^\top, \ldots , x_N^\top ]^\top$. \marginnote{\note{R4-9}}\edit{Given $x \in \bb R^n$, $\|x\|_A^2 = x^\top A x,$ with square matrix $A \succ 0$.}
-
-\smallskip
-\subsubsection*{Operator theoretic definitions}
+%\smallskip
+%\subsubsection*{Operator theoretic definitions}
 %Here, $\Id(\cdot)$ denotes the identity operator. The mapping $\iota_{S}:\R^n \rightarrow \{ 0, \, \infty \}$ denotes the indicator function for the set $\mc{S} \subseteq \R^n$, i.e., $\iota_{S}(x) = 0$ if $x \in S$, $\infty$ otherwise. 
 For a closed set $S \subseteq \R^n$, the mapping $\proj_{S}:\R^n \rightarrow S$ denotes the projection onto $S$, i.e., $\proj_{S}(x) = \argmin_{y \in S} \left\| y - x\right\|$. 
 %The set-valued mapping $\nc_{S}: \R^n \rightrightarrows \R^n$ denotes the normal cone operator for the the set $S \subseteq \R^n$, i.e., $\nc_{S}(x) = \varnothing$ if $x \notin S$, $\left\{ v \in \R^n \mid \sup_{z \in S} \, v^\top (z-x) \leq 0  \right\}$ otherwise. 
-A set-valued mapping $\mathcal{F} : \R^n \rightrightarrows \R^n$ is (strictly) monotone if $(u-v)^\top  (x-y) \geq (>) \, 0$ for all $x \neq y \in \R^n$, $u \in \mathcal{F} (x)$, $v \in \mathcal{F} (y)$.
+%A set-valued mapping $\mathcal{F} : \R^n \rightrightarrows \R^n$ is (strictly) monotone if $(u-v)^\top  (x-y) \geq (>) \, 0$ for all $x \neq y \in \R^n$, $u \in \mathcal{F} (x)$, $v \in \mathcal{F} (y)$.
 % $\fix\left( \mathcal{F}\right) := \left\{ x \in \R^n \mid x \in \mathcal{F}(x) \right\}$ and $\zer\left( \mathcal{F}\right) := \left\{ x \in \R^n \mid 0 \in \mathcal{A}(x) \right\}$ denote the set of fixed points and of zeros, respectively.
 
 %\subsection{Generalized Nash equilibrium problems}
@@ -716,18 +715,18 @@ From an economic perspective, these variables can be interpreted as extra margin
 \quad &\left|
 \begin{array}{l}
 \text{Local update via \textsc{Algorithm 2}:}\\
-\left|
+\left\lfloor
 \begin{array}{l}
 \text{Set $\{\mu_{(i,j)}(k)\}_{j \in \mc N_i}$ as in \textsc{Alg. 2} (i)}\\
 \text{Set $u_i(k\!+\!1)$ as in \textsc{Alg. 2} (ii)}
 \end{array}
 \right.\\[1em]
  \text{Communication}\\
- \left|
+ \left\lfloor
 \begin{array}{l}
 \eta_i(k\!+\!1), \; p_i^{\text{mg}}(k\!+\!1) \rightarrow \text{ DNO}\\[.5em]
 \text{For all trading partners } j \in \mc N_i \text{ (in parallel):}\\
- \left|
+ \left\lfloor
 \begin{array}{l}
 p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \end{array}
@@ -743,25 +742,25 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \quad &\left|
 \begin{array}{l}
 \text{Central update via \textsc{Algorithm 3}:}\\
-\left|
+\left\lfloor
 \begin{array}{l}
 \text{Set $u_{N+1}(k\!+\!1)$ as in \textsc{Alg. 3} (i)}\\
 \text{Set $\lambda^{\text{mg}}$, $\mu^{\text{tg}}$, $\{ \mu_y^{\text{pb}}(k\!+\!1)\}_{y \in\mc B}$ as in \textsc{Alg. 3} (ii)}
 \end{array}
 \right.\\[1em]
 \text{Communication (Gather \& Broadcast)}\\
- \left|
+ \left\lfloor
 \begin{array}{l}
 \sigma^{\mathrm{mg}},\, \lambda^{\text{mg}}, \mu^{\text{tg}}(k\!+\!1) \rightarrow \text{ all prosumers } i \in \mc N\\[.5em]
 \text{For all busses } y \in \mc B \text{ (in parallel):}\\
- \left|
+ \left\lfloor
 \begin{array}{l}
 \mu_y^{\text{pb}}(k+1) \rightarrow \text{ all prosumers } i \in \mc N_y^{\text{b}} \text{ on bus } y%
 \end{array}%
 \right.%
 \end{array}%
 \right.\\[1em]
-\end{array}%
+\end{array}
 \right.%
 \end{align*}
 \smallskip
@@ -786,7 +785,7 @@ The next proposition shows the global convergence of Algorithm 1 to a variationa
 \end{enumerate}
 \end{proposition}
 \begin{proof} (Sketch)
-Algorithm~1 is an instance of the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. To prove convergence, it is sufficient to show that the proposed market-clearing game in \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def} and \eqref{eq:Cconstr_def}, respectively, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which is the existence of a variational GNE (i.e., item (i) of Proposition \ref{prp:conv}). Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove convergence of Algorithm \ref{alg:alg1} (i.e., item (ii) of Proposition \ref{prp:conv}).
+Algorithm~1 is an instance of the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. To prove convergence, it is sufficient to show that the proposed market-clearing game in \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def} and \eqref{eq:Cconstr_def}, respectively, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which is the existence of a variational GNE (i.e., item (i) of Proposition \ref{prp:conv}). Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove convergence of Algorithm~1 (i.e., item (ii) of Proposition \ref{prp:conv}).
 %For a complete convergence analysis of the cPPP algorithm for aggregative games we refer to \cite[Appendix~C]{belgioioso2020semi}.
 %Due to space limitations, we provide next only a sketch of its derivation and convergence analysis.
 We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operationally} for a detailed derivation and convergence analysis of Algorithm~1.
@@ -982,7 +981,7 @@ Some of the default cost parameters are set as in \cite{atzeni2013}, i.e., $Q_i^
 %
 %
 \subsection{Achieving operationally-safe solutions}
-In the first simulation study, we compare the solutions obtained from solving a P2P market model with and without capacity constraints \eqref{eq:line_cap}. We specifically create an extreme case with $25$ prosumers, where the load of  prosumer $10$ (see Figure \ref{fig:simD_safe}) is very high. We solve both market designs using Algorithm \ref{alg:alg1}. Figure \ref{fig:simD_safe} shows the resulting power-line saturations between busses for both designs. 
+In the first simulation study, we compare the solutions obtained from solving a P2P market model with and without capacity constraints \eqref{eq:line_cap}. We specifically create an extreme case with $25$ prosumers, where the load of  prosumer $10$ (see Figure \ref{fig:simD_safe}) is very high. We solve both market designs using Algorithm~1. Figure \ref{fig:simD_safe} shows the resulting power-line saturations between busses for both designs. 
 %
 Some equilibrium solutions of the P2P market cause overcapacity in some lines when capacity constraints \eqref{eq:line_cap} are not taken into account in the model, as illustrated in Figure \ref{fig:simD_safe}~(b).
 
@@ -1084,13 +1083,12 @@ Note that the prosumers charge their storage units during the first off-peak hou
 \subsection{Scalability of the algorithm}
 Finally, we perform a scalability test for the proposed algorithm. Specifically, we evaluate the convergence speed, in terms of the total number of iterations required to meet a predetermined stopping criterion, when the size of the population of prosumers $N$ and the connectivity of the trading network (the number of trading links) grow. We carry out two sets of simulations.
 %
-For the former, we consider five different values of $N$ and a fixed connectivity level of $0.6$ and we run ten Monte Carlo simulations for each $N$, whereas in the latter, the connectivity of the trading network of $50$ prosumers varies in the range $[0.1,1]$, where connectivity $1$ means that the trading network is a complete graph. Similarly, we also run ten Monte Carlo simulations for each connectivity value. We can see from Figure \ref{fig:simE} that Algorithm~\ref{alg:alg1} suitably scales with respect to both the number of prosumers and the connectivity level of the trading network. \marginnote{\note{R4-7}} {\edit{The average computational time performed by each prosumer is 74.5 milliseconds per iteration whereas the average computational time/iteration of the DNO is 1.13 seconds on a computer with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory.} 
-} These results highlight that our algorithm is suitable to be applied to  large-scale systems. 
+For the former, we consider five different values of $N$ and a fixed connectivity level of $0.6$ and we run ten Monte Carlo simulations for each $N$, whereas in the latter, the connectivity of the trading network of $50$ prosumers varies in the range $[0.1,1]$, where connectivity $1$ means that the trading network is a complete graph. Similarly, we also run ten Monte Carlo simulations for each connectivity value. We can see from Figure \ref{fig:simE} that Algorithm~1 suitably scales with respect to both the number of prosumers and the connectivity level of the trading network. These results highlight that our algorithm is suitable to be applied to  large-scale systems. 
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=1\linewidth]{figures/simEF1.eps}
-	\caption{Total number of iterations for convergence of Alg. 1 vs number of prosumers (top) and the connectivity level (the number of trading links) (bottom).  
+	\caption{Total number of iterations for convergence of Alg. 1 vs number of prosumers (top) and the connectivity level (the number of trading links) (bottom). \edit{The average computation times of the inner loops, i.e., Algorithm~2 and 3, obtained on a computer with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory, are 74.5 ms and 1.13 s, respectively.} 
 	}
 
 	\label{fig:simE}

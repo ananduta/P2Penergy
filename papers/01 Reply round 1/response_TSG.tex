@@ -223,12 +223,16 @@ In the revised paper, (i) we provided a detailed description of each individual 
 
  \query[R1-7]{The algorithm requires too many iterations, which leads to poor feasibility in real applications, especially in distributed environment. }
  \ans{
-\green{The average computational time for the parallel updates of each prosumer (i.e., Algorithm 2) is $t_{\text{avg}}^{\text{pro}} = 74.5$ milliseconds; while for the DNO update (i.e., Algorithm 3), the average computational time is $t_{\text{avg}}^{\text{DNO}} = 1.13$  seconds. Hence the total running time of the proposed market-clearing algorithm (Algorithm 1) to converge to a v-GNE configuration (i.e., reach a precision of $10^{-1}$), when implemented on a real distributed system can be approximatively calculated as
+\green{The average computational time (obtained using a pc with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory) for the parallel updates of each prosumer (i.e., Algorithm 2) is $t_{\text{avg}}^{\text{pro}} = 74.5$ milliseconds; while for the DNO update (i.e., Algorithm 3), the average computational time is $t_{\text{avg}}^{\text{DNO}} = 1.13$  seconds. 
+%
+ Hence, the total running time of the proposed market-clearing algorithm (Algorithm 1) implemented on a distributed system can be approximatively calculated as
 \begin{align*}
-\text{total running time} = \text{\# iter for convergence } \times (t_{\text{avg}}^{\text{pro}} + 	t_{\text{avg}}^{\text{DNO}}).
+\text{total computation time} = \text{\# iterations for convergence } \times (t_{\text{avg}}^{\text{pro}} + 	t_{\text{avg}}^{\text{DNO}}),
 \end{align*}
-This approximation disregards the (gather and broadcast-type) communication time which is implementation dependent.
-Note that the algorithm is scalable with respect to the prosumer population size, namely, the number of iterations for convergence is not affected by the total number of prosumers in the network (see Figure \red{8}). Moreover, the computation time of the local updates is virtually also independent from the prosumer population size, for constant connectivity levels of the trading network. Therefore, the previous approximation yields running times of less than 23 minutes for our market-clearing algorithm, independently from the market size. We consider this computational-time requirement feasible for day-head or also intra-day scheduling purposes. Finally, we note that provably-convergent accelerated (inertial or over-relaxed) versions of our market-clearing mechanism can be easily devised by exploiting the algorithmic framework in based on \cite[\S~IV-B]{belgioioso2020semi} to reduce (potentially halve) the total number of iterations for convergence.
+which yields running times of less than 23 minutes. 
+%
+We consider this computational-time requirement reasonable for day-head or also for intra-day scheduling purposes. Moreover, we note that the total running time can be considerably reduced by (i) using provably-convergent accelerated versions of our market-clearing mechanism, that can be easily devised by exploiting the algorithmic framework in \cite[\S~IV-B]{belgioioso2020semi} and in practice reduce (potentially, halve) the total number of iterations for convergence;
+(ii) designing a more efficient ad-hoc algorithm to solve the projection step in Algorithm 3 (i.e., Algorithm 3 (i)); (iii) using a more computationally-powerful hardware to perform the DNO central updates, namely, Algorithm 3. Finally, we note that the main algorithm is scalable with respect to the prosumer population size, namely, the number of iterations for convergence is not affected by the total number of prosumers in the network (see Figure \red{10}). Moreover, the computation time of the local updates is virtually also independent from the prosumer population size, for constant connectivity levels of the trading network. Therefore, the previous approximation remains valid independently from the market size.
 } }
 
 
@@ -270,21 +274,35 @@ We have also modified our game formulation and proposed algorithm in Section III
 \query[R2-3]{In (9), the electricity price is defined to depend on the total consumption. This setting is often used in local energy systems (community or microgrid) but rarely used in wide-area energy networks (distribution networks). In real situations, the electricity prices in a power network are different at different buses and are determined by generation costs, power line congestion, power loss, etc. The reviewer understands that the authors deliberately use (9) to make the agents’ objectives coupled with each other. But the authors must explain why (9) is practical in the proposed model.  }
 \ans{We agree with the Reviewer that the electricity price in (9) is more suitable for local energy systems than distribution networks as (9) only considers the cost of power generation based on the total power required by the prosumer network.   Therefore, at the moment we consider the simplest model of electricity prices, which follows linear inverse demand function, i.e., the price increases when the demand does so. In other words, the cost function in (11) takes into account how congested the whole prosumer network is.   We note that the cost function defined by (9)--(11) already complicates the day-ahead problem compared to the existing P2P energy market literature as this is a coupling cost function. Moreover, to our knowledge, most of the existing literature on P2P energy markets exclude the possible interaction between the prosumer network and the main grid. In the revised manuscript, we acknowledge that including power line congestion and power loss in the formulation of electricity prices of the main grid as potential future works. In addition, we may also generalize the grid cost function (9)--(11) by considering the total congestion per bus, i.e., the electricity price at each bus depends on the total demand of the prosumers connected to that particular bus.}
 
-\query[R2-4]{ In the proposed model, the DNO is considered a game player. This setting is also used in some other related works (such as https://ieeexplore.ieee.org/document/9223743). The authors may need a more comprehensive review on this aspect.  }
-\ans{\comment{improve literature survey}}
+\query[R2-4]{In the proposed model, the DNO is considered a game player. This setting is also used in some other related works (such as https://ieeexplore.ieee.org/document/9223743). The authors may need a more comprehensive review on this aspect.  }
+\ans{\green{We thank the reviewer for drawing our attention on this relevant paper that we cited and briefly reviewed in the new version of the introduction.}}
+
+\edit{``
+A similar approach is considered in \cite{zhong2019online}, where an online decentralized control algorithm for distributed energy storage systems is developed.
+"
+}
 
 \query[R2-5]{The property of the game equilibrium is not clear enough. It is unclear what is the difference between v-GNE and GNE. The authors may need to formally (mathematically) define the variational GNE that the proposed game will reach. }
-\ans{\green{We included a more detailed explanation of the targeted class of variational generalized Nash equilibria, including a formal mathematical definition, in Section III A.}}
+\ans{\green{We included a more detailed explanation of the targeted class of variational generalized Nash equilibria, including a formal mathematical definition.}}
+
+\edit{``Among all GNEs, we target the special subclass of \textit{variational} GNEs (v-GNEs) that coincides with the solutions to a specific variational inequality GVI$(\mc K, P)$ \cite[Prop.~12.4]{facchinei201012},  i.e., the problem of finding a pair of vectors $(u^*,z^*)$, such that $u^* \in \mc K$, $z^* \in P(u^*)$, and
+\begin{align*}
+{(u - u^*)}^\top z^* \geq 0, \quad \forall u  \in  {\mc K}, 
+\end{align*}
+where the mapping $P(u^*): = \prod_{i \in \mc N^+} \frac{\partial}{\partial u_i} J_i(u_i^*,u_{-i}^*)$ is the so-called \textit{pseudo-subdifferential}, and $\mc K:= \mc C \cap (\prod_{i \in \mc N^+} \mc U_i)$ is the global feasible set.
+%
+v-GNEs enjoy the property of ``economic fairness”, namely, the marginal loss due to the presence of the coupling constraints is the same for each agent, see e.g. \cite{kulkarni2012variational}. For these reasons, v-GNEs have been used to model desirable (i.e., locally efficient, fair, and safe) configurations in several distributed engineering systems, including P2P energy market models, see e.g. \cite{lecadre2020}. In this paper, we focus on computational aspects, namely, the design and analysis of a fast and scalable decentralized v-GNE seeking algorithm for the P2P market game, while we study the properties of its v-GNEs numerically rather than analytically."
+}
 
 \query[R2-6]{Algorithm 1 looks unfriendly to readers. The explanation for the algorithm (section III-A) is also unclear. In this current version, readers may have no clue to follow the formulation/notations in the algorithm and Fig. 2. For example, what are the dual variables used for? What is the intuitive idea behind the algorithm? What are the step sizes used for? The authors are suggested to separate Algorithm 1 into several parts and explain each part. }
 \ans{ \green{
-We agree with the Reviewer. Thus, following his suggestion, we have split the main algorithm in 3 parts: (1) (the new) Algorithm 1, i.e., the main semi-decentralized loop, in which we summarize the information flow between prosumers and DNO, including the precise order of their updates; (2) Algorithm 2, i.e., the local primal-dual updates of the prosumers; (3) Algorithm 3, i.e., the central primal-dual update of the DNO.
+We agree with the Reviewer. Thus, following their suggestion, we have split the main algorithm in 3 parts: (1) (the new) Algorithm 1, i.e., the main semi-decentralized loop, in which we summarize the information flow between prosumers and DNO, including the precise order of their updates; (2) Algorithm 2, i.e., the local primal-dual updates of the prosumers; (3) Algorithm 3, i.e., the central primal-dual update of the DNO.
 %
-Moreover, we have included a paragraph in Section III B in which we list all primal, dual, and auxiliary variables in (the new) Algorithm 1, along with an explanation of their scopes within the algorithm and their economical and system-theoretic interpretations.
+Moreover, we have included a new paragraph in Section III B to list all primal, dual, and auxiliary variables of (the new) Algorithm 1, along with an explanation of their scopes within the algorithm and their economical and system-theoretic interpretations.
 %
-Finally, we have re-designed the flow-chart illustration of Algorithm 1 (Fig. X) which we also found unfriendly to readers.
+Finally, we have also re-designed the flow chart illustration of Algorithm 1 (Fig. 2).
 %
-Due to space limitations, we omitted a more detailed discussion to the algorithm design and derivation. We refer the interested reader to [16] for a complete discussion on these matters, including step-sizes bound analysis.
+Due to space limitations, we omitted a more detailed discussion of the algorithm derivation. We refer the interested reader to [16] for a complete discussion on these matter, including step-sizes bound analysis.
 }
 }
 
@@ -293,7 +311,15 @@ Due to space limitations, we omitted a more detailed discussion to the algorithm
 \textit{This paper presents an interesting work dealing with the clearing of P2P energy markets while also considering technical constraints of the distribution network. From my point of view, some issues need to be further clarified:}
 
 \query[R3-1]{Papers dealing with P2P markets are quite numerous recently. Literature review section is well structured and provides a fair number of works in this area, however the research gaps are not clearly stated. As a consequence, the contributions of the paper are quite generic. Please, consider to state, in a more specific way, the contributions of the paper. In particular, why the GNE approach is advantageous with respect to other decentralized frameworks proposed in the literature.  }
-\ans{\comment{rephrase research gaps}}
+\ans{
+\green{
+In the revised introduction, we have highlighted the research gaps of the literature and rephrased  the contributions to improve clarity.
+The main advantage of game-theoretic energy market models with respect to optimization-based ones is their ability to encode the strategic objectives, that naturally arise since prosumers are first and foremost self-interested decision-makers. Among game-theoretic models, GNE-based ones can additionally encode the global limitations of the grid (e.g., power-flow constraints, etc.) within the market.
+%
+Therefore, solutions of the resulting market clearing problem (i.e., variational GNEs) are economically efficient (locally and globally), strategically stable (no prosumer has an incentive in deviating from its current strategy), operationally safe (the global limitations of the grid are respected), and socially fair (the marginal loss for satisfying the grid constraints is the same for each prosumer). 
+%
+}
+}
 
 \query[R3-2]{From the modeling point of view, a linear approximation of the power-flow is considered. It is known that this approximation is weak in distribution systems. I would suggest to include some references and analysis of convex approximations, if any, that might be compatible with the Assumption 1 of this paper. }
 \ans{We agree with the assessment of the Reviewer on the linear approximation of the power flow equations. Based on Assumption 1, nonlinear but convex approximation of the power flow equations such as a second order cone programming  or semi-definite programming relaxation as discussed in \cite[Sect. II-A]{molzahn2017} can be considered instead of a linear one. Furthermore, since the power flow constraints are handled fully by the distribution network operator, a reformulation of these constraints does not require any modification of Algorithm 1 but only on the local constraint set of the DNO, i.e., $\mc U_{N+1}$. In this regard, the ad-hoc algorithm that we proposed to perform the projection onto $\mc U_{N+1}$ must be adjusted accordingly. We leave out the task of improving the model as future work as this is not the focus and contribution of this work. Furthermore, as suggested by the reviewer, we have modified Remark 1 based on the preceding explanation:}
@@ -309,7 +335,7 @@ Due to space limitations, we omitted a more detailed discussion to the algorithm
 \query[R3-4]{ The proposed algorithm relies on several dual variables. Please, elaborate on the meaning of this dual variables and their interpretation as economic outputs of the clearing process. }
 %
 \ans{\green{
-We have included a paragraph in Section III B in which we list all primal, dual, and auxiliary variables of the main algorithm, along with an explanation of their scope, and economical and system-theoretic interpretations.
+We have included a new paragraph in Section III B in which we list all primal, dual, and auxiliary variables of the main algorithm, along with an explanation of their scope, and economical and system-theoretic interpretations.
 }}
 %
 %\ans{We introduce dual variables for the purpose of problem decomposition. Particularly, these dual variables are associated with the coupling constraints that define $\mc C$ in \red{(9)}. Some of these dual variables, i.e., particularly those that are associated with bus power balance constraints \red{(13)} and reciprocity constraints \red{(8b)}, can be intrepreted as  nodal prices and bilateral trading prices, respectively, as discussed in \cite[Section 2.4]{lecadre2020}. }
@@ -349,11 +375,9 @@ We have included a paragraph in Section III B in which we list all primal, dual,
 
 \query[R4-2]{The authors state that due to the presence of coupling objective and constraints in the formulation, this implies the inapplicability of other decentralized algorithms employed in the literature (lines 54-57, page 2). This is not strictly true, since it is straightforward to reformulate the problem to decompose the objective function, just by replicating the variables avoiding the decomposition, and introduce new complicating constraints to coordinate these variables. Reformulate this sentence. }
 \ans{\green{
-We respectfully point out that the original game and the ``decomposed" one, obtained by including local slack variables and coupling constraints to coordinate these variables have, in general, different equilibria, see the example at the end of the answer. Therefore, social-welfare optimization methods (e.g., ADMM) cannot be straightforwardly used to solve our game-theoretic problem (which is a variational inequality). This is not surprising since v-GNEs and social optima, i.e., the minimizers of the social welfare, are essentially different configurations and coincide only in special cases. \\
-In the revised paper, we rephrased the sentence avoiding strong claims of inapplicability, as follows:
-}}
-
-\textit{ \edit{``Nevertheless, none of these works considers both coupled objectives and constraints.''}}
+What we meant is that games with coupling constraints and coupling objectives cannot, in general, be recast as distributed optimization problems, and therefore be solved via decentralized optimization algorithms.
+%
+In fact, the original market game (1) and the ``decomposed" one, obtained by including local slack variables and coupling constraints to coordinate these variables have different equilibria (see the simple example at the end of the answer). Therefore, social-welfare optimization methods (e.g., ADMM) cannot be straightforwardly used to solve our game-theoretic problem. This is not surprising since variational GNEs and social optima, i.e., the minimizers of the social welfare, are essentially different configurations and coincide only in special cases. To avoid confusion, in the revised paper, we removed the claim of inapplicability.}}
 
 \green{
 \textit{Example.} Consider the 2-player aggregative game:
@@ -456,15 +480,16 @@ which yields v-GNEs of the form $(u_1^*, u_2^*) = (x,-1/2-x)$, with $x \in \math
 \ans{By the formulation in \red{(9)--(11)}, which is based on \cite{atzeni2013}, the electricity price from the main grid follows a linear inverse demand function where it increases linearly as the total consumption increases. On the other hand, if  $c^{\mathrm{mg}}$ in (9) is a linear function, the electricity unit price is assumed to be constant, which is not the case in the practice. In our view, the former represent better the electricity unit price than the latter, as supported by \cite{atzeni2013noncooperative} and some references therein. In addition, as discussed in \cite[Section II-D]{atzeni2013noncooperative}, the cost function in \red{(11)} can represent either the actual energy cost (as a result of energy generation and transmission costs by the main grid) or simply a pricing function designed to incentivize load-shifting by the end users.}
 
 \query[R4-6]{ Taking into account comment 1, suppose that we consider a reformulation of the problem to avoid coupling objective functions, and we employ the Alternating Direction Methods of Multipliers (ADMM) to solve the P2P market game in (1). Could the authors elaborate if this would be possible? Would the application of the ADDM also guarantees the convergence to a variational GNE of the P2P market game? What are the advantages of using Algorithm 1 proposed in the paper to solve the problem?  }
-\ans{\green{Indeed, the only trivial case in which v-GNEs and social optima, i.e., the minimizers of the social welfare, coincide is for games with decoupled objective functions. This fact can be shown, for example, by a direct comparison of their KKT systems. In this special case, the original v-GNE seeking problem and the social welfare minimization problem are equivalent. Hence, the latter can be tackled via existing distributed optimization algorithms, e.g. ADMM. Unfortunately, in general, it is not possible to trivially reformulate games with coupled objectives as optimization problems -- see R4-3 for a simple counter-example in which a straightforward decoupling of the local objective functions fails to preserve the original equilibria. This simple fact motivated many authors in different research communities to design ad-hoc algorithms for games and generalized games with coupled cost functions, see e.g.  \cite{yi2019,paccagnan2019,liang2017distributed, koshal2016distributed,gadjov2020single,belgioioso2020b}.
+\ans{\green{Indeed, the only trivial case in which v-GNEs and social optima, i.e., the minimizers of the social welfare, coincide is for games with decoupled objective functions. This fact can be shown, for example, by a direct comparison of their KKT systems. In this special case, the original v-GNE seeking problem and the social welfare minimization problem are equivalent. Hence, the latter can be tackled via existing distributed optimization algorithms, e.g. ADMM. Unfortunately, in general, it is not possible to trivially reformulate games with coupled objectives as optimization problems -- see R4-3 for a simple counter-example in which a straightforward decoupling of the local objective functions fails to preserve the original equilibria. This simple fact motivated many researchers in recent years to design ad-hoc algorithms for games and generalized games with coupled cost functions, see e.g.  \cite{yi2019,paccagnan2019,liang2017distributed, koshal2016distributed,gadjov2020single,belgioioso2020b}.
 }
 }
 
 \query[R4-7]{ Regarding to the scalability of the algorithms, the author evaluates the convergence of the algorithm with respect to the number of agents and the connectivity, but they do not provide any information about the computational times. This is relevant to evaluate if it could be applied in a real large-scale system. }
-\ans{We thank the Reviewer for raising this point. We agree that the computational time is relevant in practice and thus we have added the following statement:} %\red{particularly for the simulations with different numbers of agents} 
+\ans{We thank the Reviewer for raising this point. We agree that the computational time is relevant in practice and thus we have added the remark below in the caption of Figure 10. Please, refer to our answer to the comment [R1-7] for a detailed discussion on the applicability of the proposed market-clearing mechanism on real large-scale systems.} %\red{particularly for the simulations with different numbers of agents} 
 
-\textit{\edit{`` The average computational time performed by each prosumer is 74.5 milliseconds per iteration whereas the average computational time/iteration of the DNO is 1.13 seconds on a computer with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory.
+\textit{\edit{`` The average computation times of the inner loops, i.e., Algorithm~2 and 3, obtained on a computer with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory, are 74.5 ms and 1.13 s, respectively.
 		''}}
+%
 
  \query[R4-8]{ Given a prosumer $i$, when Algorithm 1 is applied, in order to update the dual variable related to reciprocity constraints, the value of the power traded with neighbors plays an important role. In detail, I mean $\{p^{tr}_{(j,i)}\}_{j\in \mc N_{i}}$, the forward trade estimate to prosumer $i$. It seems that, depending on the order the prosumers are considered, the coordination of these variables could change, so that the convergence of the algorithm. Hence, it could be interesting to analyze how this affect to the behavior of the algorithm. For example, could it benefit to consider first prosumers with less neighbors, since maybe they reach faster an equilibrium? }
  	\ans{\green{
