@@ -7,6 +7,13 @@
   optimization.
 \newblock {\em IEEE Transactions on Smart Grid}, 4(2):866--876.
 
+\bibitem[Atzeni et~al., 2013]{atzeni2013noncooperative}
+Atzeni, I., Ord{\'o}{\~n}ez, L.~G., Scutari, G., Palomar, D.~P., and Fonollosa,
+  J.~R. (2013).
+\newblock Noncooperative and cooperative optimization of distributed energy
+  generation and storage in the demand-side of the smart grid.
+\newblock {\em IEEE transactions on signal processing}, 61(10):2454--2472.
+
 \bibitem[Auslender and Teboulle, 2000]{auslender2000lagrangian}
 Auslender, A. and Teboulle, M. (2000).
 \newblock Lagrangian duality and related multiplier methods for variational

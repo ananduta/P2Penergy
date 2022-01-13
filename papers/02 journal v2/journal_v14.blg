@@ -3,7 +3,7 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: journal_v14.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 I couldn't open style file ieeetran.bst
----line 130 of file journal_v14.aux
+---line 143 of file journal_v14.aux
  : \bibstyle{ieeetran
  :                   }
 I'm skipping whatever remains of this command

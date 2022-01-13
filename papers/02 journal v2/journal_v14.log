@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.20)  12 JAN 2022 10:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.20)  13 JAN 2022 11:01
 entering extended mode
 **./journal_v14.tex
 (journal_v14.tex
@@ -1136,10 +1136,10 @@ LaTeX Warning: Citation `jasm' on page 7 undefined on input line 978.
 LaTeX Warning: Citation `atzeni2013' on page 7 undefined on input line 982.
 
 Package epstopdf Info: Source file: <figures/simD_safe1.eps>
-(epstopdf)                    date: 2021-03-19 22:28:24
+(epstopdf)                    date: 2021-03-19 21:28:24
 (epstopdf)                    size: 31896 bytes
 (epstopdf)             Output file: <figures/simD_safe1-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-22 21:10:44
+(epstopdf)                    date: 2021-04-22 20:10:44
 (epstopdf)                    size: 5458 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simD_safe1-eps-conv
 erted-to.pdf figures/simD_safe1.eps>
@@ -1156,10 +1156,10 @@ Package pdftex.def Info: figures/simD_safe1-eps-converted-to.pdf  used on input
  line 994.
 (pdftex.def)             Requested size: 115.63092pt x 149.05548pt.
 Package epstopdf Info: Source file: <figures/simD_fail2.eps>
-(epstopdf)                    date: 2022-01-12 00:07:12
+(epstopdf)                    date: 2022-01-11 23:07:12
 (epstopdf)                    size: 3278208 bytes
 (epstopdf)             Output file: <figures/simD_fail2-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-01-12 00:13:50
+(epstopdf)                    date: 2022-01-11 23:13:50
 (epstopdf)                    size: 32749 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simD_fail2-eps-conv
 erted-to.pdf figures/simD_fail2.eps>
@@ -1182,10 +1182,10 @@ Overfull \hbox (10.59991pt too wide) in paragraph at lines 992--1003
 
 [7]
 Package epstopdf Info: Source file: <figures/b0.eps>
-(epstopdf)                    date: 2021-07-10 11:49:45
+(epstopdf)                    date: 2021-07-10 10:49:45
 (epstopdf)                    size: 42336 bytes
 (epstopdf)             Output file: <figures/b0-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-07-12 02:33:41
+(epstopdf)                    date: 2021-07-12 01:33:41
 (epstopdf)                    size: 15534 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b0-eps-converted-to
 .pdf figures/b0.eps>
@@ -1202,10 +1202,10 @@ Package pdftex.def Info: figures/b0-eps-converted-to.pdf  used on input line 10
 15.
 (pdftex.def)             Requested size: 231.83954pt x 121.0167pt.
 Package epstopdf Info: Source file: <figures/b1a.eps>
-(epstopdf)                    date: 2021-07-22 23:53:54
+(epstopdf)                    date: 2021-07-22 22:53:54
 (epstopdf)                    size: 59768 bytes
 (epstopdf)             Output file: <figures/b1a-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-09-01 15:31:04
+(epstopdf)                    date: 2021-09-01 14:31:04
 (epstopdf)                    size: 28328 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b1a-eps-converted-t
 o.pdf figures/b1a.eps>
@@ -1222,10 +1222,10 @@ Package pdftex.def Info: figures/b1a-eps-converted-to.pdf  used on input line 1
 023.
 (pdftex.def)             Requested size: 231.83954pt x 121.87297pt.
 Package epstopdf Info: Source file: <figures/b2a.eps>
-(epstopdf)                    date: 2021-07-22 23:54:51
+(epstopdf)                    date: 2021-07-22 22:54:51
 (epstopdf)                    size: 54254 bytes
 (epstopdf)             Output file: <figures/b2a-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-09-01 15:31:05
+(epstopdf)                    date: 2021-09-01 14:31:05
 (epstopdf)                    size: 26264 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/b2a-eps-converted-t
 o.pdf figures/b2a.eps>
@@ -1272,11 +1272,11 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 1053--1053
 
 Package marginnote Info: xpos seems to be 49.14749pt on input line 1053.
 Package epstopdf Info: Source file: <figures/simB_0402_pt1_v3.eps>
-(epstopdf)                    date: 2022-01-04 06:31:38
+(epstopdf)                    date: 2022-01-04 05:31:38
 (epstopdf)                    size: 161728 bytes
 (epstopdf)             Output file: <figures/simB_0402_pt1_v3-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2022-01-04 06:31:41
+(epstopdf)                    date: 2022-01-04 05:31:41
 (epstopdf)                    size: 75385 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt1_v3-ep
 s-converted-to.pdf figures/simB_0402_pt1_v3.eps>
@@ -1293,11 +1293,11 @@ Package pdftex.def Info: figures/simB_0402_pt1_v3-eps-converted-to.pdf  used on
  input line 1053.
 (pdftex.def)             Requested size: 252.0pt x 188.99939pt.
 Package epstopdf Info: Source file: <figures/simB_0402_pt2_v4.eps>
-(epstopdf)                    date: 2022-01-04 06:24:56
+(epstopdf)                    date: 2022-01-04 05:24:56
 (epstopdf)                    size: 76574 bytes
 (epstopdf)             Output file: <figures/simB_0402_pt2_v4-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2022-01-04 06:25:23
+(epstopdf)                    date: 2022-01-04 05:25:23
 (epstopdf)                    size: 35553 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt2_v4-ep
 s-converted-to.pdf figures/simB_0402_pt2_v4.eps>
@@ -1324,11 +1324,11 @@ Overfull \hbox (4.0pt too wide) in paragraph at lines 1069--1069
  []
 
 Package epstopdf Info: Source file: <figures/simB_0402_pt3_v1.eps>
-(epstopdf)                    date: 2022-01-12 10:24:53
+(epstopdf)                    date: 2022-01-12 09:24:53
 (epstopdf)                    size: 103343 bytes
 (epstopdf)             Output file: <figures/simB_0402_pt3_v1-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2022-01-12 10:24:57
+(epstopdf)                    date: 2022-01-12 09:24:57
 (epstopdf)                    size: 48372 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt3_v1-ep
 s-converted-to.pdf figures/simB_0402_pt3_v1.eps>
@@ -1361,10 +1361,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 rted-to.pdf> <./figures/b0-eps-converted-to.pdf> <./figures/b1a-eps-converted-t
 o.pdf> <./figures/b2a-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/simEF1.eps>
-(epstopdf)                    date: 2021-03-19 20:57:11
+(epstopdf)                    date: 2021-03-19 19:57:11
 (epstopdf)                    size: 59742 bytes
 (epstopdf)             Output file: <figures/simEF1-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-28 04:16:23
+(epstopdf)                    date: 2021-04-28 03:16:23
 (epstopdf)                    size: 57984 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/simEF1-eps-converte
 d-to.pdf figures/simEF1.eps>
@@ -1380,18 +1380,13 @@ File: figures/simEF1-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/simEF1-eps-converted-to.pdf  used on input lin
 e 1093.
 (pdftex.def)             Requested size: 252.0pt x 189.00099pt.
-(journal_v14.bbl)
 
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[9 <./figures/simB_0402_pt1_v3-eps-converted-to.pdf> <./figures/simB_0402_pt2_v
-4-eps-converted-to.pdf> <./figures/simB_0402_pt3_v1-eps-converted-to.pdf> <./fi
-gures/simEF1-eps-converted-to.pdf>]
-Overfull \vbox (6.0pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (8.16492pt too high) has occurred while \output is active []
+ [9 <./figures/simB_0402_pt1_v3-eps-converted-to.pdf> <./figures/simB_0402_pt2_
+v4-eps-converted-to.pdf> <./figures/simB_0402_pt3_v1-eps-converted-to.pdf> <./f
+igures/simEF1-eps-converted-to.pdf>] (journal_v14.bbl)
+Overfull \vbox (2.16492pt too high) has occurred while \output is active []
 
 
 [10] (appendix.tex
@@ -1465,7 +1460,7 @@ LaTeX Warning: Citation `bauschke2011convex' on page 11 undefined on input line
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 140.
+               Default added (so using `htbp') on input line 141.
 
 ) [11] [12] (journal_v14.aux)
 
@@ -1523,7 +1518,7 @@ ry/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmr8a.pfb><
 /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmri8
 a.pfb></Users/wicakananduta/Library/Application Support/MiKTeX/texmfs/install/f
 onts/type1/public/wasy-type1/wasy10.pfb>
-Output written on journal_v14.pdf (12 pages, 794683 bytes).
+Output written on journal_v14.pdf (12 pages, 794450 bytes).
 PDF statistics:
  275 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
