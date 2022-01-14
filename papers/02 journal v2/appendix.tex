@@ -1,7 +1,7 @@
 \appendix%[Supplementary Material ]
 \subsection{Algorithm 1: Derivation and Convergence Analysis}
 \label{app:CA}
-The derivation and convergence analysis of Algorithm 1 relies (for the most part) on the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. The objective of this appendix is to show that the proposed market-clearing game \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def}-\eqref{eq:Cconstr_def}, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which is the existence of a variational GNE, i.e., item (i) of Proposition \ref{prp:conv}. Therefore, we invoke \cite[Theorem~2]{belgioioso2020semi} to prove convergence of Algorithm \ref{alg:alg1}, i.e., item (ii) of Proposition \ref{prp:conv}. For a complete convergence analysis of the cPPP algorithm for aggregative games we refer to \cite[Appendix~C]{belgioioso2020semi}.
+The derivation and convergence analysis of Algorithm 1 relies (for the most part) on the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. The objective of this appendix is to show that the proposed market-clearing game \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def}-\eqref{eq:Cconstr_def}, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which is the existence of a variational GNE, i.e., item (i) of Proposition \ref{prp:conv}. Therefore, we invoke \cite[Theorem~2]{belgioioso2020semi} to prove convergence of Algorithm 1, i.e., item (ii) of Proposition \ref{prp:conv}. For a complete convergence analysis of the cPPP algorithm for aggregative games we refer to \cite[Appendix~C]{belgioioso2020semi}.
 
 \smallskip
 \subsubsection*{Aggregative cost functions} First, we show that the cost functions \eqref{eq:cost_def} can be cast as in\cite[Eqn.~(30)]{belgioioso2020semi}, i.e.
@@ -44,7 +44,7 @@ Let $\mc N_i = \mc N$, for all $i \in \mc N$, without loss of generality\footnot
 
 \subsection{Alternating Projection for Operational Feasibility}
 \label{APA}
-In this appendix, we propose an efficient algorithm to compute the projection onto the set $\mathcal{U}_{N+1}$  (line 30 in Algorithm~\ref{alg:alg1}). First, let us recall the structure of $u_{N+1}$, i.e.,
+In this appendix, we propose an efficient algorithm to compute the projection onto the set $\mathcal{U}_{N+1}$  (Algorithm~3~(i)). First, let us recall the structure of $u_{N+1}$, i.e.,
 $$u_{N+1}=\col\left(\{\theta_y, v_y, p_y^{\mathrm{tg}},\{p_{(y,z)}^{\ell},q_{(y,z)}^{\ell}\}_{z \in \mc B_y} \}_{y\in\mc B} \right),$$ and let us define the sets
 \begin{align}
 	\mc S_1 &:= \{u_{N+1} \mid \text{\eqref{eq:line} and \eqref{eq:grid_ex} hold}\},\\

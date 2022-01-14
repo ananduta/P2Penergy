@@ -15,7 +15,7 @@
 \usepackage{graphicx}
 \usepackage{comment}
 \usepackage{booktabs}
-%\usepackage{breqn}
+%\usepackage{breqn} 	
 \usepackage{balance}
 \usepackage{bm}
 \usepackage{graphicx}
@@ -319,7 +319,10 @@ Moreover, we also consider the electrical distribution network, to which the pro
 \begin{figure}
 	\centering
 	%\includegraphics[scale=1.4]{figures/37bus_ex}
-	\includegraphics[width=\columnwidth]{figures/NF/37bus_sysIPE1}
+	\includegraphics[width=\columnwidth]%
+%{figures/NF/37bus_sysIPE1}%
+{figures/37bus_sys_f1}
+\smallskip
 	\caption{Left plot: A modified IEEE 37-bus network with 12 prosumers (boxes) and 15 passive loads (black triangles); busses are represented by black circles, physical lines in $\mc L$ by solid lines. Right plot: P2P trading network, whereas trading relations ($\mc E$) are represented by blue double-arrow lines.
 	}
 	\label{fig:GGp}
@@ -688,13 +691,14 @@ In addition to the physical variables of the distribution network, i.e., $u_{N\!
 \end{itemize}
 From an economic perspective, these variables can be interpreted as extra marginal losses imposed to the prosumers for the grid usage. From a control-theoretic perspective, they can be interpreted as states of discrete-time integrators driven by the violation of the network operational constraints \eqref{eq:Cconstr_def}.
 }
-%
+
 \begin{figure}[t]
 \centering
-\includegraphics[width=.4\textwidth]{figures/flowChart_v1}
-\caption{Flow chart of Algorithm 1.}
+\includegraphics[width=.3\textwidth]{figures/37bus_sys_f6}
+\smallskip
+\caption{\edit{Information flow in Algorithm 1.}}
 \label{fig:IFC}
-\end{figure}
+\end{figure}%
 %
 \begin{figure}[t]
 \marginnote{\note{R1-6}}
@@ -708,7 +712,7 @@ From an economic perspective, these variables can be interpreted as extra margin
 \smallskip
 \text{Initialization}: For all prosumers $i \in \mc N$: set $\mu^{\text{tr}}_{(i,j)}(-1) = 0$, $\forall j \in \mc N_i$. DNO: set $\lambda^{\text{mg}}(0)\!=\!0$, $\mu^{\text{tg}}(0) \!=\! 0$, $\mu_y^{\text{pb}}(0)\! = \!0$, $\forall y \!\in\! \mc B$.
 
-\medskip
+\smallskip
  \text{Iterate until convergence $(k = 0,1,\ldots)$}
 \begin{align*}
 & \text{For all prosumers $i \in \mc I$ (in parallel):}\\
@@ -767,8 +771,92 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \hrule
 \end{minipage}
 }
-\end{figure}
+\end{figure}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}
+%\centering
+%\begin{subfigure}[b]{\columnwidth}
+%%\begin{minipage}{\linewidth}
+%\marginnote{\note{R1-6}}
+%\edit{
+%\hrule
+%\smallskip
+%\textsc{Algorithm 1}. Coordinated P2P Market Clearing
+%\smallskip
+%\hrule 
+%\smallskip
+%\text{Initialization}: For all prosumers $i \in \mc N$: set $\mu^{\text{tr}}_{(i,j)}(-1) = 0$, $\forall j \in \mc N_i$. DNO: set $\lambda^{\text{mg}}(0)\!=\!0$, $\mu^{\text{tg}}(0) \!=\! 0$, $\mu_y^{\text{pb}}(0)\! = \!0$, $\forall y \!\in\! \mc B$.
 %
+%\smallskip
+% \text{Iterate until convergence $(k = 0,1,\ldots)$}
+%\begin{align*}
+%& \text{For all prosumers $i \in \mc I$ (in parallel):}\\
+%\quad &\left|
+%\begin{array}{l}
+%\text{Local update via \textsc{Algorithm 2}:}\\
+%\left\lfloor
+%\begin{array}{l}
+%\text{Set $\{\mu_{(i,j)}(k)\}_{j \in \mc N_i}$ as in \textsc{Alg. 2} (i)}\\
+%\text{Set $u_i(k\!+\!1)$ as in \textsc{Alg. 2} (ii)}
+%\end{array}
+%\right.\\[1em]
+% \text{Communication}\\
+% \left\lfloor
+%\begin{array}{l}
+%\eta_i(k\!+\!1), \; p_i^{\text{mg}}(k\!+\!1) \rightarrow \text{ DNO}\\[.5em]
+%\text{For all trading partners } j \in \mc N_i \text{ (in parallel):}\\
+% \left\lfloor
+%\begin{array}{l}
+%p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
+%\end{array}
+%\right.
+%\end{array}
+%\right.
+%\end{array}
+%\right.\\[.5em]
+%%%%
+%% DNO
+%%%%
+%& \text{DNO}\\
+%\quad &\left|
+%\begin{array}{l}
+%\text{Central update via \textsc{Algorithm 3}:}\\
+%\left\lfloor
+%\begin{array}{l}
+%\text{Set $u_{N+1}(k\!+\!1)$ as in \textsc{Alg. 3} (i)}\\
+%\text{Set $\lambda^{\text{mg}}$, $\mu^{\text{tg}}$, $\{ \mu_y^{\text{pb}}(k\!+\!1)\}_{y \in\mc B}$ as in \textsc{Alg. 3} (ii)}
+%\end{array}
+%\right.\\[1em]
+%\text{Communication (Gather \& Broadcast)}\\
+% \left\lfloor
+%\begin{array}{l}
+%\sigma^{\mathrm{mg}},\, \lambda^{\text{mg}}, \mu^{\text{tg}}(k\!+\!1) \rightarrow \text{ all prosumers } i \in \mc N\\[.5em]
+%\text{For all busses } y \in \mc B \text{ (in parallel):}\\
+% \left\lfloor
+%\begin{array}{l}
+%\mu_y^{\text{pb}}(k+1) \rightarrow \text{ all prosumers } i \in \mc N_y^{\text{b}} \text{ on bus } y%
+%\end{array}%
+%\right.%
+%\end{array}%
+%\right.\\[1em]
+%\end{array}
+%\right.%
+%\end{align*}
+%\smallskip
+%\hrule
+%%\end{minipage}
+%}
+%\end{subfigure}
+%\vspace*{2em}
+%
+%\begin{subfigure}[b]{0.37\textwidth}
+%   \includegraphics[width=\linewidth]{figures/37bus_sys_f6}
+%\end{subfigure}
+%\caption{\edit{Information flow in Algorithm 1.}}
+%\label{fig:IFC}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The semi-decentralized information flow of Algorithm~1 is illustrated in Fig.~\ref{fig:IFC}, \edit{while its locals and central updates are summarized  in Algorithm 2 and Algorithm 3, respectively. In there, we use some auxiliary variables (e.g., $\zeta^{\text{tr}}_{(i,j)}$, $\psi_i$ in Alg.~2) to keep the presentation compact. }  
@@ -811,7 +899,7 @@ $
 \left| 
 \begin{array}{l}
 \text{For all } j \in \mc N_i \text{ (in parallel):}\\
-\left|
+\left\lfloor
 \begin{array}{l}
 %\text{Receive } p^{\textrm{tr}}_{(j,i)} (k) \text{ from prosumer } j\\
 \zeta^{\text{tr}}_{(i,j)}(k)  =  p^{\textrm{tr}}_{(i,j)} (k) + p^{\textrm{tr}}_{(j,i)} (k)\\
@@ -935,7 +1023,7 @@ $
 	\mu^{\text{tg}}(k+1) = \mu^{\text{tg}}(k) + \beta^{\text{tg}} (2\zeta^{\text{tg}}(k+1)-\zeta^{\text{tg}}(k))\\[.5em]
 	%
 \text{For all busses } y \in \mc B \text{ (in parallel):}\\
-\left|
+\left\lfloor
 \begin{array}{l}
 %\text{Receive } p^{\textrm{tr}}_{(j,i)} (k) \text{ from prosumer } j\\
 \zeta^{\text{pb}}_y(k+1)   = \sum_{i \in \mc P_y^{\mathrm{b}}} p_i^{\mathrm{d}} + \sum_{i \in \mc N_y^{\mathrm{b}}} \eta_i(k\!+\!1)\\
@@ -1115,7 +1203,7 @@ For the former, we consider five different values of $N$ and a fixed connectivit
 Energy management and P2P trading in future energy markets of prosumers can be formulated as a generalized game, where the network operator is an extra player in charge of handling the network operational constraints. A provably-convergent operationally-safe market-clearing mechanism is obtained by solving the game with a semi-decentralized Nash equilibrium seeking algorithm based on the proximal-point method.    
 %
 Numerical studies show that the computational complexity of the proposed mechanism is independent of the prosumer population size, and suggest that active participation in the market is economically advantageous both for prosumers and network operators.
-
+%
 Future research directions include: efficiently incorporating non-linear convex approximation of power flow in the algorithm; handling the physical constraints in a fully-distributed manner, i.e., without the action of a network operator; and dealing with uncertainties in the model, e.g., renewable energy production, as well as those from information exchange processes required by our algorithm.
 
 \balance
