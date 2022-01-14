@@ -139,11 +139,9 @@ F.~{Moret}, A.~{Tosatto}, T.~{Baroche}, and P.~{Pinson}, ``Loss allocation in
   Transactions on Power Systems}, 2020, early access at
   https://doi.org/10.1109/TPWRS.2020.3025391.
 
-\bibitem{zhong2019online}
-W.~Zhong, K.~Xie, Y.~Liu, C.~Yang, S.~Xie, and Y.~Zhang, ``Online control and
-  near-optimal algorithm for distributed energy storage sharing in smart
-  grid,'' \emph{IEEE Transactions on Smart Grid}, vol.~11, no.~3, pp.
-  2552--2562, 2019.
+\bibitem{zhong2020cooperative}
+W.~Zhong, S.~Xie, K.~Xie, Q.~Yang, and L.~Xie, ``Cooperative P2P Energy Trading in Active Distribution Networks: An MILP-Based Nash Bargaining Solution,'' \emph{IEEE Transactions on Smart Grid}, vol.~12, no.~2, pp.
+  1264--1276, 2020.
 
 \bibitem{bauschke2011convex}
 H.~H. Bauschke and P.~L. Combettes, \emph{Convex analysis and monotone operator
@@ -167,6 +165,12 @@ C.~A. Hans, P.~Braun, J.~Raisch, L.~Gr{\"u}ne, and C.~Reincke-Collon,
   ``Hierarchical distributed model predictive control of interconnected
   microgrids,'' \emph{IEEE Transactions on Sustainable Energy}, vol.~10, no.~1,
   pp. 407--416, 2019.
+
+\bibitem{zhong2019online}
+W.~Zhong, K.~Xie, Y.~Liu, C.~Yang, S.~Xie, and Y.~Zhang, ``Online control and
+  near-optimal algorithm for distributed energy storage sharing in smart
+  grid,'' \emph{IEEE Transactions on Smart Grid}, vol.~11, no.~3, pp.
+  2552--2562, 2019.
 
 \bibitem{yang2019}
 Z.~{Yang}, K.~{Xie}, J.~{Yu}, H.~{Zhong}, N.~{Zhang}, and Q.~{Xia}, ``A general
@@ -224,5 +228,6 @@ H.~H. Bauschke and V.~R. Koch, ``Projection methods: Swiss army knives for
 G.~Belgioioso and S.~Grammatico, ``On convexity and monotonicity in generalized
   aggregative games,'' \emph{IFAC-PapersOnLine}, vol.~50, no.~1, pp.
   14\,338--14\,343, 2017.
+
 
 \end{thebibliography}

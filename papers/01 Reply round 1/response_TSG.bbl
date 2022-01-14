@@ -44,12 +44,6 @@ Belgioioso, G. and Grammatico, S. (2020).
   on time-varying networks.
 \newblock {\em IEEE Transactions on Automatic Control}, 66(5):2061 -- 2075.
 
-\bibitem[Cadre et~al., 2020]{lecadre2020}
-Cadre, H.~L., Jacquot, P., Wan, C., and Alasseur, C. (2020).
-\newblock Peer-to-peer electricity market analysis: From variational to
-  generalized {Nash} equilibrium.
-\newblock {\em European Journal of Operational Research}, 282(2):753--771.
-
 \bibitem[Facchinei and Pang, 2010]{facchinei201012}
 Facchinei, F. and Pang, J.-S. (2010).
 \newblock 12. {N}ash equilibria: the variational approach.
@@ -72,6 +66,12 @@ Kulkarni, A.~A. and Shanbhag, U.~V. (2012).
 \newblock On the variational equilibrium as a refinement of the generalized
   nash equilibrium.
 \newblock {\em Automatica}, 48(1):45--55.
+
+\bibitem[{Le Cadre} et~al., 2020]{lecadre2020}
+{Le Cadre}, H., Jacquot, P., Wan, C., and Alasseur, C. (2020).
+\newblock Peer-to-peer electricity market analysis: From variational to
+  generalized {Nash} equilibrium.
+\newblock {\em European Journal of Operational Research}, 282(2):753--771.
 
 \bibitem[Liang et~al., 2017]{liang2017distributed}
 Liang, S., Yi, P., and Hong, Y. (2017).
@@ -123,5 +123,11 @@ Zhong, W., Xie, K., Liu, Y., Yang, C., Xie, S., and Zhang, Y. (2019).
 \newblock Online control and near-optimal algorithm for distributed energy
   storage sharing in smart grid.
 \newblock {\em IEEE Transactions on Smart Grid}, 11(3):2552--2562.
+
+\bibitem[Zhong et~al., 2020]{zhong2020cooperative}
+Zhong, W., Xie, S., Xie, K., Yang, Q., and Xie, L. (2020).
+\newblock Cooperative p2p energy trading in active distribution networks: An
+  milp-based nash bargaining solution.
+\newblock {\em IEEE Transactions on Smart Grid}, 12(2):1264--1276.
 
 \end{thebibliography}

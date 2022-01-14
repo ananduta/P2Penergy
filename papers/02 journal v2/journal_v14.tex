@@ -273,13 +273,13 @@ In practice, however, direct trading among prosumers might jeopardize system rel
 %
 For example, \cite{qin2018,morstyn2019} treat decentralized markets and operational reliability separately, and propose market-clearing mechanisms where decentralized market solutions must be approved by a network operator based on the system operational constraints. 
 %
-An alternative is based on incorporating network charges, which may reflect utilization fees and network congestion, into the market formulation, as discussed in \cite{baroche2019b,paudel2020}. Differently, \cite{moret2020,zhang2020} include network operators as players in the market and impose network operational requirements as constraints in the market problem, which is formulated as a multi-agent optimization. \marginnote{\note{R2-4}}\edit{A similar approach is considered in \cite{zhong2019online}, where an online decentralized control algorithm for distributed energy storage systems is developed. } 
+An alternative is based on incorporating network charges, which may reflect utilization fees and network congestion, into the market formulation, as discussed in \cite{baroche2019b,paudel2020}. Differently, \cite{moret2020,zhang2020} include network operators as players in the market and impose network operational requirements as constraints in the market problem, which is formulated as a multi-agent optimization. \marginnote{\note{R2-4}}\edit{A similar approach is considered in \cite{zhong2020cooperative}, which employs generalized Nash bargaining theory and decomposes the problem into two hierarchical subproblems (a social welfare maximization and an energy trading problem).} 
 
 
 \paragraph*{Contribution} 
 In this paper, we consider a P2P energy market in which each prosumer is capable of not only generating and storing energy but also directly trading with other prosumers as well as with the main grid. Similarly to \cite{moret2020}, we include a network operator, whose objective is to ensure safe and reliable operation  of the system. 
 %
-However, we formulate the market clearing as a GNE problem, in which the players (i.e., prosumers and network operators) have coupling objective functions and constraints (Section \ref{sub:setup}). \edit{Our market formulation extends our preliminary work \cite{belgioioso2020energy} by including network operational constraints and system operators in the model, which complicate the analysis as we need to exploit the problem structure to derive an efficient algorithm.}
+However, we formulate the market clearing as a GNE problem, in which the players (i.e., prosumers and network operators) have coupling objective functions and constraints (Section \ref{sub:setup}). \marginnote{\note{R4-3}}\edit{Our market formulation extends the preliminary work \cite{belgioioso2020energy} by including network operational constraints and system operators in the model, which complicate the analysis as we need to exploit the problem structure to derive an efficient algorithm.}
 
 %
 The main advantage of our decentralized market design is that its equilibria are not only economically-optimal but also operationally-safe and reliable. 
@@ -290,7 +290,7 @@ Finally, we investigate via extensive numerical studies: (i)  the effectiveness 
 
 \smallskip
 \subsubsection*{Notation}
-$\R$ denotes the set of real numbers, $\bb N$ denotes the set of natural numbers, and  $\bs{0}$ ($\bs{1}$) denotes a matrix/vector with all elements equal to $0$ ($1$); to improve clarity, we may add the dimension of these matrices/vectors as subscript. $A \otimes B$ denotes the Kronecker product between the matrices $A$ and $B$. For a square matrix $A \in \R^{n \times n}$, its transpose is $A^\top$, $[A]_{i,j}$ represents the element on the row $i$ and column $j$. $A \succ 0$ ($\succcurlyeq 0$) stands for positive definite (semidefinite) matrix. Given $N$ vectors $x_1 \in \bb R^{n_1}, x_2 \in \bb R^{n_2},\ldots, x_N \in \R^{n_N}$, $x := \col\left(x_1,\ldots,x_N\right) = [ x_1^\top, \ldots , x_N^\top ]^\top$. \marginnote{\note{R4-9}}\edit{Given $x \in \bb R^n$, $\|x\|_A^2 = x^\top A x,$ with square matrix $A \succ 0$.}
+$\R$ denotes the set of real numbers, $\bb N$ denotes the set of natural numbers, and  $\bs{0}$ ($\bs{1}$) denotes a matrix/vector with all elements equal to $0$ ($1$); to improve clarity, we may add the dimension of these matrices/vectors as subscript. $A \otimes B$ denotes the Kronecker product between the matrices $A$ and $B$. For a square matrix $A \in \R^{n \times n}$, its transpose is $A^\top$, $[A]_{i,j}$ represents the element on the row $i$ and column $j$. $A \succ 0$ ($\succcurlyeq 0$) stands for positive definite (semidefinite) matrix. Given $N$ vectors $x_1 \in \bb R^{n_1}, x_2 \in \bb R^{n_2},\ldots, x_N \in \R^{n_N}$, $x := \col\left(x_1,\ldots,x_N\right) = [ x_1^\top, \ldots , x_N^\top ]^\top$. \marginnote{\note{R4-9}}\edit{For any $x \in \bb R^n$, $\|x\|_A^2 = x^\top A x,$ with square matrix $A \succ 0$}. 
 %\smallskip
 %\subsubsection*{Operator theoretic definitions}
 %Here, $\Id(\cdot)$ denotes the identity operator. The mapping $\iota_{S}:\R^n \rightarrow \{ 0, \, \infty \}$ denotes the indicator function for the set $\mc{S} \subseteq \R^n$, i.e., $\iota_{S}(x) = 0$ if $x \in S$, $\infty$ otherwise. 
@@ -422,7 +422,7 @@ Each prosumer might also minimize the usage of its storage units, for instance, 
 		%\marginnote{\note{R1-3}\\ \note{R2-2}}
 f_{i}^{\mathrm{st}}(p_{i}^{\mathrm{ch}}, p_{i}^{\mathrm{ds}})= \|p_{i}^{\mathrm{ch}}\|_{Q_i^{\mathrm{st}}}^2 + \|p_{i}^{\mathrm{ds}}\|_{Q_i^{\mathrm{st}}}^2, \label{eq:f_st}
 \end{equation}
-where $Q_i^{\mathrm{st}}\succcurlyeq0$. \edit{The battery charging and discharging profiles, $p_{i}^{\mathrm{ch}} = \col((p_{i,h}^{\mathrm{ch}})_{h\in \mc H})$ and $p_{i}^{\mathrm{ds}} = \col((p_{i,h}^{\mathrm{ds}})_{h\in \mc H})$, respectively, are constrained by the battery dynamics}
+where $Q_i^{\mathrm{st}}\succcurlyeq0$. \edit{The battery charging and discharging profiles, $p_{i}^{\mathrm{ch}} = \col((p_{i,h}^{\mathrm{ch}})_{h\in \mc H})$ and $p_{i}^{\mathrm{ds}} = \col((p_{i,h}^{\mathrm{ds}})_{h\in \mc H})$, respectively, are constrained by the battery dynamics \cite{atzeni2013,zhong2019online}}
 %
 \begin{equation}
 	\marginnote{\note{R1-3}\\ \note{R2-2}}
@@ -443,7 +443,7 @@ where $Q_i^{\mathrm{st}}\succcurlyeq0$. \edit{The battery charging and dischargi
 where $x_{i,h} $ denotes the state of charge (SoC) of the storage unit at time $h \in \mc H$%
 %\footnote{In \cite{atzeni2013}, the charging and discharging power are defined separately, which is actually a better representation. However, the optimal strategies that they produce satisfies the constraint that charging and discharging must be mutually exclusive (see footnote 1 in \cite{atzeni2013}). From other papers, they usually have boolean variables to ensure this constraint and we want to avoid that.}
 , \edit{$\eta_i^{\mathrm{st}}, \eta_i^{\mathrm{ch}}, \eta_i^{\mathrm{ds}} \in (0,1]$ denote  the leakage coefficient of the storage, charging, and discharging efficiencies, respectively, while }  %$b_i~=~-\frac{T_{\mathrm{s}}}{e^{\mathrm{cap}}_{i}}$, with 
-$T_{\mathrm{s}}$ and $e^{\mathrm{cap}}_{i}$ denote sampling time and maximum capacity of the storage, respectively. Moreover, $\underline{x}_i,\overline{x}_i  \in [0,1]$  denote the minimum and the maximum SoC of the storage unit of prosumer $i$, respectively, whereas $\edit{\overline p}^{\mathrm{ch}}_i \geq 0$ and $\edit{\overline p}^{\mathrm{ds}}_i \geq 0$ denote the maximum charging and discharging power of the storage unit. Finally, we denote by  $\mathcal{N}^{\mathrm{st}}\subseteq\mathcal{N}$ 	the set of prosumers that own a storage unit.
+$T_{\mathrm{s}}$ and $e^{\mathrm{cap}}_{i}$ denote sampling time and maximum capacity of the storage, respectively. Moreover, $\underline{x}_i,\overline{x}_i  \in [0,1]$  denote the minimum and the maximum SoC of the storage unit of prosumer $i$, respectively, whereas $\edit{\overline p^{\mathrm{ch}}_i} \geq 0$ and $\edit{\overline p^{\mathrm{ds}}_i} \geq 0$ denote the maximum charging and discharging power of the storage unit. Finally, we denote by  $\mathcal{N}^{\mathrm{st}}\subseteq\mathcal{N}$ 	the set of prosumers that own a storage unit.
 
 
 \smallskip
@@ -678,9 +678,9 @@ The resulting market-clearing mechanism, summarized in Algorithm~1, requires the
 \begin{itemize}
 \item the local strategy $u_i$ that collects the power generation, storage (charging/discharging), load, and trading profiles.
 
-\item the local power unbalance $\eta_i$, defined as in \eqref{eq:etai} and privately communicated only to the DNO.
+\item the active power injection $\eta_i$, defined as in \eqref{eq:etai} and privately communicated only to the DNO.
 
-\item a (dual) variable $\mu^{\text{tr}}_{(i,j)}$ for each trading partner $j \in \mc N_i$, whose function is to drive prosumer $i$'s and $j$'s power trade to agreement, i.e., the reciprocity constraints \eqref{eq:rep_const};
+\item a (dual) variable $\mu^{\text{tr}}_{(i,j)}$ for each trading partner $j \in \mc N_i$, whose function is to drive prosumer $i$'s and $j$'s power trade to agreement, i.e., the reciprocity constraints \eqref{eq:rep_const}, and can be intrepreted as the bilateral trading shadow prices \cite[Section 2.4]{lecadre2020};
 
 \end{itemize}
 In addition to the physical variables of the distribution network, i.e., $u_{N\!+\!1}$, the DNO stores in its local memory
@@ -872,11 +872,12 @@ The next proposition shows the global convergence of Algorithm 1 to a variationa
 \item The sequence $\left(u_1(k),\ldots,u_{N+1}(k)\right)_{k \in \bb N}$ generated by Algorithm~1 converges to a v-GNE of \eqref{eq:locOpt}.
 \end{enumerate}
 \end{proposition}
-\begin{proof} (Sketch)
-Algorithm~1 is an instance of the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. To prove convergence, it is sufficient to show that the proposed market-clearing game in \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def} and \eqref{eq:Cconstr_def}, respectively, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which is the existence of a variational GNE (i.e., item (i) of Proposition \ref{prp:conv}). Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove convergence of Algorithm~1 (i.e., item (ii) of Proposition \ref{prp:conv}).
+\begin{proof} See Appendix~A.
+%(Sketch)
+%Algorithm~1 is an instance of the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. To prove convergence, it is sufficient to show that the proposed market-clearing game in \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def} and \eqref{eq:Cconstr_def}, respectively, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which is the existence of a variational GNE (i.e., item (i) of Proposition \ref{prp:conv}). Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove convergence of Algorithm~1 (i.e., item (ii) of Proposition \ref{prp:conv}).
 %For a complete convergence analysis of the cPPP algorithm for aggregative games we refer to \cite[Appendix~C]{belgioioso2020semi}.
 %Due to space limitations, we provide next only a sketch of its derivation and convergence analysis.
-We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operationally} for a detailed derivation and convergence analysis of Algorithm~1.
+%We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operationally} for a detailed derivation and convergence analysis of Algorithm~1.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -890,7 +891,7 @@ We refer the interested readers to the \cite[Appendix~A]{belgioioso2021operation
 \smallskip
 \hrule 
 \smallskip
-
+\text{Step sizes}: For each $i \in \mc N$, set $\alpha_{i} <1/(3+N\max_{h\in \mc H} d_h^{\mathrm{mg}})$, $\beta_{(i,j)}^{\text{tr}}=\beta_{(j,i)}^{\text{tr}} < 1/2$, for all $j \in \mc N_i$.\\
 \medskip
 \noindent 
 (i) \text{Dual update (trading reciprocity):}\\[.2em]
@@ -1044,16 +1045,19 @@ $
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{remark} The main properties of the proposed market-clearing mechanism (algorithms 1-3) are listed below:
+\begin{remark} The main properties of the proposed market-clearing mechanism (Algorithms 1-3) are listed below:
 \begin{enumerate}[(i)]
 
-\item The step sizes in the local and central updates (i.e., algorithms 2 and 3) are fully-uncoordinated, i.e., they can differ across prosumers and DNO, and can be chosen independently based on local information only;
+\item The step sizes in the local and central updates (i.e., Algorithms 2 and 3) are fully-uncoordinated, i.e., they can differ across prosumers and DNO, and can be chosen independently based on local information only;
 
 \item The primal update of each prosumer (Algorithm~2~(ii)) involves the solution of a quadratic program\footnote{Up to a fairly-standard reformulation of the absolute value term in \eqref{eq:f_t}.}, for which very efficient solvers are available, e.g. \cite{osqp}. \edit{In there, if $   J_{i} \big( \xi, u_{-i}(k) \big)$ is replaced by its approximate version $ \tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big)$, obtained by neglecting prosumer $i$'s contribution $p_i^{\text{tr}}$ to the aggregative active load $\sigma^{\text{mg}}$, Algorithm 1 will converge to a variational Wardrop equilibrium \cite[\S~II.B]{belgioioso2020semi}, which is a good approximation of v-GNEs for networks with a large number of prosumers.}
 
 \item \marginnote{\note{R4-10}} The primal update of the DNO (Algorithm~3~(i)) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation can be computationally expensive if naively solved. However, more efficient algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~4.3]{bauschke2015projection}, see e.g. \cite[Appendix~2]{belgioioso2021operationally}.
 
 \end{enumerate}
+\end{remark}
+\begin{remark} \marginnote{\note{R3-3}} \edit{
+Our proposed approach differs from community-based local markets \cite[Section 3.2]{sousa2019}, which also requires a coordinator that manages the trading activities. In our setup, each prosumer knows its trading partners and, thus, negotiates directly with them while the coordinator handles the physical constraints and aggregated power bought from the main grid.}
 \end{remark}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Numerical Studies}
@@ -1206,11 +1210,11 @@ Numerical studies show that the computational complexity of the proposed mechani
 %
 Future research directions include: efficiently incorporating non-linear convex approximation of power flow in the algorithm; handling the physical constraints in a fully-distributed manner, i.e., without the action of a network operator; and dealing with uncertainties in the model, e.g., renewable energy production, as well as those from information exchange processes required by our algorithm.
 
-\balance
+%\balance
 \bibliographystyle{ieeetran}
 \bibliography{ref}
 
-\newpage
+%\newpage
 \input{appendix}
 
 
