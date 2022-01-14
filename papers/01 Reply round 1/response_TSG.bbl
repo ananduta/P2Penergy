@@ -20,8 +20,13 @@ Auslender, A. and Teboulle, M. (2000).
   inequality problems.
 \newblock {\em SIAM Journal on Optimization}, 10(4):1097--1115.
 
-\bibitem[{Baroche} et~al., 2019]{baroche2019b}
-{Baroche}, T., {Pinson}, P., {Latimier}, R. L.~G., and {Ahmed}, H.~B. (2019).
+\bibitem[{Baroche} et~al., 2019a]{baroche2019}
+{Baroche}, T., {Moret}, F., and {Pinson}, P. (2019a).
+\newblock Prosumer markets: A unified formulation.
+\newblock In {\em Proceedings of 2019 IEEE Milan PowerTech}, pages 1--6.
+
+\bibitem[{Baroche} et~al., 2019b]{baroche2019b}
+{Baroche}, T., {Pinson}, P., {Latimier}, R. L.~G., and {Ahmed}, H.~B. (2019b).
 \newblock Exogenous cost allocation in peer-to-peer electricity markets.
 \newblock {\em IEEE Transactions on Power Systems}, 34(4):2553--2564.
 
@@ -43,6 +48,12 @@ Belgioioso, G. and Grammatico, S. (2020).
 \newblock Distributed generalized nash equilibrium seeking in aggregative games
   on time-varying networks.
 \newblock {\em IEEE Transactions on Automatic Control}, 66(5):2061 -- 2075.
+
+\bibitem[Cui et~al., 2020]{cui2020}
+Cui, S., Wang, Y.-W., Shi, Y., and Xiao, J.-W. (2020).
+\newblock A new and fair peer-to-peer energy sharing framework for energy
+  buildings.
+\newblock {\em IEEE Transactions on Smart Grid}, 11(5):3817--3826.
 
 \bibitem[Facchinei and Pang, 2010]{facchinei201012}
 Facchinei, F. and Pang, J.-S. (2010).
@@ -117,6 +128,12 @@ Yi, P. and Pavel, L. (2019).
 \newblock An operator splitting approach for distributed generalized nash
   equilibria computation.
 \newblock {\em Automatica}, 102:111--121.
+
+\bibitem[Zhang et~al., 2020]{zhang2020}
+Zhang, K., Troitzsch, S., Hanif, S., and Hamacher, T. (2020).
+\newblock Coordinated market design for peer-to-peer energy trade and ancillary
+  services in distribution grids.
+\newblock {\em IEEE Transactions on Smart Grid}, 11(4):2929--2941.
 
 \bibitem[Zhong et~al., 2019]{zhong2019online}
 Zhong, W., Xie, K., Liu, Y., Yang, C., Xie, S., and Zhang, Y. (2019).

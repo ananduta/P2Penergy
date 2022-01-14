@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: ref.bib
-You've used 21 entries,
+You've used 24 entries,
             1935 wiz_defined-function locations,
-            593 strings with 7856 characters,
-and the built_in function-call counts, 9542 in all, are:
-= -- 929
-> -- 458
-< -- 8
-+ -- 162
-- -- 158
-* -- 876
-:= -- 1649
-add.period$ -- 65
-call.type$ -- 21
-change.case$ -- 184
-chr.to.int$ -- 21
-cite$ -- 21
-duplicate$ -- 313
-empty$ -- 626
-format.name$ -- 191
-if$ -- 1845
-int.to.chr$ -- 1
+            606 strings with 8337 characters,
+and the built_in function-call counts, 10943 in all, are:
+= -- 1061
+> -- 522
+< -- 9
++ -- 187
+- -- 180
+* -- 1002
+:= -- 1885
+add.period$ -- 74
+call.type$ -- 24
+change.case$ -- 210
+chr.to.int$ -- 23
+cite$ -- 24
+duplicate$ -- 364
+empty$ -- 726
+format.name$ -- 216
+if$ -- 2127
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 21
-newline$ -- 109
-num.names$ -- 63
-pop$ -- 149
+missing$ -- 24
+newline$ -- 124
+num.names$ -- 72
+pop$ -- 175
 preamble$ -- 1
-purify$ -- 184
+purify$ -- 210
 quote$ -- 0
-skip$ -- 239
+skip$ -- 273
 stack$ -- 0
-substring$ -- 733
-swap$ -- 39
-text.length$ -- 2
+substring$ -- 837
+swap$ -- 47
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 126
+type$ -- 144
 warning$ -- 0
-while$ -- 73
+while$ -- 83
 width$ -- 0
-write$ -- 275
+write$ -- 314

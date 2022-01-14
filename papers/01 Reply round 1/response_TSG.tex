@@ -162,7 +162,7 @@ The authors would like to thank the Reviewers and the Associate Editor for their
 \section*{Answers to Associate Editor}
 
 \query[AE-1]{This paper proposes a generalized Nash game model for P2P energy trading in a distribution network considering network constraints and DNO. A distributed algorithm is developed to seek the equilibrium of the game. The topic is relevant and timely. However, the reviewers raised some concerns. The authors should carefully consider all the comments and make a corresponding improvement. } 
-\ans{We thank the Associate Editor for handling our manuscript and providing positive comments. We have addressed all the comments from the reviewers and revised the manuscript accordingly.}
+\ans{We thank the Associate Editor for handling our manuscript and providing positive comments. We have addressed all the comments from the Reviewers and revised the manuscript accordingly.}
 
 
 \newpage
@@ -177,10 +177,10 @@ The authors would like to thank the Reviewers and the Associate Editor for their
 \textit{The comments are as follows:}
 
 \query[R1-2]{The feasibility of such scenarios still remains further discussions considering the capital costs of energy storage, interests conflicts of current electrical roles, and the engineering implementations involving such accurate models.}
-\ans{We agree with the Reviewer. This work particularly shows how a distributed clearing mechanism that can be implemented in such scenarios as well as how peer-to-peer market scenarios in theory can be beneficial.}
+\ans{We agree with the Reviewer. This work particularly shows how a distributed clearing mechanism can be implemented in such scenarios as well as how peer-to-peer market scenarios in theory can be beneficial.}
 
 \query[R1-3]{The charging and discharging efficiency are not considered in (5), which is sometimes acceptable, but requires explanations.  }
-\ans{In the first version of the manuscript, we did not consider the charging and discharging efficiency as we assume the simplest model of the storage since modeling the components is not the main focus of this work. However, based on this reviewer comment, we now update the storage dynamics, which include the charging and discharging efficiencies. Therefore, for each storage unit, we consider two decision variables, i.e., the charging and discharging powers. The storage unit is now modeled as follows:}
+\ans{In view of the Reviewer's comment, we have updated the storage dynamics and included the charging and discharging efficiencies. Therefore, for each storage unit, we consider two decision variables, i.e., the charging and discharging powers. The storage unit is now modeled as follows:}
 
 {``\edit{The battery charging and discharging profiles, $p_{i}^{\mathrm{ch}} = \col((p_{i,h}^{\mathrm{ch}})_{h\in \mc H})$ and $p_{i}^{\mathrm{ds}} = \col((p_{i,h}^{\mathrm{ds}})_{h\in \mc H})$, respectively, are constrained by the battery dynamics \cite{atzeni2013,zhong2019online}}}
 %
@@ -206,26 +206,26 @@ The authors would like to thank the Reviewers and the Associate Editor for their
 , \edit{$\eta_i^{\mathrm{st}}, \eta_i^{\mathrm{ch}}, \eta_i^{\mathrm{ds}} \in (0,1]$ denote  the leakage coefficient of the storage, charging, and discharging efficiencies, respectively, while }  %$b_i~=~-\frac{T_{\mathrm{s}}}{e^{\mathrm{cap}}_{i}}$, with 
 $T_{\mathrm{s}}$ and $e^{\mathrm{cap}}_{i}$ denote sampling time and maximum capacity of the storage, respectively. Moreover, $\underline{x}_i,\overline{x}_i  \in [0,1]$  denote the minimum and the maximum SoC of the storage unit of prosumer $i$, respectively, whereas $\edit{\overline p}^{\mathrm{ch}}_i \geq 0$ and $\edit{\overline p}^{\mathrm{ds}}_i \geq 0$ denote the maximum charging and discharging power of the storage unit. Finally, we denote by  $\mathcal{N}^{\mathrm{st}}\subseteq\mathcal{N}$ 	the set of prosumers that own a storage unit.''}
 
-We have also modified our game formulation and proposed algorithm in Section III to take into account this storage model update.
+We have also modified our game formulation and proposed algorithm in Section III to take into account this model update.
 
 \query[R1-4]{The energy loss of the distribution network is also not considered.}
-\ans{We do not include energy loss of the distribution network in the current setup and leave it for future work. In this manuscript, we focus on the game-theoretic formulation of the interaction among prosumers and the network operator and show that the problem can be solved efficiently. For an extension that includes energy losses, we may impose to each prosumer an additional linear cost function that depends on the losses caused by trading and use linear model of power line losses as in \cite[Section II]{moret2020}.}
+\ans{We do not include energy losses of the distribution network in the current setup and leave it for future work. In this manuscript, we focus on the game-theoretic formulation of the interaction among prosumers and the network operator and show that the problem can be solved efficiently. For an extension that includes energy losses, we may impose to each prosumer an additional linear cost function that depends on the losses caused by trading and use linear model of power line losses as in \cite[Section II]{moret2020}.}
 
 \query[R1-5]{The individual variables, coupled relationships for these energy roles, and the corresponding dual variables should be explained specifically, along with the whole framework structure for equilibrium. The rationalities of the framework is not clear. At least, the current presentation is hard to follow.  }
 \ans{
 %\green{
-In the revised paper, (i) we have provided a detailed description of each individual variable along with an explanation of its function in the algorithm; (ii) we have re-designed the main algorithm layout; and (iii) we have included a paragraph to present the targeted class of equilibria considered. Please, refer to the margin notes (R1-5) in Section III for the related changes and additions.
+In the revised manuscript, (i) we have provided a detailed description of each individual variable along with an explanation of its function in the algorithm; (ii) we have re-designed the main algorithm layout; and (iii) we have included a paragraph to present the targeted class of equilibria considered. Please, refer to the margin notes (R1-5) in Section III for the related changes and additions.
 %}
 }
 
 \query[R1-6]{The P2P trading prices are given parameters, which are quite unreasonable. In fact, the P2P prices are the key variable in most literature.}
-\ans{In this manuscript, we want to consider the most general problem formulation of peer-to-peer markets available in the literature. Following \cite{sorin2019,lecadre2020,baroche2019b}, a linear trading cost function is introduced in the problem formulation for the purpose of product differentiation or preference prices. %Furthermore, \cite{baroche2019} also adds a trading tariff or transaction cost encoded as a 1-norm cost function. 
-	Furthermore, we may set $c_{\{i,j\}}^{\mathrm{tr}}=0$, and thus only consider the dual variable associated with the reciprocity constraints (Eq. {(8b)} in the revised manuscript) as the shadow price of bilateral trading \cite[Section 2.4]{lecadre2020}. Indeed the proposed algorithm can handle any case where $c_{\{i,j\}}^{\mathrm{tr}} \geq 0$, for all $\{i,j\} \in \mc E$.}
+\ans{In this manuscript, we have considered the most general problem formulation of peer-to-peer markets available in the literature. Following \cite{sorin2019,lecadre2020,baroche2019b}, a linear trading cost function is introduced in the problem formulation for the purpose of product differentiation or preference prices. %Furthermore, \cite{baroche2019} also adds a trading tariff or transaction cost encoded as a 1-norm cost function. 
+	Furthermore, we may set $c_{\{i,j\}}^{\mathrm{tr}}=0$, and thus only consider the dual variable associated with the reciprocity constraints (Eq. {(8b)} in the revised manuscript) as the shadow price of bilateral trading \cite[Section 2.4]{lecadre2020}. Thus, the proposed algorithm can handle any case where $c_{\{i,j\}}^{\mathrm{tr}} \geq 0$, for all $\{i,j\} \in \mc E$.}
 
  \query[R1-7]{The algorithm requires too many iterations, which leads to poor feasibility in real applications, especially in distributed environment. }
  \ans{
 %\green{
-	The average computational time (obtained using a pc with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory) for the parallel updates of each prosumer (i.e., Algorithm 2) is $t_{\text{avg}}^{\text{pro}} = 74.5$ milliseconds; while for the DNO update (i.e., Algorithm 3), the average computational time is $t_{\text{avg}}^{\text{DNO}} = 1.13$  seconds. 
+	The average computational time (obtained using a PC with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory) for the parallel updates of each prosumer (i.e., Algorithm 2) is $t_{\text{avg}}^{\text{pro}} = 74.5$ milliseconds; while for the DNO update (i.e., Algorithm 3), the average computational time is $t_{\text{avg}}^{\text{DNO}} = 1.13$  seconds. 
 %
  Hence, the total running time of the proposed market-clearing algorithm (Algorithm 1) implemented on a distributed system can be approximatively calculated as
 \begin{align*}
@@ -234,7 +234,7 @@ In the revised paper, (i) we have provided a detailed description of each indivi
 which yields running times of less than 23 minutes. 
 %
 We consider this computational-time requirement reasonable for day-head or also for intra-day scheduling purposes. Moreover, we note that the total running time can be considerably reduced by (i) using provably-convergent accelerated versions of our market-clearing mechanism, that can be easily devised by exploiting the algorithmic framework in \cite[\S~IV-B]{belgioioso2020semi} and in practice reduce (potentially, halve) the total number of iterations for convergence;
-(ii) designing a more efficient ad-hoc algorithm to solve the projection step in Algorithm 3 (i.e., Algorithm 3 (i)); (iii) using a more computationally-powerful hardware to perform the DNO central updates, namely, Algorithm 3. Finally, we note that the main algorithm is scalable with respect to the prosumer population size, namely, the number of iterations for convergence is not affected by the total number of prosumers in the network (see Figure {10}). Moreover, the computation time of the local updates is virtually also independent from the prosumer population size, for constant connectivity levels of the trading network. Therefore, the previous approximation remains valid independently from the market size.
+(ii) designing a more efficient ad-hoc algorithm to solve the projection step in Algorithm 3 (i.e., Algorithm 3 (i)); (iii) using a more computationally-powerful hardware to perform the DNO central updates, namely, Algorithm 3. Finally, we note that the main algorithm is scalable with respect to the number of prosumers, namely, the number of iterations to converge is not affected by the total number of prosumers in the network (see Figure {10}). Moreover, the computation time of the local updates is virtually also independent from the number of prosumers, for constant connectivity levels of the trading network. Therefore, the previous approximation remains valid independently of the market size.
 %} 
 }
 
@@ -246,7 +246,7 @@ We consider this computational-time requirement reasonable for day-head or also 
 \ans{We thank the Reviewer for the positive comment.}
 
 \query[R2-2]{In common energy storage models, efficiency is usually a coefficient of the charging/discharging power. The storage model in (5) is uncommon as the authors take the efficiency $a_i$ as a coefficient of energy state $x_{ih}$. In related works (such as (6) in https://ieeexplore.ieee.org/document/8919970), the coefficient of energy states is usually called a leakage coefficient, describing energy leakage over time. References may be needed for (5), and please explain in what sense this storage model (5) is practical.  }
-\ans{We thank the reviewer for raising this point and suggesting the reference. In the first version of the manuscript, we did not consider the charging and discharging efficiency as we assumed the simplest model of the storage since component models are not the focus of this work. Nevertheless, based on this reviewer comment, we have updated the storage dynamics, which include the charging and discharging efficiencies. Therefore, for each storage unit, we consider two decision variables, i.e., the charging and discharging powers. The storage unit is now modeled as follows:}
+\ans{In view of the Reviewer's comment, we have updated the storage dynamics, which include the charging and discharging efficiencies. Therefore, for each storage unit, we consider two decision variables, i.e., the charging and discharging powers. The storage unit is now modeled as follows:}
 
 {``\edit{The battery charging and discharging profiles, $p_{i}^{\mathrm{ch}} = \col((p_{i,h}^{\mathrm{ch}})_{h\in \mc H})$ and $p_{i}^{\mathrm{ds}} = \col((p_{i,h}^{\mathrm{ds}})_{h\in \mc H})$, respectively, are constrained by the battery dynamics \cite{atzeni2013,zhong2019online}}}
 %
@@ -272,22 +272,22 @@ We consider this computational-time requirement reasonable for day-head or also 
 	, \edit{$\eta_i^{\mathrm{st}}, \eta_i^{\mathrm{ch}}, \eta_i^{\mathrm{ds}} \in (0,1]$ denote  the leakage coefficient of the storage, charging, and discharging efficiencies, respectively, while }  %$b_i~=~-\frac{T_{\mathrm{s}}}{e^{\mathrm{cap}}_{i}}$, with 
 	$T_{\mathrm{s}}$ and $e^{\mathrm{cap}}_{i}$ denote sampling time and maximum capacity of the storage, respectively. Moreover, $\underline{x}_i,\overline{x}_i  \in [0,1]$  denote the minimum and the maximum SoC of the storage unit of prosumer $i$, respectively, whereas $\edit{\overline p^{\mathrm{ch}}_i} \geq 0$ and $\edit{\overline p^{\mathrm{ds}}_i} \geq 0$ denote the maximum charging and discharging power of the storage unit. Finally, we denote by  $\mathcal{N}^{\mathrm{st}}\subseteq\mathcal{N}$ 	the set of prosumers that own a storage unit.''}
 
-We have also modified our game formulation and proposed algorithm in Section III to take into account this storage model update.
+We have also modified our game formulation and proposed algorithm in Section III to take into account this model update.
 
 
 \query[R2-3]{In (9), the electricity price is defined to depend on the total consumption. This setting is often used in local energy systems (community or microgrid) but rarely used in wide-area energy networks (distribution networks). In real situations, the electricity prices in a power network are different at different buses and are determined by generation costs, power line congestion, power loss, etc. The reviewer understands that the authors deliberately use (9) to make the agents’ objectives coupled with each other. But the authors must explain why (9) is practical in the proposed model.  }
-\ans{We agree with the Reviewer that the electricity price in (9) is more suitable for local energy systems than distribution networks as (9).   At the moment we consider the simplest model of electricity prices, which follows linear inverse demand function, i.e., the price increases when the demand does so. In other words, the cost function in (11) takes into account how congested the whole prosumer network is.   We note that the cost function defined by (9)--(11) already complicates the day-ahead problem compared to the existing P2P energy market literature. To our knowledge, most of the existing literature on P2P energy markets exclude the possible interaction between the prosumer network and the main grid, and do not have coupling cost function as in (11). In the revised manuscript, we acknowledge the inclusion of power line congestion and power loss in the formulation of electricity prices of the main grid as a potential future work. In addition, we may also generalize the grid cost function (9)--(11) by considering the total congestion per bus, i.e., the electricity price at each bus depends on the total demand of the prosumers connected to that particular bus.}
+\ans{We agree with the Reviewer that the electricity price in (9) is more suitable for local energy systems than distribution networks.   Here, we consider the simplest model of electricity prices, which follows linear inverse demand function, i.e., the price increases when the demand does so. In other words, the cost function in (11) takes into account how congested the whole prosumer network is.   We note that the cost function defined by (9)--(11) already complicates the day-ahead problem compared to the existing P2P energy market literature \cite{lecadre2020,moret2020,sousa2019,baroche2019,cui2020,zhang2020,sorin2019}. To our knowledge, most of the existing literature on P2P energy markets exclude the possible interaction between the prosumer network and the main grid, and do not have coupled cost functions as in (11). In the revised manuscript, we acknowledge the inclusion of power line congestion and power loss in the formulation of electricity prices of the main grid as a potential future work. In addition, we may also generalize the grid cost function (9)--(11) by considering the total congestion per bus, i.e., the electricity price at each bus depends on the total demand of the prosumers connected to that particular bus.}
 
 \query[R2-4]{In the proposed model, the DNO is considered a game player. This setting is also used in some other related works (such as https://ieeexplore.ieee.org/document/9223743). The authors may need a more comprehensive review on this aspect.  }
-\ans{{We thank the reviewer for drawing our attention on this relevant paper that we cited and briefly reviewed in the new version of the introduction.}}
+\ans{{We thank the Reviewer for drawing our attention on this relevant paper that we cited and briefly reviewed in the new version of the introduction.}}
 
 {\edit{``A similar approach is considered in \cite{zhong2020cooperative}, which employs generalized Nash bargaining theory and decomposes  a P2P market problem into two hierarchical subproblems (a social welfare maximization and an energy trading problem).''
 }}
 
-
 \query[R2-5]{The property of the game equilibrium is not clear enough. It is unclear what is the difference between v-GNE and GNE. The authors may need to formally (mathematically) define the variational GNE that the proposed game will reach. }
 \ans{{We have included a more detailed explanation of the targeted class of variational generalized Nash equilibria, including a formal mathematical definition, as follows.}}
 
+\vspace{-5pt}
 \edit{``Among all GNEs, we target the special subclass of \textit{variational} GNEs (v-GNEs) that coincides with the solutions to a specific variational inequality GVI$(\mc K, P)$ \cite[Prop.~12.4]{facchinei201012},  i.e., the problem of finding a pair of vectors $(u^*,z^*)$, such that $u^* \in \mc K$, $z^* \in P(u^*)$, and
 \begin{align*}
 {(u - u^*)}^\top z^* \geq 0, \quad \forall u  \in  {\mc K}, 
@@ -296,17 +296,16 @@ where the mapping $P(u^*): = \prod_{i \in \mc N^+} \frac{\partial}{\partial u_i}
 %
 v-GNEs enjoy the property of ``economic fairness”, namely, the marginal loss due to the presence of the coupling constraints is the same for each agent, see e.g. \cite{kulkarni2012variational}. For these reasons, v-GNEs have been used to model desirable (i.e., locally efficient, fair, and safe) configurations in several distributed engineering systems, including P2P energy market models, see e.g. \cite{lecadre2020}. In this paper, we focus on computational aspects, namely, the design and analysis of a fast and scalable decentralized v-GNE seeking algorithm for the P2P market game, while we study the properties of its v-GNEs numerically rather than analytically."
 }
+\vspace{-5pt}
 
 \query[R2-6]{Algorithm 1 looks unfriendly to readers. The explanation for the algorithm (section III-A) is also unclear. In this current version, readers may have no clue to follow the formulation/notations in the algorithm and Fig. 2. For example, what are the dual variables used for? What is the intuitive idea behind the algorithm? What are the step sizes used for? The authors are suggested to separate Algorithm 1 into several parts and explain each part. }
-\ans{ {
-We agree with the Reviewer. Thus, following their suggestion, we have split the main algorithm in 3 parts: (1) (the revised) Algorithm 1, i.e., the main semi-decentralized loop, in which we summarize the information flow between prosumers and DNO, including the precise order of their updates; (2) Algorithm 2, i.e., the local primal-dual updates of the prosumers; (3) Algorithm 3, i.e., the central primal-dual update of the DNO.
+\ans{ We agree with the Reviewer. Thus, following their suggestion, we have split the main algorithm in 3 parts: (1) (the revised) Algorithm 1, i.e., the main semi-decentralized loop, in which we summarize the information flow between prosumers and DNO, including the precise order of their updates; (2) Algorithm 2, i.e., the local primal-dual updates of the prosumers; (3) Algorithm 3, i.e., the central primal-dual update of the DNO.
 %
 Moreover, we have included a new paragraph in Section III-B to list all primal, dual, and auxiliary variables of (the revised) Algorithm 1, along with an explanation of their scopes within the algorithm and their economical and system-theoretic interpretations.
 %
 Finally, we have also re-designed the flow chart illustration of Algorithm 1 (Fig. 2).
 %
-Due to space limitations, we omitted a more detailed discussion of the algorithm derivation. We refer the interested reader to \cite{belgioioso2020semi} for a complete discussion on this matter, including step-sizes bound analysis.
-}
+Due to space limitations, we have omitted a more detailed discussion of the algorithm derivation. We refer the interested reader to \cite{belgioioso2020semi} for a complete discussion on this matter, including the analysis of the feasible step-sizes.
 }
 
 \newpage
@@ -317,7 +316,7 @@ Due to space limitations, we omitted a more detailed discussion of the algorithm
 \ans{
 {
 In the revised introduction, we have highlighted the research gaps of the literature and rephrased  the contributions to improve clarity.
-The main advantage of game-theoretic energy market models with respect to optimization-based ones is their ability to encode the strategic objectives, that naturally arise since prosumers are first and foremost self-interested decision-makers. Among game-theoretic models, GNE-based ones can additionally encode the global limitations of the grid (e.g., power-flow constraints, etc.) within the market.
+The main advantage of game-theoretic energy market models with respect to optimization-based ones is their ability to formulate  strategic or self-interested objectives, that naturally arise since prosumers are first and foremost self-interested decision-makers. Among game-theoretic models, GNE-based ones can additionally encode the global limitations of the grid (e.g., power-flow constraints, etc.) within the market.
 %
 Therefore, solutions of the resulting market clearing problem (i.e., variational GNEs) are economically efficient (locally and globally), strategically stable (no prosumer has an incentive in deviating from its current strategy), operationally safe (the global limitations of the grid are respected), and socially fair (the marginal loss for satisfying the grid constraints is the same for each prosumer). 
 %
@@ -325,7 +324,7 @@ Therefore, solutions of the resulting market clearing problem (i.e., variational
 }
 
 \query[R3-2]{From the modeling point of view, a linear approximation of the power-flow is considered. It is known that this approximation is weak in distribution systems. I would suggest to include some references and analysis of convex approximations, if any, that might be compatible with the Assumption 1 of this paper. }
-\ans{We agree with the assessment of the Reviewer on the linear approximation of the power flow equations. Based on Assumption 1, nonlinear but convex approximation of the power flow equations such as a second order cone programming  or semi-definite programming relaxation as discussed in \cite[Sect. II-A]{molzahn2017} can be considered instead of a linear one. Furthermore, since the power flow constraints are handled fully by the distribution network operator, a reformulation of these constraints does not require any modification of Algorithm 1 but only on the local constraint set of the DNO, i.e., $\mc U_{N+1}$. In this regard, the ad-hoc algorithm that we proposed to perform the projection onto $\mc U_{N+1}$ must be adjusted accordingly. We leave out the task of improving the model as future work as this is not the main  contribution of this work. Furthermore, as suggested by the reviewer, we have modified Remark 1 based on the preceding explanation:}
+\ans{We agree with the assessment of the Reviewer on the linear approximation of the power flow equations. Based on Assumption 1, nonlinear but convex approximation of the power flow equations such as a second order cone programming  or semi-definite programming relaxation as discussed for example in \cite[Sect. II-A]{molzahn2017} can be considered instead of a linear one. Furthermore, since the power flow constraints are handled fully by the distribution network operator, a reformulation of these constraints does not require any modification of Algorithm 1 but only on the local constraint set of the DNO, i.e., $\mc U_{N+1}$. In this regard, the ad-hoc algorithm that we proposed to perform the projection onto $\mc U_{N+1}$ must be adjusted accordingly. We leave out the task of improving the model as future work as we believe this is not the main  contribution of our work. Furthermore, as suggested by the Reviewer, we have modified Remark 1 based on the preceding explanation:}
 
 
 {``$\dots$ remain satisfied.} \edit{{In addition, instead of considering linear power flow equations in {(15)}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.
@@ -345,7 +344,7 @@ We have included a new paragraph in Section III-B in which we list all primal, d
 
 
 \query[R3-5]{As to the results section, I miss some analysis of trading prices. Please consider to add some information about transactions prices among peers and compare them with grid prices. This analysis might be interesting in both storage and non-storage situations.}
-\ans{For the simulations in Section IV-C, we consider a uniform per-unit trading price $c_{(i,j)}^{\mathrm{tr}}=0.08$, for all trading links $(i,j) \in \mc E$, and trading tariff $c^{\mathrm{ta}}=0.01$. Figure 9 in the revised manuscript show how the average trading prices $c^{\mathrm{tr}} + c^{\mathrm{ta}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$ compares with the electricity price from the main grid ($c^{\mathrm{mg}}$). The relatively low trading prices explain high power traded among the prosumers. We can also observe from the top plot that during the first six hours, these prices are almost equal, thus the amount of power traded is relatively low (see Figure 8 in the revised manuscript). }
+\ans{For the simulations in Section IV-C, we consider a uniform per-unit trading price $c_{(i,j)}^{\mathrm{tr}}=0.08$, for all trading links $(i,j) \in \mc E$, and trading tariff $c^{\mathrm{ta}}=0.01$. Figure 9 in the revised manuscript show how the average trading prices $c^{\mathrm{tr}} + c^{\mathrm{ta}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$ compare with the electricity price from the main grid ($c^{\mathrm{mg}}$). The relatively low trading prices explain high power traded among the prosumers. We can also observe from the top plot that during the first six hours, these prices are almost equal, thus the amount of power traded is relatively low (see Figure 8 in the revised manuscript). }
 \renewcommand{\thefigure}{9}
 \begin{figure}[h!]
 	\centering
@@ -365,7 +364,7 @@ We have included a new paragraph in Section III-B in which we list all primal, d
 	\caption{	Incorporating storage units causes a peak-shaving effect on the sum of the total power imported from the main grid and the power locally generated.}
 \end{figure}
 \query[R3-7]{ As a conclusion, the paper presents an interesting mathematical approach for clearing P2P markets. On the another hand, some relevant topics in this area remain uncovered and highlighted as future work. All in all, in my opinion, is a very good work, and should be considered for publication if the issues raised during revision are handled. }
-\ans{We thank the Reviewer for the positive comment and recommendation.}
+\ans{We thank the Reviewer for the very positive comment and recommendation.}
 
 \newpage
 \section*{Answers to Reviewer 4}
@@ -473,18 +472,18 @@ which yields v-GNEs of the form $(u_1^*, u_2^*) = (x,-1/2-x)$, with $x \in \math
 } 
 
 \query[R4-3]{ In the introduction, the authors assert that they extend a preliminary work by including nonlinear operational constraints, which complicate the analysis. However, they consider a linear approximation of power-flow equations (equations (13)). In fact, it seems that the only nonlinear constraint in the model is (15a), although some quadratic terms appear in the objective function. Is there any justification for this? Probably, the statement must be relaxed.  }
-\ans{We agree with the Reviewer that the statement can be made clearer. That statement concerns the analysis for the algorithm development as we now have a larger set of coupling constraints than that in \cite{belgioioso2020energy}. In order to have an efficient algorithm, we exploit the structure of these constraints in decomposing the problem, thus resulting in Algorithm 1 in the revised manuscript, which is more complicated than \cite[Algorithm 1]{belgioioso2020energy}. Based on this discussion, in the revised manuscript, we have modified the statement as follows:}
+\ans{We agree with the Reviewer that the statement should be made clearer. That statement concerns the analysis for the algorithm development as we now have a larger set of coupling constraints than that in \cite{belgioioso2020energy}. In order to have an efficient algorithm, we exploit the structure of these constraints in decomposing the problem, thus resulting in Algorithm 1 in the revised manuscript, which is more complicated than \cite[Algorithm 1]{belgioioso2020energy}. Based on this discussion, in the revised manuscript, we have modified the statement as follows:}
 
 { \edit{``Our market formulation extends our preliminary work \cite{belgioioso2020energy} by including network operational constraints and system operators in the model, which complicate the analysis as we need to exploit the problem structure to derive an efficient algorithm.''}}
 
 \query[R4-4]{ Related to the previous comment, one of the nonlinearities appears in the objective function related to dispatchable units (equation (2)). However, in the numerical studies the parameter $Q_{i}^{di}$ is taken as zero, becoming a linear objective function, and simplifying the model. The same happens with the objective function associated to storage units (equation (4)). Have you tested the effect of these parameters in the model? Further, if these parameters take a positive value, some of the conclusions presented in the numerical study could change. I suggest the authors to analyze this issue.  }
-\ans{We thank the reviewer for raising this point. For our proposed algorithm, we have a convergence guarantee for either linear or non-linear objective functions as long as they are locally convex, i.e., convex with respect to local decision variables.In other words, our proposed algorithm works in the case with quadratic local cost functions. Nevertheless, in view of this comment, we have updated the simulations in Section IV-C, where we now use a quadratic cost of dispatchable production, i.e., $Q_{i}^{\mathrm{di}}>0$, for all $i \in \mc N^{\mathrm{di}}$, which varies from one unit to another. The results are shown in Figure {7}, where we still observe a peak-shaving effect caused by the introduction of storage units. As this manuscript focuses on the distributed clearing mechanism that we propose, we leave the analysis of the effect of different possible objective functions on the clearing outcome as future work.}
+\ans{We thank the Reviewer for raising this point. For our proposed algorithm, we have a convergence guarantee for either linear or non-linear objective functions as long as they are locally convex, i.e., convex with respect to local decision variables. In other words, our proposed algorithm works with quadratic local cost functions. Nevertheless, in view of this comment, we have updated the simulations in Section IV-C, where we now use a quadratic cost of dispatchable production, i.e., $Q_{i}^{\mathrm{di}}>0$, for all $i \in \mc N^{\mathrm{di}}$, which varies from one unit to another. The results are shown in Figure {7}, where we still observe a peak-shaving effect caused by the introduction of storage units. As this manuscript focuses on the distributed clearing mechanism design, we leave the analysis of the effect of different possible objective functions on the clearing outcome as future work.}
 
 \query[R4-5]{The objective function associated to the power traded with the main grid seems not so natural. If the electricity unit price, $c_{h}^{mg}$ in equation (9) is considered linear (instead of quadratic) with respect to the total consumption, this would simplify this term, further becoming (11) a decomposable function. Could the authors elaborate what is the advantage of using a quadratic term here? Is worth the improvement it could add with respect to the difficulty it brings to the model?}
 \ans{By the formulation in {(9)--(11)}, which is based on \cite{atzeni2013}, the electricity price from the main grid follows a linear inverse demand function where it increases linearly as the total consumption increases. On the other hand, if  $c^{\mathrm{mg}}$ in (9) is a linear function, the electricity unit price is assumed to be constant, which is not the case in the practice. In our view, the former represent better the electricity unit price than the latter, as supported by \cite{atzeni2013noncooperative} and some references therein. In addition, as discussed in \cite[Section II-D]{atzeni2013noncooperative}, the cost function in {(11)} can represent either the actual energy cost (as a result of energy generation and transmission costs by the main grid) or simply a pricing function designed to incentivize load-shifting by the end users.}
 
 \query[R4-6]{ Taking into account comment 1, suppose that we consider a reformulation of the problem to avoid coupling objective functions, and we employ the Alternating Direction Methods of Multipliers (ADMM) to solve the P2P market game in (1). Could the authors elaborate if this would be possible? Would the application of the ADDM also guarantees the convergence to a variational GNE of the P2P market game? What are the advantages of using Algorithm 1 proposed in the paper to solve the problem?  }
-\ans{{Indeed, the only trivial case in which v-GNEs and social optima, i.e., the minimizers of the social welfare, coincide is for games with decoupled objective functions. This fact can be shown, for example, by a direct comparison of their KKT systems. In this special case, the original v-GNE seeking problem and the social welfare minimization problem are equivalent. Hence, the latter can be tackled via existing distributed optimization algorithms, e.g. ADMM. Unfortunately, in general, it is not possible to trivially reformulate games with coupled objectives as optimization problems -- see R4-3 for a simple counter-example in which a straightforward decoupling of the local objective functions fails to preserve the original equilibria. This simple fact motivated many researchers in recent years to design ad-hoc algorithms for games and generalized games with coupled cost functions, see e.g.  \cite{yi2019,paccagnan2019,liang2017distributed, koshal2016distributed,gadjov2020single,belgioioso2020b}.
+\ans{{Indeed, the only trivial case in which v-GNEs and social optima, i.e., the minimizers of the social welfare, coincide is for games with decoupled objective functions. This fact can be shown, for example, by a direct comparison of their KKT systems. In this special case, the original v-GNE seeking problem and the social welfare minimization problem are equivalent. Therefore, the latter can be solved via existing distributed optimization algorithms, e.g. ADMM. Unfortunately, in general, it is not possible to trivially reformulate games with coupled objectives as optimization problems -- see R4-3 for a simple counter-example in which a straightforward decoupling of the local objective functions fails to preserve the original equilibria. This simple fact motivated many researchers in recent years to design ad-hoc algorithms for games and generalized games with coupled cost functions, see e.g.  \cite{yi2019,paccagnan2019,liang2017distributed, koshal2016distributed,gadjov2020single,belgioioso2020b}.
 }
 }
 
@@ -497,18 +496,18 @@ which yields v-GNEs of the form $(u_1^*, u_2^*) = (x,-1/2-x)$, with $x \in \math
 
  \query[R4-8]{ Given a prosumer $i$, when Algorithm 1 is applied, in order to update the dual variable related to reciprocity constraints, the value of the power traded with neighbors plays an important role. In detail, I mean $\{p^{tr}_{(j,i)}\}_{j\in \mc N_{i}}$, the forward trade estimate to prosumer $i$. It seems that, depending on the order the prosumers are considered, the coordination of these variables could change, so that the convergence of the algorithm. Hence, it could be interesting to analyze how this affect to the behavior of the algorithm. For example, could it benefit to consider first prosumers with less neighbors, since maybe they reach faster an equilibrium? }
  	\ans{{
-In the proposed market-clearing mechanism, all the local (primal and dual) updates of the prosumers are performed in parallel. We explicitly clarified this point in the new algorithm layout (see the revised Algorithm 1).
+In the proposed market-clearing mechanism, all the local (primal and dual) updates of the prosumers are performed in parallel. We explicitly clarified this point in the new algorithm layout (please see the revised Algorithm 1).
  	}}
  
  \textit{Minor comments:}
  
  	\query[R4-9]{ The notation used to define the quadratic terms of the objective functions must be introduced previously as “Basic notation”.  }
- 	\ans{We thank the reviewer for this suggestion and we have introduced the notation as follows:}
+ 	\ans{We thank the Reviewer for this suggestion and we have introduced the notation as follows:}
  	
- 	\edit{{``For any $x \in \bb R^n$, $\|x\|_A^2 = x^\top A x,$ with square matrix $A \succ 0$.''}}
+ 	\edit{{``For any $x \in \bb R^n$, $\|x\|_A^2 = x^\top A x,$ with square symmetric matrix $A \succ 0$.''}}
  	
  	\query[R4-10]{ The references to the lines of Algorithm 1 (in page 7) appearing in the text must be revised. For example, in item (iv) of Remark 2 (page 6), it must appear “…..(lines: 28-31)”. In the box related to dual variable update of prosumer $i$, in Figure 2 (page 6), the line references must be: lines 19-24. }
- 	\ans{We thank the reviewer for noticing this errors. As we have updated the presentation of Algorithm 1 to improve readability, we have also modified Remark 2 accordingly.}
+ 	\ans{We thank the Reviewer for noticing this errors. As we have updated the presentation of Algorithm 1 to improve readability, we have also modified Remark 2 accordingly.}
 
 \bibliographystyle{apalike}
 \bibliography{ref}
