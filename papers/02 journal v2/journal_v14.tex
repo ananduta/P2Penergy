@@ -275,22 +275,28 @@ For example, \cite{qin2018,morstyn2019} treat decentralized markets and operatio
 %
 An alternative is based on incorporating network charges, which may reflect utilization fees and network congestion, into the market formulation, as discussed in \cite{baroche2019b,paudel2020}. Differently, \cite{moret2020,zhang2020} include network operators as players in the market and impose network operational requirements as constraints in the market problem, which is formulated as a multi-agent optimization. \marginnote{\note{R2-4}}\edit{A similar approach is considered in \cite{zhong2020cooperative}, which employs generalized Nash bargaining theory and decomposes the problem into two hierarchical subproblems (a social welfare maximization and an energy trading problem).} 
 
-
-\paragraph*{Contribution} 
 In this paper, we consider a P2P energy market in which each prosumer is capable of not only generating and storing energy but also directly trading with other prosumers as well as with the main grid. Similarly to \cite{moret2020}, we include a network operator, whose objective is to ensure safe and reliable operation  of the system. 
 %
-However, we formulate the market clearing as a GNE problem, in which the players (i.e., prosumers and network operators) have coupling objective functions and constraints (Section \ref{sub:setup}). \marginnote{\note{R4-3}}\edit{Our market formulation extends the preliminary work \cite{belgioioso2020energy} by including network operational constraints and system operators in the model, which complicate the analysis as we need to exploit the problem structure to derive an efficient algorithm.}
+However, we formulate the market clearing as a GNE problem, in which the players (i.e., prosumers and network operators) have coupling objective functions and constraints (Section \ref{sub:setup}). \marginnote{\note{R4-3}\\\note{R3-1}}\edit{Our market formulation extends the preliminary work \cite{belgioioso2020energy} by including network operational constraints and system operators in the model, which complicate the analysis as we need to exploit the problem structure to derive an efficient algorithm.}
 
 %
-The main advantage of our decentralized market design is that its equilibria are not only economically-optimal but also operationally-safe and reliable. 
+\edit{
+The main advantage of our decentralized market design is that its equilibria are not only economically optimal but also strategically stable, i.e., no prosumer has an incentive in unilaterally deviate, operationally safe and reliable, i.e., the network operational requirements are met, and socially fair, i.e., the marginal loss for satisfying the grid constraints is the same for each prosumer. 
+%
 %
 Furthermore, we propose a provably-convergent, scalable and distributed market-clearing algorithm based on the proximal-point method for monotone inclusion problems	\cite[\S~23]{bauschke2011convex} (Section \ref{sub:alg}). 
 %\red{discuss differences from \cite{belgioioso2020energy}}.
 Finally, we investigate via extensive numerical studies: (i)  the effectiveness of the proposed market framework; (ii) the impact of distributed generation, storage and P2P tradings in distribution grids; and (iii) the scalability of the proposed market-clearing mechanism with respect to both the number of prosumers and the number of P2P tradings in the distribution network (Section \ref{sub:case_std}).
+}
 
 \smallskip
 \subsubsection*{Notation}
-$\R$ denotes the set of real numbers, $\bb N$ denotes the set of natural numbers, and  $\bs{0}$ ($\bs{1}$) denotes a matrix/vector with all elements equal to $0$ ($1$); to improve clarity, we may add the dimension of these matrices/vectors as subscript. $A \otimes B$ denotes the Kronecker product between the matrices $A$ and $B$. For a square matrix $A \in \R^{n \times n}$, its transpose is $A^\top$, $[A]_{i,j}$ represents the element on the row $i$ and column $j$. $A \succ 0$ ($\succcurlyeq 0$) stands for positive definite (semidefinite) matrix. Given $N$ vectors $x_1 \in \bb R^{n_1}, x_2 \in \bb R^{n_2},\ldots, x_N \in \R^{n_N}$, $x := \col\left(x_1,\ldots,x_N\right) = [ x_1^\top, \ldots , x_N^\top ]^\top$. \marginnote{\note{R4-9}}\edit{For any $x \in \bb R^n$, $\|x\|_A^2 = x^\top A x,$ with square symmetric matrix $A \succ 0$}. 
+$\R$ denotes the set of real numbers, $\bb N$ denotes the set of natural numbers, and  $\bs{0}$ ($\bs{1}$) denotes a matrix/vector with all elements equal to $0$ ($1$).
+%;
+%to improve clarity, we may add the dimension of these matrices/vectors as subscript.
+$A \otimes B$ denotes the Kronecker product between the matrices $A$ and $B$. For a square matrix $A \in \R^{n \times n}$, its transpose is $A^\top$, $[A]_{i,j}$ represents the element on the row $i$ and column $j$. $A \succ 0$ ($\succcurlyeq 0$) stands for positive definite (semidefinite) matrix.
+%Given $N$ vectors $x_1 \in \bb R^{n_1}, x_2 \in \bb R^{n_2},\ldots, x_N \in \R^{n_N}$, $x := \col\left(x_1,\ldots,x_N\right) = [ x_1^\top, \ldots , x_N^\top ]^\top$.
+\marginnote{\note{R4-9}}\edit{For any $x \in \bb R^n$, $\|x\|_A^2 = x^\top A x,$ with square symmetric matrix $A \succ 0$}. 
 %\smallskip
 %\subsubsection*{Operator theoretic definitions}
 %Here, $\Id(\cdot)$ denotes the identity operator. The mapping $\iota_{S}:\R^n \rightarrow \{ 0, \, \infty \}$ denotes the indicator function for the set $\mc{S} \subseteq \R^n$, i.e., $\iota_{S}(x) = 0$ if $x \in S$, $\infty$ otherwise. 
@@ -304,7 +310,7 @@ For a closed set $S \subseteq \R^n$, the mapping $\proj_{S}:\R^n \rightarrow S$ 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Peer-to-peer markets as a Generalized Nash Equilibrium Problem}
+\section{Peer-to-peer markets as a GNE Problem}
 \label{sub:setup}
 
 %\subsubsection*{Network description}
@@ -323,11 +329,10 @@ Moreover, we also consider the electrical distribution network, to which the pro
 %{figures/NF/37bus_sysIPE1}%
 {figures/37bus_sys_f1}
 \smallskip
-	\caption{Left plot: A modified IEEE 37-bus network with 12 prosumers (boxes) and 15 passive loads (black triangles); busses are represented by black circles, physical lines in $\mc L$ by solid lines. Right plot: P2P trading network, whereas trading relations ($\mc E$) are represented by blue double-arrow lines.
+	\caption{Left plot: A modified IEEE 37-bus network with 12 prosumers (boxes) and 15 passive loads (black triangles); busses are represented by black circles, physical lines in $\mc L$ by solid lines. Right plot: P2P trading network, where trading relations ($\mc E$) are represented by blue double-arrow lines.
 	}
 	\label{fig:GGp}
 \end{figure} 
-
 %\begin{figure}
 %	\centering
 %	\includegraphics[scale=1.4]{figures/37bus_ex}
@@ -337,10 +342,10 @@ Moreover, we also consider the electrical distribution network, to which the pro
 %\end{figure} 
 
 %\subsubsection*{Types of market considered}
-We focus on P2P spot markets, i.e., day-ahead and intra-day markets, similarly to \cite{sousa2019,lecadre2020,moret2020}. Thus, we denote the time horizon for which the decisions are computed by $\mc H = \{1,2,\dots,H \}$. For instance, in a day-ahead market, typically, the sampling period is one hour and the time horizon is $H=24$ hours. Moreover, as in \cite{moret2020}, we also include the physical constraints of the distribution network to ensure that a solution is not only economically optimal but also meets the standards of the DNO.
+We focus on P2P spot markets, i.e., day-ahead and intra-day markets, similarly to \cite{sousa2019,lecadre2020,moret2020}. Thus, we denote the horizon of the decision profiles by $\mc H = \{1,2,\dots,H \}$. For instance, in a day-ahead market, typically, the sampling period is one hour and the time horizon is $H=24$ hours. Moreover, as in \cite{moret2020}, we also include the physical constraints of the distribution network to ensure that a solution is not only economically optimal but also meets the standards of the DNO.
 
-Let us model such a P2P market as a generalized game. Specifically, we assume that each prosumer, or agent, $i\in \mc N$ aims at selfishly minimizing its cost function, which might involve decisions of other agents, subject to local and coupling constraints. Furthermore, we consider the DNO as an additional agent, i.e., agent $N+1$, whose objective is to ensure the constraints of the physical network are met. 
-In this regard, let $u_i \in \bb R^{n_i}$ denote the decision of agent $i$, for all $i\in \mc N^+ :=\{1,\dots,N+1\}$,  for the whole time. 
+Let us model such a P2P market as a generalized game. Specifically, we assume that each prosumer, or agent, $i\in \mc N$ aims at selfishly minimizing its cost function, which might involve decisions of other agents, subject to local and coupling constraints. Furthermore, we consider the DNO as an additional agent, i.e., agent $N\!+\!1$, whose objective is to ensure the constraints of the physical network are met. 
+In this regard, let $u_i \in \bb R^{n_i}$ denote the decision of agent $i$, for all $i\in \mc N^+ :=\{1,\dots,N\!+\!1\}$. 
 Furthermore, we denote by $u$ the decision profile, namely, the stacked vectors of the decisions of all agents, i.e., $u:=\col(\{u_j\}_{j\in \mc N^+ })$, and by $u_{-i}$ the decision of all agents except agent $i$, i.e., $u_{-i} = \col(\{u_j\}_{j\in \mc N^+ \backslash \{i\}})$.
 
 Each agent $i$ is self-interested and wants to compute an optimal decision, $u_i^*$, that solves its local optimization problem%
@@ -647,7 +652,7 @@ In other words, a set of strategies $\{u_1^*,\ldots,u_{N+1}^*\}$ is a GNE if no 
 \end{align*}
 where the mapping $P(u^*): = \prod_{i \in \mc N^+} \frac{\partial}{\partial u_i} J_i(u_i^*,u_{-i}^*)$ is the so-called \textit{pseudo-subdifferential}, and $\mc K:= \mc C \cap (\prod_{i \in \mc N^+} \mc U_i)$ is the global feasible set.
 %
-v-GNEs enjoy the property of ``economic fairness”, namely, the marginal loss due to the presence of the coupling constraints is the same for each agent, see e.g. \cite{kulkarni2012variational}. For these reasons, v-GNEs have been used to model desirable (i.e., locally efficient, fair, and safe) configurations in several distributed engineering systems, including P2P energy market models, see e.g. \cite{lecadre2020}. In this paper, we focus on computational aspects, namely, the design and analysis of a fast and scalable decentralized v-GNE seeking algorithm for the P2P market game \eqref{eq:locOpt}, while we study the properties of its v-GNEs numerically rather than analytically.} 
+v-GNEs enjoy the property of ``economic fairness”, namely, the marginal loss due to the presence of the coupling constraints is the same for each agent, see e.g. \cite{kulkarni2012variational}. For these reasons, v-GNEs have been used to model desirable (i.e., efficient, strategically stable, fair, and safe) configurations in several distributed engineering systems, including P2P energy market models, see e.g. \cite{lecadre2020}. In this paper, we focus on computational aspects, namely, the design and analysis of a fast and scalable decentralized v-GNE seeking algorithm for the P2P market game \eqref{eq:locOpt}, while we study the properties of its v-GNEs numerically rather than analytically.} 
 
 
 Note that the cost functions in \eqref{eq:cost_def} are coupled only via the aggregative quantity $\sigma^{\textrm{mg}} = \sum_{i\in\mathcal{N}} p_{i}^{\mathrm{mg}}$ in  \eqref{eq:Aggr}, namely, the active load (i.e., the congestion) on the main grid. Therefore, for each agent $i \in \mc I$, we can define a function $\tilde J_i$ such that
@@ -676,11 +681,11 @@ Unlike most of the available semi-decentralized pseudo-gradient-based methods, \
 %
 The resulting market-clearing mechanism, summarized in Algorithm~1, requires the prosumers and the DNO to store, update, and communicate some additional (dual and auxiliary) variables, whose primary function is to coordinate the system towards operational feasibility and trading reciprocity. In particular, each prosumer $i\in\mc N$ stores in its local memory
 \begin{itemize}
-\item the local strategy $u_i$ that collects the power generation, storage (charging/discharging), load, and trading profiles.
+\item the local strategy $u_i$ that collects the power generation, storage (charging/discharging), load, and trading profiles;
 
-\item the active power injection $\eta_i$, defined as in \eqref{eq:etai} and privately communicated only to the DNO.
+\item the active power injection $\eta_i$, defined as in \eqref{eq:etai} and privately communicated (as a grid usage bid) to the DNO;
 
-\item a (dual) variable $\mu^{\text{tr}}_{(i,j)}$ for each trading partner $j \in \mc N_i$, whose function is to drive prosumer $i$'s and $j$'s power trade to agreement, i.e., the reciprocity constraints \eqref{eq:rep_const}, and can be intrepreted as the bilateral trading shadow prices \cite[Section 2.4]{lecadre2020};
+\item a (dual) variable $\mu^{\text{tr}}_{(i,j)}$ for each trading partner $j \in \mc N_i$, whose function is to drive prosumer $i$'s and $j$'s power trade to agreement, i.e., the reciprocity constraints \eqref{eq:rep_const}, and can be interpreted from an economic perspective as a bilateral trading shadow price \cite[Section 2.4]{lecadre2020}.
 
 \end{itemize}
 In addition to the physical variables of the distribution network, i.e., $u_{N\!+\!1}$, the DNO stores in its local memory
@@ -691,7 +696,7 @@ In addition to the physical variables of the distribution network, i.e., $u_{N\!
 \end{itemize}
 From an economic perspective, these variables can be interpreted as extra marginal losses imposed to the prosumers for the grid usage. From a control-theoretic perspective, they can be interpreted as states of discrete-time integrators driven by the violation of the network operational constraints \eqref{eq:Cconstr_def}.
 }
-
+%
 \begin{figure}[t]
 \centering
 \includegraphics[width=.3\textwidth]{figures/37bus_sys_f6}
@@ -864,7 +869,7 @@ The semi-decentralized information flow of Algorithm~1 is illustrated in Fig.~\r
 The next proposition shows the global convergence of Algorithm 1 to a variational GNE of the P2P market game. 
 
 \smallskip
-\begin{proposition}[Convergence of Algorithm 1]\hspace*{3em}
+\begin{proposition} The following statements hold true:\hspace*{3em}
 	\label{prp:conv}
 \begin{enumerate}[(i)]
 \item There exists a v-GNE of the P2P market game \eqref{eq:locOpt}.
@@ -1214,7 +1219,7 @@ Future research directions include: efficiently incorporating non-linear convex 
 \bibliographystyle{ieeetran}
 \bibliography{ref}
 
-%\newpage
+\clearpage
 \input{appendix}
 
 

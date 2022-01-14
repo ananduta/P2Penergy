@@ -37,11 +37,11 @@ Belgioioso, G., Ananduta, W., Grammatico, S., and Ocampo-Martinez, C. (2020).
 \newblock In {\em 2020 European Control Conference (ECC)}, pages 1324--1329.
   IEEE.
 
-\bibitem[Belgioioso and Grammatico, 2020]{belgioioso2020semi}
-Belgioioso, G. and Grammatico, S. (2020).
-\newblock Semi-decentralized generalized nash equilibrium seeking in monotone
+\bibitem[Belgioioso and Grammatico, 2021]{belgioioso2020semi}
+Belgioioso, G. and Grammatico, S. (2021).
+\newblock Semi-decentralized generalized {N}ash equilibrium seeking in monotone
   aggregative games.
-\newblock {\em arXiv preprint arXiv:2003.04031}.
+\newblock {\em IEEE Transactions on Automatic Control}.
 
 \bibitem[{Belgioioso} et~al., 2021]{belgioioso2020b}
 {Belgioioso}, G., {Nedich}, A., and {Grammatico}, S. (2021).
