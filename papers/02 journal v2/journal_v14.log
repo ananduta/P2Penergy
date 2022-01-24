@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.20)  15 JAN 2022 02:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.20)  15 JAN 2022 03:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -964,12 +964,12 @@ Package marginnote Info: Margin note 8.2 is on absolute page 9 on input line 11
 43.
 Package marginnote Info: right page because not two side mode on input line 114
 3.
+Package marginnote Info: xpos seems to be 270.95784pt on input line 1143.
 
 Overfull \hbox (4.0pt too wide) in paragraph at lines 1143--1143
- []\OT1/pcr/m/n/10 R3-5[]
+[]\OT1/pcr/m/n/10 R3-5[]  
  []
 
-Package marginnote Info: xpos seems to be 93.84555pt on input line 1143.
 [8 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail2-eps-conver
 ted-to.pdf> <./figures/b0-eps-converted-to.pdf> <./figures/b1a-eps-converted-to
 .pdf> <./figures/b2a-eps-converted-to.pdf>]
@@ -1093,11 +1093,6 @@ Underfull \hbox (badness 2564) in paragraph at lines 137--141
 eer mar-
  []
 
-
-Underfull \hbox (badness 2426) in paragraph at lines 206--210
-[]\OT1/ptm/m/n/8 G. Bel-gioioso, W. Anan-duta, S. Gram-matico, and C. Ocampo-
- []
-
 ) [10] (./appendix.tex
 
 LaTeX Warning: No positions in optional float specifier.
@@ -1107,13 +1102,13 @@ LaTeX Warning: No positions in optional float specifier.
 
 ] (./journal_v14.aux) ) 
 Here is how much of TeX's memory you used:
- 7655 strings out of 480608
- 120513 string characters out of 5903630
- 385030 words of memory out of 5000000
- 23332 multiletter control sequences out of 15000+600000
+ 7654 strings out of 480608
+ 120484 string characters out of 5903630
+ 385027 words of memory out of 5000000
+ 23331 multiletter control sequences out of 15000+600000
  586285 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,34n,46p,1091b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,34n,46p,1089b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base
 /8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbs
 y10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
@@ -1146,7 +1141,7 @@ s/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/ur
 w/times/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on journal_v14.pdf (11 pages, 789967 bytes).
+Output written on journal_v14.pdf (11 pages, 789638 bytes).
 PDF statistics:
  332 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams
