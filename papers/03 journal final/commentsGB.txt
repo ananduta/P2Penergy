@@ -1,0 +1,13 @@
+- slack complementarity of chargin and dischargin?
+
+- change dotted to solid line in bus congestion plots.
+
+- only p2p communications are necessary for the negostiation process
+
+- robustness to asynchronous implementations
+
+- active power injection of prosumer i instead of power unbalance
+
+- use IEEE smart grid jargon: ancillary services
+
+- is the energy loss modelled in the cost function of the central coordinator?
