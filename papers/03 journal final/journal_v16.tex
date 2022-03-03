@@ -391,7 +391,7 @@ For simplicity of exposition, we assume that each prosumer only owns at most one
 Next, we present the model for these devices.
 
 
-%\smallskip
+\smallskip
 \paragraph*{Dispatchable units}
 The objective function of a dispatchable unit, denoted by $f_{i}^{\mathrm{di}}: \mathbb{R}^{H} \to \mathbb{R}$, is typically a convex quadratic function   \cite{atzeni2013,hans2018,sorin2019}, e.g. 
 \begin{equation}
@@ -420,7 +420,7 @@ where $Q_i^{\mathrm{st}}\succcurlyeq0$. {The battery charging and discharging pr
 	\begin{aligned}
 	%	\left.
 	%	\begin{array}{c}
-			x_{i,h+1} &=\eta_i^{\mathrm{st}} x_{i,h} +\frac{T_{\mathrm{s}}}{e^{\mathrm{cap}}_{i}}(\eta_i^{\mathrm{ch}} p_{i,h}^{\mathrm{ch}} -(\frac{1}{\eta_i^{\mathrm{ds}}})p_{i,h}^{\mathrm{ds}}), %\forall i \in \mc N^{\mathrm{st}}, \forall h \in \mc H,\\[.2em]
+			x_{i,h+1} &=\eta_i^{\mathrm{st}} x_{i,h} +\tfrac{T_{\mathrm{s}}}{e^{\mathrm{cap}}_{i}}(\eta_i^{\mathrm{ch}} p_{i,h}^{\mathrm{ch}} -(\tfrac{1}{\eta_i^{\mathrm{ds}}})p_{i,h}^{\mathrm{ds}}), %\forall i \in \mc N^{\mathrm{st}}, \forall h \in \mc H,\\[.2em]
 		\\
 			\underline{x}_i &\leq x_{i,h+1} \leq \overline{x}_i,  \qquad \forall i \in \mc N^{\mathrm{st}}, \forall h \in \mc H,\\%[.2em]
 			{p}_{i}^{\mathrm{ch}} &\in [0,\overline{{p}}_{i}^{\mathrm{ch}}], \ \ {p}_{i}^{\mathrm{ds}} \in [0,\overline{{p}}_{i}^{\mathrm{ds}}],  \quad  \forall i \in \mc N^{\mathrm{st}},
@@ -682,7 +682,7 @@ From an economic perspective, these variables can be interpreted as extra margin
 %
 \begin{figure}[t]
 \centering
-\includegraphics[width=.28\textwidth]{figures/37bus_sys_f6}
+\includegraphics[width=.29\textwidth]{figures/37bus_sys_f6}
 \smallskip
 \caption{{Information flow in Algorithm 1.}}
 \label{fig:IFC}
@@ -1065,13 +1065,13 @@ Some equilibrium solutions of the P2P market cause overcapacity in some lines wh
 	\centering
 	\begin{subfigure}[t]{0.23\textwidth}
 		\centering
-		\includegraphics[scale=0.9]{figures/simD_safe1}
+		\includegraphics[scale=0.92]{figures/simD_safe1}
 		\caption{With physical constraints}
 	\end{subfigure}%
 	~ 
 	\begin{subfigure}[t]{0.27\textwidth}
 		\centering
-		\includegraphics[scale=0.9]{figures/simD_fail2}
+		\includegraphics[scale=0.92]{figures/simD_fail2}
 		\caption{Without physical constraints}
 	\end{subfigure}
 	\caption{Power line capacities of the physical network. The solutions of the P2P market might cause overcapacity in some lines of the physical network when capacity constraints \eqref{eq:line_cap} are not taken into account.}
@@ -1086,7 +1086,7 @@ we generate a network of 50 prosumers and consider two scenarios: (a) where trad
 %	
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.9\linewidth]{figures/b0a.eps}
+	\includegraphics[width=.92\linewidth]{figures/b0a.eps}
 	\caption{Total cost improvement (\euro) of each prosumer by trading ($c_{(i,j)}^{\mathrm{tr}}=0.08\text{\euro/kW}$).
 	}
 	\label{fig:simC_cost}
@@ -1094,7 +1094,7 @@ we generate a network of 50 prosumers and consider two scenarios: (a) where trad
 %
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.9\linewidth]{figures/b1a.eps}
+	\includegraphics[width=.92\linewidth]{figures/b1a.eps}
 	\caption{Aggregated P2P trading for different cost coefficients ($c_{(i,j)}^{\mathrm{tr}}$ in \euro/kW).
 	}
 	\label{fig:simC_ctr}
@@ -1102,7 +1102,7 @@ we generate a network of 50 prosumers and consider two scenarios: (a) where trad
 %
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=.9\linewidth]{figures/b2a.eps}
+	\includegraphics[width=.92\linewidth]{figures/b2a.eps}
 	\caption{Aggregated P2P trading for different penalty coefficients ($c^{\mathrm{ta}}$ in \euro/kW).
 	}
 	\label{fig:simC_pen}
@@ -1124,14 +1124,14 @@ Note that the prosumers charge their storage units during the first off-peak hou
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.9\linewidth]{figures/simB_0402_pt1_v3a}
+	\includegraphics[width=0.92\linewidth]{figures/simB_0402_pt1_v3a}
 	\caption{	Incorporating storage units causes a peak-shaving effect on the sum of the total power imported from the main grid and the power locally generated.}
 	\label{fig:sim_B1}
 \end{figure}
 \begin{figure}[t]
 	\centering 
 	%\hspace{-17pt}
-	\includegraphics[width=0.9\linewidth]{figures/simB_0402_pt2_v4a}
+	\includegraphics[width=0.92\linewidth]{figures/simB_0402_pt2_v4a}
 	\caption{Aggregated P2P trading in scenarios (a) and (b).
 	}
 	\label{fig:sim_B2}
@@ -1139,7 +1139,7 @@ Note that the prosumers charge their storage units during the first off-peak hou
 \begin{figure}[t]
 	\centering 
 	%\hspace{-17pt}
-	\includegraphics[width=0.9\linewidth]{figures/simB_0402_pt3_v2a}
+	\includegraphics[width=0.92\linewidth]{figures/simB_0402_pt3_v2a}
 	\caption{Comparison of the average electricity trading price ($c^{\mathrm{tr}} + c^{\mathrm{ta}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$) with the electricity grid prices.
 	}
 	\label{fig:sim_B3}
@@ -1147,7 +1147,7 @@ Note that the prosumers charge their storage units during the first off-peak hou
 \iffalse 
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=0.9\linewidth]{figures/simC_37_v2.eps}
+	\includegraphics[width=0.92\linewidth]{figures/simC_37_v2.eps}
 	\caption{\textcolor{red}{[OLD]} Peak shaving effect with different per-unit cost of using storage.
 	}
 	\label{fig:simC}
@@ -1162,7 +1162,7 @@ For the former, we consider five different values of $N$ and a fixed connectivit
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.9\linewidth]{figures/simEF2.eps}
+	\includegraphics[width=0.92\linewidth]{figures/simEF2.eps}
 	\caption{Total number of iterations for convergence of Alg. 1 vs number of prosumers (top) and the connectivity level (the number of trading links) (bottom). {The average computation times of the inner loops, i.e., Algs.~2 and 3, obtained on a computer with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory, are 74.5 ms and 1.13 s, respectively.} 
 	}
 	\label{fig:simE}

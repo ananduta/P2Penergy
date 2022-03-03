@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.20)  3 MAR 2022 21:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.20)  3 MAR 2022 21:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -639,7 +639,7 @@ Overfull \hbox (15.93622pt too wide) detected at line 596
 File: figures/37bus_sys_f6.pdf Graphic file (type pdf)
 <use figures/37bus_sys_f6.pdf>
 Package pdftex.def Info: figures/37bus_sys_f6.pdf  used on input line 685.
-(pdftex.def)             Requested size: 144.47937pt x 235.33714pt.
+(pdftex.def)             Requested size: 149.63654pt x 243.73416pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 693--761
 
@@ -691,7 +691,7 @@ File: figures/simD_safe1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simD_safe1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simD_safe1-eps-converted-to.pdf  used on input
  line 1068.
-(pdftex.def)             Requested size: 115.63092pt x 149.05548pt.
+(pdftex.def)             Requested size: 118.20107pt x 152.36856pt.
 Package epstopdf Info: Source file: <figures/simD_fail2.eps>
 (epstopdf)                    date: 2022-01-11 17:07:12
 (epstopdf)                    size: 3278208 bytes
@@ -712,7 +712,7 @@ File: figures/simD_fail2-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simD_fail2-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simD_fail2-eps-converted-to.pdf  used on input
  line 1074.
-(pdftex.def)             Requested size: 114.72755pt x 148.15211pt.
+(pdftex.def)             Requested size: 117.27762pt x 151.44511pt.
 
 Overfull \hbox (10.59991pt too wide) in paragraph at lines 1066--1077
  [][]  [] 
@@ -738,7 +738,7 @@ File: figures/b0a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/b0a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/b0a-eps-converted-to.pdf  used on input line 1
 089.
-(pdftex.def)             Requested size: 226.79846pt x 117.45006pt.
+(pdftex.def)             Requested size: 231.83954pt x 120.0573pt.
 Package epstopdf Info: Source file: <figures/b1a.eps>
 (epstopdf)                    date: 2021-07-22 17:53:54
 (epstopdf)                    size: 59768 bytes
@@ -759,7 +759,7 @@ File: figures/b1a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/b1a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/b1a-eps-converted-to.pdf  used on input line 1
 097.
-(pdftex.def)             Requested size: 226.79846pt x 119.22246pt.
+(pdftex.def)             Requested size: 231.83954pt x 121.87297pt.
 Package epstopdf Info: Source file: <figures/b2a.eps>
 (epstopdf)                    date: 2021-07-22 17:54:51
 (epstopdf)                    size: 54254 bytes
@@ -780,7 +780,7 @@ File: figures/b2a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/b2a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/b2a-eps-converted-to.pdf  used on input line 1
 105.
-(pdftex.def)             Requested size: 226.79846pt x 118.99889pt.
+(pdftex.def)             Requested size: 231.83954pt x 121.64296pt.
 [8 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail2-eps-conver
 ted-to.pdf> <./figures/b0a-eps-converted-to.pdf> <./figures/b1a-eps-converted-t
 o.pdf> <./figures/b2a-eps-converted-to.pdf>]
@@ -805,7 +805,7 @@ File: figures/simB_0402_pt1_v3a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simB_0402_pt1_v3a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simB_0402_pt1_v3a-eps-converted-to.pdf  used o
 n input line 1127.
-(pdftex.def)             Requested size: 226.79846pt x 170.1001pt.
+(pdftex.def)             Requested size: 231.83954pt x 173.8761pt.
 Package epstopdf Info: Source file: <figures/simB_0402_pt2_v4a.eps>
 (epstopdf)                    date: 2022-03-02 07:12:56
 (epstopdf)                    size: 82537 bytes
@@ -828,7 +828,7 @@ File: figures/simB_0402_pt2_v4a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simB_0402_pt2_v4a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simB_0402_pt2_v4a-eps-converted-to.pdf  used o
 n input line 1134.
-(pdftex.def)             Requested size: 226.79846pt x 84.64503pt.
+(pdftex.def)             Requested size: 231.83954pt x 86.52405pt.
 Package epstopdf Info: Source file: <figures/simB_0402_pt3_v2a.eps>
 (epstopdf)                    date: 2022-03-02 07:05:11
 (epstopdf)                    size: 120168 bytes
@@ -850,7 +850,7 @@ File: figures/simB_0402_pt3_v2a-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simB_0402_pt3_v2a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simB_0402_pt3_v2a-eps-converted-to.pdf  used o
 n input line 1142.
-(pdftex.def)             Requested size: 226.79846pt x 170.1001pt.
+(pdftex.def)             Requested size: 231.83954pt x 173.8761pt.
 Package epstopdf Info: Source file: <figures/simEF2.eps>
 (epstopdf)                    date: 2022-03-02 07:09:21
 (epstopdf)                    size: 77776 bytes
@@ -871,7 +871,7 @@ File: figures/simEF2-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simEF2-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simEF2-eps-converted-to.pdf  used on input lin
 e 1165.
-(pdftex.def)             Requested size: 226.79846pt x 170.1001pt.
+(pdftex.def)             Requested size: 231.83954pt x 173.8761pt.
 [9 <./figures/simB_0402_pt1_v3a-eps-converted-to.pdf> <./figures/simB_0402_pt2_
 v4a-eps-converted-to.pdf> <./figures/simB_0402_pt3_v2a-eps-converted-to.pdf> <.
 /figures/simEF2-eps-converted-to.pdf>] (./journal_v16.bbl
@@ -885,51 +885,48 @@ Underfull \hbox (badness 2564) in paragraph at lines 137--141
 eer mar-
  []
 
-) [10] (./journal_v16.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) [10] (./journal_v16.aux) ) 
 Here is how much of TeX's memory you used:
  7471 strings out of 480608
  118149 string characters out of 5903630
- 379692 words of memory out of 5000000
+ 379691 words of memory out of 5000000
  23151 multiletter control sequences out of 15000+600000
  586804 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,34n,46p,1058b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/
-2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
-c/eurosym/feymr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/p
-ublic/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type
-1/urw/courier/ucrr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/ti
-mes/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmbi8
-a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
-r/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on journal_v16.pdf (10 pages, 864414 bytes).
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips
+/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.
+pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pf
+b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/local/texlive/2020/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2020/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fo
+nts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times
+/utmri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/wasy-type1/
+wasy10.pfb>
+Output written on journal_v16.pdf (10 pages, 865525 bytes).
 PDF statistics:
  325 PDF objects out of 1000 (max. 8388607)
  187 compressed objects within 2 object streams
