@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.23">
-<info created="D:20210319153732" modified="D:20220114010845"/>
+<info created="D:20210319153732" modified="D:20220116161830"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -1057,10 +1057,6 @@ h
 264 644 l
 </path>
 <path matrix="-0.627558 -0.708592 0.999225 -0.00255574 -259.825 778.09" stroke="black" arrow="normal/tiny">
-328 768 m
-336 768 l
-</path>
-<path matrix="-0.627558 -0.708592 0.999225 -0.00255574 -259.825 778.09" stroke="black" arrow="normal/tiny">
 328 732 m
 336 732 l
 </path>
@@ -1208,7 +1204,7 @@ h
 255.993 374.629 m
 255.993 405.783 l
 </path>
-<text matrix="1 0 0 1 -111.29 -31.9575" pos="373.728 444.064" stroke="black" type="label" width="30.561" height="7.797" depth="2.65" valign="baseline">$\eta_6, p_6^{mg}$</text>
+<text matrix="1 0 0 1 -111.29 -31.9575" pos="373.728 444.064" stroke="black" type="label" width="30.561" height="7.797" depth="2.65" valign="baseline" style="math">\eta_6, p_6^{mg}</text>
 <text matrix="1 0 0 1 -78.7698 -48.4176" pos="373.728 444.064" stroke="black" type="label" width="30.561" height="7.797" depth="2.65" valign="baseline" style="math">\eta_4, p_4^{mg}</text>
 <text matrix="1 0 0 1 -271.137 24.4752" pos="451.747 398.24" stroke="black" type="label" width="39.297" height="6.926" depth="1.93" valign="baseline">exchange</text>
 <path matrix="0.847039 0 0 0.847039 61.1931 89.1847" stroke="black" arrow="normal/normal">
@@ -1239,5 +1235,9 @@ h
 476.186 756.887 c
 </path>
 <text matrix="1 0 0 1 -79.6314 -41.8593" pos="315.08 714.488" stroke="black" type="label" width="73.53" height="7.473" depth="2.49" valign="baseline">Operator (DNO)</text>
+<path matrix="-0.627558 -0.708592 0.999225 -0.00255574 -259.825 778.09" stroke="black" arrow="normal/tiny">
+328 768 m
+336 768 l
+</path>
 </page>
 </ipe>
