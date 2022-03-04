@@ -1190,7 +1190,7 @@ $
 \item The primal update of each prosumer (Algorithm~2~(ii)) involves the solution of a quadratic program\footnote{Up to a fairly-standard reformulation of the absolute value term in \eqref{eq:f_t}.}, for which very efficient solvers are available, e.g. \cite{osqp}. {In there, if $   J_{i} \big( \xi, u_{-i}(k) \big)$ is replaced by its approximate version $ \tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big)$, obtained by neglecting prosumer $i$'s contribution $p_i^{\text{tr}}$ to the aggregative active load $\sigma^{\text{mg}}$, Algorithm 1 will converge to a variational Wardrop equilibrium \cite[\S~II.B]{belgioioso2020semi}, which is a good approximation of v-GNEs for networks with a large number of prosumers.}
 
 \item  The primal update of the DNO (Algorithm~3~(i)) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation can be computationally expensive if naively solved. However, more efficient algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~30]{bauschke2011convex} .%, \edit{e.g.  the  \textit{Douglas--Rachford splitting}   \cite[\S~26.3]{bauschke2011convex}.}%\cite[Appendix~2]{belgioioso2021operationally}.
-\item \blue{Algorithm 1 can be cast as a proximal-point method, opportunely preconditioned to distribute the computation among the prosumers.
+\item \blue{Algorithm 1 can be cast as a proximal-point method opportunely preconditioned to distribute the computation among the prosumers.
 %
 Such operator-theoretic interpretation can be used to design provably-correct acceleration schemes\cite[\S~IV.B]{belgioioso2020semi} as well as to provide robustness guarantees to asynchronous implementations \cite{cenedese2021asynchronous}.
 }
