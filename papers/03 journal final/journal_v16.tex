@@ -137,9 +137,9 @@ Operationally-Safe Peer-to-Peer Energy Trading in Distribution Grids: A Game-The
 \begin{abstract}
 In future distribution grids, prosumers (i.e., energy consumers with storage and/or production capabilities) will trade energy with each other and with the main grid.
 %
-To ensure an efficient and safe operation of energy trading, in this paper, we formulate a peer-to-peer energy market of prosumers as a generalized aggregative game, in which a network operator is only  responsible for the operational constraints of the system.
+To ensure an efficient and safe operation of energy trading, in this paper, we formulate a peer-to-peer energy market of prosumers as a generalized aggregative game, in which a network operator is responsible to enforce the operational constraints of the system.
 %
-We design a distributed market-clearing mechanism with convergence guarantee to an economically-efficient and operationally-safe configuration (i.e., a variational generalized Nash equilibrium). 
+We design a distributed market-clearing mechanism with convergence guarantee to an economically-efficient, strategically-stable, and operationally-safe configuration (i.e., a variational generalized Nash equilibrium). 
 %
 Numerical studies on the IEEE 37-bus testcase show the scalability of the proposed approach and suggest that active participation in the market is beneficial for both prosumers and the network operator.  
 \end{abstract}
@@ -257,7 +257,7 @@ Numerical studies on the IEEE 37-bus testcase show the scalability of the propos
 In recent years, there has been a fast growing penetration of distributed and renewable energy sources as well as storage units in distribution networks \cite{parag2016}. The parties who own these devices are called prosumers, i.e., energy consumers with production and/or storage capabilities. Unlike traditional consumers, prosumers can have a prominent role in achieving energy balance in a distribution network, since they can contribute to energy supply.  Therefore, currently there is a large research effort to study potential evolutions of electricity markets and decentralized energy management mechanisms that can enable active participation of prosumers \cite{parag2016,tushar2018,liu2019,sousa2019}.
 
 %\paragraph*{literature survey: what are currently studied}
-Focusing on spot markets, i.e., day-ahead and intra-day markets, each prosumer has to decide its energy production and consumption over a certain time horizon, with the objective of minimizing its own economic cost while satisfying its physical and operational constraints. 
+Focusing on spot markets, i.e., day-ahead and intra-day markets, each prosumer has to decide its energy production and consumption over a certain time horizon, with the objective of minimizing its own expenses while satisfying its physical and operational constraints. 
 Most of existing works formulate such peer-to-peer (P2P) markets via game-theoretic or multi-agent optimization frameworks \cite{tushar2018,tushar2020,lecadre2020,cui2020,zhang2020,baroche2019,sorin2019}. For instance, the authors of \cite{tushar2018} provide a literature survey of early works on game-theoretic P2P market models. {More recently, \cite{tushar2020} considers a coalition game approach for peer-to-peer trading of prosumers with storage units.}  Furthermore, \cite{lecadre2020,cui2020,zhang2020,baroche2019,sorin2019} propose economic dispatch formulations where energy trading is incorporated as coupling (reciprocity) constraints and each prosumer has local decoupled objectives. 
 
 Generalizing the previous papers, our preliminary work in  \cite{belgioioso2020energy} does not only consider multi-bilateral trading  but also trading with the main grid, which extends the coupling to both constraints and objective functions. 
@@ -266,7 +266,7 @@ Mathematically, clearing the resulting P2P market corresponds to finding a gener
 %
 Similarly, \cite{wang2021} formulates a generalized Nash game of energy sharing or a multilateral (instead of bilateral) trading among prosumers, and proposes a distributed algorithm to find a solution of the market equilibrium problem. 
 %
-In parallel, we note that operator-theoretic approaches have been effectively exploited to design distributed methods that efficiently solve GNE problems under the least restrictive assumptions \cite{paccagnan2019,belgioioso2020b,gadjov2020single,belgioioso2020semi,
+In parallel, we note that operator-theoretic approaches have been effectively exploited to design distributed algorithms that efficiently solve GNE problems under the least restrictive assumptions \cite{paccagnan2019,belgioioso2020b,gadjov2020single,belgioioso2020semi,
 	bianchi2020fast}.
 
 %\paragraph*{highlight on considering physical constraints}
@@ -282,10 +282,10 @@ However, we formulate the market clearing as a GNE problem, in which the players
 
 %
 {
-The main advantage of our decentralized market design is that its equilibria are not only economically optimal but also strategically stable, i.e., no prosumer has any incentive to unilaterally deviate, operationally safe and reliable, i.e., the network operational requirements are met, and socially fair, i.e., the marginal loss for satisfying the grid constraints is the same for each prosumer. 
+The main advantage of our decentralized market design is that its equilibria are not only economically-optimal but also strategically-stable (i.e., no prosumer has any incentive to unilaterally deviate), operationally-safe and reliable (i.e., the network operational requirements are met), and socially-fair (i.e., the marginal loss for satisfying the grid constraints is the same for each prosumer). 
 %
 %
-Furthermore, we propose a provably-convergent, scalable and distributed market-clearing algorithm based on the proximal-point method for monotone inclusion problems	\cite[\S~23]{bauschke2011convex} (Section \ref{sub:alg}). 
+Furthermore, we design a provably-convergent, scalable and distributed market-clearing algorithm based on the proximal-point method for monotone inclusion problems	\cite[\S~23]{bauschke2011convex} (Section \ref{sub:alg}). 
 %\red{discuss differences from \cite{belgioioso2020energy}}.
 Finally, we investigate via extensive numerical studies: (i)  the effectiveness of the proposed market framework; (ii) the impact of distributed generation, storage and P2P tradings in distribution grids; and (iii) the scalability of the proposed market-clearing mechanism with respect to both the number of prosumers and the number of P2P tradings in the distribution network (Section \ref{sub:case_std}).
 }
@@ -320,7 +320,7 @@ We denote a group of $N$ prosumers connected in a distribution network by the se
 We model the trading network of prosumers as an undirected graph  $\mc G^{\mathrm{t}} =(\mc N,\mc E)$, where $\mc N $ is the set of vertices (agents) and $\mc E \subseteq \mc N \times \mc N$ is the set of edges, with $|\mc E |= E$. The unordered pair of vertices $(i,j) \in \mc E$ if and only if agents $j$ and $i$ can trade power. The set of trading partners of agent $i$ is defined as $ \mc N_i = \{ j | \, (j,i)\in \mc E \}$.   
 
 
-Moreover, we also consider the electrical distribution network, to which the prosumers are physically connected. This network consists of a set of $B$ busses, denoted by $\mc B:=\{1,2,\dots,B\}$, connected with each other by a set of power lines, denoted by $\mc L\subseteq \mc B \times \mc B$. Thus, we represent the physical electrical network as a connected undirected graph $\mc G^{\mathrm{p}}=(\mc B, \mc L)$. In $\mc G^{\mathrm{p}}$, each prosumer  is connected to a bus and, in general, one bus may have more than one prosumer. Figure \ref{fig:GGp} illustrates an example of trading and physical electrical networks. Furthermore, we assume that a distribution network operator (DNO) is responsible to maintain the reliability of the system, i.e., to ensure the satisfaction of the physical constraints of the electrical network \cite{qin2018,morstyn2019,moret2020}. 
+Moreover, we also consider the electrical distribution network, to which the prosumers are physically connected. This network consists of a set of $B$ busses, denoted by $\mc B:=\{1,2,\dots,B\}$, connected with each other by a set of power lines, denoted by $\mc L\subseteq \mc B \! \times\! \mc B$. Thus, we represent the physical electrical network as a connected undirected graph $\mc G^{\mathrm{p}}=(\mc B, \mc L)$. In $\mc G^{\mathrm{p}}$, each prosumer  is connected to a bus and, in general, one bus may have more than one prosumer. Figure~\ref{fig:GGp} shows an example of trading and physical electrical networks. Furthermore, we assume that a distribution network operator (DNO) is responsible to maintain the reliability of the system, i.e., to ensure the satisfaction of the physical constraints of the electrical network \cite{qin2018,morstyn2019,moret2020}. 
 \color{black}
 
 \begin{figure}
@@ -345,7 +345,7 @@ Moreover, we also consider the electrical distribution network, to which the pro
 %\subsubsection*{Types of market considered}
 We focus on P2P spot markets, i.e., day-ahead and intra-day markets, similarly to \cite{sousa2019,lecadre2020,moret2020}. Thus, we denote the horizon of the decision profiles by $\mc H = \{1,2,\dots,H \}$. For instance, in a day-ahead market, typically, the sampling period is one hour and the time horizon is $H=24$ hours. Moreover, as in \cite{moret2020}, we also include the physical constraints of the distribution network to ensure that a solution is not only economically optimal but also meets the standards of the DNO.
 
-Let us model such a P2P market as a generalized game. Specifically, we assume that each prosumer, or agent, $i\in \mc N$ aims at selfishly minimizing its cost function, which might involve decisions of other agents, subject to local and coupling constraints. Furthermore, we consider the DNO as an additional agent, i.e., agent $N\!+\!1$, whose objective is to ensure the constraints of the physical network are met. 
+Let us model such a P2P market as a generalized game. Specifically, we assume that each prosumer, or agent, $i\in \mc N$ aims at selfishly minimizing its cost function, which might involve decisions of other agents, subject to local and coupling constraints. Furthermore, we consider the DNO as an additional agent, i.e., agent $N\!+\!1$, whose only objective is to ensure the constraints of the physical network are met. 
 In this regard, let $u_i \in \bb R^{n_i}$ denote the decision of agent $i$, for all $i\in \mc N^+ :=\{1,\dots,N\!+\!1\}$. 
 Furthermore, we denote by $u$ the decision profile, namely, the stacked vectors of the decisions of all agents, i.e., $u:=\col(\{u_j\}_{j\in \mc N^+ })$, and by $u_{-i}$ the decision of all agents except agent $i$, i.e., $u_{-i} = \col(\{u_j\}_{j\in \mc N^+ \backslash \{i\}})$.
 
@@ -379,7 +379,7 @@ For each agent $i\in \mc N^+$, the function $J_i(\cdot,u_{-i})$ is convex and co
 %\smallskip
 
 %\vspace{-20pt}
-\subsection{Model of prosumers in the network}
+\subsection{Modelling the prosumers}
 \label{sec:mod_comp}
 In this section, we introduce the prosumer model. We consider that power might be generated by non-dispatchable generation units, e.g. solar and wind-based generators, or dispatchable units, e.g. small-scale fuel-based generators.
 %
@@ -410,11 +410,11 @@ where $\overline{p}_{i}^{\mathrm{di}} > \underline{p}_{i}^{\mathrm{di}}\ge 0$ de
 
 %\smallskip
 \paragraph*{Storage units} 
-Each prosumer might also minimize the usage of its storage units, for instance, in order to reduce its degradation. The corresponding cost function is denoted by $f_{i}^{\mathrm{st}}:\mathbb{R}^{H} \to \mathbb{R}$, defined as in \cite{hans2018}:
+Each prosumer might also minimize the usage of its storage units, for instance, in order to reduce its degradation. The corresponding cost function is denoted by $f_{i}^{\mathrm{st}}:\mathbb{R}^{H} \to \mathbb{R}$ and defined as in \cite{hans2018}:
 \begin{equation}
 f_{i}^{\mathrm{st}}(p_{i}^{\mathrm{ch}}, p_{i}^{\mathrm{ds}})= \|p_{i}^{\mathrm{ch}}\|_{Q_i^{\mathrm{st}}}^2 + \|p_{i}^{\mathrm{ds}}\|_{Q_i^{\mathrm{st}}}^2, \label{eq:f_st}
 \end{equation}
-where $Q_i^{\mathrm{st}}\succcurlyeq0$. {The battery charging and discharging profiles, $p_{i}^{\mathrm{ch}} = \col((p_{i,h}^{\mathrm{ch}})_{h\in \mc H})$ and $p_{i}^{\mathrm{ds}} = \col((p_{i,h}^{\mathrm{ds}})_{h\in \mc H})$, respectively, are constrained by the battery dynamics \cite{atzeni2013,zhong2019online}}
+where $Q_i^{\mathrm{st}}\succcurlyeq0$. {The battery charging and discharging profiles, $p_{i}^{\mathrm{ch}} = \col((p_{i,h}^{\mathrm{ch}})_{h\in \mc H})$ and $p_{i}^{\mathrm{ds}} = \col((p_{i,h}^{\mathrm{ds}})_{h\in \mc H})$, respectively, are constrained by the battery dynamics \cite{atzeni2013,zhong2019online}},
 %
 \begin{equation}
 	\begin{aligned}
@@ -460,14 +460,13 @@ In this section, we present the cost and constraints of bilateral tradings betwe
 
 \smallskip
 \paragraph*{Power traded with neighbors}
-Recall that each prosumer $i \in \mc N$ has a set of trading partners denoted by $\mc N_i$. The corresponding cumulative trading cost is 
+Recall that each prosumer $i \in \mc N$ has a set of trading partners denoted by $\mc N_i$. The corresponding cumulative trading cost is given by
 \begin{equation}
 f_{i}^{\mathrm{tr}} \left( \{ p_{(i,j)}^{\mathrm{tr}} \}_{j \in \mc N_i} \right) = 
 \1_H^\top \sum_{j\in \mathcal{N}_i} \left(
 c_{(i,j)}^{\mathrm{tr}}p_{(i,j)}^{\mathrm{tr}}\!+\! c^{\mathrm{ta}}  |p_{(i,j)}^{\mathrm{tr}}|\right)
-,
- \label{eq:f_t}
-\end{equation}
+, \label{eq:f_t}
+\end{equation}%
 where $p_{(i,j)}^{\mathrm{tr}} \in \R^{H}$ is the power that prosumer $i$ trades with prosumer $j$, $c_{(i,j)}^{\mathrm{tr}} \geq 0$ is the per-unit cost of trading \cite{lecadre2020}, and $c^{\mathrm{ta}}$ is a tariff imposed by the DNO for using the network \cite{baroche2019}. In  practice, the parameters $c_{(i,j)}^{\mathrm{tr}}$ can be agreed through a bilateral contract \cite{sousa2019}, model taxes to encourage the development of certain technologies  {or be used for the purpose of product differentiation} \cite{sorin2019,baroche2019,lecadre2020}. Furthermore, for each P2P trade it must hold that
 \begin{subequations}
 \begin{align}
@@ -481,19 +480,18 @@ where $ \overline{p}_{(i,j)}^{\mathrm{tr}}$ denotes the maximum power can be tra
 %Clearly, each pair of neighboring agent $i$ and $j$ has the same reciprocity constraint.
 
 %\smallskip
-\paragraph*{Power traded with the main grid} Let $p_{i,h}^{\mathrm{mg}}$ be the power prosumer $i$ imports from the main grid at time $h \in \mc H$. As in \cite{atzeni2013}, we assume that the electricity unit price at each time step $h \in \mc H	$ depends on the total consumption and is defined as a quadratic function, i.e.,
+\paragraph*{Power traded with the main grid} Let $p_{i,h}^{\mathrm{mg}}$ be the power prosumer $i$ imports from the main grid at time $h \in \mc H$. As in \cite{atzeni2013}, we assume that the electricity unit price at each time step $h \in \mc H	$ depends on the total consumption,
 \begin{equation}
 c_h^{\mathrm{mg}}(\sigma^{\textrm{mg}}_h)= d_h^{\mathrm{mg}}\cdot {\left(\sigma^{\textrm{mg}}_h + b_h \right)}^2,
 \end{equation}
-where $\sigma^{\textrm{mg}}_h$ and $b_h$ denotes the \textit{aggregate active} and \textit{passive} \textit{load on the main grid}, respectively, i.e., 
+where $d_h^{\mathrm{mg}}$ is a positive price parameter, whereas $\sigma^{\textrm{mg}}_h$ and $b_h$ denote the \textit{aggregate active} and \textit{passive} \textit{load on the grid}, i.e., 
 \begin{equation} \label{eq:Aggr}
 \sigma^{\textrm{mg}}_h = \sum_{i\in\mathcal{N}} p_{i,h}^{\mathrm{mg}},
 \quad
 b_h =\sum_{i\in \mathcal P}p_{i,h}^{\mathrm{d}},
- \quad \forall h \in \mathcal H,
+ \quad \forall h \in \mathcal H.
 \end{equation} 
-and $d_h^{\mathrm{mg}} > 0$ is a constant.
-Therefore, the cost incurred by prosumer $i$ over $\mc H$ for trading with the main grid is
+Therefore, the total cost incurred by prosumer $i$, over the horizon $\mc H$, for trading with the main grid is given by
 %objective function of agent $i$ associated to the trading with the main grid, denoted by $f_{i}^{\mathrm{mg}}$, is defined as 
 \begin{equation}
 \begin{aligned} \textstyle
@@ -503,11 +501,12 @@ f_{i}^{\mathrm{mg}}\left( p_{i}^{\mathrm{mg}},\sigma^{\textrm{mg}} \right) &= \s
 \label{eq:f_mg}
 \end{aligned}
 \end{equation}
-where $p_{i}^{\mathrm{mg}} = \col((p_{i,h}^{\mathrm{mg}})_{h\in\mc H})$ and $b =\col((b_h)_{h\in\mc H})$. {We note that the cost function \eqref{eq:f_mg} assumes equal electricity price at each distribution node and the consideration of power losses and congestion, which may result in different price at different node, is left for future work.}  
+%where $p_{i}^{\mathrm{mg}} = \col((p_{i,h}^{\mathrm{mg}})_{h\in\mc H})$ and $b =\col((b_h)_{h\in\mc H})$.
+We note that the cost function \eqref{eq:f_mg} assumes equal electricity price at each distribution node and the consideration of power losses and congestion, which may result in different price at different node, is left for future work.  
 
 Finally, we bound the aggregative loads \eqref{eq:Aggr} as follows:
 \begin{align}
-\underline{p}^{\mathrm{mg}} \1_H \leq \sigma^{\textrm{mg}} + b  \leq \1_H \overline{p}^{\mathrm{mg}}  , \label{eq:p_mg_bound}
+\underline{p}^{\mathrm{mg}} \1_H \leq \sigma^{\textrm{mg}} + b  \leq \overline{p}^{\mathrm{mg}} \1_H   , \label{eq:p_mg_bound}
 \end{align}
 where $\overline{p}^{\mathrm{mg}}>\underline{p}^{\mathrm{mg}} \geq 0$ denote the upper and lower bounds. Typically, the latter is  positive to ensure a continuous operation of the main generators that supply the main grid.
 
@@ -532,9 +531,9 @@ where $\overline{p}^{\mathrm{mg}}>\underline{p}^{\mathrm{mg}} \geq 0$ denote the
 \end{definition}
 \fi 
 
-\subsection{Physical constraints}
-
-To ensure that the solutions to our decentralized market design are not only economically-efficient but also operationally-safe and reliable for the entire system, we impose the physical constraints of the electrical network, namely, power-flow-related constraints.
+\subsection{Modelling the physical constraints}
+%
+To ensure that the solutions to our decentralized market design are operationally-safe and reliable for the entire system, we impose the physical constraints of the electrical network, namely, power-flow-related constraints.
 
 Firstly, recall that $\mc G^{\mathrm p}=(\mc B, \mc L)$ is a graph representation of the physical electrical network that connects the prosumers. We  denote by $\mc B_y =\{z~|~(y,z) \in \mc L\}$ the set of neighbouring busses of bus $y \in \mc B$, whereas we denote by $\mc N_y^{\mathrm b} \subseteq \mc N$ and $\mc P_y^\mathrm{b} \subseteq \mc P$ the set of prosumers and passive consumers that are connected to bus $y \in \mc B$, respectively. 
 Additionally, we denote the set of busses connected to the main grid by $\mc B^{\mathrm{mg}} \subseteq \mc B$.
@@ -548,15 +547,14 @@ We consider a linear approximation of power-flow equations, which is standard in
 \end{equation}
 where $\eta_i$ is the active power injection of prosumer $i$, i.e.,
 \begin{equation}\label{eq:etai}
-\eta_i:= p_i^{\mathrm d}-p_{i}^{\mathrm{di}}-{p_{i}^{\mathrm{ds}}+p_{i}^{\mathrm{ch}}}
+\eta_i:= p_i^{\mathrm d}-p_{i}^{\mathrm{di}}-{p_{i}^{\mathrm{ds}}+p_{i}^{\mathrm{ch}}}.
 \end{equation}
-Equation \eqref{eq:p_bal_p} models the local power balance of bus $y$, similarly to \eqref{eq:l_pow_b} although now it relates power generation, consumption, and line powers. Moreover, it must hold that
-\begin{subequations}
+Equation \eqref{eq:p_bal_p} models the local power balance of bus $y$, similarly to \eqref{eq:l_pow_b} although now it relates power generation, consumption, and line powers. Moreover, it must hold that\begin{subequations}
 \small
 \label{eq:pf_pq}
 \begin{align}
-&p_{(y,z)}^{\ell} = B_{(y,z)}\left({\theta_y - \theta_z} \right) - G_{(y,z)}\left(v_y - v_z \right), \, \, \forall z \in \mc B_y, \label{eq:pf_p}\\
-&q_{(y,z)}^{\ell} = G_{(y,z)}\left({\theta_y - \theta_z} \right) + B_{(y,z)}\left(v_y - v_z \right), \, \,  \forall z \in \mc B_y, \label{eq:pf_q}
+&p_{(y,z)}^{\ell} = B_{(y,z)}\left({\theta_y - \theta_z} \right) - G_{(y,z)}\left(v_y - v_z \right), \quad \forall z \in \mc B_y, \label{eq:pf_p}\\
+&q_{(y,z)}^{\ell} = G_{(y,z)}\left({\theta_y - \theta_z} \right) + B_{(y,z)}\left(v_y - v_z \right), \quad  \forall z \in \mc B_y, \label{eq:pf_q}
 \end{align}
 \label{eq:pf_all}
 \end{subequations}
@@ -567,7 +565,7 @@ We also impose reliability constraints for each bus $y \in \mc B$,
 \begin{subequations}
 \label{eq:line}
 \begin{align}
-	(p_{(y,z),h}^{\ell})^2 + (q_{(y,z),h}^{\ell})^2 &\leq \overline{s}_{(y,z)}^2, \forall z\in\mc B_y, \ \forall h\in \mc H, \label{eq:line_cap}\\
+	(p_{(y,z),h}^{\ell})^2 + (q_{(y,z),h}^{\ell})^2 &\leq \overline{s}_{(y,z)}^2,\quad \forall z\in\mc B_y,  \forall h\in \mc H, \label{eq:line_cap}\\
 	\underline{\theta}_y\1 \leq \theta_y &\leq \overline{\theta}_y\1,  \label{eq:theta_b}\\
 	\underline{v}_y\1 \leq v_y &\leq \overline v_y\1, \label{eq:v_b}
 \end{align}
@@ -650,7 +648,7 @@ gadjov2020single,bianchi2020fast}.
 When the agents' cost functions depend linearly on the congestion (as for our P2P market model), v-GNEs are efficient. Specifically, the so-called \textit{price of anarchy}\cite{koutsoupias1999worst}, which quantifies how much selfish behaviour degrades the performance of a given system, tends to one (i.e., no performance degradation) as the agents population size grows \cite{paccagnan2018efficiency}.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Semi-decentralized Coordinated Market Clearing}
+\subsection{Semi-decentralized Market Clearing}
 Several semi-decentralized and distributed algorithms have been recently proposed to find a solution of the generalized aggregative game in \eqref{eq:locOpt}, e.g. \cite{paccagnan2019,belgioioso2020semi,belgioioso2020b,
 gadjov2020single,bianchi2020fast}. 
 %
@@ -668,7 +666,7 @@ The resulting market-clearing mechanism, summarized in Algorithm~1, requires the
 
 \item the active power injection $\eta_i$, defined as in \eqref{eq:etai} and privately communicated (as a grid usage bid) to the DNO;
 
-\item a (dual) variable $\mu^{\text{tr}}_{(i,j)}$ for each trading partner $j \in \mc N_i$, whose function is to drive prosumer $i$'s and $j$'s power trade to agreement, i.e., the reciprocity constraints \eqref{eq:rep_const}, and can be interpreted from an economic perspective as a bilateral trading shadow price \cite[Section 2.4]{lecadre2020}.
+\item a (dual) variable $\mu^{\text{tr}}_{(i,j)}$ for each trading partner $j \in \mc N_i$, whose function is to drive prosumer $i$'s and $j$'s power trades to agreement, i.e., the reciprocity constraints \eqref{eq:rep_const}, and can be interpreted from an economic perspective as a bilateral trading shadow price \cite[Section 2.4]{lecadre2020}.
 
 \end{itemize}
 In addition to the physical variables of the distribution network, i.e., $u_{N\!+\!1}$, the DNO stores in its local memory
@@ -680,20 +678,11 @@ In addition to the physical variables of the distribution network, i.e., $u_{N\!
 From an economic perspective, these variables can be interpreted as extra marginal losses imposed to the prosumers for the grid usage. From a control-theoretic perspective, they can be interpreted as states of discrete-time integrators driven by the violation of the network operational constraints \eqref{eq:Cconstr_def}.
 }
 %
-\begin{figure}[t]
-\centering
-\includegraphics[width=.29\textwidth]{figures/37bus_sys_f6}
-\smallskip
-\caption{{Information flow in Algorithm 1.}}
-\label{fig:IFC}
-\end{figure}%
-%
-\begin{figure}[t]
-{
+\begin{figure}[t!]%
 \begin{minipage}{\columnwidth}
 \hrule
 \smallskip
-\textsc{Algorithm 1}. Coordinated P2P Market Clearing
+\textsc{Algorithm 1}. Semi-decentralized P2P Market Clearing
 \smallskip
 \hrule 
 \smallskip
@@ -702,8 +691,8 @@ From an economic perspective, these variables can be interpreted as extra margin
 \smallskip
  \text{Iterate until convergence $(k = 0,1,\ldots)$}
 \begin{align*}
-& \text{For all prosumers $i \in \mc I$ (in parallel):}\\
-\quad &\left|
+& \text{For all prosumers $i \in \mc N$ (in parallel):}\\
+\quad &\left\lfloor
 \begin{array}{l}
 \text{Local update via \textsc{Algorithm 2}:}\\
 \left\lfloor
@@ -724,13 +713,14 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \right.
 \end{array}
 \right.
+\vspace*{.1em}
 \end{array}
 \right.\\[.5em]
 %%%
 % DNO
 %%%
 & \text{DNO}\\
-\quad &\left|
+\quad &\left\lfloor
 \begin{array}{l}
 \text{Central update via \textsc{Algorithm 3}:}\\
 \left\lfloor
@@ -750,23 +740,35 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \end{array}%
 \right.%
 \end{array}%
-\right.\\[1em]
+\right.
+\vspace*{.1em}
 \end{array}
 \right.%
 \end{align*}
 \smallskip
 \hrule
 \end{minipage}
-}
+
+\vspace*{2.4em}
+
+\centering
+\includegraphics[width=.37\textwidth]{figures/37bus_sys_f7_GB}
+\smallskip
+\caption{Information flow in Algorithm 1.}
+\label{fig:IFC}
 \end{figure}%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}
+%
+%\begin{figure}[t]
 %\centering
-%\begin{subfigure}[b]{\columnwidth}
-%%\begin{minipage}{\linewidth}
+%\includegraphics[width=.3435\textwidth]{figures/37bus_sys_f6}
+%\smallskip
+%\caption{{Information flow in Algorithm 1.}}
+%\label{fig:IFC}
+%\end{figure}%
+%%
+%\begin{figure}[b!]
 %{
+%\begin{minipage}{\columnwidth}
 %\hrule
 %\smallskip
 %\textsc{Algorithm 1}. Coordinated P2P Market Clearing
@@ -832,22 +834,13 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 %\end{align*}
 %\smallskip
 %\hrule
-%%\end{minipage}
+%\end{minipage}
 %}
-%\end{subfigure}
-%\vspace*{2em}
-%
-%\begin{subfigure}[b]{0.37\textwidth}
-%   \includegraphics[width=\linewidth]{figures/37bus_sys_f6}
-%\end{subfigure}
-%\caption{{Information flow in Algorithm 1.}}
-%\label{fig:IFC}
-%\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{figure}%
 
-The semi-decentralized information flow of Algorithm~1 is illustrated in Fig.~\ref{fig:IFC}, {while its locals and central updates are summarized  in Algorithm 2 and Algorithm 3, respectively. In there, we use some auxiliary variables (e.g., $\zeta^{\text{tr}}_{(i,j)}$, $\psi_i$ in Alg.~2) to keep the presentation compact. }  
+The semi-decentralized information flow of Algorithm~1 is illustrated in Figure~\ref{fig:IFC}, while its locals and central updates are summarized  in Algorithm~2 and Algorithm~3, respectively. In there, we used some auxiliary variables (e.g., $\zeta^{\text{tr}}_{(i,j)}$, $\psi_i$ in Algorithm~2) to keep the presentation compact.  
 %
-The next proposition shows the global convergence of Algorithm 1 to a variational GNE of the P2P market game. 
+The next proposition shows the global convergence of Algorithm 1 to a variational GNE of the proposed P2P market game. \blue{Due to space limitations, we provide only a sketch of the proof that is mainly based on the technical results in \cite[Theorem~2]{belgioioso2020semi}.}
 
 \smallskip
 \begin{proposition} The following statements hold true:\hspace*{3em}
@@ -868,8 +861,165 @@ Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove item (ii
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[t]
+%{
+%\begin{minipage}{\columnwidth}
+%\hrule
+%\smallskip
+%\textsc{Algorithm 2}. Prosumer $i$'s local update
+%\smallskip
+%\hrule 
+%\smallskip
+%\text{Step sizes}: For each $i \in \mc N$, set $\alpha_{i} <1/(3+N\max_{h\in \mc H} d_h^{\mathrm{mg}})$, $\beta_{(i,j)}^{\text{tr}}=\beta_{(j,i)}^{\text{tr}} < 1/2$, for all $j \in \mc N_i$.\\[.5em]
+%\noindent 
+%(i) \text{Dual update (trading reciprocity):}\\[.2em]
+%\hspace*{.15em}
+%$
+%\left| 
+%\begin{array}{l}
+%\text{For all } j \in \mc N_i \text{ (in parallel):}\\
+%\left\lfloor
+%\begin{array}{l}
+%%\text{Receive } p^{\textrm{tr}}_{(j,i)} (k) \text{ from prosumer } j\\
+%\zeta^{\text{tr}}_{(i,j)}(k)  =  p^{\textrm{tr}}_{(i,j)} (k) + p^{\textrm{tr}}_{(j,i)} (k)\\
+%\mu^{\text{tr}}_{(i,j)}(k) = \mu^{\text{tr}}_{(i,j)}(k) + \beta_{(i,j)}^{\text{tr}} \left( 
+%	2  \zeta^{\text{tr}}_{(i,j)}(k) - \zeta^{\text{tr}}_{(i,j)}(k\!-\!1)
+%	\right)
+%\end{array}
+%\right.
+%\end{array}
+%\right.
+%$
+%
+%\medskip
+%\noindent
+%(ii) \text{Primal update (generation, storage, load, and trading):}\\[.2em]
+%\hspace*{.15em}
+%$
+%\left| 
+%\begin{array}{l}
+%%\text{Receive } \sigma^{\mathrm{mg}}(k),\, \lambda^{\text{mg}}(k), \mu^{\text{tg}}(k), \mu_y^{\text{pb}}(k) \text{ from the DNO}\\
+%\psi_i(k) = u_i(k)-
+%	\alpha_i \cdot \col \Big(-\mu_y^{\text{pb}}(k),{\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),}\\
+%	\hspace*{5em}
+%	{
+%	%\left(
+%	\left[
+%	\begin{smallmatrix}
+%	I_H\\
+%	- I_H 
+%	\end{smallmatrix}
+%	\right] 
+%	%\otimes I_H
+%%\right)	
+%	}^\top \lambda^{\text{mg}}(k) + \mu^{\text{tg}}(k),
+%	%
+%	\left\{ {\mu^{\text{tr}}_{(i,j)}(k)}\right\}_{j \in \mc N_i}   \Big)\\
+%%
+%\text{Set } u_i(k\!+\!1) \text{ as the unique solution to}\\[.2em]	
+%\left\{
+%\begin{array}{r l}
+%	\underset{\xi \in \R^{n_i}}{\argmin} & 
+%	 J_{i} \big( \xi, u_{-i}(k) \big) 
+%	+ \frac{1}{2 \alpha_i}
+%	\left\| \xi -  \psi_i(k) 
+%	\textstyle
+%	  \right\|^2 \\
+%	\text{s.t.} & \xi \in \mc U_i
+%\end{array} 
+%	\right.
+%\end{array}	
+%\right.		$
+%
+%\medskip
+%\hrule
+%\end{minipage}
+%}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[t]
+%{
+%\begin{minipage}{\columnwidth}
+%\hrule
+%\smallskip
+%\textsc{Algorithm 3}. DNO central update
+%\smallskip
+%\hrule 
+%\smallskip
+%
+%\text{Step sizes}: set $\alpha_{N+1} <2$, $\gamma^{\text{mg}} < 1/N$, $\beta^{\text{tg}} < (|\mc N| \!+\! |\mc B|)^{-1}$, and $\beta_y^{\text{pb}} < (1\!+\!2|\mc N_y^{\mathrm{b}}|\!+\!|\mc B_y|)^{-1}$,  for all busses $y\!\in\! \mc B $.
+%
+%\medskip
+%\noindent 
+%(i) \text{Primal update (network physical variables):}\\[.2em]
+%\hspace*{.15em}
+%$\left|
+%\begin{array}{l}
+%\psi(k) = \col \left( 
+%	\left\{
+%	\0,\mu^{\text{tg}}(k) + \mu_y^{\text{pb}}(k), 
+%	\{ \mu_y^{\text{pb}}(k), \0 \}_{z \in \mc B_y}
+%	\right\}_{y \in \mc B} \right)\\[.7em]
+%%
+%u_{N+1}(k+1) = \proj_{\mc U_{N+1}}  \left( u_{N+1}(k) + (\alpha_{N+1})^{-1} \psi(k) \right)
+%\end{array}
+%\right.
+%$
+%
+%\medskip
+%\noindent
+%\noindent 
+%(ii) \text{Dual update (operational feasibility):}\\[.2em]
+%\hspace*{.15em}
+%$
+%\left| 
+%\begin{array}{l}
+%%
+%\eta(k\!+\!1) = 
+%	\left[
+%	\begin{smallmatrix}
+%	1\\
+%	- 1 
+%	\end{smallmatrix}
+%	\right] \otimes (2 \sigma^{\text{mg}}(k+1)- \sigma^{\text{mg}}(k)) 
+%	-
+%	\left[
+%	\begin{smallmatrix}
+%	\overline{p}^{\mathrm{mg}}\1_{H}-b \\
+%	-     \underline{p}^{\mathrm{mg}} \1_{H}+b
+%	\end{smallmatrix} 
+%	\right]\\
+%	%
+%	\lambda^{\text{mg}}(k+1) = \textstyle
+%	\proj_{\R^{2 H}_{\geq 0}}\left( 
+%	\lambda^{\text{mg}}(k) + \gamma^{\text{mg}} \eta(k\!+\!1)
+%	 \right)\\
+%%
+%\zeta^{\text{tg}}(k+1) = \sigma^{\text{mg}}
+%	(k\!+\!1)+b- \sigma^{\text{tg}}(k\!+\!1)\\
+%	%
+%	\mu^{\text{tg}}(k+1) = \mu^{\text{tg}}(k) + \beta^{\text{tg}} (2\zeta^{\text{tg}}(k+1)-\zeta^{\text{tg}}(k))\\[.5em]
+%	%
+%\text{For all busses } y \in \mc B \text{ (in parallel):}\\
+%\left\lfloor
+%\begin{array}{l}
+%%\text{Receive } p^{\textrm{tr}}_{(j,i)} (k) \text{ from prosumer } j\\
+%\zeta^{\text{pb}}_y(k+1)   = \sum_{i \in \mc P_y^{\mathrm{b}}} p_i^{\mathrm{d}} + \sum_{i \in \mc N_y^{\mathrm{b}}} \eta_i(k\!+\!1)\\
+%\hspace*{9em} - p^{\text{tg}}_y(k\!+\!1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k\!+\!1)\\[.5em]
+%%
+%\mu_y^{\text{pb}}(k+1) = \mu_y^{\text{pb}}(k) + \beta^{\text{pb}}_y (2 \zeta^{\text{pb}}_y(k\!+\!1)- \zeta^{\text{pb}}_y(k))
+%\end{array}
+%\right.
+%\end{array}
+%\right.
+%$
+%
+%\medskip
+%\hrule
+%\end{minipage}
+%}
+%\end{figure}
 \begin{figure}[t]
-{
 \begin{minipage}{\columnwidth}
 \hrule
 \smallskip
@@ -877,13 +1027,14 @@ Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove item (ii
 \smallskip
 \hrule 
 \smallskip
-\text{Step sizes}: For each $i \in \mc N$, set $\alpha_{i} <1/(3+N\max_{h\in \mc H} d_h^{\mathrm{mg}})$, $\beta_{(i,j)}^{\text{tr}}=\beta_{(j,i)}^{\text{tr}} < 1/2$, for all $j \in \mc N_i$.\\
+\text{Step sizes}: For each $i \in \mc N$, set $\alpha_{i} <1/(3+N\max_{h\in \mc H} d_h^{\mathrm{mg}})$, $\beta_{(i,j)}^{\text{tr}}=\beta_{(j,i)}^{\text{tr}} < 1/2$, for all $j \in \mc N_i$.
+
 \medskip
 \noindent 
 (i) \text{Dual update (trading reciprocity):}\\[.2em]
 \hspace*{.15em}
 $
-\left| 
+\left\lfloor
 \begin{array}{l}
 \text{For all } j \in \mc N_i \text{ (in parallel):}\\
 \left\lfloor
@@ -895,6 +1046,7 @@ $
 	\right)
 \end{array}
 \right.
+\vspace*{.1em}
 \end{array}
 \right.
 $
@@ -904,11 +1056,11 @@ $
 (ii) \text{Primal update (generation, storage, load, and trading):}\\[.2em]
 \hspace*{.15em}
 $
-\left| 
+\left\lfloor
 \begin{array}{l}
 %\text{Receive } \sigma^{\mathrm{mg}}(k),\, \lambda^{\text{mg}}(k), \mu^{\text{tg}}(k), \mu_y^{\text{pb}}(k) \text{ from the DNO}\\
 \psi_i(k) = u_i(k)-
-	\alpha_i \cdot \col \Big(-\mu_y^{\text{pb}}(k),{\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),}\\
+	\alpha_i \cdot \col \Big(-\mu_y^{\text{pb}}(k),\mu_y^{\text{pb}}(k), -\mu_y^{\text{pb}}(k),\\
 	\hspace*{5em}
 	{
 	%\left(
@@ -936,17 +1088,16 @@ $
 	\text{s.t.} & \xi \in \mc U_i
 \end{array} 
 	\right.
+	\vspace*{.1em}
 \end{array}	
 \right.		$
 
 \medskip
 \hrule
 \end{minipage}
-}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
-{
 \begin{minipage}{\columnwidth}
 \hrule
 \smallskip
@@ -961,7 +1112,7 @@ $
 \noindent 
 (i) \text{Primal update (network physical variables):}\\[.2em]
 \hspace*{.15em}
-$\left|
+$\left\lfloor
 \begin{array}{l}
 \psi(k) = \col \left( 
 	\left\{
@@ -970,6 +1121,7 @@ $\left|
 	\right\}_{y \in \mc B} \right)\\[.7em]
 %
 u_{N+1}(k+1) = \proj_{\mc U_{N+1}}  \left( u_{N+1}(k) + (\alpha_{N+1})^{-1} \psi(k) \right)
+\vspace*{.1em}
 \end{array}
 \right.
 $
@@ -980,16 +1132,16 @@ $
 (ii) \text{Dual update (operational feasibility):}\\[.2em]
 \hspace*{.15em}
 $
-\left| 
+\left\lfloor
 \begin{array}{l}
 %
-\eta(k\!+\!1) = 
+\delta(k\!+\!1) = 
 	\left[
 	\begin{smallmatrix}
 	1\\
 	- 1 
 	\end{smallmatrix}
-	\right] \otimes (2 \sigma^{\text{mg}}(k+1)- \sigma^{\text{mg}}(k)) 
+	\right] \otimes (2 \sigma^{\text{mg}}(k\!+\!1)\!-\! \sigma^{\text{mg}}(k)) 
 	-
 	\left[
 	\begin{smallmatrix}
@@ -1000,7 +1152,7 @@ $
 	%
 	\lambda^{\text{mg}}(k+1) = \textstyle
 	\proj_{\R^{2 H}_{\geq 0}}\left( 
-	\lambda^{\text{mg}}(k) + \gamma^{\text{mg}} \eta(k\!+\!1)
+	\lambda^{\text{mg}}(k) + \gamma^{\text{mg}} \delta(k\!+\!1)
 	 \right)\\
 %
 \zeta^{\text{tg}}(k+1) = \sigma^{\text{mg}}
@@ -1013,11 +1165,12 @@ $
 \begin{array}{l}
 %\text{Receive } p^{\textrm{tr}}_{(j,i)} (k) \text{ from prosumer } j\\
 \zeta^{\text{pb}}_y(k+1)   = \sum_{i \in \mc P_y^{\mathrm{b}}} p_i^{\mathrm{d}} + \sum_{i \in \mc N_y^{\mathrm{b}}} \eta_i(k\!+\!1)\\
-\hspace*{9em} - p^{\text{tg}}_y(k\!+\!1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k\!+\!1)\\[.5em]
+\hspace*{8em} - p^{\text{tg}}_y(k\!+\!1) - \sum_{z \in \mc B_y} p^\ell_{(y,z)} (k\!+\!1)\\[.5em]
 %
 \mu_y^{\text{pb}}(k+1) = \mu_y^{\text{pb}}(k) + \beta^{\text{pb}}_y (2 \zeta^{\text{pb}}_y(k\!+\!1)- \zeta^{\text{pb}}_y(k))
 \end{array}
 \right.
+\vspace*{.2em}
 \end{array}
 \right.
 $
@@ -1025,7 +1178,6 @@ $
 \medskip
 \hrule
 \end{minipage}
-}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1037,8 +1189,11 @@ $
 
 \item The primal update of each prosumer (Algorithm~2~(ii)) involves the solution of a quadratic program\footnote{Up to a fairly-standard reformulation of the absolute value term in \eqref{eq:f_t}.}, for which very efficient solvers are available, e.g. \cite{osqp}. {In there, if $   J_{i} \big( \xi, u_{-i}(k) \big)$ is replaced by its approximate version $ \tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big)$, obtained by neglecting prosumer $i$'s contribution $p_i^{\text{tr}}$ to the aggregative active load $\sigma^{\text{mg}}$, Algorithm 1 will converge to a variational Wardrop equilibrium \cite[\S~II.B]{belgioioso2020semi}, which is a good approximation of v-GNEs for networks with a large number of prosumers.}
 
-\item  The primal update of the DNO (Algorithm~3~(i)) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation can be computationally expensive if naively solved. However, more efficient algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~4.3]{bauschke2015projection}, \edit{e.g.  the  \textit{Douglas--Rachford splitting}   \cite[\S~26.3]{bauschke2011convex}.}%\cite[Appendix~2]{belgioioso2021operationally}.
-
+\item  The primal update of the DNO (Algorithm~3~(i)) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation can be computationally expensive if naively solved. However, more efficient algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~30]{bauschke2011convex} .%, \edit{e.g.  the  \textit{Douglas--Rachford splitting}   \cite[\S~26.3]{bauschke2011convex}.}%\cite[Appendix~2]{belgioioso2021operationally}.
+\item \blue{Algorithm 1 can be cast as a proximal-point method, opportunely preconditioned to distribute the computation among the prosumers.
+%
+Such operator-theoretic interpretation can be used to design provably-correct acceleration schemes\cite[\S~IV.B]{belgioioso2020semi} as well as to provide robustness guarantees to asynchronous implementations \cite{cenedese2021asynchronous}.
+}
 \end{enumerate}
 \end{remark}
 \begin{remark}  {
@@ -1078,7 +1233,7 @@ Some equilibrium solutions of the P2P market cause overcapacity in some lines wh
 	\label{fig:simD_safe}
 \end{figure}
 
-\subsection{Peer-to-Peer trading}
+\subsection{The economic impact P2P trading}
 %\iffalse 
 In this section, we evaluate whether energy trading is economically beneficial for the prosumers. To this end, 
 we generate a network of 50 prosumers and consider two scenarios: (a) where trading is not allowed, i.e., $\overline{p}_{(i,j)}^{\mathrm{tr}}=0$ in \eqref{eq:p_t_bound}; (b) where trading is allowed with $\overline{p}_{(i,j)}^{\mathrm{tr}}=30 \ \mathrm{kW}$, and the default cost parameters are homogeneous. The other parameters of the network are kept constant in both scenarios. Figure~\ref{fig:simC_cost} shows the individual costs difference between the equilibrium configurations of the market designs with (a) and without P2P tradings (b). In particular, all prosumers gain economical benefits when they can trade.
@@ -1155,14 +1310,14 @@ Note that the prosumers charge their storage units during the first off-peak hou
 \fi 
 %\clearpage
 
-\subsection{Scalability of the algorithm}
+\subsection{Scalability of the market-clearing mechanism}
 Finally, we perform a scalability test for the proposed algorithm. Specifically, we evaluate the convergence speed, in terms of the total number of iterations required to meet a predetermined stopping criterion, when the size of the population of prosumers $N$ and the connectivity of the trading network (the number of trading links) grow. We carry out two sets of simulations.
 %
 For the former, we consider five different values of $N$ and a fixed connectivity level of $0.6$ and we run ten Monte Carlo simulations for each $N$, whereas in the latter, the connectivity of the trading network of $50$ prosumers varies in the range $[0.1,1]$, where connectivity $1$ means that the trading network is a complete graph. Similarly, we also run ten Monte Carlo simulations for each connectivity value. We can see from Figure \ref{fig:simE} that Algorithm~1 suitably scales with respect to both the number of prosumers and the connectivity level of the trading network. These results highlight that our algorithm is suitable to be applied to  large-scale systems. 
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.92\linewidth]{figures/simEF2.eps}
+	\includegraphics[width=0.92\linewidth]{figures/simEF2_GB3.eps}
 	\caption{Total number of iterations for convergence of Alg. 1 vs number of prosumers (top) and the connectivity level (the number of trading links) (bottom). {The average computation times of the inner loops, i.e., Algs.~2 and 3, obtained on a computer with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory, are 74.5 ms and 1.13 s, respectively.} 
 	}
 	\label{fig:simE}

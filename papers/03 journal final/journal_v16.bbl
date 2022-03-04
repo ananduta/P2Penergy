@@ -140,8 +140,9 @@ F.~{Moret}, A.~{Tosatto}, T.~{Baroche}, and P.~{Pinson}, ``Loss allocation in
   https://doi.org/10.1109/TPWRS.2020.3025391.
 
 \bibitem{zhong2020cooperative}
-W.~Zhong, S.~Xie, K.~Xie, Q.~Yang, and L.~Xie, ``Cooperative P2P Energy Trading in Active Distribution Networks: An MILP-Based Nash Bargaining Solution,'' \emph{IEEE Transactions on Smart Grid}, vol.~12, no.~2, pp.
-  1264--1276, 2020.
+W.~Zhong, S.~Xie, K.~Xie, Q.~Yang, and L.~Xie, ``Cooperative p2p energy trading
+  in active distribution networks: An milp-based nash bargaining solution,''
+  \emph{IEEE Transactions on Smart Grid}, vol.~12, no.~2, pp. 1264--1276, 2020.
 
 \bibitem{bauschke2011convex}
 H.~H. Bauschke and P.~L. Combettes, \emph{Convex analysis and monotone operator
@@ -202,28 +203,21 @@ D.~Paccagnan, F.~Parise, and J.~Lygeros, ``On the efficiency of {N}ash
   equilibria in aggregative charging games,'' \emph{IEEE control systems
   letters}, vol.~2, no.~4, pp. 629--634, 2018.
 
-
-
 \bibitem{osqp}
 B.~Stellato, G.~Banjac, P.~Goulart, A.~Bemporad, and S.~Boyd, ``{OSQP}: an
   operator splitting solver for quadratic programs,'' \emph{Mathematical
   Programming Computation}, vol.~12, no.~4, pp. 637--672, 2020.
 
-\bibitem{bauschke2015projection}
-H.~H. Bauschke and V.~R. Koch, ``Projection methods: Swiss army knives for
-  solving feasibility and best approximation problems with halfspaces,''
-  \emph{Contemporary Mathematics}, vol. 636, pp. 1--40, 2015.
+\bibitem{cenedese2021asynchronous}
+C.~Cenedese, G.~Belgioioso, S.~Grammatico, and M.~Cao, ``An asynchronous
+  distributed and scalable generalized nash equilibrium seeking algorithm for
+  strongly monotone games,'' \emph{European Journal of Control}, vol.~58, pp.
+  143--151, 2021.
 
 \bibitem{jasm}
 \BIBentryALTinterwordspacing
 ``{JASM} data platform,'' {Accessed: 25-11-2020}. [Online]. Available:
   \url{https://data.sccer-jasm.ch}
 \BIBentrySTDinterwordspacing
-
-\bibitem{belgioioso2017convexity}
-G.~Belgioioso and S.~Grammatico, ``On convexity and monotonicity in generalized
-  aggregative games,'' \emph{IFAC-PapersOnLine}, vol.~50, no.~1, pp.
-  14\,338--14\,343, 2017.
-
 
 \end{thebibliography}

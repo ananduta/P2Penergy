@@ -2,52 +2,57 @@ This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: journal_v16.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
-I couldn't open style file ieeetran.bst
----line 127 of file journal_v16.aux
- : \bibstyle{ieeetran
- :                   }
-I'm skipping whatever remains of this command
+The style file: ieeetran.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
-I found no style file---while reading file journal_v16.aux
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: ref.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
 You've used 37 entries,
-            0 wiz_defined-function locations,
-            122 strings with 975 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+            4087 wiz_defined-function locations,
+            1018 strings with 14176 characters,
+and the built_in function-call counts, 31884 in all, are:
+= -- 2649
+> -- 827
+< -- 305
++ -- 463
+- -- 142
+* -- 1564
+:= -- 4671
+add.period$ -- 76
+call.type$ -- 37
+change.case$ -- 39
+chr.to.int$ -- 669
+cite$ -- 37
+duplicate$ -- 2246
+empty$ -- 2314
+format.name$ -- 177
+if$ -- 7469
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
+int.to.str$ -- 37
+missing$ -- 384
+newline$ -- 136
+num.names$ -- 36
+pop$ -- 818
+preamble$ -- 1
 purify$ -- 0
-quote$ -- 0
-skip$ -- 0
+quote$ -- 2
+skip$ -- 2480
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 1633
+swap$ -- 1968
+text.length$ -- 82
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
+top$ -- 5
+type$ -- 37
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+while$ -- 138
+width$ -- 39
+write$ -- 403
