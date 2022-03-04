@@ -660,7 +660,7 @@ v-GNEs enjoy the property of ``economic fairness”, namely, the marginal loss d
 
 Note that the cost functions in \eqref{eq:cost_def} are coupled only via the aggregative quantity $\sigma^{\textrm{mg}} = \sum_{i\in\mathcal{N}} p_{i}^{\mathrm{mg}}$ in  \eqref{eq:Aggr}, namely, the active load (i.e., the congestion) on the main grid. Therefore, for each agent $i \in \mc I$, we can define a function $\tilde J_i$ such that
 \begin{equation}
-\tilde J_i(u_i, \sigma^{\textrm{mg}}) =:J_i(u_i,  u_{-i}).
+J_i(u_i,  u_{-i})=\tilde J_i(u_i, \sigma^{\textrm{mg}}) .
 \end{equation}
 Games with such special structure are known as \textit{aggregative games} \cite{jensen2010aggregative}, and have received intense research interest, within the operations research and the automatic control communities \cite{paccagnan2019,belgioioso2020semi,belgioioso2020b,
 gadjov2020single,bianchi2020fast}. 
@@ -689,32 +689,13 @@ The resulting market-clearing mechanism, summarized in Algorithm~1, requires the
 \item the active power injection $\eta_i$, defined as in \eqref{eq:etai} and privately communicated (as a grid usage bid) to the DNO;
 
 \item a (dual) variable $\mu^{\text{tr}}_{(i,j)}$ for each trading partner $j \in \mc N_i$, whose function is to drive prosumer $i$'s and $j$'s power trade to agreement, i.e., the reciprocity constraints \eqref{eq:rep_const}, and can be interpreted from an economic perspective as a bilateral trading shadow price \cite[Section 2.4]{lecadre2020}.
-
 \end{itemize}
-In addition to the physical variables of the distribution network, i.e., $u_{N\!+\!1}$, the DNO stores in its local memory
-\begin{itemize}
-\item the (dual) variables $\lambda^{\text{mg}}$ and $\mu^{\text{tg}} $, that are associated with the main grid constraints \eqref{eq:p_mg_bound} and \eqref{eq:grid_const2}, respectively;
 
-\item a (dual) variable $\mu_{y}^{\text{pb}}$ for each bus $y \in \mc B$, associated with the power balance constraint on bus $y$ \eqref{eq:p_bal_p}.
-\end{itemize}
-From an economic perspective, these variables can be interpreted as extra marginal losses imposed to the prosumers for the grid usage. From a control-theoretic perspective, they can be interpreted as states of discrete-time integrators driven by the violation of the network operational constraints \eqref{eq:Cconstr_def}.
-}
-%
-\begin{figure}[t!]
-\centering
-\includegraphics[width=.3\textwidth]{figures/37bus_sys_f7}
-\smallskip
-\caption{\edit{Information flow in Algorithm 1.}}
-\label{fig:IFC}
-\end{figure}%
-%
-\begin{figure}[t]
-\marginnote{\note{R1-6}}
-\edit{
+\begin{figure}[t!]%
 \begin{minipage}{\columnwidth}
 \hrule
 \smallskip
-\textsc{Algorithm 1}. Coordinated P2P Market Clearing
+\textsc{Algorithm 1}. Distributed P2P Market Clearing
 \smallskip
 \hrule 
 \smallskip
@@ -723,7 +704,7 @@ From an economic perspective, these variables can be interpreted as extra margin
 \smallskip
  \text{Iterate until convergence $(k = 0,1,\ldots)$}
 \begin{align*}
-& \text{For all prosumers $i \in \mc I$ (in parallel):}\\
+& \text{For all prosumers $i \in \mc N$ (in parallel):}\\
 \quad &\left\lfloor
 \begin{array}{l}
 \text{Local update via \textsc{Algorithm 2}:}\\
@@ -780,17 +761,30 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \smallskip
 \hrule
 \end{minipage}
-}
+
+\vspace*{3em}
+
+\centering
+\includegraphics[width=.36\textwidth]{figures/37bus_sys_f7}
+\smallskip
+\caption{\edit{Information flow in Algorithm 1.}}
+\label{fig:IFC}
 \end{figure}%
 
+In addition to the physical variables of the distribution network, i.e., $u_{N\!+\!1}$, the DNO stores in its local memory
+\begin{itemize}
+\item the (dual) variables $\lambda^{\text{mg}}$ and $\mu^{\text{tg}} $, that are associated with the main grid constraints \eqref{eq:p_mg_bound} and \eqref{eq:grid_const2}, respectively;
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}
-%\centering
-%\begin{subfigure}[b]{\columnwidth}
-%%\begin{minipage}{\linewidth}
+\item a (dual) variable $\mu_{y}^{\text{pb}}$ for each bus $y \in \mc B$, associated with the power balance constraint on bus $y$ \eqref{eq:p_bal_p}.
+\end{itemize}
+From an economic perspective, these variables can be interpreted as extra marginal losses imposed to the prosumers for the grid usage. From a control-theoretic perspective, they can be interpreted as states of discrete-time integrators driven by the violation of the network operational constraints \eqref{eq:Cconstr_def}.
+}
+%
+%
+%\begin{figure}[t]
 %\marginnote{\note{R1-6}}
 %\edit{
+%\begin{minipage}{\columnwidth}
 %\hrule
 %\smallskip
 %\textsc{Algorithm 1}. Coordinated P2P Market Clearing
@@ -803,7 +797,7 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 % \text{Iterate until convergence $(k = 0,1,\ldots)$}
 %\begin{align*}
 %& \text{For all prosumers $i \in \mc I$ (in parallel):}\\
-%\quad &\left|
+%\quad &\left\lfloor
 %\begin{array}{l}
 %\text{Local update via \textsc{Algorithm 2}:}\\
 %\left\lfloor
@@ -824,13 +818,14 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 %\right.
 %\end{array}
 %\right.
+%\vspace*{.1em}
 %\end{array}
 %\right.\\[.5em]
 %%%%
 %% DNO
 %%%%
 %& \text{DNO}\\
-%\quad &\left|
+%\quad &\left\lfloor
 %\begin{array}{l}
 %\text{Central update via \textsc{Algorithm 3}:}\\
 %\left\lfloor
@@ -850,24 +845,16 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 %\end{array}%
 %\right.%
 %\end{array}%
-%\right.\\[1em]
+%\right.
+%\vspace*{.1em}
 %\end{array}
 %\right.%
 %\end{align*}
 %\smallskip
 %\hrule
-%%\end{minipage}
+%\end{minipage}
 %}
-%\end{subfigure}
-%\vspace*{2em}
-%
-%\begin{subfigure}[b]{0.37\textwidth}
-%   \includegraphics[width=\linewidth]{figures/37bus_sys_f6}
-%\end{subfigure}
-%\caption{\edit{Information flow in Algorithm 1.}}
-%\label{fig:IFC}
-%\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{figure}%
 
 The semi-decentralized information flow of Algorithm~1 is illustrated in Fig.~\ref{fig:IFC}, \edit{while its locals and central updates are summarized  in Algorithm 2 and Algorithm 3, respectively. In there, we use some auxiliary variables (e.g., $\zeta^{\text{tr}}_{(i,j)}$, $\psi_i$ in Alg.~2) to keep the presentation compact. }  
 %
