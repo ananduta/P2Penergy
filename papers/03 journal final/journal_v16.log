@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  4 MAR 2022 16:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  7 MAR 2022 11:04
 entering extended mode
 **./journal_v16.tex
 (journal_v16.tex
@@ -571,39 +571,32 @@ File: omspcr.fd
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
 
-Underfull \hbox (badness 1859) in paragraph at lines 133--133
-[][][]\OT1/ptm/m/n/8 G. Bel-gioioso is with Au-to-matic Con-trol Lab-o-ra-tory,
- ETH Zurich,
- []
-
-
-Underfull \hbox (badness 4505) in paragraph at lines 133--133
-\OT1/ptm/m/n/8 Switzer-land. W. Anan-duta and S. Gram-matico are with the Delft
-
+Underfull \hbox (badness 6708) in paragraph at lines 133--133
+[][][]\OT1/ptm/m/n/8 G. Bel-gioioso is with the Au-to-matic Con-trol Lab-o-ra-t
+ory, ETH
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 133--133
-\OT1/ptm/m/n/8 C. Ocampo-Martinez is with the Au-to-matic Con-trol De-part-ment
-,
+\OT1/ptm/m/n/8 Zurich, Switzer-land. W. Anan-duta and S. Gram-matico are with
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 133--133
+\OT1/ptm/m/n/8 the Delft Cen-ter for Sys-tems and Con-trol (DCSC), TU Delft, Th
+e
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 133--133
-\OT1/ptm/m/n/8 Uni-ver-si-tat Polit[]ecnica de Catalunya, Barcelona, Spain. E-m
-ail
+\OT1/ptm/m/n/8 Nether-lands. C. Ocampo-Martinez is with the Au-to-matic Con-tro
+l
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--133
-\OT1/ptm/m/n/8 ad-dresses: \OT1/pcr/m/n/8 gbelgioioso@ethz.ch\OT1/ptm/m/n/8 , \
-OT1/pcr/m/n/8 carlos.ocampo@upc.edu
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--133
-\OMS/cmsy/m/n/8 f\OT1/pcr/m/n/8 w.ananduta,s.grammatico\OMS/cmsy/m/n/8 g\OT1/pc
-r/m/n/8 @tudelft.nl\OT1/ptm/m/n/8 . This work was
+Underfull \hbox (badness 2401) in paragraph at lines 133--133
+\OT1/ptm/m/n/8 P2P-TALES (grant n. 647.003.003), the ERC un-der re-search proje
+ct
  []
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 156
@@ -734,156 +727,124 @@ Overfull \hbox (10.59991pt too wide) in paragraph at lines 1221--1232
  [][]  [] 
  []
 
-Package epstopdf Info: Source file: <figures/b0a.eps>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 47598 bytes
-(epstopdf)             Output file: <figures/b0a-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 16622 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/b0a-eps-converted-t
-o.pdf figures/b0a.eps>
+Package epstopdf Info: Source file: <figures/b0b.eps>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 59286 bytes
+(epstopdf)             Output file: <figures/b0b-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 27335 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/b0b-eps-converted-t
+o.pdf figures/b0b.eps>
 (epstopdf)             \includegraphics on input line 1244.
 Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./figures/b0a-eps-converted-to.pdf): PDF inclusi
-on: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/b0a-eps-converted-to.pdf, id=150, 562.1pt x 291.0875pt>
-File: figures/b0a-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/b0a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/b0a-eps-converted-to.pdf  used on input line 1
+<figures/b0b-eps-converted-to.pdf, id=150, 564.1075pt x 282.05376pt>
+File: figures/b0b-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/b0b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/b0b-eps-converted-to.pdf  used on input line 1
 244.
-(pdftex.def)             Requested size: 231.83954pt x 120.0573pt.
-Package epstopdf Info: Source file: <figures/b1a.eps>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 63235 bytes
-(epstopdf)             Output file: <figures/b1a-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 28328 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/b1a-eps-converted-t
-o.pdf figures/b1a.eps>
+(pdftex.def)             Requested size: 231.83954pt x 115.91821pt.
+Package epstopdf Info: Source file: <figures/b1b.eps>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 72677 bytes
+(epstopdf)             Output file: <figures/b1b-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 36932 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/b1b-eps-converted-t
+o.pdf figures/b1b.eps>
 (epstopdf)             \includegraphics on input line 1252.
 Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./figures/b1a-eps-converted-to.pdf): PDF inclusi
-on: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/b1a-eps-converted-to.pdf, id=151, 488.82625pt x 256.96pt>
-File: figures/b1a-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/b1a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/b1a-eps-converted-to.pdf  used on input line 1
+<figures/b1b-eps-converted-to.pdf, id=151, 488.82625pt x 256.96pt>
+File: figures/b1b-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/b1b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/b1b-eps-converted-to.pdf  used on input line 1
 252.
 (pdftex.def)             Requested size: 231.83954pt x 121.87297pt.
-Package epstopdf Info: Source file: <figures/b2a.eps>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 57518 bytes
-(epstopdf)             Output file: <figures/b2a-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 26264 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/b2a-eps-converted-t
-o.pdf figures/b2a.eps>
+Package epstopdf Info: Source file: <figures/b2b.eps>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 66404 bytes
+(epstopdf)             Output file: <figures/b2b-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 34818 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/b2b-eps-converted-t
+o.pdf figures/b2b.eps>
 (epstopdf)             \includegraphics on input line 1260.
 Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./figures/b2a-eps-converted-to.pdf): PDF inclusi
-on: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/b2a-eps-converted-to.pdf, id=152, 487.8225pt x 255.95625pt>
-File: figures/b2a-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/b2a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/b2a-eps-converted-to.pdf  used on input line 1
+<figures/b2b-eps-converted-to.pdf, id=152, 487.8225pt x 255.95625pt>
+File: figures/b2b-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/b2b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/b2b-eps-converted-to.pdf  used on input line 1
 260.
 (pdftex.def)             Requested size: 231.83954pt x 121.64296pt.
 [8 <./figures/simD_safe1-eps-converted-to.pdf> <./figures/simD_fail2-eps-conver
-ted-to.pdf> <./figures/b0a-eps-converted-to.pdf> <./figures/b1a-eps-converted-t
-o.pdf> <./figures/b2a-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/simB_0402_pt1_v3a.eps>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 172054 bytes
-(epstopdf)             Output file: <figures/simB_0402_pt1_v3a-eps-converted-to
+ted-to.pdf> <./figures/b0b-eps-converted-to.pdf> <./figures/b1b-eps-converted-t
+o.pdf> <./figures/b2b-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/simB_0402_pt1_v3b.eps>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 185041 bytes
+(epstopdf)             Output file: <figures/simB_0402_pt1_v3b-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 74497 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt1_v3a-e
-ps-converted-to.pdf figures/simB_0402_pt1_v3a.eps>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 97150 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt1_v3b-e
+ps-converted-to.pdf figures/simB_0402_pt1_v3b.eps>
 (epstopdf)             \includegraphics on input line 1282.
 Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./figures/simB_0402_pt1_v3a-eps-converted-to.pdf
-): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simB_0402_pt1_v3a-eps-converted-to.pdf, id=194, 562.1pt x 421.575pt>
-File: figures/simB_0402_pt1_v3a-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/simB_0402_pt1_v3a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/simB_0402_pt1_v3a-eps-converted-to.pdf  used o
+<figures/simB_0402_pt1_v3b-eps-converted-to.pdf, id=185, 562.1pt x 536.0025pt>
+File: figures/simB_0402_pt1_v3b-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/simB_0402_pt1_v3b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/simB_0402_pt1_v3b-eps-converted-to.pdf  used o
 n input line 1282.
-(pdftex.def)             Requested size: 231.83954pt x 173.8761pt.
-Package epstopdf Info: Source file: <figures/simB_0402_pt2_v4a.eps>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 86809 bytes
-(epstopdf)             Output file: <figures/simB_0402_pt2_v4a-eps-converted-to
+(pdftex.def)             Requested size: 201.60077pt x 192.24101pt.
+Package epstopdf Info: Source file: <figures/simB_0402_pt2_v4b.eps>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 62976 bytes
+(epstopdf)             Output file: <figures/simB_0402_pt2_v4b-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 38927 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt2_v4a-e
-ps-converted-to.pdf figures/simB_0402_pt2_v4a.eps>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 33286 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt2_v4b-e
+ps-converted-to.pdf figures/simB_0402_pt2_v4b.eps>
 (epstopdf)             \includegraphics on input line 1289.
 Package epstopdf Info: Output file is already uptodate.
+<figures/simB_0402_pt2_v4b-eps-converted-to.pdf, id=186, 562.1pt x 209.78375pt>
 
-
-pdfTeX warning: pdflatex (file ./figures/simB_0402_pt2_v4a-eps-converted-to.pdf
-): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simB_0402_pt2_v4a-eps-converted-to.pdf, id=195, 562.1pt x 209.78375pt>
-
-File: figures/simB_0402_pt2_v4a-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/simB_0402_pt2_v4a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/simB_0402_pt2_v4a-eps-converted-to.pdf  used o
+File: figures/simB_0402_pt2_v4b-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/simB_0402_pt2_v4b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/simB_0402_pt2_v4b-eps-converted-to.pdf  used o
 n input line 1289.
 (pdftex.def)             Requested size: 231.83954pt x 86.52405pt.
-Package epstopdf Info: Source file: <figures/simB_0402_pt3_v2a.eps>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 126677 bytes
-(epstopdf)             Output file: <figures/simB_0402_pt3_v2a-eps-converted-to
+Package epstopdf Info: Source file: <figures/simB_0402_pt3_v2b.eps>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 128261 bytes
+(epstopdf)             Output file: <figures/simB_0402_pt3_v2b-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2022-03-04 07:50:45
-(epstopdf)                    size: 56635 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt3_v2a-e
-ps-converted-to.pdf figures/simB_0402_pt3_v2a.eps>
+(epstopdf)                    date: 2022-03-07 10:37:05
+(epstopdf)                    size: 72630 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/simB_0402_pt3_v2b-e
+ps-converted-to.pdf figures/simB_0402_pt3_v2b.eps>
 (epstopdf)             \includegraphics on input line 1297.
 Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex (file ./figures/simB_0402_pt3_v2a-eps-converted-to.pdf
-): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simB_0402_pt3_v2a-eps-converted-to.pdf, id=196, 562.1pt x 421.575pt>
-File: figures/simB_0402_pt3_v2a-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/simB_0402_pt3_v2a-eps-converted-to.pdf>
-Package pdftex.def Info: figures/simB_0402_pt3_v2a-eps-converted-to.pdf  used o
+<figures/simB_0402_pt3_v2b-eps-converted-to.pdf, id=187, 562.1pt x 421.575pt>
+File: figures/simB_0402_pt3_v2b-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/simB_0402_pt3_v2b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/simB_0402_pt3_v2b-eps-converted-to.pdf  used o
 n input line 1297.
 (pdftex.def)             Requested size: 231.83954pt x 173.8761pt.
-Package epstopdf Info: Source file: <figures/simEF2_GB3.eps>
-(epstopdf)                    date: 2022-03-04 11:47:52
-(epstopdf)                    size: 70040 bytes
-(epstopdf)             Output file: <figures/simEF2_GB3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-03-04 11:48:00
-(epstopdf)                    size: 67294 bytes
-(epstopdf)             Command: <epstopdf --outfile=figures/simEF2_GB3-eps-conv
-erted-to.pdf figures/simEF2_GB3.eps>
-(epstopdf)             \includegraphics on input line 1320.
-Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./figures/simEF2_GB3-eps-converted-to.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/simEF2_GB3-eps-converted-to.pdf, id=197, 421.575pt x 316.18124pt>
-File: figures/simEF2_GB3-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/simEF2_GB3-eps-converted-to.pdf>
-Package pdftex.def Info: figures/simEF2_GB3-eps-converted-to.pdf  used on input
- line 1320.
-(pdftex.def)             Requested size: 231.83954pt x 173.88092pt.
-[9 <./figures/simB_0402_pt1_v3a-eps-converted-to.pdf> <./figures/simB_0402_pt2_
-v4a-eps-converted-to.pdf> <./figures/simB_0402_pt3_v2a-eps-converted-to.pdf> <.
-/figures/simEF2_GB3-eps-converted-to.pdf>] (journal_v16.bbl
+pdfTeX warning: pdflatex (file ./figures/simEF3_GB2.pdf): PDF inclusion: found 
+PDF version <1.6>, but at most version <1.5> allowed
+<figures/simEF3_GB2.pdf, id=188, 385.00076pt x 303.97063pt>
+File: figures/simEF3_GB2.pdf Graphic file (type pdf)
+<use figures/simEF3_GB2.pdf>
+Package pdftex.def Info: figures/simEF3_GB2.pdf  used on input line 1311.
+(pdftex.def)             Requested size: 226.79846pt x 179.06746pt.
+
+Underfull \vbox (badness 4805) has occurred while \output is active []
+
+ [9 <./figures/simB_0402_pt1_v3b-eps-converted-to.pdf> <./figures/simB_0402_pt2
+_v4b-eps-converted-to.pdf> <./figures/simB_0402_pt3_v2b-eps-converted-to.pdf> <
+./figures/simEF3_GB2.pdf>] (journal_v16.bbl
 Underfull \hbox (badness 4353) in paragraph at lines 137--141
 []\OT1/ptm/m/n/8 F. Moret, A. Tosatto, T. Baroche, and P. Pin-son, ``Loss al-
  []
@@ -897,8 +858,8 @@ eer mar-
 ) [10] (journal_v16.aux) ) 
 Here is how much of TeX's memory you used:
  7743 strings out of 479334
- 127767 string characters out of 2855431
- 448447 words of memory out of 3000000
+ 127699 string characters out of 2855431
+ 447451 words of memory out of 3000000
  24986 multiletter control sequences out of 15000+200000
  457896 words of font info for 146 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -940,9 +901,9 @@ public/amsfonts/symbols/msbm7.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX
 /fonts/type1/urw/times/utmbi8a.pfb><C:/Users/giuse/AppData/Roaming/MiKTeX/2.9/f
 onts/type1/urw/times/utmr8a.pfb><C:/Users/giuse/AppData/Roaming/MiKTeX/2.9/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on journal_v16.pdf (10 pages, 824363 bytes).
+Output written on journal_v16.pdf (10 pages, 886695 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
+ 302 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

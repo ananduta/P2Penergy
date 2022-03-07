@@ -118,7 +118,7 @@ Operationally-Safe Peer-to-Peer Energy Trading in Distribution Grids: A Game-The
 }
 \author{Giuseppe Belgioioso, Wicak Ananduta, Sergio Grammatico, \emph{Senior Member, IEEE,} \\ and Carlos Ocampo-Martinez, \emph{Senior Member, IEEE}
 \thanks{
-	G. Belgioioso is with Automatic Control Laboratory, ETH Zurich, Switzerland. W. Ananduta and S. Grammatico are with the Delft Center for Systems and Control (DCSC), TU Delft, The Netherlands. C. Ocampo-Martinez is with the Automatic Control Department, Universitat Polit\`{e}cnica de Catalunya, Barcelona, Spain. 
+	G. Belgioioso is with the Automatic Control Laboratory, ETH Zurich, Switzerland. W. Ananduta and S. Grammatico are with the Delft Center for Systems and Control (DCSC), TU Delft, The Netherlands. C. Ocampo-Martinez is with the Automatic Control Department, Universitat Polit\`{e}cnica de Catalunya, Barcelona, Spain. 
 	%
 	E-mail addresses: \texttt{gbelgioioso@ethz.ch}, \texttt{carlos.ocampo@upc.edu} \texttt{\{w.ananduta,s.grammatico\}@tudelft.nl}. This work was partially supported by NWO under research projects OMEGA (grant n. 613.001.702), P2P-TALES (grant n. 647.003.003), the ERC under research project COSMOS (802348) and PID2020-115905RB-C21 (L-BEST) funded by MCIN/ AEI /10.13039/501100011033. 
 }
@@ -311,7 +311,7 @@ For a closed set $S \subseteq \R^n$, the mapping $\proj_{S}:\R^n \rightarrow S$ 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Peer-to-peer markets as a GNE Problem}
+\section{Peer-to-peer markets as a generalized Nash equilibrium problem}
 \label{sub:setup}
 
 %\subsubsection*{Network description}
@@ -556,7 +556,7 @@ Equation \eqref{eq:p_bal_p} models the local power balance of bus $y$, similarly
 &p_{(y,z)}^{\ell} = B_{(y,z)}\left({\theta_y - \theta_z} \right) - G_{(y,z)}\left(v_y - v_z \right), \quad \forall z \in \mc B_y, \label{eq:pf_p}\\
 &q_{(y,z)}^{\ell} = G_{(y,z)}\left({\theta_y - \theta_z} \right) + B_{(y,z)}\left(v_y - v_z \right), \quad  \forall z \in \mc B_y, \label{eq:pf_q}
 \end{align}
-\label{eq:pf_all}
+\label{eq:pf_all}%
 \end{subequations}
 which represent the power flow equations of line $(y,z)$ from the perspective of bus $y$, with $B_{(y,z)}$ and  $G_{(y,z)}$ denoting the susceptance and conductance, respectively, of line $(y,z)$. Note that by \eqref{eq:pf_p} and \eqref{eq:pf_q}, for each pair $(y,z) \in \mc L$, it holds that $p_{(y,z)}^{\ell} = {-p}_{(z,y)}^{\ell}$ and $q_{(y,z)}^{\ell} = {-q}_{(z,y)}^{\ell}$. 
 
@@ -620,7 +620,7 @@ u~|~ \text{\eqref{eq:rep_const}, \eqref{eq:p_mg_bound}, \eqref{eq:p_bal_p}, \eqr
 
 
 \begin{remark}
-Our definitions of $J_i$, $\mc U_i$, $\mc C$ satisfy Assumption~\ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied.  {Additionally, instead of considering linear power flow equations in \eqref{eq:pf_all}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.}\eod
+Our definitions of $J_i$, $\mc U_i$, $\mc C$ satisfy Assumption~\ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied.  {Additionally, instead of linear power flow equations in \eqref{eq:pf_all}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.}\eod
 \end{remark}
 
 %\smallskip
@@ -840,7 +840,7 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 
 The semi-decentralized information flow of Algorithm~1 is illustrated in Figure~\ref{fig:IFC}, while its locals and central updates are summarized  in Algorithm~2 and Algorithm~3, respectively. In there, we used some auxiliary variables (e.g., $\zeta^{\text{tr}}_{(i,j)}$, $\psi_i$ in Algorithm~2) to keep the presentation compact.  
 %
-The next proposition shows the global convergence of Algorithm 1 to a variational GNE of the proposed P2P market game. \blue{Due to space limitations, we provide only a sketch of the proof that is mainly based on the technical results in \cite[Theorem~2]{belgioioso2020semi}.}
+The next proposition shows the global convergence of Algorithm 1 to a variational GNE of the proposed P2P market game. {Due to space limitations, we provide only a sketch of the proof that is mainly based on the technical results in \cite[Theorem~2]{belgioioso2020semi}.}
 
 \smallskip
 \begin{proposition} The following statements hold true:\hspace*{3em}
@@ -852,7 +852,7 @@ The next proposition shows the global convergence of Algorithm 1 to a variationa
 \end{enumerate}
 \end{proposition}
 \begin{proof} %See Appendix~A.
-\edit{(Sketch)
+{(Sketch)
 Algorithm~1 is an instance of the \textit{customized preconditioned proximal-point (cPPP)} algorithm for generalized aggregative games proposed in \cite[Algorithm~6]{belgioioso2020semi}. To prove convergence, it is sufficient to show that the proposed market-clearing game in \eqref{eq:locOpt}, with cost functions and constraints sets defined in \eqref{eq:cost_def} and \eqref{eq:Cconstr_def}, respectively, satisfies all the technical conditions in \cite[Theorem~2]{belgioioso2020semi}, among which also imply the existence of a variational GNE (i.e., item (i) of Proposition \ref{prp:conv}). 
 Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove item (ii) of Proposition \ref{prp:conv}.}
 %For a complete convergence analysis of the cPPP algorithm for aggregative games we refer to \cite[Appendix~C]{belgioioso2020semi}.
@@ -1189,10 +1189,10 @@ $
 
 \item The primal update of each prosumer (Algorithm~2~(ii)) involves the solution of a quadratic program\footnote{Up to a fairly-standard reformulation of the absolute value term in \eqref{eq:f_t}.}, for which very efficient solvers are available, e.g. \cite{osqp}. {In there, if $   J_{i} \big( \xi, u_{-i}(k) \big)$ is replaced by its approximate version $ \tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big)$, obtained by neglecting prosumer $i$'s contribution $p_i^{\text{tr}}$ to the aggregative active load $\sigma^{\text{mg}}$, Algorithm 1 will converge to a variational Wardrop equilibrium \cite[\S~II.B]{belgioioso2020semi}, which is a good approximation of v-GNEs for networks with a large number of prosumers.}
 
-\item  The primal update of the DNO (Algorithm~3~(i)) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation can be computationally expensive if naively solved. However, more efficient algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~30]{bauschke2011convex} .%, \edit{e.g.  the  \textit{Douglas--Rachford splitting}   \cite[\S~26.3]{bauschke2011convex}.}%\cite[Appendix~2]{belgioioso2021operationally}.
-\item \blue{Algorithm 1 can be cast as a proximal-point method opportunely preconditioned to distribute the computation among the prosumers.
+\item  The primal update of the DNO (Algorithm~3~(i)) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation can be computationally expensive if naively solved. However, more efficient algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~30]{bauschke2011convex}.%, \edit{e.g.  the  \textit{Douglas--Rachford splitting}   \cite[\S~26.3]{bauschke2011convex}.}%\cite[Appendix~2]{belgioioso2021operationally}.
+\item {Algorithm 1 can be recast as a proximal-point method opportunely preconditioned to distribute the computation among the prosumers \cite[\S~IV]{belgioioso2020semi}.
 %
-Such operator-theoretic interpretation can be used to design provably-correct acceleration schemes\cite[\S~IV.B]{belgioioso2020semi} as well as to provide robustness guarantees to asynchronous implementations \cite{cenedese2021asynchronous}.
+Such operator-theoretic interpretation can be used to design provably-correct acceleration schemes \cite{belgioioso2020semi} as well as to provide robustness guarantees to asynchronous implementations \cite{cenedese2021asynchronous}.
 }
 \end{enumerate}
 \end{remark}
@@ -1205,7 +1205,7 @@ Our proposed approach differs from community-based local markets \cite[Section 3
 %\paragraph{introduction of numerical study}
 We perform an extensive numerical study on the IEEE 37-bus distribution network to validate the proposed game-theoretic market design and market-clearing algorithm. Specifically: (a) we evaluate the importance of having physical constraints in the model; (b) we evaluate the economical benefits of trading;  (c) we show how storage units owned by prosumers might affect power consumptions; and (d) we test the scalability of the proposed algorithm. All the simulations are carried out in \textsc{Matlab} and use the \texttt{OSQP} solver \cite{osqp} for solving the quadratic programming problems. 
 
-In all simulations\footnote{The codes and data sets used for all simulations are available at \texttt{https://github.com/ananduta/P2Penergy}.}, we consider heterogeneous networks, where the power demand profile of a prosumer or passive user is either that of single household, multiple households, restaurant, office, hospital, or school. Moreover, some prosumers may have solar-based power generation. The demand and solar-based generation profiles are based on \cite{jasm}.
+In all simulations\footnote{The codes and data sets used for all simulations are available at \texttt{https://github.com/ananduta/P2Penergy/simulations}.}, we consider heterogeneous networks, where the power demand profile of a prosumer or passive user is either that of single household, multiple households, restaurant, office, hospital, or school. Moreover, some prosumers may have solar-based power generation. The demand and solar-based generation profiles are based on \cite{jasm}.
 %
 We also arbitrarily select a set of prosumers to own dispatchable generation units with different sizes and to own homogeneous storage units. We randomly generate the trading networks and place each prosumer and passive user in one of the busses of the IEEE 37-bus network. 
 
@@ -1233,7 +1233,7 @@ Some equilibrium solutions of the P2P market cause overcapacity in some lines wh
 	\label{fig:simD_safe}
 \end{figure}
 
-\subsection{The economic impact P2P trading}
+\subsection{The impact of P2P trading}
 %\iffalse 
 In this section, we evaluate whether energy trading is economically beneficial for the prosumers. To this end, 
 we generate a network of 50 prosumers and consider two scenarios: (a) where trading is not allowed, i.e., $\overline{p}_{(i,j)}^{\mathrm{tr}}=0$ in \eqref{eq:p_t_bound}; (b) where trading is allowed with $\overline{p}_{(i,j)}^{\mathrm{tr}}=30 \ \mathrm{kW}$, and the default cost parameters are homogeneous. The other parameters of the network are kept constant in both scenarios. Figure~\ref{fig:simC_cost} shows the individual costs difference between the equilibrium configurations of the market designs with (a) and without P2P tradings (b). In particular, all prosumers gain economical benefits when they can trade.
@@ -1241,7 +1241,7 @@ we generate a network of 50 prosumers and consider two scenarios: (a) where trad
 %	
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.92\linewidth]{figures/b0a.eps}
+	\includegraphics[width=.92\linewidth]{figures/b0b.eps}
 	\caption{Total cost improvement (\euro) of each prosumer by trading ($c_{(i,j)}^{\mathrm{tr}}=0.08\text{\euro/kW}$).
 	}
 	\label{fig:simC_cost}
@@ -1249,7 +1249,7 @@ we generate a network of 50 prosumers and consider two scenarios: (a) where trad
 %
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.92\linewidth]{figures/b1a.eps}
+	\includegraphics[width=.92\linewidth]{figures/b1b.eps}
 	\caption{Aggregated P2P trading for different cost coefficients ($c_{(i,j)}^{\mathrm{tr}}$ in \euro/kW).
 	}
 	\label{fig:simC_ctr}
@@ -1257,7 +1257,7 @@ we generate a network of 50 prosumers and consider two scenarios: (a) where trad
 %
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=.92\linewidth]{figures/b2a.eps}
+	\includegraphics[width=.92\linewidth]{figures/b2b.eps}
 	\caption{Aggregated P2P trading for different penalty coefficients ($c^{\mathrm{ta}}$ in \euro/kW).
 	}
 	\label{fig:simC_pen}
@@ -1279,14 +1279,14 @@ Note that the prosumers charge their storage units during the first off-peak hou
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.92\linewidth]{figures/simB_0402_pt1_v3a}
+	\includegraphics[width=0.8\linewidth]{figures/simB_0402_pt1_v3b}
 	\caption{	Incorporating storage units causes a peak-shaving effect on the sum of the total power imported from the main grid and the power locally generated.}
 	\label{fig:sim_B1}
 \end{figure}
 \begin{figure}[t]
 	\centering 
 	%\hspace{-17pt}
-	\includegraphics[width=0.92\linewidth]{figures/simB_0402_pt2_v4a}
+	\includegraphics[width=0.92\linewidth]{figures/simB_0402_pt2_v4b}
 	\caption{Aggregated P2P trading in scenarios (a) and (b).
 	}
 	\label{fig:sim_B2}
@@ -1294,21 +1294,12 @@ Note that the prosumers charge their storage units during the first off-peak hou
 \begin{figure}[t]
 	\centering 
 	%\hspace{-17pt}
-	\includegraphics[width=0.92\linewidth]{figures/simB_0402_pt3_v2a}
+	\includegraphics[width=0.92\linewidth]{figures/simB_0402_pt3_v2b}
 	\caption{Comparison of the average electricity trading price ($c^{\mathrm{tr}} + c^{\mathrm{ta}} + \tfrac{1}{|\mc E|}\sum_{(i,j)\in \mc E}\mu_{(i,j)}^{\mathrm{tr}}$) with the electricity grid prices.
 	}
 	\label{fig:sim_B3}
 \end{figure}  
-\iffalse 
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=0.92\linewidth]{figures/simC_37_v2.eps}
-	\caption{\textcolor{red}{[OLD]} Peak shaving effect with different per-unit cost of using storage.
-	}
-	\label{fig:simC}
-\end{figure}
-\fi 
-%\clearpage
+
 
 \subsection{Scalability of the market-clearing mechanism}
 Finally, we perform a scalability test for the proposed algorithm. Specifically, we evaluate the convergence speed, in terms of the total number of iterations required to meet a predetermined stopping criterion, when the size of the population of prosumers $N$ and the connectivity of the trading network (the number of trading links) grow. We carry out two sets of simulations.
@@ -1317,7 +1308,7 @@ For the former, we consider five different values of $N$ and a fixed connectivit
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.92\linewidth]{figures/simEF2_GB3.eps}
+	\includegraphics[width=0.9\linewidth]{figures/simEF3_GB2.pdf}
 	\caption{Total number of iterations for convergence of Alg. 1 vs number of prosumers (top) and the connectivity level (the number of trading links) (bottom). {The average computation times of the inner loops, i.e., Algs.~2 and 3, obtained on a computer with Intel Xeon E5-2637 3.5 GHz processors and 128 GB of memory, are 74.5 ms and 1.13 s, respectively.} 
 	}
 	\label{fig:simE}
