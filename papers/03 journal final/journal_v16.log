@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.20)  5 MAR 2022 06:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.20)  7 MAR 2022 10:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -550,39 +550,32 @@ File: omspcr.fd
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
 
-Underfull \hbox (badness 1859) in paragraph at lines 133--133
-[][][]\OT1/ptm/m/n/8 G. Bel-gioioso is with Au-to-matic Con-trol Lab-o-ra-tory,
- ETH Zurich,
- []
-
-
-Underfull \hbox (badness 4505) in paragraph at lines 133--133
-\OT1/ptm/m/n/8 Switzer-land. W. Anan-duta and S. Gram-matico are with the Delft
-
+Underfull \hbox (badness 6708) in paragraph at lines 133--133
+[][][]\OT1/ptm/m/n/8 G. Bel-gioioso is with the Au-to-matic Con-trol Lab-o-ra-t
+ory, ETH
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 133--133
-\OT1/ptm/m/n/8 C. Ocampo-Martinez is with the Au-to-matic Con-trol De-part-ment
-,
+\OT1/ptm/m/n/8 Zurich, Switzer-land. W. Anan-duta and S. Gram-matico are with
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 133--133
+\OT1/ptm/m/n/8 the Delft Cen-ter for Sys-tems and Con-trol (DCSC), TU Delft, Th
+e
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 133--133
-\OT1/ptm/m/n/8 Uni-ver-si-tat Polit[]ecnica de Catalunya, Barcelona, Spain. E-m
-ail
+\OT1/ptm/m/n/8 Nether-lands. C. Ocampo-Martinez is with the Au-to-matic Con-tro
+l
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--133
-\OT1/ptm/m/n/8 ad-dresses: \OT1/pcr/m/n/8 gbelgioioso@ethz.ch\OT1/ptm/m/n/8 , \
-OT1/pcr/m/n/8 carlos.ocampo@upc.edu
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--133
-\OMS/cmsy/m/n/8 f\OT1/pcr/m/n/8 w.ananduta,s.grammatico\OMS/cmsy/m/n/8 g\OT1/pc
-r/m/n/8 @tudelft.nl\OT1/ptm/m/n/8 . This work was
+Underfull \hbox (badness 2401) in paragraph at lines 133--133
+\OT1/ptm/m/n/8 P2P-TALES (grant n. 647.003.003), the ERC un-der re-search proje
+ct
  []
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 156
@@ -854,7 +847,7 @@ eer mar-
 Here is how much of TeX's memory you used:
  7470 strings out of 480608
  118147 string characters out of 5903630
- 379687 words of memory out of 5000000
+ 379691 words of memory out of 5000000
  23150 multiletter control sequences out of 15000+600000
  586804 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -891,7 +884,7 @@ nts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/wasy-type1/
 wasy10.pfb>
-Output written on journal_v16.pdf (10 pages, 931823 bytes).
+Output written on journal_v16.pdf (10 pages, 931923 bytes).
 PDF statistics:
  304 PDF objects out of 1000 (max. 8388607)
  175 compressed objects within 2 object streams

@@ -118,7 +118,7 @@ Operationally-Safe Peer-to-Peer Energy Trading in Distribution Grids: A Game-The
 }
 \author{Giuseppe Belgioioso, Wicak Ananduta, Sergio Grammatico, \emph{Senior Member, IEEE,} \\ and Carlos Ocampo-Martinez, \emph{Senior Member, IEEE}
 \thanks{
-	G. Belgioioso is with Automatic Control Laboratory, ETH Zurich, Switzerland. W. Ananduta and S. Grammatico are with the Delft Center for Systems and Control (DCSC), TU Delft, The Netherlands. C. Ocampo-Martinez is with the Automatic Control Department, Universitat Polit\`{e}cnica de Catalunya, Barcelona, Spain. 
+	G. Belgioioso is with the Automatic Control Laboratory, ETH Zurich, Switzerland. W. Ananduta and S. Grammatico are with the Delft Center for Systems and Control (DCSC), TU Delft, The Netherlands. C. Ocampo-Martinez is with the Automatic Control Department, Universitat Polit\`{e}cnica de Catalunya, Barcelona, Spain. 
 	%
 	E-mail addresses: \texttt{gbelgioioso@ethz.ch}, \texttt{carlos.ocampo@upc.edu} \texttt{\{w.ananduta,s.grammatico\}@tudelft.nl}. This work was partially supported by NWO under research projects OMEGA (grant n. 613.001.702), P2P-TALES (grant n. 647.003.003), the ERC under research project COSMOS (802348) and PID2020-115905RB-C21 (L-BEST) funded by MCIN/ AEI /10.13039/501100011033. 
 }
@@ -311,7 +311,7 @@ For a closed set $S \subseteq \R^n$, the mapping $\proj_{S}:\R^n \rightarrow S$ 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Peer-to-peer markets as a GNE Problem}
+\section{Peer-to-peer markets as a generalized Nash equilibrium problem}
 \label{sub:setup}
 
 %\subsubsection*{Network description}
@@ -556,7 +556,7 @@ Equation \eqref{eq:p_bal_p} models the local power balance of bus $y$, similarly
 &p_{(y,z)}^{\ell} = B_{(y,z)}\left({\theta_y - \theta_z} \right) - G_{(y,z)}\left(v_y - v_z \right), \quad \forall z \in \mc B_y, \label{eq:pf_p}\\
 &q_{(y,z)}^{\ell} = G_{(y,z)}\left({\theta_y - \theta_z} \right) + B_{(y,z)}\left(v_y - v_z \right), \quad  \forall z \in \mc B_y, \label{eq:pf_q}
 \end{align}
-\label{eq:pf_all}
+\label{eq:pf_all}%
 \end{subequations}
 which represent the power flow equations of line $(y,z)$ from the perspective of bus $y$, with $B_{(y,z)}$ and  $G_{(y,z)}$ denoting the susceptance and conductance, respectively, of line $(y,z)$. Note that by \eqref{eq:pf_p} and \eqref{eq:pf_q}, for each pair $(y,z) \in \mc L$, it holds that $p_{(y,z)}^{\ell} = {-p}_{(z,y)}^{\ell}$ and $q_{(y,z)}^{\ell} = {-q}_{(z,y)}^{\ell}$. 
 
@@ -620,7 +620,7 @@ u~|~ \text{\eqref{eq:rep_const}, \eqref{eq:p_mg_bound}, \eqref{eq:p_bal_p}, \eqr
 
 
 \begin{remark}
-Our definitions of $J_i$, $\mc U_i$, $\mc C$ satisfy Assumption~\ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied.  {Additionally, instead of considering linear power flow equations in \eqref{eq:pf_all}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.}\eod
+Our definitions of $J_i$, $\mc U_i$, $\mc C$ satisfy Assumption~\ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied.  {Additionally, instead of linear power flow equations in \eqref{eq:pf_all}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.}\eod
 \end{remark}
 
 %\smallskip
