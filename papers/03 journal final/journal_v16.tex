@@ -576,8 +576,8 @@ where \eqref{eq:line_cap} represents the line capacity constraint at each line, 
 Finally, the power exchanged with the main grid must satisfy the following constraints:
 \begin{subequations}
 \begin{align}
-	p^{\mathrm{tg}}_{y} &= 0, \quad \forall y \notin \mc B^{\mathrm{mg}}, \label{eq:grid_ex}\\
-	\sigma^{\textrm{mg}}_h + b_h &= \sum_{y\in\mc B}p^{\mathrm{tg}}_{y,h}, \quad \forall h \in \mathcal H, \label{eq:grid_const2}
+	p^{\mathrm{tg}}_{y} &= 0,  &\forall y \notin \mc B^{\mathrm{mg}}, \label{eq:grid_ex}\\
+	\sigma^{\textrm{mg}}_h + b_h &= \sum_{y\in\mc B}p^{\mathrm{tg}}_{y,h},  &\forall h \in \mathcal H, \label{eq:grid_const2}
 \end{align}
 \end{subequations}
 where \eqref{eq:grid_ex} is imposed by definition that the busses that are not directly connected with the main grid do not exchange  power with the main grid, whereas \eqref{eq:grid_const2} ensures that the power traded by the prosumers with the main grid (in the trading network) corresponds to the power exchanged between the whole distribution network and the main grid.
@@ -599,7 +599,7 @@ f_{i}^{\mathrm{di}}(p_{i}^{\mathrm{di}}) + f_{i}^{\mathrm{st}}({p_{i}^{\mathrm{c
     + f_{i}^{\mathrm{mg}}\left( p_{i}^{\mathrm{mg}},\sigma^{\textrm{mg}} \right), \quad \forall  i \in \mc N,
  \label{eq:cost_def}
 	\end{multline}
-whereas\footnote{Here, we assume that the DNO does not have preferences on the outcome, provided that it is a feasible solution for the network.} $J_{N+1}=0$; the local action set is
+whereas\footnote{Here, we assume that the DNO does not have preferences on the outcome, provided that it is a feasible solution for the grid.} $J_{N+1}=0$; the local action set is
 \begin{align}
 \label{eq:constr_def}
 \mc U_i =
@@ -620,7 +620,7 @@ u~|~ \text{\eqref{eq:rep_const}, \eqref{eq:p_mg_bound}, \eqref{eq:p_bal_p}, \eqr
 
 
 \begin{remark}
-Our definitions of $J_i$, $\mc U_i$, $\mc C$ satisfy Assumption~\ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied.  {Additionally, instead of linear power flow equations in \eqref{eq:pf_all}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.}\eod
+The definitions of $J_i$, $\mc U_i$, $\mc C$ in \eqref{eq:cost_def}, \eqref{eq:constr_def}, \eqref{eq:Cconstr_def} satisfy Assumption~\ref{as:gen}. Moreover, these definitions can be expanded by incorporating additional cost terms, for example, related to the degradation of storage units and constraints (e.g. ramping constraints of dispatchable generation units), as long as Assumption \ref{as:gen} remains satisfied.  {Additionally, instead of linear power flow equations in \eqref{eq:pf_all}, a nonlinear convex relaxation, such as a second order cone or semi-definite programming as discussed in \cite[Sect. II-A]{molzahn2017} can be considered since it still satisfies Assumption 1. In this case, only the definition of $\mc U_{N+1}$ differs from the current formulation.}\eod
 \end{remark}
 
 %\smallskip
@@ -1023,7 +1023,7 @@ Therefore, \cite[Theorem~2]{belgioioso2020semi} can be invoked to prove item (ii
 \begin{minipage}{\columnwidth}
 \hrule
 \smallskip
-\textsc{Algorithm 2}. Prosumer $i$'s local update
+\textsc{Algorithm 2}. Local update of Prosumer $i$
 \smallskip
 \hrule 
 \smallskip
@@ -1110,7 +1110,7 @@ $
 
 \medskip
 \noindent 
-(i) \text{Primal update (network physical variables):}\\[.2em]
+(i) \text{Primal update (grid physical variables):}\\[.2em]
 \hspace*{.15em}
 $\left\lfloor
 \begin{array}{l}
