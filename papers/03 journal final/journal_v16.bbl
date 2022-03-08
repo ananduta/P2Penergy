@@ -98,10 +98,10 @@ G.~{Belgioioso}, A.~{Nedich}, and S.~{Grammatico}, ``Distributed generalized
   2075, 2021.
 
 \bibitem{gadjov2020single}
-D.~Gadjov and L.~Pavel, ``Single-timescale distributed {GNE} seeking for
-  aggregative games over networks via forward-backward operator splitting,''
-  \emph{IEEE Transactions on Automatic Control}, 2020, early access at
-  https://doi.org/10.1109/TAC.2020.3015354.
+D.~Gadjov and L.~Pavel, ``Single-timescale distributed gne seeking for
+  aggregative games over networks via forward--backward operator splitting,''
+  \emph{IEEE Transactions on Automatic Control}, vol.~66, no.~7, pp.
+  3259--3266, 2020.
 
 \bibitem{belgioioso2020semi}
 G.~Belgioioso and S.~Grammatico, ``Semi-decentralized generalized {N}ash
@@ -140,9 +140,10 @@ F.~{Moret}, A.~{Tosatto}, T.~{Baroche}, and P.~{Pinson}, ``Loss allocation in
   https://doi.org/10.1109/TPWRS.2020.3025391.
 
 \bibitem{zhong2020cooperative}
-W.~Zhong, S.~Xie, K.~Xie, Q.~Yang, and L.~Xie, ``Cooperative p2p energy trading
-  in active distribution networks: An milp-based nash bargaining solution,''
-  \emph{IEEE Transactions on Smart Grid}, vol.~12, no.~2, pp. 1264--1276, 2020.
+W.~Zhong, S.~Xie, K.~Xie, Q.~Yang, and L.~Xie, ``Cooperative {P2P} energy
+  trading in active distribution networks: {A}n {MILP}-based {N}ash bargaining
+  solution,'' \emph{IEEE Transactions on Smart Grid}, vol.~12, no.~2, pp.
+  1264--1276, 2020.
 
 \bibitem{bauschke2011convex}
 H.~H. Bauschke and P.~L. Combettes, \emph{Convex analysis and monotone operator
@@ -210,7 +211,7 @@ B.~Stellato, G.~Banjac, P.~Goulart, A.~Bemporad, and S.~Boyd, ``{OSQP}: an
 
 \bibitem{cenedese2021asynchronous}
 C.~Cenedese, G.~Belgioioso, S.~Grammatico, and M.~Cao, ``An asynchronous
-  distributed and scalable generalized nash equilibrium seeking algorithm for
+  distributed and scalable generalized {N}ash equilibrium seeking algorithm for
   strongly monotone games,'' \emph{European Journal of Control}, vol.~58, pp.
   143--151, 2021.
 
