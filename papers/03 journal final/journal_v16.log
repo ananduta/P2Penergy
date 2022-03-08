@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  7 MAR 2022 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.15)  8 MAR 2022 09:36
 entering extended mode
 **./journal_v16.tex
 (journal_v16.tex
@@ -658,15 +658,20 @@ Overfull \hbox (2.43643pt too wide) in paragraph at lines 682--751
 []$[]$ 
  []
 
-<figures/37bus_sys_f7_GB.pdf, id=81, 236.77962pt x 375.89835pt>
-File: figures/37bus_sys_f7_GB.pdf Graphic file (type pdf)
-<use figures/37bus_sys_f7_GB.pdf>
-Package pdftex.def Info: figures/37bus_sys_f7_GB.pdf  used on input line 755.
-(pdftex.def)             Requested size: 190.91748pt x 303.10513pt.
+<figures/NF/37bus_sys_f8_v2.pdf, id=81, 225.39307pt x 375.89835pt>
+File: figures/NF/37bus_sys_f8_v2.pdf Graphic file (type pdf)
+<use figures/NF/37bus_sys_f8_v2.pdf>
+Package pdftex.def Info: figures/NF/37bus_sys_f8_v2.pdf  used on input line 755
+.
+(pdftex.def)             Requested size: 185.76031pt x 309.79875pt.
 
 LaTeX Warning: Text page 6 contains only floats.
 
-[6 <./figures/37bus_sys_f7_GB.pdf>]
+
+Overfull \vbox (6.95271pt too high) has occurred while \output is active []
+
+
+[6 <./figures/NF/37bus_sys_f8_v2.pdf>]
 Overfull \hbox (15.52422pt too wide) in paragraph at lines 1033--1053
 |  $[]$ 
  []
@@ -857,8 +862,8 @@ eer mar-
 
 ) [10] (journal_v16.aux) ) 
 Here is how much of TeX's memory you used:
- 7743 strings out of 479334
- 127699 string characters out of 2855431
+ 7744 strings out of 479334
+ 127728 string characters out of 2855431
  447451 words of memory out of 3000000
  24986 multiletter control sequences out of 15000+200000
  457896 words of font info for 146 fonts, out of 3000000 for 9000
@@ -901,7 +906,7 @@ public/amsfonts/symbols/msbm7.pfb><C:/Users/giuse/AppData/Local/Programs/MiKTeX
 /fonts/type1/urw/times/utmbi8a.pfb><C:/Users/giuse/AppData/Roaming/MiKTeX/2.9/f
 onts/type1/urw/times/utmr8a.pfb><C:/Users/giuse/AppData/Roaming/MiKTeX/2.9/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on journal_v16.pdf (10 pages, 886696 bytes).
+Output written on journal_v16.pdf (10 pages, 885545 bytes).
 PDF statistics:
  302 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
