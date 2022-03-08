@@ -645,7 +645,7 @@ Note that the cost functions in \eqref{eq:cost_def} are coupled only via the agg
 Games with such special structure are known as \textit{aggregative games} \cite{jensen2010aggregative}, and have received intense research interest, within the operations research and the automatic control communities \cite{paccagnan2019,belgioioso2020semi,belgioioso2020b,
 gadjov2020single,bianchi2020fast}. 
 {
-When the agents' cost functions depend linearly on the congestion (as for our P2P market model), v-GNEs are efficient. Specifically, the so-called \textit{price of anarchy}\cite{koutsoupias1999worst}, which quantifies how much selfish behaviour degrades the performance of a given system, tends to one (i.e., no performance degradation) as the agents population size grows \cite{paccagnan2018efficiency}.}
+When the agents' cost functions depend linearly on the congestion (as for our P2P market model) v-GNEs are efficient (in terms of social welfare). Specifically, the so-called \textit{price of anarchy}\cite{koutsoupias1999worst}, which quantifies how much selfish behaviour degrades the performance of a given system, tends to one (i.e., no performance degradation) as the agents population size grows unbounded \cite{paccagnan2018efficiency}.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Semi-decentralized Market Clearing}
@@ -719,7 +719,7 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 %%%
 % DNO
 %%%
-& \text{DNO}\\
+& \text{Distribution Network Operator (DNO)}\\
 \quad &\left\lfloor
 \begin{array}{l}
 \text{Central update via \textsc{Algorithm 3}:}\\
@@ -729,7 +729,7 @@ p_{(i,j)}^{\text{tr}}(k\!+\!1) \rightarrow \text{ prosumer } j
 \text{Set $\lambda^{\text{mg}}$, $\mu^{\text{tg}}$, $\{ \mu_y^{\text{pb}}(k\!+\!1)\}_{y \in\mc B}$ as in \textsc{Alg. 3} (ii)}
 \end{array}
 \right.\\[1em]
-\text{Communication (Gather \& Broadcast)}\\
+\text{Communication (Broadcast)}\\
  \left\lfloor
 \begin{array}{l}
 \sigma^{\mathrm{mg}},\, \lambda^{\text{mg}}, \mu^{\text{tg}}(k\!+\!1) \rightarrow \text{ all prosumers } i \in \mc N\\[.5em]
@@ -1189,7 +1189,7 @@ $
 
 \item The primal update of each prosumer (Algorithm~2~(ii)) involves the solution of a quadratic program\footnote{Up to a fairly-standard reformulation of the absolute value term in \eqref{eq:f_t}.}, for which very efficient solvers are available, e.g. \cite{osqp}. {In there, if $   J_{i} \big( \xi, u_{-i}(k) \big)$ is replaced by its approximate version $ \tilde J_{i} \big( \xi, \sigma^{\text{mg}}(k) \big)$, obtained by neglecting prosumer $i$'s contribution $p_i^{\text{tr}}$ to the aggregative active load $\sigma^{\text{mg}}$, Algorithm 1 will converge to a variational Wardrop equilibrium \cite[\S~II.B]{belgioioso2020semi}, which is a good approximation of v-GNEs for networks with a large number of prosumers.}
 
-\item  The primal update of the DNO (Algorithm~3~(i)) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation can be computationally expensive if naively solved. However, more efficient algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~30]{bauschke2011convex}.%, \edit{e.g.  the  \textit{Douglas--Rachford splitting}   \cite[\S~26.3]{bauschke2011convex}.}%\cite[Appendix~2]{belgioioso2021operationally}.
+\item  The primal update of the DNO (Algorithm~3~(i)) requires projecting onto $\mc U_{N+1}$, which is a convex but nonlinear set. This operation is computationally expensive if naively solved. However, more efficient ad-hoc algorithms to calculate $\proj_{\mc U_{N+1}}$ can be designed using \textit{best approximation methods} \cite[\S~30]{bauschke2011convex}.%, \edit{e.g.  the  \textit{Douglas--Rachford splitting}   \cite[\S~26.3]{bauschke2011convex}.}%\cite[Appendix~2]{belgioioso2021operationally}.
 \item {Algorithm 1 can be recast as a proximal-point method opportunely preconditioned to distribute the computation among the prosumers \cite[\S~IV]{belgioioso2020semi}.
 %
 Such operator-theoretic interpretation can be used to design provably-correct acceleration schemes \cite{belgioioso2020semi} as well as to provide robustness guarantees to asynchronous implementations \cite{cenedese2021asynchronous}.
